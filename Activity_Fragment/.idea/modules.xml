@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Activity_Fragment.iml" filepath="$PROJECT_DIR$/Activity_Fragment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PreferenceActivity/PreferenceActivity.iml" filepath="$PROJECT_DIR$/PreferenceActivity/PreferenceActivity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dynamicfragment/dynamicfragment.iml" filepath="$PROJECT_DIR$/dynamicfragment/dynamicfragment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragmentcommunication/fragmentcommunication.iml" filepath="$PROJECT_DIR$/fragmentcommunication/fragmentcommunication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragmenttest/fragmenttest.iml" filepath="$PROJECT_DIR$/fragmenttest/fragmenttest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intenttest1/intenttest1.iml" filepath="$PROJECT_DIR$/intenttest1/intenttest1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/staticfragment/staticfragment.iml" filepath="$PROJECT_DIR$/staticfragment/staticfragment.iml" />
+    </modules>
+  </component>
+</project>

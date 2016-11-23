@@ -1,0 +1,14 @@
+CHANGED,D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ssdut\lst\namemaker\MainActivity$4$override.class
+CHANGED,D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ssdut\lst\namemaker\PayClass$override.class
+CHANGED,D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ssdut\lst\namemaker\BuildConfig$override.class
+CHANGED,D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ssdut\lst\namemaker\MainActivity$1$override.class
+CHANGED,D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ssdut\lst\namemaker\MainActivity$7$override.class
+CHANGED,D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ssdut\lst\namemaker\MainActivity$5$override.class
+CHANGED,D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ssdut\lst\namemaker\MainActivity$3$override.class
+CHANGED,D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ssdut\lst\namemaker\PayClass$1$override.class
+CHANGED,D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ssdut\lst\namemaker\MainActivity$override.class
+CHANGED,D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ssdut\lst\namemaker\MainActivity$8$override.class
+CHANGED,D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ssdut\lst\namemaker\PayClass$MyPayResultListener$override.class
+CHANGED,D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ssdut\lst\namemaker\MainActivity$6$override.class
+CHANGED,D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
+CHANGED,D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ssdut\lst\namemaker\MainActivity$2$override.class

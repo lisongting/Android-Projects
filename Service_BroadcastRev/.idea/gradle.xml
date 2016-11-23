@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-2.10" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/SmsManager" />
+            <option value="$PROJECT_DIR$/alarmtest" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/audiomanager" />
+            <option value="$PROJECT_DIR$/broadcast" />
+            <option value="$PROJECT_DIR$/contactsreadertest" />
+            <option value="$PROJECT_DIR$/intentservice" />
+            <option value="$PROJECT_DIR$/musicbox" />
+            <option value="$PROJECT_DIR$/player" />
+            <option value="$PROJECT_DIR$/soundpool" />
+            <option value="$PROJECT_DIR$/telephonystatus" />
+          </set>
+        </option>
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/SmsManager" />
+            <option value="$PROJECT_DIR$/alarmtest" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/audiomanager" />
+            <option value="$PROJECT_DIR$/broadcast" />
+            <option value="$PROJECT_DIR$/contactsreadertest" />
+            <option value="$PROJECT_DIR$/intentservice" />
+            <option value="$PROJECT_DIR$/musicbox" />
+            <option value="$PROJECT_DIR$/player" />
+            <option value="$PROJECT_DIR$/soundpool" />
+            <option value="$PROJECT_DIR$/telephonystatus" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

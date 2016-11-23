@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SQLite.iml" filepath="$PROJECT_DIR$/SQLite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SqliteTest/SqliteTest.iml" filepath="$PROJECT_DIR$/SqliteTest/SqliteTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SqliteTest/app.iml" filepath="$PROJECT_DIR$/SqliteTest/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gesturetest/gesturetest.iml" filepath="$PROJECT_DIR$/gesturetest/gesturetest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/namemaker/namemaker.iml" filepath="$PROJECT_DIR$/namemaker/namemaker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/randomnumberio/randomnumberio.iml" filepath="$PROJECT_DIR$/randomnumberio/randomnumberio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sdfileexplorer/sdfileexplorer.iml" filepath="$PROJECT_DIR$/sdfileexplorer/sdfileexplorer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sharedpreferencestest/sharedpreferencestest.iml" filepath="$PROJECT_DIR$/sharedpreferencestest/sharedpreferencestest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/texttospeech/texttospeech.iml" filepath="$PROJECT_DIR$/texttospeech/texttospeech.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wordslist/wordslist.iml" filepath="$PROJECT_DIR$/wordslist/wordslist.iml" />
+    </modules>
+  </component>
+</project>

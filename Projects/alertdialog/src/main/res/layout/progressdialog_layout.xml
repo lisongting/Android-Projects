@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动环形进度条"
+        android:onClick="showSpinner"
+        android:layout_marginTop="6dp"/>
+    <Button
+        android:id="@+id/button22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动进度条2"
+        android:onClick="showIndeterminate"
+        android:layout_marginTop="6dp"/>
+    <Button
+        android:id="@+id/button33"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动进度条3"
+        android:onClick="showProgress"
+        android:layout_marginTop="6dp"/>
+</LinearLayout>

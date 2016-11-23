@@ -1,0 +1,68 @@
+-injars 'D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\jarMerging\release\jars\1\1f\combined.jar'
+-outjars 'D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\multi-dex\release\componentClasses.jar'
+
+-libraryjars 'D:\SSoftware\Android\sdk\build-tools\24.0.2\lib\shrinkedAndroid.jar'
+
+-forceprocessing
+-dontoptimize
+-dontobfuscate
+-dontusemixedcaseclassnames
+-dontpreverify
+-dontnote **,com.android.tools.fd.**,android.support.multidex.MultiDexExtractor
+-dontwarn **
+-printconfiguration 'D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\multi-dex\release\components.flags'
+
+
+-keep class com.ssdut.lst.namemaker.MainActivity {
+    <init>();
+}
+
+-keep class com.wanpu.pay.PayView {
+    <init>();
+}
+
+-keep class com.payeco.android.plugin.PayecoPluginLoadingActivity {
+    <init>();
+}
+
+-keep class com.payeco.android.plugin.PayecoOrderDetailActivity {
+    <init>();
+}
+
+-keep class com.payeco.android.plugin.PayecoPayResultActivity {
+    <init>();
+}
+
+-keep class com.payeco.android.plugin.PayecoWebViewActivity {
+    <init>();
+}
+
+-keep class com.payeco.android.plugin.PayecoRiskControlActivity {
+    <init>();
+}
+
+-keep class com.alipay.sdk.app.H5PayActivity {
+    <init>();
+}
+
+-keep class com.unionpay.uppay.PayActivity {
+    <init>();
+}
+
+-keep class com.wanpu.pay.WXActivity {
+    <init>();
+}
+
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+
+-keep public class * extends java.lang.annotation.Annotation {
+    <fields>;
+    <methods>;
+}
+
+-keep class com.android.tools.fd.** {
+    <fields>;
+    <methods>;
+}

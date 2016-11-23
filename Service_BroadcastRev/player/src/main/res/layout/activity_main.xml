@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.ssdut.lst.player.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="一个简单的音乐播放器:(借助Service和BroadcastReceiver实现)" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/singer"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_prev"
+            android:src="@drawable/prev"
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_play"
+            android:src="@drawable/play"
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_stop"
+            android:src="@drawable/stop"
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_next"
+            android:src="@drawable/next"
+            />
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开音效控制器"
+        android:onClick="openController"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MainActivity通过startService的方式启动一个播放音乐的Service，
+        然后用BroadcastReceiver接受Service发送的Broadcast(包括播放状态和当前歌曲)，
+        MainActivity的BroadcastReceiver中的onReceive()接受数据，然后控制UI界面的改变。broadcastReceiver用Intent作为数据的载体
+        打开音效控制器可以调节音效。\n通过第二个Activity的bindService()方法与MainActivity中
+        播放音乐的Service进行绑定，这样就能通过第二个Activity控制Service中播放音乐的音效。"/>
+</LinearLayout>

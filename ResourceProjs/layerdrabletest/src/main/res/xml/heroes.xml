@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<heroes>
+    <hero name="剑圣 " 位置="打野 ">我的剑就是你的剑</hero>
+    <hero name="皮城女警 " 位置="ADC ">我们去查案吧</hero>
+    <hero name="海洋之灾 " 位置="中单 ">不管是烈火还是深海，都取不走我的命</hero>
+    <hero name="巨魔之王 " 位置="上单 ">巨魔时间到啦</hero>
+</heroes>

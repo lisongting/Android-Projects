@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="@string/q"
+        android:showAsAction="always|withText"
+        android:icon="@drawable/mango">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/font_10"
+                    android:title="字体10"/>
+                <item
+                    android:id="@+id/font_12"
+                    android:title="字体12"/>
+                <item
+                    android:id="@+id/font_14"
+                    android:title="字体14"/>
+                <item
+                    android:id="@+id/font_16"
+                    android:title="字体16"/>
+                <item
+                    android:id="@+id/font_18"
+                    android:title="字体18"/>
+            </group>
+        </menu>
+    </item>
+    <item android:id="@+id/plain_item"
+        android:showAsAction="always|withText"
+        android:title="@string/plain_item">
+    </item>
+    <item android:title="@string/font_color"
+        android:showAsAction="always"
+        android:icon="@drawable/color">
+        <menu>
+            <group>
+                <item
+                    android:id="@+id/red_font"
+                    android:title="@string/red_title"/>
+                <item
+                    android:id="@+id/green_font"
+                    android:title="@string/green_title"/>
+                <item
+                    android:id="@+id/blue_font"
+                    android:title="@string/blue_title"/>
+            </group>
+        </menu>
+    </item>
+</menu>

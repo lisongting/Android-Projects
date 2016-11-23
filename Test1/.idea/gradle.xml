@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="D:\SSoftware\Android Studio\gradle\gradle-2.10" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/UIBestPractice" />
+            <option value="$PROJECT_DIR$/configurationtest" />
+            <option value="$PROJECT_DIR$/handler2" />
+            <option value="$PROJECT_DIR$/handler3" />
+            <option value="$PROJECT_DIR$/handlertest" />
+            <option value="$PROJECT_DIR$/imageswitcher" />
+            <option value="$PROJECT_DIR$/module1" />
+            <option value="$PROJECT_DIR$/module2" />
+            <option value="$PROJECT_DIR$/simpleadaptertest" />
+            <option value="$PROJECT_DIR$/spinnertest" />
+            <option value="$PROJECT_DIR$/stackview" />
+            <option value="$PROJECT_DIR$/uilistviewtest" />
+            <option value="$PROJECT_DIR$/uitest" />
+          </set>
+        </option>
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/UIBestPractice" />
+            <option value="$PROJECT_DIR$/configurationtest" />
+            <option value="$PROJECT_DIR$/handler2" />
+            <option value="$PROJECT_DIR$/handler3" />
+            <option value="$PROJECT_DIR$/handlertest" />
+            <option value="$PROJECT_DIR$/imageswitcher" />
+            <option value="$PROJECT_DIR$/module1" />
+            <option value="$PROJECT_DIR$/module2" />
+            <option value="$PROJECT_DIR$/simpleadaptertest" />
+            <option value="$PROJECT_DIR$/spinnertest" />
+            <option value="$PROJECT_DIR$/stackview" />
+            <option value="$PROJECT_DIR$/uilistviewtest" />
+            <option value="$PROJECT_DIR$/uitest" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="播放Raw里面的声音"
+        android:onClick="playInRaw"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="播放Assets里面的声音"
+        android:onClick="playInAsset"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#50f"
+        android:text="该例子显示了如何引用raw和Assets文件夹里面的声音资源\n
+        引用Raw里面的声音文件：MediaPlayer p1 = MediaPlayer.create(this,R.raw.angela);\n
+        引用Assets里面的声音文件： AssetManager am = getAssets();\n
+            //获取指定文件对应的AssetFileDescriptor\n
+            AssetFileDescriptor afd = am.openFd('little.mp3');\n
+            MediaPlayer p2 = new MediaPlayer();\n
+            p2.setDataSource(afd.getFileDescriptor());\n
+            p2.prepare();\n"/>
+</LinearLayout>

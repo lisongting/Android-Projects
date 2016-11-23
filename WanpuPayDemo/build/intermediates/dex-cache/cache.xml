@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="c6ffaba0c2fa2f479cc9088a65798a296a2fd930">
+        <dex dex="D:\SSoftware\AndroidStudioProjects\WanpuPayDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_50044b2628a8ec3ca90f7c49d31e7a2e8bcee8d8\classes.dex" />
+    </item>
+
+</items>

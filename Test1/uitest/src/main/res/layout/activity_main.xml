@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:andriod="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.test.administrator.uitest.MainActivity"
+    android:orientation = "vertical">
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="this is a TextView"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:background="#00ff00"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_text"
+        android:hint="在这里输入一些东西"
+        android:maxLines="2"/>
+    <Button
+        android:id="@+id/button_commit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Commit"/>
+    <Button
+        android:id = "@+id/button"
+        android:layout_width = "match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="进度条++" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageview"
+        android:src="@drawable/ufo"
+        android:layout_gravity="center_horizontal"
+       />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
+        />
+
+    <Button
+        android:id="@+id/alertButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="弹出AlertDialog"/>
+    <Button
+        android:id="@+id/ProgressDialog_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="弹出ProgressDialog"/>
+</LinearLayout>

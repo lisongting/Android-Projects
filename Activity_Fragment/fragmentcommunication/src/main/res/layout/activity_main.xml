@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:id="@+id/layout"
+    tools:context="com.test.administrator.fragmentcommunication.MainActivity">
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入数据,点击按钮向fragment发送数据"/>
+    <Button
+        android:id="@+id/sendToFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText1"
+        android:layout_centerInParent="true"
+        android:text="向fragment发送数据"/>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sendToFragment"
+        android:background="#0f8"
+        android:text="下面区域是一个Fragment"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/area"
+        android:orientation="vertical"
+        android:layout_below="@id/textView"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="#f0f"
+            android:text="(一)activity向Fragment发送数据核心代码:\n
+            String str = edittext.getText().toString();
+                建立bundle对象， 将数据装入到bundle中\n
+                Bundle bundle = new Bundle();\n
+                bundle.putString('key1',str);
+                Fragment1 fragment1 = new Fragment1();
+                fragment1.setArguments(bundle);
+                FragmentManager manager = getFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.add(R.id.area,fragment1,'fragment1');
+                transaction.commit();
+                \n
+                Toast.makeText(MainActivity.this,'向fragment发送了数据:+str+,Toast.LENGTH_SHORT).show();\n
+                犯误教训:终于搞懂了，transaction是把fragment替换到一个layout上。这个layout的位置非常重要，原本我只是想把界面下部分的区域用Fragment替换
+                \n第一次犯错时是因为事务执行时
+                \n写成了transaction.add(R.id.layout,fragment1,'fragment1');而这个R.id.layout是整个界面即RelativeLayout的id.
+                直接将整个界面替换会导致EditText重叠等错误效果
+                \n
+                (二)Fragment向Activity传值：\n
+                1.在Fragment内部定义一个接口，该接口声明一个抽象方法\n
+                public interface Mylistener{public void give(String code);\n
+                2.在Activity中实现上面的接口，并写出具体实现方法
+                public void give(String code){Toast.makeText(this,'接受到来自Fragment的数据:'+code,Toast.LENGTH_SHORT).show()}；\n
+                3.在Fragment定义一个接口成员实例public Mylistener listener;\n
+                4.重写Fragment的onAttach方法，在该方法中把activity传给listener,listener = (Mylistener)activity.这样listener实例就相当于那个调用该fragment的Activity\n
+                5.在某个事件触发后，调用listener.give(String)\n
+                "/>
+        </ScrollView>
+
+
+
+</RelativeLayout>

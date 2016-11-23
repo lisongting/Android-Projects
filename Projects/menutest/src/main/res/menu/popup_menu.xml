@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/banana"
+        android:title="查找"/>
+    <item
+        android:id="@+id/add"
+        android:icon="@drawable/cherry"
+        android:title="添加"/>
+    <item
+        android:id="@+id/edit"
+        android:title="编辑"
+        android:icon="@drawable/mango">
+        <menu>
+            <item
+                android:id="@+id/copy"
+                android:title="复制"/>
+            <item
+                android:id="@+id/paste"
+                android:title="粘贴"
+                android:icon="@drawable/banana"/>
+            <item
+                android:id="@+id/cut"
+                android:title="剪切"/>
+        </menu>
+    </item>
+    <item
+        android:title="隐藏菜单"
+        android:id="@+id/exit"/>
+</menu>

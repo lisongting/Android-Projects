@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.test.administrator.myapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".FirstActivity"
+            android:label="活动一">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:label="活动二"
+            android:name=".SecondActivity">
+            <!-- 给第二个活动设置隐式的Intent-->
+            <intent-filter>
+                <action android:name="dark_intent" />
+                <category android:name ="android.intent.category.DEFAULT" />
+                <category android:name ="category"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:label="活动三"
+            android:name=".ThirdActivity">
+            <intent-filter>
+                <!--属性里面的字符串不能包含空格!!-->
+                <action android:name="action.of.Third.Activity"/>
+                <category android:name = "category.of.Third.Activity"/>
+                <!-- 下面这行表示该活动可以响应http-->
+                <data android:scheme = "http"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

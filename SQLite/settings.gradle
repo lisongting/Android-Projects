@@ -1,0 +1,1 @@
+include ':SqliteTest', ':wordslist', ':namemaker', ':randomnumberio', ':sharedpreferencestest', ':sdfileexplorer', ':gesturetest', ':texttospeech'

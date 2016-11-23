@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Test1.iml" filepath="$PROJECT_DIR$/Test1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UIBestPractice/UIBestPractice.iml" filepath="$PROJECT_DIR$/UIBestPractice/UIBestPractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configurationtest/configurationtest.iml" filepath="$PROJECT_DIR$/configurationtest/configurationtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/handler2/handler2.iml" filepath="$PROJECT_DIR$/handler2/handler2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/handler3/handler3.iml" filepath="$PROJECT_DIR$/handler3/handler3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/handlertest/handlertest.iml" filepath="$PROJECT_DIR$/handlertest/handlertest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imageswitcher/imageswitcher.iml" filepath="$PROJECT_DIR$/imageswitcher/imageswitcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module1/module1.iml" filepath="$PROJECT_DIR$/module1/module1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module2/module2.iml" filepath="$PROJECT_DIR$/module2/module2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simpleadaptertest/simpleadaptertest.iml" filepath="$PROJECT_DIR$/simpleadaptertest/simpleadaptertest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spinnertest/spinnertest.iml" filepath="$PROJECT_DIR$/spinnertest/spinnertest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stackview/stackview.iml" filepath="$PROJECT_DIR$/stackview/stackview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uilistviewtest/uilistviewtest.iml" filepath="$PROJECT_DIR$/uilistviewtest/uilistviewtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uitest/uitest.iml" filepath="$PROJECT_DIR$/uitest/uitest.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:textColor="#f0f"
+                android:text="动态加载Fragment的例子，点击下面两个按钮分别会加载出Fragment
+                通过下面方法进行Fragment替换：\nFragmentManager manager = getFragmentManager();\nFragmentTransaction transaction = manager.beginTransaction();\ntransaction.replace(R.id.id_content, contentFragment);\nR.id.id_content就是将要被替换的Layout区域，将它替换为contentFragment\n
+                最后还要事务提交：transaction.commit()\n还可以添加返回栈transaction.addToBackStack(String);\n
+                这样点击返回键就不会直接退出程序
+                "/>
+        </ScrollView>
+
+
+</LinearLayout>

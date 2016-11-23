@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/show_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_dark"
+        android:text="这是第二个Fragment---------------------
+        一个静态加载Fragment的例子，分别写每个Fragment的布局文件，\n
+        再写每个Fragment的类定义，要重写onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)方法\n
+        然后在MainActivity的布局文件里面定义两个Fragment，把name属性指向详细包下面的具体类名" />
+</LinearLayout>

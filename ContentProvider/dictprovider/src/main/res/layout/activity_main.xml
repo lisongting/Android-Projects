@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.test.administrator.dictprovider.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f08"
+        android:textSize="20sp"
+        android:text="测试ContentProvider和ContentResolver：\n该应用需要与DictResolver一起使用。(一个应用进行数据存储，另一个应用进行生词插入和查找)
+        \n先用该app创建底层数据库，把数据库的CRUD操作提供给ContentProvider,然后用另一个应用的ContentResolver来对指定Uri的数据进行访问。从而实现数据共享" />
+</RelativeLayout>

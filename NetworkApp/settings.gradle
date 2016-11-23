@@ -1,0 +1,1 @@
+include ':app', ':multithreadclient', ':async_task', ':httpclienttest', ':getposttest', ':webviewtest', ':multithreaddown', ':jscallandroid'

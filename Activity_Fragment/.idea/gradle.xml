@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="D:\SSoftware\Android Studio\gradle\gradle-2.10" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/PreferenceActivity" />
+            <option value="$PROJECT_DIR$/dynamicfragment" />
+            <option value="$PROJECT_DIR$/fragmentcommunication" />
+            <option value="$PROJECT_DIR$/fragmenttest" />
+            <option value="$PROJECT_DIR$/intenttest1" />
+            <option value="$PROJECT_DIR$/staticfragment" />
+          </set>
+        </option>
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/PreferenceActivity" />
+            <option value="$PROJECT_DIR$/dynamicfragment" />
+            <option value="$PROJECT_DIR$/fragmentcommunication" />
+            <option value="$PROJECT_DIR$/fragmenttest" />
+            <option value="$PROJECT_DIR$/intenttest1" />
+            <option value="$PROJECT_DIR$/staticfragment" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

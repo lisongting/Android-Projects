@@ -1,0 +1,1 @@
+include ':module1', ':module2', ':uitest', ':uilistviewtest', ':UIBestPractice', ':simpleadaptertest', ':configurationtest', ':spinnertest', ':stackview', ':handlertest', ':handler2', ':handler3', ':imageswitcher', ':imageswitcher'

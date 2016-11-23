@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="colors">
+        <item>最喜欢的颜色是？</item>
+        <item>黑色</item>
+        <item>白色</item>
+        <item>紫色</item>
+        <item>红色</item>
+        <item>黄色</item>
+        <item>绿色</item>
+        <item>蓝色</item>
+        <item>橙色</item>
+    </string-array>
+    <string-array name="fruits">
+        <item>最喜欢的水果是？</item>
+        <item>西瓜</item>
+        <item>香蕉</item>
+        <item>苹果</item>
+        <item>葡萄</item>
+        <item>梨</item>
+        <item>草莓</item>
+        <item>桃</item>
+        <item>橘子</item>
+    </string-array>
+    <string-array name="actions">
+        <item>最喜欢的运动是？</item>
+        <item>足球</item>
+        <item>篮球</item>
+        <item>乒乓球</item>
+        <item>羽毛球</item>
+        <item>登山</item>
+        <item>跑步</item>
+        <item>游泳</item>
+        <item>滑冰</item>
+    </string-array>
+    <string-array name="music">
+        <item>最喜欢的音乐类型是？</item>
+        <item>流行音乐</item>
+        <item>摇滚音乐</item>
+        <item>民谣</item>
+        <item>说唱</item>
+        <item>轻音乐</item>
+        <item>电子音乐</item>
+        <item>古典乐</item>
+        <item>爵士乐</item>
+    </string-array>
+    <string-array name="watch">
+        <item>阅读、影视喜好是？</item>
+        <item>悬疑\\推理</item>
+        <item>自然\\科学</item>
+        <item>动漫\\神话</item>
+        <item>战争\\枪战</item>
+        <item>言情\\喜剧</item>
+        <item>动作\\格斗</item>
+        <item>灾难\\惊悚</item>
+        <item>古装\\武侠</item>
+    </string-array>
+</resources>

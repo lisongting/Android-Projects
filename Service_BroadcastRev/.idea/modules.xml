@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Service_BroadcastRev.iml" filepath="$PROJECT_DIR$/Service_BroadcastRev.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmsManager/SmsManager.iml" filepath="$PROJECT_DIR$/SmsManager/SmsManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alarmtest/alarmtest.iml" filepath="$PROJECT_DIR$/alarmtest/alarmtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/audiomanager/audiomanager.iml" filepath="$PROJECT_DIR$/audiomanager/audiomanager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/broadcast/broadcast.iml" filepath="$PROJECT_DIR$/broadcast/broadcast.iml" />
+      <module fileurl="file://$PROJECT_DIR$/contactsreadertest/contactsreadertest.iml" filepath="$PROJECT_DIR$/contactsreadertest/contactsreadertest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intentservice/intentservice.iml" filepath="$PROJECT_DIR$/intentservice/intentservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmsManager/monitorphone.iml" filepath="$PROJECT_DIR$/SmsManager/monitorphone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/musicbox/musicbox.iml" filepath="$PROJECT_DIR$/musicbox/musicbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/player/player.iml" filepath="$PROJECT_DIR$/player/player.iml" />
+      <module fileurl="file://$PROJECT_DIR$/soundpool/soundpool.iml" filepath="$PROJECT_DIR$/soundpool/soundpool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/telephonystatus/telephonystatus.iml" filepath="$PROJECT_DIR$/telephonystatus/telephonystatus.iml" />
+    </modules>
+  </component>
+</project>

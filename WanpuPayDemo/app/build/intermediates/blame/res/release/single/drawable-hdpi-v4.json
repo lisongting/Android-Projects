@@ -1,0 +1,362 @@
+[
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_logo_waps.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_logo_waps.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_btn_back_clicked.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_btn_back_clicked.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wplogin_et_password.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wplogin_et_password.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_solidgray.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_solidgray.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_btnleft_selector.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_btnleft_selector.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_toast_bg.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_toast_bg.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_arraw_selected.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_arraw_selected.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wplogin_btn_quick_login_selector2.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wplogin_btn_quick_login_selector2.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wplogin_dialog_bg.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wplogin_dialog_bg.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_keyboard_key.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_keyboard_key.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_btn_login_selector.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_btn_login_selector.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_input_bg_on.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_input_bg_on.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_pay_input.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_pay_input.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_smallbtn_bg.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_smallbtn_bg.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_radiobt_bg.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_radiobt_bg.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_arraw_normal.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_arraw_normal.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_common_info_title.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_common_info_title.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_logo_tenpay.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_logo_tenpay.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_btn_showex_selector.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_btn_showex_selector.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_unionpay_logo.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_unionpay_logo.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_checkbox_bg.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_checkbox_bg.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_btn_back_selector.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_btn_back_selector.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_balancetitleshape.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_balancetitleshape.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_keyboard_btn_selector.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_keyboard_btn_selector.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_title_waps.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_title_waps.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_btnright_selector.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_btnright_selector.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_radiobt_selector.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_radiobt_selector.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_listview_selector.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_listview_selector.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_spinner_bg_on.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_spinner_bg_on.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_bp_bg_selector.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_bp_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wplogin_title_bottom_line2.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wplogin_title_bottom_line2.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_logo_cardpay.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_logo_cardpay.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_pop_bg.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_pop_bg.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wplogin_et_username.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wplogin_et_username.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_bp_refresh_selector.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_bp_refresh_selector.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_takepickture_tips_bg.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_takepickture_tips_bg.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_solidyellow.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_solidyellow.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_camera_normal.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_camera_normal.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_spinner_selector.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_spinner_selector.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_input_bg.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_input_bg.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_keyboard_btn1_default.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_keyboard_btn1_default.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\background.jpg",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\background.jpg"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_dropdown_click.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_dropdown_click.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_keyboard_letter_a2.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_keyboard_letter_a2.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_bp_btn_submit_selector.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_bp_btn_submit_selector.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_logo_alipay.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_logo_alipay.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wplogin_et_username_auto.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wplogin_et_username_auto.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_camerabtn_background.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_camerabtn_background.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_common_info_bottom.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_common_info_bottom.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_keyboard_toast_bg.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_keyboard_toast_bg.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_checkbox_checked.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_checkbox_checked.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_bg_panel.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_bg_panel.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wplogin_btn_quick_regist_selector2.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wplogin_btn_quick_regist_selector2.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_btn_back_normal.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_btn_back_normal.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wplogin_pop_names_delete.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wplogin_pop_names_delete.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_bp_arrow_selector.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_bp_arrow_selector.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wplogin_et_password_auto.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wplogin_et_password_auto.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_bp_btn_normal.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_bp_btn_normal.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_logo_bankpay.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_logo_bankpay.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_balancelayoutshape.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_balancelayoutshape.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_login_head.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_login_head.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_checkbox_click_bg.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_checkbox_click_bg.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_radiu_dialog.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_radiu_dialog.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_bp_btn_push.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_bp_btn_push.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_common_info_bg.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_common_info_bg.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_keyboard_btn1_on.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_keyboard_btn1_on.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_popup_bg.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_popup_bg.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_info_waps.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_info_waps.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wplogin_et_window_modify_pwd_bg.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wplogin_et_window_modify_pwd_bg.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_progressbar.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_progressbar.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_spinner_bg.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_spinner_bg.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_pay_type_bg.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_pay_type_bg.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_logo_wechat.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_logo_wechat.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wplogin_et_dialog_bg2.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wplogin_et_dialog_bg2.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_checkbox_normal.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_checkbox_normal.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\icon.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\icon.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_keyboard_input_bg.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_keyboard_input_bg.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_btn_back.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_btn_back.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wplogin_et_dialog_bg.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wplogin_et_dialog_bg.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_btn_recharge_selector.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_btn_recharge_selector.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_checkbox_bg.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_checkbox_bg.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_plugin_radiobt_bg_checked.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_plugin_radiobt_bg_checked.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_camera_clicked.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_camera_clicked.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wplogin_iv_et_right_bg.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wplogin_iv_et_right_bg.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_keyboard_btn1_background.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_keyboard_btn1_background.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_bg.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_bg.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_keyboard_letter_a1.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_keyboard_letter_a1.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\payeco_keyboard_bg.xml",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\payeco_keyboard_bg.xml"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\yue_dropdown_normal.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\yue_dropdown_normal.9.png"
+    },
+    {
+        "merged": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\wppay_info_waps.9.png",
+        "source": "D:\\SSoftware\\AndroidStudioProjects\\WanpuPayDemo\\app\\src\\main\\res\\drawable-hdpi\\wppay_info_waps.9.png"
+    }
+]

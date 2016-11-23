@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--使用指定的PreferenceFragment列表项-->
+    <header android:fragment = "com.test.administrator.activity_fragment.PreferenceActivityTest$Prefs1Fragment"
+        android:icon="@drawable/ic_settings_applications"
+        android:title="程序选项设置"
+        android:summary="设置应用的相关选项"/>
+    <!--使用指定的PreferenceFragment列表项-->
+    <header
+        android:fragment = "com.test.administrator.activity_fragment.PreferenceActivityTest$Prefs2Fragment"
+        android:icon="@drawable/ic_settings_display"
+        android:title="界面选项设置"
+        android:summary="设置显示界面的相关选项" >
+        <extra android:name="website"
+            android:value="www.baidu.com"/>
+    </header>
+    <!--使用Intent启动指定Activity列表项-->
+    <header
+        android:icon="@drawable/ic_settings_display"
+        android:title="使用intent"
+        android:summary="使用intent启动某个Activity">
+        <intent android:action="android.intent.action.VIEW"
+            android:data="http://www.baidu.com"/>
+    </header>
+</preference-headers>

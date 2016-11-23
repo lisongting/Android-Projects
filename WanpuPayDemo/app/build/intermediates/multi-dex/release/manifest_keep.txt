@@ -1,0 +1,20 @@
+-keep class com.ssdut.lst.namemaker.MainActivity { <init>(); }
+-keep class com.wanpu.pay.PayView { <init>(); }
+-keep class com.payeco.android.plugin.PayecoPluginLoadingActivity { <init>(); }
+-keep class com.payeco.android.plugin.PayecoOrderDetailActivity { <init>(); }
+-keep class com.payeco.android.plugin.PayecoPayResultActivity { <init>(); }
+-keep class com.payeco.android.plugin.PayecoWebViewActivity { <init>(); }
+-keep class com.payeco.android.plugin.PayecoRiskControlActivity { <init>(); }
+-keep class com.alipay.sdk.app.H5PayActivity { <init>(); }
+-keep class com.unionpay.uppay.PayActivity { <init>(); }
+-keep class com.wanpu.pay.WXActivity { <init>(); }
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+-keep public class * extends java.lang.annotation.Annotation {
+    *;
+}
+-keep class com.android.tools.fd.** {
+    *;
+}
+-dontnote com.android.tools.fd.**,android.support.multidex.MultiDexExtractor

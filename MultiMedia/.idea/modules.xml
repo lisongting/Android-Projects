@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MultiMedia.iml" filepath="$PROJECT_DIR$/MultiMedia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/VideoView/VideoView.iml" filepath="$PROJECT_DIR$/VideoView/VideoView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/VideoView/app.iml" filepath="$PROJECT_DIR$/VideoView/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/surfaceview/surfaceview.iml" filepath="$PROJECT_DIR$/surfaceview/surfaceview.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Async_Task</string>
+    <string name="detail">使用异步线程：AsyncTask[参数1，参数2，参数3]类\n好处是可以在线程中对UI进行更新，
+            而子线程不需要采用handler去通知主线程更新UI\n使用AsyncTask要重写4个方法：\n1.onPreExecute():在执行后台耗时任务之前调用，用于初始化工作
+            \n2.doInBackground():后台执行的任务\n3.onProgressUpdate():在doInBackground中调用publishProgress()更新任务的执行进度后，
+            将会触发该方法\n4.onPostExecute():当doInBackground完成后，系统自动调用该方法，并将doInBackground的返回值传给该方法</string>
+</resources>

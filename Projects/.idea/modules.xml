@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CalendarView/CalendarView.iml" filepath="$PROJECT_DIR$/CalendarView/CalendarView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FragmentTest/FragmentTest.iml" filepath="$PROJECT_DIR$/FragmentTest/FragmentTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Projects.iml" filepath="$PROJECT_DIR$/Projects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alertdialog/alertdialog.iml" filepath="$PROJECT_DIR$/alertdialog/alertdialog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/menutest/menutest.iml" filepath="$PROJECT_DIR$/menutest/menutest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/notification/notification.iml" filepath="$PROJECT_DIR$/notification/notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FragmentTest/popupmenu.iml" filepath="$PROJECT_DIR$/FragmentTest/popupmenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/searchview/searchview.iml" filepath="$PROJECT_DIR$/searchview/searchview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tabhost/tabhost.iml" filepath="$PROJECT_DIR$/tabhost/tabhost.iml" />
+    </modules>
+  </component>
+</project>
