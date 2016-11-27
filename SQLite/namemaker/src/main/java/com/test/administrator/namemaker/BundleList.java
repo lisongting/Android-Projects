@@ -1,7 +1,6 @@
 package com.test.administrator.namemaker;
 
 import android.database.Cursor;
-import android.os.Parcelable;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,6 +18,7 @@ public class BundleList implements Serializable {
     public ArrayList<Map<String, Object>> getList() {
         return list;
     }
+
     BundleList(Cursor cursor){
         list = new ArrayList<Map<String,Object>>();
         while(cursor.moveToNext()){
