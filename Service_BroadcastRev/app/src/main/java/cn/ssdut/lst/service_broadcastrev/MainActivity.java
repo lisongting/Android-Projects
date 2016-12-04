@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
             //获取service的onBind方法所返回的MyBinder对象
             binder = (BindService.MyBinder) service;
         }
-
         public void onServiceDisconnected(ComponentName name){
             Log.d("tag", "与service断开连接");
         }
@@ -37,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     public void bind(View view) {
         bindService(intent,conn, BindService.BIND_AUTO_CREATE);
     }
-
     public void unbind(View view) {
         unbindService(conn);
     }

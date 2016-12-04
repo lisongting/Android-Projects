@@ -15,6 +15,16 @@
         android:layout_height="wrap_content"
         android:text="读取联系人"
         android:onClick="read"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height='wrap_content'
+        android:text="启动Service"
+        android:onClick="startService"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height='wrap_content'
+        android:text="关闭Service"
+        android:onClick="stopService"/>
     <ListView
         android:id="@+id/listView2"
         android:layout_width="match_parent"

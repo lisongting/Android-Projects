@@ -11,6 +11,7 @@ import java.util.Map;
 
 /**
  * Created by Administrator on 2016/11/27.
+ * 一个暂时无用的类，在Activity之间用Intent传递数据时，我不知道怎样把复杂对象变为可序列化的
  */
 public class DisplayActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {

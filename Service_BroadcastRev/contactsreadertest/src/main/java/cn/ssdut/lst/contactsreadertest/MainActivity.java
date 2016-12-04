@@ -1,6 +1,7 @@
 package cn.ssdut.lst.contactsreadertest;
 
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -18,6 +19,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private BundleList dataList;
     private ContentResolver contentResolver;
+    private Intent serviceIntent;
     ArrayList<Map<String,String>> list = new ArrayList<>();
     ListView listView;
     @Override
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             //使用ContentResolver查找联系人电话号码
             Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,null,
                     ContactsContract.CommonDataKinds.Phone.CONTACT_ID+"="+contactId,null,null);
-            Log.d("tag","phones的"+phones.getColumnCount());
+            Log.d("tag","phones的列数为"+phones.getColumnCount());
             while(phones.moveToNext()){
                 String phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                 item.put("phone",phoneNumber);
@@ -56,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
         SimpleAdapter adapter = new SimpleAdapter(this, list, R.layout.layout_item, new String[]{"name", "phone"}, new int[]{R.id.personName, R.id.personPhone});
         listView.setAdapter(adapter);
         Toast.makeText(this, "共"+list.size()+"位联系人", Toast.LENGTH_SHORT).show();
+    }
 
+    public void startService(View v){
+        serviceIntent = new Intent(this,MyService.class);
+        startService(serviceIntent);
+    }
+    public void stopService(View v){
+        stopService(serviceIntent);
     }
 }

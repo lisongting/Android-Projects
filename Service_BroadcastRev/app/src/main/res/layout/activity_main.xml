@@ -9,11 +9,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="cn.ssdut.lst.service_broadcastrev.MainActivity">
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="这是一个绑定了Service的Activity" />
+        android:textColor="#f0f"
+        android:text="这是可以绑定Service的Activity" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,6 +27,6 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="获取Service的状态"
+        android:text="获取Count的值"
         android:onClick="getState"/>
 </LinearLayout>
