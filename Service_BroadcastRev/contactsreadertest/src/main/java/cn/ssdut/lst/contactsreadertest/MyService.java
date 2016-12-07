@@ -1,6 +1,5 @@
 package cn.ssdut.lst.contactsreadertest;
 
-import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
@@ -32,23 +31,31 @@ public class MyService extends Service {
 
     }
     public void onDestroy(){
+        Log.d("tag","--------MyService--onDestroy()");
         super.onDestroy();
         timer.cancel();
-        Log.d("tag","--------MyService--onDestroy()");
+
 
     }
 
     class SendThread extends Thread{
+        int killSelf=0;
         public void run(){
             //服务关闭后TimerTask还会继续运行,因为Timer.schedule会开启新的线程
             timer  = new Timer();
             timer.schedule(new TimerTask(){
                 @Override
                 public void run() {
+                    killSelf++;
                     Log.d("tag","--------MyService正在运行");
                 }
             },0,2000);
+            if(killSelf==30){//如果运行了30秒则服务自动关闭（我担心在某次测试中关不掉）
+                stopSelf();
+                Log.d("tag","--------killSelf--->30");
+            }
         }
-        PendingIntent intent;
+        //PendingIntent intent;
     }
+
 }

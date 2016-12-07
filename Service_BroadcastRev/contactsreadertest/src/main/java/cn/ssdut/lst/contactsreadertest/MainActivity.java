@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    private BundleList dataList;
+
     private ContentResolver contentResolver;
     private Intent serviceIntent;
     ArrayList<Map<String,String>> list = new ArrayList<>();
@@ -26,10 +26,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //ArrayList<Map<String,String>> list = new ArrayList<>();
         contentResolver = getContentResolver();
         Cursor cursor = contentResolver.query(ContactsContract.Contacts.CONTENT_URI,null,null,null,null);
-        //dataList = new BundleList(cursor,contentResolver);
 
         list = new ArrayList<>();
         while (cursor.moveToNext()) {
@@ -40,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             //使用ContentResolver查找联系人电话号码
             Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,null,
                     ContactsContract.CommonDataKinds.Phone.CONTACT_ID+"="+contactId,null,null);
-            Log.d("tag","phones的列数为"+phones.getColumnCount());
+            //Log.d("tag","phones的列数为"+phones.getColumnCount());
             while(phones.moveToNext()){
                 String phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                 item.put("phone",phoneNumber);
@@ -49,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
+    public void onDestroy(){
+        Log.d("tag","Activity---onDestroy");
+        super.onDestroy();
+    }
     public void read(View v){
-//        Intent intent = new Intent(MainActivity.this,DisplayActivity.class);
-//        intent.putExtra("personsInfoList",dataList);
-//        startActivity(intent);
         listView = (ListView)findViewById(R.id.listView2) ;
         SimpleAdapter adapter = new SimpleAdapter(this, list, R.layout.layout_item, new String[]{"name", "phone"}, new int[]{R.id.personName, R.id.personPhone});
         listView.setAdapter(adapter);
@@ -62,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void startService(View v){
         serviceIntent = new Intent(this,MyService.class);
+        serviceIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startService(serviceIntent);
     }
     public void stopService(View v){

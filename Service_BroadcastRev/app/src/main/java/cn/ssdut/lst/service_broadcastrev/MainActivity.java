@@ -19,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
         public void onServiceConnected(ComponentName name ,IBinder service){
             Log.d("tag","与service建立连接");
             //获取service的onBind方法所返回的MyBinder对象
-            binder = (BindService.MyBinder) service;
+            binder =  (BindService.MyBinder) service;
         }
         public void onServiceDisconnected(ComponentName name){
+
             Log.d("tag", "与service断开连接");
         }
     };
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         intent = new Intent(this,BindService.class);
+        //startService(intent);
     }
 
     public void bind(View view) {

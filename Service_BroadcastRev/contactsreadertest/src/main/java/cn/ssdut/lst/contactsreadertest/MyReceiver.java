@@ -11,7 +11,7 @@ import android.util.Log;
 public class MyReceiver extends BroadcastReceiver {
     public void onReceive(Context context,Intent intent){
         Log.d("tag","MyReceiver-----onCreate()调用");
-        Intent tIntent = new Intent(context,MyService.class);
-        context.startService(tIntent);
+            Intent tIntent = new Intent(context,MyService.class);
+            context.startService(tIntent);
     }
 }
