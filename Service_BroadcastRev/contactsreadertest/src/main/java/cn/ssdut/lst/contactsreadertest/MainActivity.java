@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 list.add(item);
                 break;
             }
+
         }
     }
     public void onDestroy(){
@@ -65,5 +66,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void stopService(View v){
         stopService(serviceIntent);
+    }
+
+    public void startIntentService(View v){
+        Intent tIntent = new Intent(this,MyIntentService.class);
+        tIntent.putExtra("list",list);
+        startService(tIntent);
     }
 }

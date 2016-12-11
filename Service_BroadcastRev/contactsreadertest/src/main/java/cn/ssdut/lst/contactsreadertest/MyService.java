@@ -39,21 +39,22 @@ public class MyService extends Service {
     }
 
     class SendThread extends Thread{
-        int killSelf=0;
+
+        long endTime = System.currentTimeMillis()+20*1000;
         public void run(){
             //服务关闭后TimerTask还会继续运行,因为Timer.schedule会开启新的线程
             timer  = new Timer();
             timer.schedule(new TimerTask(){
                 @Override
                 public void run() {
-                    killSelf++;
                     Log.d("tag","--------MyService正在运行");
+                    if(System.currentTimeMillis()>endTime){//如果运行了20秒则服务自动关闭（我担心在某次测试中关不掉）
+                        stopSelf();
+                        Log.d("tag","--------endTime,午时已到--->");
+                    }
                 }
             },0,2000);
-            if(killSelf==30){//如果运行了30秒则服务自动关闭（我担心在某次测试中关不掉）
-                stopSelf();
-                Log.d("tag","--------killSelf--->30");
-            }
+
         }
         //PendingIntent intent;
     }
