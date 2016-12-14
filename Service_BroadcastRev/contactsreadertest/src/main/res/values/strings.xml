@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">ContactsReaderTest</string>
+    <string name="app_name">英文名推荐器</string>
+    <string name="tip1">请选择最喜欢的颜色</string>
 </resources>

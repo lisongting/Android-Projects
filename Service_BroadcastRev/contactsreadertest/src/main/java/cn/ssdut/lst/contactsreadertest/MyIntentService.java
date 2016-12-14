@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public class MyIntentService extends IntentService {
 
-    private static String SERV_ADDR = "192.168.17.17";
+    private static String SERV_ADDR = "192.168.18.64";
     private static int PORT = 30000;
     private List<Map<String,String>> contactsList;
     private JSONArray jsonArray;
