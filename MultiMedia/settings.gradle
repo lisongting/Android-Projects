@@ -1,1 +1,1 @@
-include ':VideoView', ':surfaceview'
+include ':VideoView', ':surfaceview', ':videorecorder', ':screen_catcher'

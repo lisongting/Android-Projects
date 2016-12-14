@@ -10,14 +10,18 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/VideoView" />
+            <option value="$PROJECT_DIR$/screen_catcher" />
             <option value="$PROJECT_DIR$/surfaceview" />
+            <option value="$PROJECT_DIR$/videorecorder" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/VideoView" />
+            <option value="$PROJECT_DIR$/screen_catcher" />
             <option value="$PROJECT_DIR$/surfaceview" />
+            <option value="$PROJECT_DIR$/videorecorder" />
           </set>
         </option>
       </GradleProjectSettings>
