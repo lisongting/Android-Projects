@@ -58,8 +58,31 @@ public class MainActivity extends AppCompatActivity {
                 drawView.paint.setColor(Color.RED);
                 mi.setChecked(true);
                 break;
-
+            case R.id.green:
+                drawView.paint.setColor(Color.GREEN);
+                mi.setChecked(true);
+                break;
+            case R.id.blue:
+                drawView.paint.setColor(Color.BLUE);
+                mi.setChecked(true);
+                break;
+            case R.id.width_1:
+                drawView.paint.setStrokeWidth(1);
+                break;
+            case R.id.width_3:
+                drawView.paint.setStrokeWidth(3);
+                break;
+            case R.id.width_5:
+                drawView.paint.setStrokeWidth(5);
+                break;
+            case R.id.blur:
+                drawView.paint.setMaskFilter(blur);
+                break;
+            case R.id.emboss:
+                drawView.paint.setMaskFilter(emboss);
+                break;
         }
+        return true;
     }
     public class DrawView extends View {
         float preX,preY;
