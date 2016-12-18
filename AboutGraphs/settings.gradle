@@ -1,1 +1,1 @@
-include ':app', ':path_test', ':path_test2', ':hand_drawer', ':pinball'
+include ':app', ':path_test', ':path_test2', ':hand_drawer', ':pinball', ':matrix'

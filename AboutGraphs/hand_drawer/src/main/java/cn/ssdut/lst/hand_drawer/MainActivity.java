@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(MainActivity.this, "width:"+displayMetrics.widthPixels+";height:"+displayMetrics.heightPixels, Toast.LENGTH_SHORT).show();
         line.addView(drawView);
         setContentView(line);
+        //EmbossMaskFilter构造函数
+        //EmbossMaskFilter(float[] direction, float ambient, float specular, float blurRadius)
+        //float[]{x,y,z}:光源的位置  ambient:光强度(0,1]  specular：高光系数   blurRadius：模糊半径
         emboss = new EmbossMaskFilter(new float[]{1.5f, 1.5f, 1.5f}, 0.6f, 6, 4.2f);//????
         blur = new BlurMaskFilter(8, BlurMaskFilter.Blur.NORMAL);
 
@@ -120,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
                     preY = y;
                     Log.d("tag","-------ActionDown----");
                     break;
+                //ACTION_MOVE的处罚频率很高，只要手指在屏幕上时就会一直触发ACTION_MOVE
                 case MotionEvent.ACTION_MOVE:
                     path.quadTo(preX,preY,x,y);//从(preX,preY)到(x,y)绘制二次贝塞尔曲线
                     preX = x;
