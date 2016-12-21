@@ -10,8 +10,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/butterfly" />
             <option value="$PROJECT_DIR$/frame_animation1" />
             <option value="$PROJECT_DIR$/hand_drawer" />
+            <option value="$PROJECT_DIR$/listviewteen" />
             <option value="$PROJECT_DIR$/matrix" />
             <option value="$PROJECT_DIR$/path_test" />
             <option value="$PROJECT_DIR$/path_test2" />
@@ -24,8 +26,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/butterfly" />
             <option value="$PROJECT_DIR$/frame_animation1" />
             <option value="$PROJECT_DIR$/hand_drawer" />
+            <option value="$PROJECT_DIR$/listviewteen" />
             <option value="$PROJECT_DIR$/matrix" />
             <option value="$PROJECT_DIR$/path_test" />
             <option value="$PROJECT_DIR$/path_test2" />
