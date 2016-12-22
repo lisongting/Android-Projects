@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             path.moveTo(0, 0);
             for (int i = 0; i < 40; i++) {
                 //生成40个点，随机生成y坐标，将他们连成一条path
-                path.lineTo(i * 20, (float) Math.ra1dom() * 60);
+                path.lineTo(i * 20, (float) Math.random() * 60);
             }
             colors = new int[]{Color.BLACK, Color.BLUE, Color.CYAN, Color.GREEN, Color.MAGENTA, Color.RED, Color.YELLOW};
             Toast.makeText(context, "phase值是："+phase, Toast.LENGTH_SHORT).show();

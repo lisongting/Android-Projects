@@ -13,11 +13,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ListView listView = (ListView) findViewById(R.id.listView);
-        WindowManager windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+        final ListView listView = (ListView) findViewById(R.id.listView);
+       WindowManager windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+//        WindowManager windowManager = getWindowManager();
         Display display = windowManager.getDefaultDisplay();
         DisplayMetrics metrics = new DisplayMetrics();
         display.getMetrics(metrics);
-        listView.setAnimation(new MyAnimation(metrics.xdpi/2,metrics.ydpi/2,3500));
+        final MyAnimation animation = new MyAnimation(metrics.xdpi/2,metrics.ydpi/2,3500);
+        listView.setAnimation(animation);//只有被定义为final 的变量才能在匿名内部类中使用
+        //我想定义一个定时器，当动画播放完时自动重新演示动画，但是没成功
+//        TimerTask timerTask = new TimerTask() {
+//            @Override
+//            public void run() {
+//                listView.setAnimation(animation);
+//            }
+//        };
+//        new Timer().schedule(timerTask,3500,4000);
     }
 }
