@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColor="#f0f"
+    android:textSize="20sp"
+    android:text="这是TestActivity,MainActivity通过显式Intent启动该Activity,
+    注意观察Activity生命周期函数调用"/>
+</LinearLayout>

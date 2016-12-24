@@ -1,1 +1,1 @@
-include ':app', ':intentservice', ':SmsManager', ':telephonystatus', ':audiomanager', ':alarmtest', ':broadcast', ':musicbox', ':player', ':contactsreadertest', ':soundpool'
+include ':app', ':intentservice', ':SmsManager', ':telephonystatus', ':audiomanager', ':alarmtest', ':broadcast', ':musicbox', ':player', ':contactsreadertest', ':soundpool', ':activity_sample'

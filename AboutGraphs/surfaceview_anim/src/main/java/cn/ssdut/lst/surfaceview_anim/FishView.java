@@ -45,6 +45,9 @@ public class FishView extends SurfaceView
                         }
                 }
         }
-        public void resume
+
+        public void resume() {
+
+        }
 
 }

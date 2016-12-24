@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Service_BroadcastRev.iml" filepath="$PROJECT_DIR$/Service_BroadcastRev.iml" />
       <module fileurl="file://$PROJECT_DIR$/SmsManager/SmsManager.iml" filepath="$PROJECT_DIR$/SmsManager/SmsManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/activity_sample/activity_sample.iml" filepath="$PROJECT_DIR$/activity_sample/activity_sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/alarmtest/alarmtest.iml" filepath="$PROJECT_DIR$/alarmtest/alarmtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/audiomanager/audiomanager.iml" filepath="$PROJECT_DIR$/audiomanager/audiomanager.iml" />
