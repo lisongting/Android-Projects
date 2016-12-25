@@ -7,6 +7,6 @@
     android:layout_height="wrap_content"
     android:textColor="#f0f"
     android:textSize="20sp"
-    android:text="这是TestActivity,MainActivity通过显式Intent启动该Activity,
-    注意观察Activity生命周期函数调用"/>
+    android:text="这是TestActivity,MainActivity通过显式Intent启动该Activity,并向该Activity传值
+    注意使用Logcat观察Activity生命周期函数调用"/>
 </LinearLayout>

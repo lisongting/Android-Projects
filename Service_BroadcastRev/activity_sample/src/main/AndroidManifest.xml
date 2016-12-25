@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.ssdut.lst.activity_sample">
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,10 +10,17 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TestActivity"/>
+        <activity android:name=".TestActivity2"/>
+        <activity android:name=".StandardActivity"/>
+        <activity android:name=".SgTaskActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".SgTopActivity"
+            android:launchMode="singleTop"/>
+        <activity android:name=".SgInstanceActivity"
+            android:launchMode="singleInstance"/>
     </application>
-
 </manifest>
