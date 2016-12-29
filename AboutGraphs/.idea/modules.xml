@@ -14,6 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/pinball/pinball.iml" filepath="$PROJECT_DIR$/pinball/pinball.iml" />
       <module fileurl="file://$PROJECT_DIR$/shader_test/shader_test.iml" filepath="$PROJECT_DIR$/shader_test/shader_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/surfaceview_anim/surfaceview_anim.iml" filepath="$PROJECT_DIR$/surfaceview_anim/surfaceview_anim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/surfaceview_waver/surfaceview_waver.iml" filepath="$PROJECT_DIR$/surfaceview_waver/surfaceview_waver.iml" />
       <module fileurl="file://$PROJECT_DIR$/tween_test/tween_test.iml" filepath="$PROJECT_DIR$/tween_test/tween_test.iml" />
     </modules>
   </component>

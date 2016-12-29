@@ -5,7 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\SSoftware\Android Studio\gradle\gradle-2.10" />
+        <option name="gradleHome" value="D:\SSoftware\Android Studio\gradle\gradle-2.14.1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -20,26 +20,11 @@
             <option value="$PROJECT_DIR$/pinball" />
             <option value="$PROJECT_DIR$/shader_test" />
             <option value="$PROJECT_DIR$/surfaceview_anim" />
+            <option value="$PROJECT_DIR$/surfaceview_waver" />
             <option value="$PROJECT_DIR$/tween_test" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/butterfly" />
-            <option value="$PROJECT_DIR$/frame_animation1" />
-            <option value="$PROJECT_DIR$/hand_drawer" />
-            <option value="$PROJECT_DIR$/listviewteen" />
-            <option value="$PROJECT_DIR$/matrix" />
-            <option value="$PROJECT_DIR$/path_test" />
-            <option value="$PROJECT_DIR$/path_test2" />
-            <option value="$PROJECT_DIR$/pinball" />
-            <option value="$PROJECT_DIR$/shader_test" />
-            <option value="$PROJECT_DIR$/surfaceview_anim" />
-            <option value="$PROJECT_DIR$/tween_test" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

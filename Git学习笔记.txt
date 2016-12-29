@@ -1,0 +1,61 @@
+git init
+
+git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+
+git add a.txt
+
+
+git commit -m"备注信息"
+
+git status命令可以让我们时刻掌握仓库当前的状态，文件是否被修改过
+
+git diff    查看修改了什么内容
+
+git log     查看修改记录
+
+cat a.txt	在当前视图下查看a.txt文件的内容
+
+git log --pretty=oneline   用单行显示修改的记录
+
+git reset --hard head^ 		回退到上一个版本
+
+git reset --hard d47bacd        回退到指定的版本(或者回退之后后悔了，还可以前进至d47bacd版本)
+
+git reflog    查看所有的操作记录，包括commit和reset等，每一个记录都有一项id,假设有一项操作记录的id是8d0ee72
+
+git reset --hard 8d0ee72	回退到8d0ee72那个操作记录对应的版本
+
+情景一：已经修改了a.txt文件内容，不过还没有add进暂存区，想放弃修改：
+git checkout -- a.txt
+
+情景二：已经修改了a.txt文件内容，并且add进了暂存区，想放弃修改：
+先git reset head a.txt  ,此时就回到情景一，然后git checkout -- a.txt
+
+删除文件：rm a.txt
+git rm a.txt
+git commit --m"..."
+
+创建RSA密钥：
+ssh-keygen -t rsa -C "501648152@qq.com"
+
+添加远程仓库关联：
+git remote add origin git@github.com:lisongting/learngit
+(learngit是远程仓库的名称，不一定要和本地文件夹同名)
+
+移除远程仓库关联：
+git remote rm origin
+
+git remote -v
+查看当前关联的远程仓库名
+
+向远程仓库提交：
+git push -u origin master
+(一次关联后，以后推送至远端只要使用git push origin master就可以)
+（如果遇到pull first 的错误提示可以使用git push -f origin master强制提交）
+
+
+克隆远端的某个仓库到当前目录下：
+git clone git@github.com:lisongting/clonetest
+(这就把远端仓库名为clonetest的仓库克隆了下来)
