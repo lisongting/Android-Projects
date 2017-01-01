@@ -1,0 +1,1 @@
+include ':app', ':simple3d', ':texture3d'

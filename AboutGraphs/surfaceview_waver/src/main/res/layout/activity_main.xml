@@ -19,13 +19,13 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="正弦图像"
-            android:onClick="sin_show"/>
+            />
         <Button
             android:id="@+id/cos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="余弦图像"
-            android:onClick="cos_show"/>
+            />
     </LinearLayout>
     <SurfaceView
         android:id="@+id/show"
