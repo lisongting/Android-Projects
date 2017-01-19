@@ -34,6 +34,8 @@ public class LiveWallPaper extends WallpaperService {
             public void run() {
                 drawFrame();
             }
-        }
+        };
     }
 }
+
+
