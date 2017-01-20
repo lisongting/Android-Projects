@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/randomnumberio/randomnumberio.iml" filepath="$PROJECT_DIR$/randomnumberio/randomnumberio.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdfileexplorer/sdfileexplorer.iml" filepath="$PROJECT_DIR$/sdfileexplorer/sdfileexplorer.iml" />
       <module fileurl="file://$PROJECT_DIR$/sharedpreferencestest/sharedpreferencestest.iml" filepath="$PROJECT_DIR$/sharedpreferencestest/sharedpreferencestest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sqlite_example/sqlite_example.iml" filepath="$PROJECT_DIR$/sqlite_example/sqlite_example.iml" />
       <module fileurl="file://$PROJECT_DIR$/texttospeech/texttospeech.iml" filepath="$PROJECT_DIR$/texttospeech/texttospeech.iml" />
       <module fileurl="file://$PROJECT_DIR$/wordslist/wordslist.iml" filepath="$PROJECT_DIR$/wordslist/wordslist.iml" />
     </modules>

@@ -5,7 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\SSoftware\Android Studio\gradle\gradle-2.10" />
+        <option name="gradleHome" value="D:\SSoftware\Android Studio\gradle\gradle-2.14.1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -15,23 +15,12 @@
             <option value="$PROJECT_DIR$/randomnumberio" />
             <option value="$PROJECT_DIR$/sdfileexplorer" />
             <option value="$PROJECT_DIR$/sharedpreferencestest" />
+            <option value="$PROJECT_DIR$/sqlite_example" />
             <option value="$PROJECT_DIR$/texttospeech" />
             <option value="$PROJECT_DIR$/wordslist" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/SqliteTest" />
-            <option value="$PROJECT_DIR$/gesturetest" />
-            <option value="$PROJECT_DIR$/namemaker" />
-            <option value="$PROJECT_DIR$/randomnumberio" />
-            <option value="$PROJECT_DIR$/sdfileexplorer" />
-            <option value="$PROJECT_DIR$/sharedpreferencestest" />
-            <option value="$PROJECT_DIR$/texttospeech" />
-            <option value="$PROJECT_DIR$/wordslist" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

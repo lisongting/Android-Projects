@@ -1,1 +1,1 @@
-include ':SqliteTest', ':wordslist', ':namemaker', ':randomnumberio', ':sharedpreferencestest', ':sdfileexplorer', ':gesturetest', ':texttospeech'
+include ':SqliteTest', ':wordslist', ':namemaker', ':randomnumberio', ':sharedpreferencestest', ':sdfileexplorer', ':gesturetest', ':texttospeech', ':sqlite_example'
