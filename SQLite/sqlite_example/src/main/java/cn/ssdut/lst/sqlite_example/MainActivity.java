@@ -1,28 +1,35 @@
 package cn.ssdut.lst.sqlite_example;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Xml;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlSerializer;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    TextView show;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+        show = (TextView) findViewById(R.id.show);
+        SQLiteDatabase db;
+        Cursor cursor;
     }
 
     public void formatXml(View v) {
@@ -33,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         list[1] = p2;
         XmlSerializer serializer = Xml.newSerializer();
         File file = new File(Environment.getExternalStorageDirectory(), "persons.xml");
-        Toast.makeText(this, ""+Environment.getExternalStorageDirectory(), Toast.LENGTH_SHORT).show();
         try {
             FileOutputStream fos = new FileOutputStream(file);
             serializer.setOutput(fos,"utf-8");
@@ -45,11 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 serializer.startTag(null, "name");
                 serializer.text(p.getName());
                 serializer.endTag(null, "name");
-
                 serializer.startTag(null, "sex");
                 serializer.text(p.getSex());
                 serializer.endTag(null, "sex");
-
                 serializer.startTag(null, "age");
                 serializer.text(p.getAge()+"");
                 serializer.endTag(null, "age");
@@ -58,9 +62,20 @@ public class MainActivity extends AppCompatActivity {
             serializer.endTag(null, "persons");
             serializer.endDocument();
             Toast.makeText(this, "生成成功", Toast.LENGTH_SHORT).show();
+            showXmlFile(file);
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public void showXmlFile(File file) throws Exception {
+        StringBuilder sb = new StringBuilder("");
+        FileInputStream fis = new FileInputStream(file);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            sb.append(line);
+        }
+        show.setText(sb);
     }
     public void parseXml(View v) {
         List<Person> list= null;
@@ -75,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (type) {
                     case XmlPullParser.START_TAG:
                         if ("persons".equals(parser.getName())) {
-                            list = new ArrayList<Person>();
+                            list = new ArrayList<>();
                         } else if ("person".equals(parser.getName())) {
                             p = new Person();
                             String id = parser.getAttributeValue(0);
@@ -95,13 +110,17 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                 }
+                type = parser.next();
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        for (Person p : list) {
-            Toast.makeText(this, p.toString(), Toast.LENGTH_SHORT).show();
-        }
+        if(list.size()>0)
+            for (Person p : list) {
+                Toast.makeText(this, p.toString(), Toast.LENGTH_SHORT).show();
+            }
+        else
+            Toast.makeText(this, "list is empty", Toast.LENGTH_SHORT).show();
     }
 }
