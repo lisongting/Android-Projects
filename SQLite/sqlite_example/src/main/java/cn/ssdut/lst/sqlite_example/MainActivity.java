@@ -1,7 +1,7 @@
 package cn.ssdut.lst.sqlite_example;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -9,29 +9,30 @@ import android.util.Xml;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlSerializer;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     TextView show;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         show = (TextView) findViewById(R.id.show);
-        SQLiteDatabase db;
-        Cursor cursor;
+        preferences = getSharedPreferences("test",MODE_PRIVATE);
+        editor = preferences.edit();
     }
-
     public void formatXml(View v) {
         Person p1 = new Person(1,"jack", "male", 23);
         Person p2 = new Person(2,"alice", "female", 22);
@@ -39,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
         list[0]=p1;
         list[1] = p2;
         XmlSerializer serializer = Xml.newSerializer();
-        File file = new File(Environment.getExternalStorageDirectory(), "persons.xml");
+        File file = new File(Environment.getExternalStorageDirectory()
+                , "persons.xml");
         try {
             FileOutputStream fos = new FileOutputStream(file);
             serializer.setOutput(fos,"utf-8");
@@ -70,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
     public void showXmlFile(File file) throws Exception {
         StringBuilder sb = new StringBuilder("");
         FileInputStream fis = new FileInputStream(file);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(fis));
         String line;
         while ((line = reader.readLine()) != null) {
             sb.append(line);
@@ -80,7 +83,8 @@ public class MainActivity extends AppCompatActivity {
     public void parseXml(View v) {
         List<Person> list= null;
         try {
-            File file = new File(Environment.getExternalStorageDirectory(), "persons.xml");
+            File file = new File(Environment.getExternalStorageDirectory(),
+                    "persons.xml");
             FileInputStream fis = new FileInputStream(file);
             Person p= null;
             XmlPullParser parser = Xml.newPullParser();
@@ -112,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 type = parser.next();
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -122,5 +125,25 @@ public class MainActivity extends AppCompatActivity {
             }
         else
             Toast.makeText(this, "list is empty", Toast.LENGTH_SHORT).show();
+    }
+    public void writeToSP(View v){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日" +
+                "hh:mm:ss");
+        //存入当前时间
+        editor.putString("time",sdf.format(new Date()));
+        //存入一个随机数
+        editor.putInt("random",(int)(Math.random()*100));
+        editor.commit();
+    }
+    public void readFromSP(View v) {
+        String time = preferences.getString("time",null);
+        int randNum = preferences.getInt("random",0);
+        String result = time ==null?"还未写入数据":"写入时间为："+time+"\n" +
+                "上次生成的随机数为："+randNum;
+        Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT).show();
+    }
+    public void openWordList(View view) {
+        Intent t = new Intent(this, WordListActivty.class);
+        startActivity(t);
     }
 }

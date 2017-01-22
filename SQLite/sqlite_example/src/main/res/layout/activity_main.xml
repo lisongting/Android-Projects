@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/activity_main"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="cn.ssdut.lst.sqlite_example.MainActivity">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="向SharedPreferences写入数据"
+        android:onClick="writeToSP"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="读取SharedPreferences的数据"
+        android:onClick="readFromSP"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,6 +26,11 @@
         android:layout_height="wrap_content"
         android:text="xml解析"
         android:onClick="parseXml" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开SQLite单词本程序"
+        android:onClick="openWordList"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
