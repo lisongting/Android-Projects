@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/ContentProvider.iml" filepath="$PROJECT_DIR$/ContentProvider.iml" />
       <module fileurl="file://$PROJECT_DIR$/FirstProvider/FirstProvider.iml" filepath="$PROJECT_DIR$/FirstProvider/FirstProvider.iml" />
       <module fileurl="file://$PROJECT_DIR$/FirstProvider/app.iml" filepath="$PROJECT_DIR$/FirstProvider/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/book_provider/book_provider.iml" filepath="$PROJECT_DIR$/book_provider/book_provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/book_resolver/book_resolver.iml" filepath="$PROJECT_DIR$/book_resolver/book_resolver.iml" />
       <module fileurl="file://$PROJECT_DIR$/dictprovider/dictprovider.iml" filepath="$PROJECT_DIR$/dictprovider/dictprovider.iml" />
       <module fileurl="file://$PROJECT_DIR$/dictresolver/dictresolver.iml" filepath="$PROJECT_DIR$/dictresolver/dictresolver.iml" />
       <module fileurl="file://$PROJECT_DIR$/firstresolver/firstresolver.iml" filepath="$PROJECT_DIR$/firstresolver/firstresolver.iml" />

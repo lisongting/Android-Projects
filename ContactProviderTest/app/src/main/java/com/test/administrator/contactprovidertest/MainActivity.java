@@ -1,16 +1,14 @@
 package com.test.administrator.contactprovidertest;
 
 import android.app.AlertDialog;
-import android.app.ExpandableListActivity;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
 import android.provider.ContactsContract;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         //为"content://sms"的改变注册一个监听器
-        getContentResolver().registerContentObserver(Uri.parse("content://sms"),true,new SmsObserver(this,new Handler()));
+        getContentResolver().registerContentObserver(
+                Uri.parse("content://sms"),true,new SmsObserver(this,new Handler()));
     }
     public void search(View v){
         Cursor cursor = getContentResolver().query(ContactsContract.Contacts.CONTENT_URI,null,null,null,null);

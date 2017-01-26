@@ -1,1 +1,1 @@
-include ':FirstProvider', ':firstresolver', ':dictprovider', ':dictresolver'
+include ':FirstProvider', ':firstresolver', ':dictprovider', ':dictresolver', ':book_provider', ':book_resolver'

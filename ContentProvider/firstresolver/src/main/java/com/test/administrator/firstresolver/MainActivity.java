@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     ContentResolver resolver;
-    Uri uri = Uri.parse("content://com.ssdut.provider.firstprovider");
+    Uri uri = Uri.parse("content://com.ssdut.provider.firstprovider/");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

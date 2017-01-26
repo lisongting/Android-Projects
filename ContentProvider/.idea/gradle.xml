@@ -5,25 +5,19 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\SSoftware\Android Studio\gradle\gradle-2.10" />
+        <option name="gradleHome" value="D:\SSoftware\Android Studio\gradle\gradle-2.14.1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/FirstProvider" />
+            <option value="$PROJECT_DIR$/book_provider" />
+            <option value="$PROJECT_DIR$/book_resolver" />
             <option value="$PROJECT_DIR$/dictprovider" />
             <option value="$PROJECT_DIR$/dictresolver" />
             <option value="$PROJECT_DIR$/firstresolver" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/FirstProvider" />
-            <option value="$PROJECT_DIR$/dictprovider" />
-            <option value="$PROJECT_DIR$/dictresolver" />
-            <option value="$PROJECT_DIR$/firstresolver" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
