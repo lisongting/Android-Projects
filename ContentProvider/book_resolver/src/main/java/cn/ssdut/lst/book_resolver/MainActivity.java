@@ -1,29 +1,31 @@
 package cn.ssdut.lst.book_resolver;
 
-import android.content.ContentUris;
-import android.content.UriMatcher;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+    private EditText et_name;
+    private EditText et_author;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        et_name = (EditText) findViewById(R.id.et_name);
+        et_author = (EditText) findViewById(R.id.et_author);
+        
+    }
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.bt_insert:
 
-        //[使用示例]
-        //创建一个UriMatcher类，UriMatcher.NO_MATCH的值是-1，该参数代表
-        //Uri的根路径标识码
-        UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH);
-        //注册Uri，识别码为666
-        matcher.addURI("content://cn.ssdut.lst.provider","test",666);
-        //当使用Uri进行匹配时，返回识别码666
-        int t = matcher.match(Uri.parse("content://cn.ssdut.lst.provider/test"));
+                break;
+            case R.id.bt_del:
 
-
-        Uri uri = Uri.parse("content://cn.ssdut.lst.provider/test/2");
-        long id = ContentUris.parseId(uri);
+                break;
+            default:
+                break;
+        }
     }
 }
