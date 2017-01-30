@@ -8,8 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="cn.ssdut.lst.book_provider.MainActivity">
-
-
     <Button
         android:id="@+id/bt_show"
         android:layout_width="match_parent"
