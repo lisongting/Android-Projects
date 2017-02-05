@@ -90,20 +90,16 @@ public class MainActivity extends AppCompatActivity {
                     }
                     public void onStatusChanged(String provider,
                                                 int status, Bundle extras) {
-                        //gps状态变化时触发
-                        Log.d("tag","GPS状态变化");
+                        //位置状态变化时触发
                     }
                     public void onProviderEnabled(String provider) {
-                        //GPS启用时触发
-                        Log.d("tag", "GPS已启用");
                     }
                     public void onProviderDisabled(String provider) {
-                        //GPS被禁用时触发
-                        Log.d("tag", "GPS已禁用");
                     }
                 };
                 if(PackageManager.PERMISSION_GRANTED==
                         checkSelfPermission("android.permission.INTERNET"))
+                    //每两秒刷新一次
                 locManager.requestLocationUpdates(
                         LocationManager.NETWORK_PROVIDER,2000,0,locListener);
             }
