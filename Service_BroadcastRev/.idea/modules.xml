@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/audiomanager/audiomanager.iml" filepath="$PROJECT_DIR$/audiomanager/audiomanager.iml" />
       <module fileurl="file://$PROJECT_DIR$/broadcast/broadcast.iml" filepath="$PROJECT_DIR$/broadcast/broadcast.iml" />
+      <module fileurl="file://$PROJECT_DIR$/broadcastrecvdemo/broadcastrecvdemo.iml" filepath="$PROJECT_DIR$/broadcastrecvdemo/broadcastrecvdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/contactsreadertest/contactsreadertest.iml" filepath="$PROJECT_DIR$/contactsreadertest/contactsreadertest.iml" />
       <module fileurl="file://$PROJECT_DIR$/intentservice/intentservice.iml" filepath="$PROJECT_DIR$/intentservice/intentservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/SmsManager/monitorphone.iml" filepath="$PROJECT_DIR$/SmsManager/monitorphone.iml" />

@@ -5,7 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\SSoftware\Android Studio\gradle\gradle-2.10" />
+        <option name="gradleHome" value="D:\SSoftware\Android Studio\gradle\gradle-2.14.1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/audiomanager" />
             <option value="$PROJECT_DIR$/broadcast" />
+            <option value="$PROJECT_DIR$/broadcastrecvdemo" />
             <option value="$PROJECT_DIR$/contactsreadertest" />
             <option value="$PROJECT_DIR$/intentservice" />
             <option value="$PROJECT_DIR$/musicbox" />
@@ -23,23 +24,7 @@
             <option value="$PROJECT_DIR$/telephonystatus" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/SmsManager" />
-            <option value="$PROJECT_DIR$/activity_sample" />
-            <option value="$PROJECT_DIR$/alarmtest" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/audiomanager" />
-            <option value="$PROJECT_DIR$/broadcast" />
-            <option value="$PROJECT_DIR$/contactsreadertest" />
-            <option value="$PROJECT_DIR$/intentservice" />
-            <option value="$PROJECT_DIR$/musicbox" />
-            <option value="$PROJECT_DIR$/player" />
-            <option value="$PROJECT_DIR$/soundpool" />
-            <option value="$PROJECT_DIR$/telephonystatus" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
