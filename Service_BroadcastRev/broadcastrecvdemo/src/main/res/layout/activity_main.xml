@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/activity_main"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="cn.ssdut.lst.broadcastrecvdemo.MainActivity">
-
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <Button
+        android:id="@+id/bt_common"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送普通广播"/>
+    <Button
+        android:id="@+id/bt_ordered"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送有序广播"
+        android:layout_below="@+id/bt_common"/>
+    <Button
+        android:id="@+id/bt_abort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送并中断有序广播传递"
+        android:layout_below="@+id/bt_ordered"
+        />
 </RelativeLayout>
