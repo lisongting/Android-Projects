@@ -11,10 +11,12 @@
       <module fileurl="file://$PROJECT_DIR$/broadcast/broadcast.iml" filepath="$PROJECT_DIR$/broadcast/broadcast.iml" />
       <module fileurl="file://$PROJECT_DIR$/broadcastrecvdemo/broadcastrecvdemo.iml" filepath="$PROJECT_DIR$/broadcastrecvdemo/broadcastrecvdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/contactsreadertest/contactsreadertest.iml" filepath="$PROJECT_DIR$/contactsreadertest/contactsreadertest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/foregroundservice/foregroundservice.iml" filepath="$PROJECT_DIR$/foregroundservice/foregroundservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/intentservice/intentservice.iml" filepath="$PROJECT_DIR$/intentservice/intentservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/SmsManager/monitorphone.iml" filepath="$PROJECT_DIR$/SmsManager/monitorphone.iml" />
       <module fileurl="file://$PROJECT_DIR$/musicbox/musicbox.iml" filepath="$PROJECT_DIR$/musicbox/musicbox.iml" />
       <module fileurl="file://$PROJECT_DIR$/player/player.iml" filepath="$PROJECT_DIR$/player/player.iml" />
+      <module fileurl="file://$PROJECT_DIR$/remoteservicecreater/remoteservicecreater.iml" filepath="$PROJECT_DIR$/remoteservicecreater/remoteservicecreater.iml" />
       <module fileurl="file://$PROJECT_DIR$/soundpool/soundpool.iml" filepath="$PROJECT_DIR$/soundpool/soundpool.iml" />
       <module fileurl="file://$PROJECT_DIR$/telephonystatus/telephonystatus.iml" filepath="$PROJECT_DIR$/telephonystatus/telephonystatus.iml" />
     </modules>
