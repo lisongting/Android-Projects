@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.ssdut.lst.remoteservicecreater">
+    package="cn.ssdut.lst.remoteserviceuser">
 
     <application android:allowBackup="true" android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name" android:supportsRtl="true" android:theme="@style/AppTheme">
@@ -11,13 +11,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".LocalService"/>
-        <service android:name=".RemoteService"
-            android:process="remote.service">
-            <intent-filter>
-                <action android:name="cn.lst.RemoteService"/>
-            </intent-filter>
-        </service>
     </application>
 
 </manifest>

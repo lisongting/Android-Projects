@@ -49,8 +49,8 @@ public class BindService extends Service {
 
     //service被关闭之前回调该方法
     public void onDestroy() {
-        super.onDestroy();
         this.quit = true;
         Log.d("tag", "service is destroyed");
+        super.onDestroy();
     }
 }

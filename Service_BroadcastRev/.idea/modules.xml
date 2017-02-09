@@ -17,6 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/musicbox/musicbox.iml" filepath="$PROJECT_DIR$/musicbox/musicbox.iml" />
       <module fileurl="file://$PROJECT_DIR$/player/player.iml" filepath="$PROJECT_DIR$/player/player.iml" />
       <module fileurl="file://$PROJECT_DIR$/remoteservicecreater/remoteservicecreater.iml" filepath="$PROJECT_DIR$/remoteservicecreater/remoteservicecreater.iml" />
+      <module fileurl="file://$PROJECT_DIR$/remoteserviceuser/remoteserviceuser.iml" filepath="$PROJECT_DIR$/remoteserviceuser/remoteserviceuser.iml" />
       <module fileurl="file://$PROJECT_DIR$/soundpool/soundpool.iml" filepath="$PROJECT_DIR$/soundpool/soundpool.iml" />
       <module fileurl="file://$PROJECT_DIR$/telephonystatus/telephonystatus.iml" filepath="$PROJECT_DIR$/telephonystatus/telephonystatus.iml" />
     </modules>

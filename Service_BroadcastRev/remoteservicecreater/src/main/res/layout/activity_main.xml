@@ -8,6 +8,30 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="cn.ssdut.lst.remoteservicecreater.MainActivity">
 
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <Button
+        android:id="@+id/bt_localS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="绑定本地服务"
+        />
+    <Button
+        android:id="@+id/bt_useLocalS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询本地服务的信息"
+        android:layout_below="@+id/bt_localS"
+        />
+    <Button
+        android:id="@+id/bt_unBindLocalS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="销毁本地服务"
+        android:layout_below="@id/bt_useLocalS"
+        />
+    <Button
+        android:id="@+id/bt_remoteS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动远程服务"
+        android:layout_below="@id/bt_unBindLocalS"/>
 </RelativeLayout>

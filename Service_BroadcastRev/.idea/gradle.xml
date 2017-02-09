@@ -22,6 +22,7 @@
             <option value="$PROJECT_DIR$/musicbox" />
             <option value="$PROJECT_DIR$/player" />
             <option value="$PROJECT_DIR$/remoteservicecreater" />
+            <option value="$PROJECT_DIR$/remoteserviceuser" />
             <option value="$PROJECT_DIR$/soundpool" />
             <option value="$PROJECT_DIR$/telephonystatus" />
           </set>
