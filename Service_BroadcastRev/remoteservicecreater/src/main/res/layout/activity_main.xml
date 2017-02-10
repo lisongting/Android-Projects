@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/activity_main"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="cn.ssdut.lst.remoteservicecreater.MainActivity">
-
     <Button
         android:id="@+id/bt_localS"
         android:layout_width="match_parent"
@@ -25,7 +26,7 @@
         android:id="@+id/bt_unBindLocalS"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="销毁本地服务"
+        android:text="解除绑定本地服务"
         android:layout_below="@id/bt_useLocalS"
         />
     <Button
@@ -34,4 +35,11 @@
         android:layout_height="wrap_content"
         android:text="启动远程服务"
         android:layout_below="@id/bt_unBindLocalS"/>
+    <Button
+        android:id="@+id/bt_unBindRemoteS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="解除绑定远程服务"
+        android:layout_below="@id/bt_remoteS"
+        />
 </RelativeLayout>

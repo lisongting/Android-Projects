@@ -1,15 +1,10 @@
 package cn.ssdut.lst.remoteservicecreater;
-
 import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
+import android.os.Process;
 import android.util.Log;
-
-/**
- * Created by Administrator on 2017/2/9.
- */
-
 public class LocalService extends Service {
     private int count=0;
     private boolean quit=false;
@@ -23,6 +18,7 @@ public class LocalService extends Service {
     //在该Service中启动一个计数器
     public void onCreate() {
         binder = new MyBinder();
+        Log.i("tag","LocalService所在的进程ID是:"+ Process.myPid());
         Log.i("tag","LocalService----onCreate()");
         new Thread() {
             public void run() {
@@ -56,5 +52,4 @@ public class LocalService extends Service {
         Log.i("tag","LocalService----onDestroy()");
         super.onDestroy();
     }
-
 }

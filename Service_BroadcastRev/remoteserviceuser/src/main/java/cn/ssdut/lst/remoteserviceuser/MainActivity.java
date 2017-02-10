@@ -13,6 +13,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+/**
+ *[错误标记]
+ * 本来想跨进程调用remoteservicecreater中的远程服务（用两个app，一个
+ * 中定义远程服务，另一个app调用这个远程服务），却一直做不出想要的结果，
+ * 不知道时什么原因。报错是说Aidl接口错误，在logcat中的记录说明：
+ * remoteService的onCreate(),onbind()和MainActivity中ServiceConnection的
+ * onServiceConnected()都已经触发，然后可能是在调用aidl接口方法时出了问题，
+ * 之后remoteService就直接onBind()了。调用效果没出来
+ */
 
 public class MainActivity extends AppCompatActivity {
     private IMyAidlInterface binder;
@@ -23,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 binder = IMyAidlInterface.Stub.asInterface(service);
                 String tmp = binder.getMessage();
-                Toast.makeText(getApplicationContext(), "接收到内容：" + tmp, Toast.LENGTH_LONG);
+                Toast.makeText(MainActivity.this, "接收到内容：" + tmp, Toast.LENGTH_LONG).show();
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
