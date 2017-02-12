@@ -15,6 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name=".RemoteService"
+            android:process="ashmem.service">
+            <intent-filter>
+                <action android:name="cn.lst.ashmem.service"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
