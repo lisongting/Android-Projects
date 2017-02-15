@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         show = (TextView)findViewById(R.id.show);
+
     }
     public void downLoad(View source){
         DownTask task = new DownTask(this);

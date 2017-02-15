@@ -5,33 +5,24 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\SSoftware\Android Studio\gradle\gradle-2.10" />
+        <option name="gradleHome" value="D:\SSoftware\Android Studio\gradle\gradle-2.14.1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/HttpUrlConnectionTest" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/async_task" />
+            <option value="$PROJECT_DIR$/asynctaskttest" />
             <option value="$PROJECT_DIR$/getposttest" />
-            <option value="$PROJECT_DIR$/httpclienttest" />
             <option value="$PROJECT_DIR$/jscallandroid" />
             <option value="$PROJECT_DIR$/multithreadclient" />
             <option value="$PROJECT_DIR$/multithreaddown" />
+            <option value="$PROJECT_DIR$/okhttptest" />
+            <option value="$PROJECT_DIR$/volleytest" />
             <option value="$PROJECT_DIR$/webviewtest" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/async_task" />
-            <option value="$PROJECT_DIR$/getposttest" />
-            <option value="$PROJECT_DIR$/httpclienttest" />
-            <option value="$PROJECT_DIR$/jscallandroid" />
-            <option value="$PROJECT_DIR$/multithreadclient" />
-            <option value="$PROJECT_DIR$/multithreaddown" />
-            <option value="$PROJECT_DIR$/webviewtest" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

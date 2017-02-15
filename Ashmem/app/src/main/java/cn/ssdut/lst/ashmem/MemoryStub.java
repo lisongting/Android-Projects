@@ -9,7 +9,19 @@ import android.util.Log;
  * 无法使用MemoryFile file = MemoryStub.File的方式
  * 获取到MemoryStub的静态成员变量。
  * 只有在同一个进程中才可以
+ * [困惑]
+ * 我觉得我这个例子程序还不是本质上的匿名内存共享，
+ * 因为这使用Aidl接口来访问stub中的MemoryFile对象，
+ * 尽管是跨进程，但这并不是理想的匿名内存共享
+ * 被困在：MemoryFile只有一个构造方法了。罗升阳那本书中的例子是
+ * 通过文件描述符做参数，调用了MemoryFile的第二个构造方法，从而
+ * 在另一个进程中还原出MemoryFile匿名共享内存对象
+ *
+ * 我想将在Aidl接口文件中写一个getMemoryFile()函数，用来返回那个
+ * MemoryFile对象，而MemoryFile貌似不是可序列化的，结果aidl中不能
+ * 返回MemoryFile对象。我不知道怎样用这个类变成自定义可序列化的类。
  */
+
 public class MemoryStub extends IMemoryService.Stub {
     public static MemoryFile file;
     public MemoryStub(){

@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/HttpUrlConnectionTest/HttpUrlConnectionTest.iml" filepath="$PROJECT_DIR$/HttpUrlConnectionTest/HttpUrlConnectionTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/NetworkApp.iml" filepath="$PROJECT_DIR$/NetworkApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/async_task/async_task.iml" filepath="$PROJECT_DIR$/async_task/async_task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/asynctaskttest/asynctaskttest.iml" filepath="$PROJECT_DIR$/asynctaskttest/asynctaskttest.iml" />
       <module fileurl="file://$PROJECT_DIR$/getposttest/getposttest.iml" filepath="$PROJECT_DIR$/getposttest/getposttest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/httpclienttest/httpclienttest.iml" filepath="$PROJECT_DIR$/httpclienttest/httpclienttest.iml" />
       <module fileurl="file://$PROJECT_DIR$/jscallandroid/jscallandroid.iml" filepath="$PROJECT_DIR$/jscallandroid/jscallandroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/multithreadclient/multithreadclient.iml" filepath="$PROJECT_DIR$/multithreadclient/multithreadclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/multithreaddown/multithreaddown.iml" filepath="$PROJECT_DIR$/multithreaddown/multithreaddown.iml" />
+      <module fileurl="file://$PROJECT_DIR$/okhttptest/okhttptest.iml" filepath="$PROJECT_DIR$/okhttptest/okhttptest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/volleytest/volleytest.iml" filepath="$PROJECT_DIR$/volleytest/volleytest.iml" />
       <module fileurl="file://$PROJECT_DIR$/webviewtest/webviewtest.iml" filepath="$PROJECT_DIR$/webviewtest/webviewtest.iml" />
     </modules>
   </component>
