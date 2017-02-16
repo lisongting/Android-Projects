@@ -1,5 +1,4 @@
 package com.test.administrator.httpclienttest;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -8,19 +7,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
-
 public class MainActivity extends AppCompatActivity {
-
     private Button bt_get;
     private Button bt_post;
     private TextView show;
-    //淘宝网的电话号码归属地查询服务器
+    //淘宝网的电话号码归属地查询的web服务器
     private String url_get =
             "https://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=15850781443";
     private String url_post =
@@ -40,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         bt_get.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
                 //因为进行http通信属于耗时操作
                 // 因此启动新线程访问
@@ -49,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         bt_post.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
                 Thread t = new Thread(new PostThread());
                 t.start();
@@ -69,8 +63,6 @@ public class MainActivity extends AppCompatActivity {
                 urlConn.setDoOutput(true);
                 //设置8秒的超时计时，如果8秒未连接服务器，则超时
                 urlConn.setConnectTimeout(8000);
-
-                //urlConn.connect();
                 InputStream is = urlConn.getInputStream();
                 if (urlConn.getResponseCode()==200) {
                     int hasRead=0;
@@ -94,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     class PostThread implements Runnable{
-        @Override
         public void run() {
             try {
                 URL url = new URL(url_post);
@@ -108,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
                 out.writeBytes(content);
                 out.flush();
                 out.close();
-
                 InputStream is = urlConn.getInputStream();
                 if (urlConn.getResponseCode()==200) {
                     int hasRead=0;
@@ -125,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
                     msg.obj = sb.toString();
                     handler.sendMessage(msg);
                 }
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
