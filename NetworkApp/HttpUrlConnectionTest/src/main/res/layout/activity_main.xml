@@ -13,6 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="发送POST请求"/>
+	<Button
+		android:id="@+id/bt_download"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="下载音乐"/>
     <TextView
 		android:id="@+id/tv_show"
 		android:layout_width="match_parent"

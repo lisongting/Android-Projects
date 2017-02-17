@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/jscallandroid/jscallandroid.iml" filepath="$PROJECT_DIR$/jscallandroid/jscallandroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/multithreadclient/multithreadclient.iml" filepath="$PROJECT_DIR$/multithreadclient/multithreadclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/multithreaddown/multithreaddown.iml" filepath="$PROJECT_DIR$/multithreaddown/multithreaddown.iml" />
+      <module fileurl="file://$PROJECT_DIR$/networkdemo/networkdemo.iml" filepath="$PROJECT_DIR$/networkdemo/networkdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/okhttptest/okhttptest.iml" filepath="$PROJECT_DIR$/okhttptest/okhttptest.iml" />
       <module fileurl="file://$PROJECT_DIR$/volleytest/volleytest.iml" filepath="$PROJECT_DIR$/volleytest/volleytest.iml" />
       <module fileurl="file://$PROJECT_DIR$/webviewtest/webviewtest.iml" filepath="$PROJECT_DIR$/webviewtest/webviewtest.iml" />

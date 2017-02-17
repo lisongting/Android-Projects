@@ -1,1 +1,1 @@
-include ':app', ':multithreadclient', ':async_task', ':HttpUrlConnectionTest', ':getposttest', ':webviewtest', ':multithreaddown', ':jscallandroid', ':asynctaskttest', ':volleytest', ':okhttptest'
+include ':app', ':multithreadclient', ':async_task', ':HttpUrlConnectionTest', ':getposttest', ':webviewtest', ':multithreaddown', ':jscallandroid', ':asynctaskttest', ':volleytest', ':okhttptest', ':networkdemo'
