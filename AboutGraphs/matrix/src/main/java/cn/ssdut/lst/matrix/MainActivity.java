@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
     private boolean isScale = false;//缩放还是旋转
     private float sx = 0.0f;//设置倾斜度
     //缩放比例
@@ -23,7 +22,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        myview = new MyView(this);
         setContentView(R.layout.activity_main);
         Button bt1,bt2,bt3,bt4;
         bt1 = (Button)findViewById(R.id.leftSkew);
@@ -34,10 +32,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt2.setOnClickListener(this);
         bt3.setOnClickListener(this);
         bt4.setOnClickListener(this);
+        myview = new MyView(this);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
         linearLayout.addView(myview);
     }
-
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.leftSkew:
@@ -59,26 +57,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.zoomOut:
                 isScale = true;
                 if(scale>0.5)//最小只能缩小到0.5
-                    scale -=.01;
+                    scale -=.02;
                 myview.invalidate();
                 break;
         }
     }
-    @TargetApi(19)
+    @TargetApi(21)
     public class MyView extends View {
         private Bitmap bitmap;
         private Matrix matrix = new Matrix();
         private int width,height;
         public MyView(Context context) {
             super(context);
-            bitmap = ((BitmapDrawable)context.getResources().getDrawable(R.drawable.pic)).getBitmap();//获取drawable中的图片文件
+            //获取drawable中的图片文件
+            bitmap = ((BitmapDrawable)context.getResources()
+                    .getDrawable(R.drawable.pic,null)).getBitmap();
             //bitmap.setWidth(bitmap.getWidth());
             width = bitmap.getWidth();//获取位图宽度
             height = bitmap.getHeight();//获取位图高度
             //令当前视图获得焦点
             this.setFocusable(true);
         }
-
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
             matrix.reset();//重置matrix
@@ -91,6 +90,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Bitmap bitmap2 = Bitmap.createBitmap(bitmap, 0, 0, width, height, matrix, true);
             canvas.drawBitmap(bitmap2, matrix, null);//绘制新的图片
         }
-
     }
 }

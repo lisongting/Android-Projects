@@ -45,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
                 anim.stop();
             }
         });
-
-
         //为帧布局设置后背景
         bomb = MediaPlayer.create(this, R.raw.bomb);
         myView = new MyView(this);
@@ -74,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         public MyView(Context context) {
             super(context);
         }
-
         public void onDraw(Canvas canvas) {
             try {
                 Field field = AnimationDrawable.class.getDeclaredField("mCurFrame");

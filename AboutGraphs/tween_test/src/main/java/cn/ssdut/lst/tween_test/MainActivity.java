@@ -37,12 +37,12 @@ public class MainActivity extends AppCompatActivity {
         bn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                 flower.startAnimation(anim);
-                //设置3秒钟后启动第二个动画，还原
+                //设置2秒钟后启动第二个动画，将动画还原
                 new Timer().schedule(new TimerTask() {
                     public void run() {
                         handler.sendEmptyMessage(123);
                     }
-                }, 3000);
+                }, 2000);
             }
         });
     }

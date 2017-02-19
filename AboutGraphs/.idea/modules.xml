@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/butterfly/butterfly.iml" filepath="$PROJECT_DIR$/butterfly/butterfly.iml" />
       <module fileurl="file://$PROJECT_DIR$/frame_animation1/frame_animation1.iml" filepath="$PROJECT_DIR$/frame_animation1/frame_animation1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/graphtest/graphtest.iml" filepath="$PROJECT_DIR$/graphtest/graphtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/hand_drawer/hand_drawer.iml" filepath="$PROJECT_DIR$/hand_drawer/hand_drawer.iml" />
       <module fileurl="file://$PROJECT_DIR$/listviewteen/listviewteen.iml" filepath="$PROJECT_DIR$/listviewteen/listviewteen.iml" />
       <module fileurl="file://$PROJECT_DIR$/matrix/matrix.iml" filepath="$PROJECT_DIR$/matrix/matrix.iml" />
