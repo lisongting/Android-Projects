@@ -1,10 +1,10 @@
 package cn.ssdut.lst.surfaceview;
 
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     SurfaceView surfaceView;
     Button play,pause,stop;
     MediaPlayer player;
-    int position;//记录视频播放的位置
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,11 +34,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stop.setOnClickListener(this);
         player = new MediaPlayer();
         surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
-        //设置播放时打开屏幕
-        surfaceView.getHolder().setKeepScreenOn(true);
+        //给SurfaceView添加一个Callback对象，用来实时监听SurfaceView的状态
         surfaceView.getHolder().addCallback(new SurfaceListener());
     }
-
     public void onClick(View source) {
         try {
             switch (source.getId()) {
@@ -50,7 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (player.isPlaying()) {
                         player.pause();
                     }else{
-                        player.start();//播放或者继续播放
+                        //start()可从头播放，也可继续播放
+                        player.start();
                     }
                     break;
                 case R.id.stop:
@@ -63,15 +61,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             e.printStackTrace();
         }
     }
-
     public void play()throws IOException {
         player.reset();
-        player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-        player.setDataSource("/mnt/sdcard/DCIM/Video/test.mp4");
+        player.setDataSource("/mnt/sdcard/data/video.mp4");
+
         player.setDisplay(surfaceView.getHolder());
         player.prepare();
+
         WindowManager wManager = getWindowManager();//获取窗口管理器
         DisplayMetrics metrics = new DisplayMetrics();
+
         //获取屏幕大小,displayMetrics包含着这个ViewHolder的宽高大小和密度等属性
         wManager.getDefaultDisplay().getMetrics(metrics);
         //保持视频横纵比缩放到占满整个屏幕
@@ -81,40 +80,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     //定义一个监听器，实现SurfaceHolder.Callback接口
     private class SurfaceListener implements SurfaceHolder.Callback{
-        //写出下面方法的具体实现
+        //可以根据具体需求在下面回调方法中写出更具体的处理代码
         @Override
         public void surfaceCreated(SurfaceHolder holder) {
-            if (position > 0) {
-                try {
-                    play();
-                    player.seekTo(position);
-                    position=0;
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            Log.i("tag", "surface Created()");
         }
-
         @Override
         public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-
+            Log.i("tag", "surface Changed()");
         }
-
         @Override
         public void surfaceDestroyed(SurfaceHolder holder) {
-
+            Log.i("tag", "surface Destroyed()");
         }
     }
-    //当其他Activity打开时，暂停播放
-    public void onPause() {
-        if (player.isPlaying()) {
-            //保存当前播放位置
-            position=player.getCurrentPosition();
-            player.stop();
-        }
-        super.onPause();
-    }
-
     public void onDestroy() {
         if (player.isPlaying()) {
             player.stop();

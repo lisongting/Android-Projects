@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/path_test/path_test.iml" filepath="$PROJECT_DIR$/path_test/path_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/path_test2/path_test2.iml" filepath="$PROJECT_DIR$/path_test2/path_test2.iml" />
       <module fileurl="file://$PROJECT_DIR$/pinball/pinball.iml" filepath="$PROJECT_DIR$/pinball/pinball.iml" />
+      <module fileurl="file://$PROJECT_DIR$/propertyanim/propertyanim.iml" filepath="$PROJECT_DIR$/propertyanim/propertyanim.iml" />
       <module fileurl="file://$PROJECT_DIR$/shader_test/shader_test.iml" filepath="$PROJECT_DIR$/shader_test/shader_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/surfaceview_anim/surfaceview_anim.iml" filepath="$PROJECT_DIR$/surfaceview_anim/surfaceview_anim.iml" />
       <module fileurl="file://$PROJECT_DIR$/surfaceview_waver/surfaceview_waver.iml" filepath="$PROJECT_DIR$/surfaceview_waver/surfaceview_waver.iml" />

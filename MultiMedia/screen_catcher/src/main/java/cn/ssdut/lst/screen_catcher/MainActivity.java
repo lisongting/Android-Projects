@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         projectionManager = (MediaProjectionManager) getSystemService(Context.MEDIA_PROJECTION_SERVICE);
 
     }
-    @TargetApi(21)//通过这个注释才能调用stop方法
+    @TargetApi(21)//使用这个标注才能调用stop方法
     public void onDestroy(){
         super.onDestroy();
         if (mediaProjection != null) {
