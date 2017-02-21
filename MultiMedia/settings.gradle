@@ -1,1 +1,1 @@
-include ':VideoView', ':surfaceview', ':videorecorder', ':screen_catcher'
+include ':VideoView', ':surfaceview', ':videorecorder', ':screen_catcher', ':soundpooltest', ':musicplayer'
