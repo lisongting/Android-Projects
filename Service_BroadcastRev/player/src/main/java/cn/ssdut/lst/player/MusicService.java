@@ -65,8 +65,10 @@ public class MusicService extends Service {
                 prepareAndPlay(music[currentSong]);
             }
         });
-
     }
+
+
+
     public class MyReceiver extends BroadcastReceiver{
         public void onReceive(Context context,Intent intent){
             int control = intent.getIntExtra("control",-1);

@@ -274,7 +274,8 @@ public class Controller extends AppCompatActivity {
                 type = 0;
             }
             return true;
-            //return true 和false分别会怎样？？
+            //return true表示已处理事件
+            //return false表示没有处理该事件
         }
 
         public void onDraw(Canvas canvas) {

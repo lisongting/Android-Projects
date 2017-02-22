@@ -68,6 +68,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     play.setImageResource(R.drawable.pause);
                     status = STATUS_PLAY;
                     break;
+                default:
+                    break;
             }
         }
     }
