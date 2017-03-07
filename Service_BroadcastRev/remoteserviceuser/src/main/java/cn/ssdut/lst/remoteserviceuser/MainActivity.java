@@ -20,7 +20,7 @@ import android.widget.Toast;
  * 不知道时什么原因。报错是说Aidl接口错误，在logcat中的记录说明：
  * remoteService的onCreate(),onbind()和MainActivity中ServiceConnection的
  * onServiceConnected()都已经触发，然后可能是在调用aidl接口方法时出了问题，
- * 之后remoteService就直接onBind()了。调用效果没出来
+ * 之后remoteService就直接onUnBind()了。调用效果没出来
  */
 
 public class MainActivity extends AppCompatActivity {
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent t = new Intent();
                 t.setAction("cn.lst.RemoteService");
                 t.setPackage("cn.ssdut.lst.remoteservicecreater");
+                //t.setComponent(new ComponentName("cn.ssdut.lst.remoteservicecreater","cn.ssdut.lst.remoteservicecreater.RemoteService"));
                 bindService(t, conn, Context.BIND_AUTO_CREATE);
 //                Intent intent = new Intent();
 //                intent.setClassName(MainActivity.this,"cn.lst.RemoteService");
