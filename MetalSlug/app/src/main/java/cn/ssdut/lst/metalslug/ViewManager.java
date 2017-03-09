@@ -19,28 +19,46 @@ import java.util.HashMap;
  */
 
 public class ViewManager {
+    // 定义一个SoundPool
     public static SoundPool soundPool;
-    public static HashMap<Integer,Integer> soundMap = new HashMap<>();
-    public static Bitmap map;
+    public static HashMap<Integer, Integer> soundMap = new HashMap<>();
+    // 地图图片
+    public static Bitmap map = null;
+    // 保存角色站立时脚部动画帧的图片数组
     public static Bitmap[] legStandImage = null;
+    // 保存角色站立时头部动画帧的图片数组
     public static Bitmap[] headStandImage = null;
+    // 保存角色跑动时腿部动画帧的图片数组
     public static Bitmap[] legRunImage = null;
+    // 保存角色跑动时头部动画帧的图片数组
     public static Bitmap[] headRunImage = null;
+    // 保存角色跳动时腿部动画帧的图片数组
     public static Bitmap[] legJumpImage = null;
+    // 保存角色跳动时头部动画帧的图片数组
     public static Bitmap[] headJumpImage = null;
+    // 保存角色射击时头部动画帧的图片数组
     public static Bitmap[] headShootImage = null;
+    // 加载所有子弹的图片
     public static Bitmap[] bulletImage = null;
-    //绘制角色的图片
+    // 绘制角色的图片
     public static Bitmap head = null;
+    // 保存第一种怪物（炸弹）未爆炸时动画帧的图片
     public static Bitmap[] bombImage = null;
+    // 保存第一种怪物（炸弹）爆炸时动画帧的图片
     public static Bitmap[] bomb2Image = null;
+    // 保存第二种怪物（飞机）的动画帧的图片
     public static Bitmap[] flyImage = null;
+    // 保存第二种怪物（飞机）爆炸的动画帧的图片
     public static Bitmap[] flyDieImage = null;
+    // 保存第三种怪物（人）的动画帧的图片
     public static Bitmap[] manImage = null;
+    // 保存第三种怪物（人）的死亡时动画帧的图片
     public static Bitmap[] manDieImage = null;
-    //定义游戏对图片的缩放比例
-    public static float scale = 1f;
-    public static int SCREEN_WIDTH;    public static int SCREEN_HEIGHT;
+    // 定义游戏对图片的缩放比例
+    public static float scale = 2f;
+
+    public static int SCREEN_WIDTH;
+    public static int SCREEN_HEIGHT;
 
     // 获取屏幕初始宽度、高度的方法
     public static void initScreen(int width, int height)
@@ -76,19 +94,26 @@ public class ViewManager {
         soundMap.put(2,soundPool.load(MainActivity.mainActivity,R.raw.bomb,1));
         soundMap.put(3,soundPool.load(MainActivity.mainActivity,R.raw.oh,1));
 
-        //Bitmap tmp = createBitmapByID(MainActivity.res, R.drawable.map,ViewManager.scale);
+        //加载背景地图
         Bitmap tmp = createBitmapByID(MainActivity.res, R.drawable.map);
         if (tmp != null) {
             int height = tmp.getHeight();
             if (height != SCREEN_HEIGHT && SCREEN_HEIGHT != 0) {
-                //scale = (float) SCREEN_HEIGHT/height;
-                //Log.i("tag", "scale的值是：" + scale);
-                //map = Graphics.scale(tmp,tmp.getWidth()* scale,height * scale);
+                /**[内存溢出]
+                 * 原书的代码是这一块，会导致内存溢出。
+                 * 原因是这个比例scale，在横轴方向和纵轴方向使用了相同的比例
+                 * 导致那张背景图过大，造成内存溢出
+                scale = (float) SCREEN_HEIGHT/height;
+                Log.i("tag", "scale的值是：" + scale);
+                map = Graphics.scale(tmp,tmp.getWidth()* scale,height * scale);
+                */
+
                 //单独计算宽度和高度的比
                 float scale1 = (float) SCREEN_HEIGHT / height;
                 float scale2 = (float) SCREEN_WIDTH / tmp.getWidth();
                 map = Graphics.scale(tmp, tmp.getWidth() * scale2, height * scale1);
-                Log.i("tag","ViewManager中loadResource函数：调用了Grapics.scale()函数");
+
+                Log.i("tag","-------------ViewManager中loadResource函数：调用了Grapics.scale()函数");
                 tmp.recycle();
             }else{
                 map = tmp;
@@ -257,5 +282,18 @@ public class ViewManager {
         GameView.player.draw(canvas);
         //画怪物
         MonsterManager.drawMonster(canvas);
+    }
+    // 工具方法：根据图片的文件名来获取实际的位图，
+    private static Bitmap createBitmapByFile(String pathName)
+    {
+        try
+        {
+            InputStream fin = MainActivity.mainActivity.getAssets().open(pathName);
+            return BitmapFactory.decodeStream(fin, null, null);
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
     }
 }

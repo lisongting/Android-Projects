@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DesktopWidget.iml" filepath="$PROJECT_DIR$/DesktopWidget.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LiveWallpaper/LiveWallpaper.iml" filepath="$PROJECT_DIR$/LiveWallpaper/LiveWallpaper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ledlock/ledlock.iml" filepath="$PROJECT_DIR$/ledlock/ledlock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shotcut/shotcut.iml" filepath="$PROJECT_DIR$/shotcut/shotcut.iml" />
     </modules>
   </component>
 </project>

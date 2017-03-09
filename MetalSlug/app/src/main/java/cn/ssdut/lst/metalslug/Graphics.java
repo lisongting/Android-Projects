@@ -274,9 +274,6 @@ public class Graphics {
         try
         {
             // 生成对img缩放之后的图片
-//            return Bitmap.createBitmap(img, 0, 0,
-//                    (int) width, (int) height, matrix, true);
-
             return Bitmap.createBitmap(img, 0, 0,
                     (int) width, (int) height, matrix, true);
         }

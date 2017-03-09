@@ -53,61 +53,91 @@ public class MonsterManager {
         }
     }
 
-    //检查怪物是否将要死亡的方法
-    public static void checkMonster() {
+    public static void checkMonster()
+    {
+        // 获取玩家发射的所有子弹
         List<Bullet> bulletList = GameView.player.getBulletList();
-        if (bulletList == null) {
+        if (bulletList == null)
+        {
             bulletList = new ArrayList<>();
         }
         Monster monster = null;
-        //保存将要死亡的怪物
+        // 定义一个delList集合，用于保存将要死亡的怪物
         List<Monster> delList = new ArrayList<>();
-        //保存所有将要被删除的子弹
+        // 定义一个delBulletList集合，用于保存所有将要被删除的子弹
         List<Bullet> delBulletList = new ArrayList<>();
-        for (int i = 0; i < monsterList.size(); i++) {
+        // 遍历所有怪物
+        for (int i = 0; i < monsterList.size(); i++)
+        {
             monster = monsterList.get(i);
-            if (monster == null) {
+            if (monster == null)
+            {
                 continue;
             }
-            //如果怪物是炸弹
-            if (monster.getType() == Monster.TYPE_BOMB) {
-                if (GameView.player.isHurt(monster.getStartX(), monster.getEndX(),
-                        monster.getStartY(), monster.getEndY())) {
+            // 如果怪物是炸弹
+            if (monster.getType() == Monster.TYPE_BOMB)
+            {
+                // 角色被炸弹炸到
+                if (GameView.player.isHurt(monster.getStartX()
+                        , monster.getEndX(), monster.getStartY(), monster.getEndY()))
+                {
+                    // 将怪物设置为死亡状态
                     monster.setDie(true);
-                    ViewManager.soundPool.play(ViewManager.soundMap.get(2), 1, 1, 0, 0, 1);
+                    // 播放爆炸音效
+                    ViewManager.soundPool.play(
+                            ViewManager.soundMap.get(2), 1, 1, 0, 0, 1);
+                    // 将怪物（爆炸的炸弹）添加到delList集合中
                     delList.add(monster);
+                    // 玩家控制的角色的生命值减10
                     GameView.player.setHp(GameView.player.getHp() - 10);
                 }
                 continue;
             }
-            //对于其他类型的怪物，则需要遍历角色发射的所有子弹
-            //只要任何一个子弹打中怪物，则可判断怪物死亡
-            for (Bullet b : bulletList) {
-                if (b == null || !b.isEffect()) {
+            // 对于其他类型的怪物，则需要遍历角色发射的所有子弹
+            // 只要任何一个子弹打中怪物，即可判断怪物即将死亡
+            for (Bullet bullet : bulletList)
+            {
+                if (bullet == null || !bullet.isEffect())
+                {
                     continue;
                 }
-                if (monster.isHurt(b.getX(), b.getY())) {
-                    b.setEffect(false);
+                // 如果怪物被角色的子弹打到
+                if (monster.isHurt(bullet.getX(), bullet.getY()))
+                {
+                    // 将子弹设为无效
+                    bullet.setEffect(false);
+                    // 将怪物设为死亡状态
                     monster.setDie(true);
-                    if (monster.getType() == Monster.TYPE_FLY) {
-                        ViewManager.soundPool.play(ViewManager.soundMap.get(2), 1, 1, 0, 0, 1);
+                    // 如果怪物是飞机
+                    if(monster.getType() == Monster.TYPE_FLY)
+                    {
+                        // 播放爆炸音效
+                        ViewManager.soundPool.play(
+                                ViewManager.soundMap.get(2), 1, 1, 0, 0, 1);
                     }
-                    if (monster.getType() == Monster.TYPE_MAN) {
-                        ViewManager.soundPool.play(ViewManager.soundMap.get(3), 1, 1, 0, 0, 1);
+                    // 如果怪物是人
+                    if(monster.getType() == Monster.TYPE_MAN)
+                    {
+                        // 播放惨叫音效
+                        ViewManager.soundPool.play(
+                                ViewManager.soundMap.get(3), 1, 1, 0, 0, 1);
                     }
+                    // 将怪物（被子弹打中的怪物）添加到delList集合中
                     delList.add(monster);
-                    delBulletList.add(b);
+                    // 将打中怪物的子弹添加到delBulletList集合中
+                    delBulletList.add(bullet);
                 }
             }
+            // 将delBulletList包含的所有子弹从bulletList集合中删除
             bulletList.removeAll(delBulletList);
+            // 检查怪物子弹是否打到角色
             monster.checkBullet();
         }
-        //将死亡的怪物（保存在delList集合中）添加到dieMonsterList集合中
+        // 将已死亡的怪物（保存在delList集合中）添加到dieMonsterList集合中
         dieMonsterList.addAll(delList);
-        //将已死亡的怪物（保存在delList集合中）从monsterlist中删除
+        // 将已死亡的怪物（保存在delList集合中）从monsterList集合中删除
         monsterList.removeAll(delList);
     }
-
     //绘制所有怪物的方法
     public static void drawMonster(Canvas canvas) {
         Monster monster = null;
