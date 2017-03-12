@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     /**
                      * 给LocationManager绑定监听
                      * 参数1，设备：有GPS_PROVIDER和NETWORK_PROVIDER两种，
-                     *      前者是GPS,后者是GPRS以及WIFI定位
+                     *      前者是GPS,后者是GPRS以及网络定位
                      * 参数2，位置信息更新周期.单位是毫秒
                      * 参数3，位置变化最小距离：当位置距离变化超过此值时，将更新位置信息
                      * 参数4，LocationListener监听器
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                      * 时间来定时更新；两者为0，则随时刷新
                      */
                     locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
-                            2000,0,locListener);
+                            1000,0,locListener);
                 }
             }
         });

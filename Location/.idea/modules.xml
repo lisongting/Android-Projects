@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Location.iml" filepath="$PROJECT_DIR$/Location.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/goldmaptest/goldmaptest.iml" filepath="$PROJECT_DIR$/goldmaptest/goldmaptest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gpsgoldmap/gpsgoldmap.iml" filepath="$PROJECT_DIR$/gpsgoldmap/gpsgoldmap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/navigation/navigation.iml" filepath="$PROJECT_DIR$/navigation/navigation.iml" />
     </modules>
   </component>
 </project>

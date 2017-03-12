@@ -1,1 +1,1 @@
-include ':app'
+include ':app', ':goldmaptest', ':gpsgoldmap', ':navigation'
