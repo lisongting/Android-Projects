@@ -9,10 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/ViewPager" />
-            <option value="$PROJECT_DIR$/buttonflyout" />
-            <option value="$PROJECT_DIR$/fragmenttab" />
-            <option value="$PROJECT_DIR$/viewpagerindicator" />
+            <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

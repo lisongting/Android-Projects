@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UIEffects.iml" filepath="$PROJECT_DIR$/UIEffects.iml" />
       <module fileurl="file://$PROJECT_DIR$/ViewPager/ViewPager.iml" filepath="$PROJECT_DIR$/ViewPager/ViewPager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/buttonflyout/buttonflyout.iml" filepath="$PROJECT_DIR$/buttonflyout/buttonflyout.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmenttab/fragmenttab.iml" filepath="$PROJECT_DIR$/fragmenttab/fragmenttab.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" filepath="$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" />
     </modules>

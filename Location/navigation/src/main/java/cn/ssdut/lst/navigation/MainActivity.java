@@ -226,6 +226,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //只能定位大连的
                     GeocodeQuery query = new GeocodeQuery(addr,"大连");
                     geoSearch.getFromLocationNameAsyn(query);
+
                 }
                 break;
             case R.id.id_bt_navigate:
