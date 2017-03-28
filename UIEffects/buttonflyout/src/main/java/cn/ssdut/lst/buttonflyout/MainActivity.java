@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void closeAnim(){
         for(int i=1;i<imagesID.length;i++){
             ImageButton bt = imageButtons.get(i);
-            ObjectAnimator anim = ObjectAnimator.ofFloat(bt,"translationY",(7-i)*150,0);
-            ObjectAnimator anim2 = ObjectAnimator.ofFloat(bt,"translationX",(i-1)*150,0);
+            ObjectAnimator anim = ObjectAnimator.ofFloat(bt,"translationY",(float)Math.sin((6-i)*Math.PI/10.0)*750,0);
+            ObjectAnimator anim2 = ObjectAnimator.ofFloat(bt,"translationX",(float)Math.cos((6-i)*Math.PI/10.0)*750,0);
             ObjectAnimator anim3 = ObjectAnimator.ofFloat(bt,"rotation",0,360);
             AnimatorSet set = new AnimatorSet();
 
@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void startAnim(){
         for(int i=1;i<imagesID.length;i++){
             ImageButton bt = imageButtons.get(i);
-            ObjectAnimator anim = ObjectAnimator.ofFloat(bt,"translationY",0,(7-i)*150);
-            ObjectAnimator anim2 = ObjectAnimator.ofFloat(bt,"translationX",0,(i-1)*150);
+            ObjectAnimator anim = ObjectAnimator.ofFloat(bt,"translationY",0,(float)Math.sin((6-i)*Math.PI/10.0)*750);
+            ObjectAnimator anim2 = ObjectAnimator.ofFloat(bt,"translationX",0,(float)Math.cos((6-i)*Math.PI/10.0)*750);
             ObjectAnimator anim3 = ObjectAnimator.ofFloat(bt,"rotationY",0,360);
             AnimatorSet set = new AnimatorSet();
             set.setInterpolator(new AccelerateDecelerateInterpolator());

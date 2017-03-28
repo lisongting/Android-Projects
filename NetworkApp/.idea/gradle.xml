@@ -19,6 +19,8 @@
             <option value="$PROJECT_DIR$/multithreaddown" />
             <option value="$PROJECT_DIR$/networkdemo" />
             <option value="$PROJECT_DIR$/okhttptest" />
+            <option value="$PROJECT_DIR$/retrofittest" />
+            <option value="$PROJECT_DIR$/rxjavatest" />
             <option value="$PROJECT_DIR$/volleytest" />
             <option value="$PROJECT_DIR$/webviewtest" />
           </set>

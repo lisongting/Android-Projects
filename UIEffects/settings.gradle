@@ -1,1 +1,1 @@
-include ':ViewPager', ':fragmenttab', ':viewpagerindicator', ':buttonflyout'
+include ':ViewPager', ':fragmenttab', ':viewpagerindicator', ':buttonflyout', ':desktopwidget'
