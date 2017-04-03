@@ -22,12 +22,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 +"zhihu_news text,"
                 +"zhihu_time real,"
                 +"zhihu_content text)");
+
         db.execSQL("create table if not exists Guokr("
                 +"id integer primary key autoincrement,"
                 +"guokr_id integer not null,"
                 +"guokr_news text,"
                 +"guokr_time real,"
                 +"guokr_content text)");
+
         //real是浮点类型
         db.execSQL("create table if not exists Douban("
                 +"id integer primary key autoincrement,"

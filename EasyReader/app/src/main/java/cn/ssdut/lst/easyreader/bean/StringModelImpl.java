@@ -21,6 +21,7 @@ public class StringModelImpl {
         this.context = context;
     }
 
+    //load方法中对URL发起请求，处理逻辑写在Listener中
     public void load(String url, final OnStringListener listener) {
         StringRequest request = new StringRequest(url, new Response.Listener<String>() {
             @Override

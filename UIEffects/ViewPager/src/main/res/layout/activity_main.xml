@@ -9,6 +9,7 @@
     tools:context="cn.ssdut.lst.uieffects.MainActivity">
 
     <include layout="@layout/top" />
+
     <android.support.v4.view.ViewPager
         android:id="@+id/id_viewpager"
         android:layout_width="match_parent"
@@ -16,7 +17,12 @@
         android:layout_weight="1"
         >
     </android.support.v4.view.ViewPager>
-
+    <Button
+        android:id="@+id/id_bt1"
+        android:text="使用ViewPager实现的引导页"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        />
     <include
         layout="@layout/bottom"
         />

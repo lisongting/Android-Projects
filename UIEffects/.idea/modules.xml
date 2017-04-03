@@ -7,6 +7,10 @@
       <module fileurl="file://$PROJECT_DIR$/buttonflyout/buttonflyout.iml" filepath="$PROJECT_DIR$/buttonflyout/buttonflyout.iml" />
       <module fileurl="file://$PROJECT_DIR$/desktopwidget/desktopwidget.iml" filepath="$PROJECT_DIR$/desktopwidget/desktopwidget.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmenttab/fragmenttab.iml" filepath="$PROJECT_DIR$/fragmenttab/fragmenttab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myview/myview.iml" filepath="$PROJECT_DIR$/myview/myview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myviewgroup/myviewgroup.iml" filepath="$PROJECT_DIR$/myviewgroup/myviewgroup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recyclerviewtest/recyclerviewtest.iml" filepath="$PROJECT_DIR$/recyclerviewtest/recyclerviewtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewdraghelper/viewdraghelper.iml" filepath="$PROJECT_DIR$/viewdraghelper/viewdraghelper.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" filepath="$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" />
     </modules>
   </component>

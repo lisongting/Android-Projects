@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lst="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <cn.ssdut.lst.myview.CustomCircleView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:padding="10dp"
+        lst:firstColor="#D4F668"
+        lst:secondColor="#2F9DD2"
+        lst:speed="20"
+        lst:circleWidth="15dp"
+        />
+    <cn.ssdut.lst.myview.CustomCircleView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        lst:circleWidth="24dp"
+        lst:firstColor="#16A3FA"
+        lst:secondColor="#D20F02"
+        lst:speed="10" />
+</LinearLayout>
