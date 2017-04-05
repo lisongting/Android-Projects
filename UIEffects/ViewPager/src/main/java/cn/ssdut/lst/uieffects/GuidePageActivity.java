@@ -24,6 +24,8 @@ public class GuidePageActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_guide_page);
         mViewPager = (ViewPager) findViewById(R.id.id_viewpager2);
+
+        //设置View的切换动画
         mViewPager.setPageTransformer(true,new DepthPageTransformer());
         mViewPager.setAdapter(new PagerAdapter() {
             @Override

@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private PagerAdapter mAdapter;
     //适配器的创建需要一个View集合
     private List<View> mViews = new ArrayList<>();
-    private Button bt1;
+    private Button bt1,bt2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +53,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mMangoImg = (ImageButton) findViewById(R.id.id_ib3);
         mOrangeImg = (ImageButton) findViewById(R.id.id_ib4);
         bt1 = (Button) findViewById(R.id.id_bt1);
+        bt2 = (Button) findViewById(R.id.id_bt2);
 
-        //通过Layout
+        //通过使用Inflater将Layout中的的布局转换为View
         LayoutInflater inflater = LayoutInflater.from(this);
         View tab01 = inflater.inflate(R.layout.tab01, null);
         View tab02 = inflater.inflate(R.layout.tab02, null);
@@ -103,6 +104,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mOrangeImg.setOnClickListener(this);
         mMangoImg.setOnClickListener(this);
         bt1.setOnClickListener(this);
+        bt2.setOnClickListener(this);
+
+
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -157,8 +161,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mOrangeImg.setImageResource(R.drawable.clicked);
                 break;
             case R.id.id_bt1:
+                //启动 引导页
                 Intent t = new Intent(this, GuidePageActivity.class);
                 startActivity(t);
+                break;
+            case R.id.id_bt2:
+                Intent t2 = new Intent(this, CustomViewPagerActivity.class);
+                startActivity(t2);
+                break;
         }
     }
 

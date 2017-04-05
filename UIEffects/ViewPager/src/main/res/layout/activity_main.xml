@@ -23,6 +23,12 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         />
+    <Button
+        android:id="@+id/id_bt2"
+        android:text="自定义的ViewPager引导页实现"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        />
     <include
         layout="@layout/bottom"
         />

@@ -82,6 +82,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<MyViewHolder> {
         mDatas.remove(pos);
         notifyItemRemoved(pos);
     }
+
+
 }
 class MyViewHolder extends RecyclerView.ViewHolder{
 

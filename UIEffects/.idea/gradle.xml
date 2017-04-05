@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/myview" />
             <option value="$PROJECT_DIR$/myviewgroup" />
             <option value="$PROJECT_DIR$/recyclerviewtest" />
+            <option value="$PROJECT_DIR$/swiperefreshlayouttest" />
             <option value="$PROJECT_DIR$/viewdraghelper" />
             <option value="$PROJECT_DIR$/viewpagerindicator" />
           </set>
