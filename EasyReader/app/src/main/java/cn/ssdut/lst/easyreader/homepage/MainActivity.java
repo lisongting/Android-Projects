@@ -1,4 +1,4 @@
-package cn.ssdut.lst.easyreader;
+package cn.ssdut.lst.easyreader.homepage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

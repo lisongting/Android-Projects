@@ -18,7 +18,6 @@ import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import java.util.Calendar;
 import java.util.List;
 
-import cn.ssdut.lst.easyreader.R;
 import cn.ssdut.lst.easyreader.adapter.ZhihuDailyNewsAdapter;
 import cn.ssdut.lst.easyreader.bean.ZhihuDailyNews;
 import cn.ssdut.lst.easyreader.interfaze.OnRecyclerViewOnClickListener;
