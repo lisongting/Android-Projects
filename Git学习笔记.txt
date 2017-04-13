@@ -59,3 +59,32 @@ git push -u origin master
 克隆远端的某个仓库到当前目录下：
 git clone git@github.com:lisongting/clonetest
 (这就把远端仓库名为clonetest的仓库克隆了下来)
+
+
+**************************
+创建分支：
+git branch dev
+(分支名称为dev)
+
+切换分支:
+git checkout dev
+
+创建并切换分支"dev"：
+git checkout -b dev
+
+查看当前有哪些分支：
+git branch 
+
+dev分支与master分支合并：
+git merge dev
+
+删除分支：
+git branch -d dev
+
+查看分支合并图：
+git log --graph
+
+在merge的时候禁用fastforward模式：
+git merge --no-ff -dev
+(将dev分支合并)
+
