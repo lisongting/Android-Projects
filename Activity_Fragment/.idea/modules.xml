@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/fragmentcommunication/fragmentcommunication.iml" filepath="$PROJECT_DIR$/fragmentcommunication/fragmentcommunication.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmenttest/fragmenttest.iml" filepath="$PROJECT_DIR$/fragmenttest/fragmenttest.iml" />
       <module fileurl="file://$PROJECT_DIR$/intenttest1/intenttest1.iml" filepath="$PROJECT_DIR$/intenttest1/intenttest1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/settingactivity/settingactivity.iml" filepath="$PROJECT_DIR$/settingactivity/settingactivity.iml" />
       <module fileurl="file://$PROJECT_DIR$/staticfragment/staticfragment.iml" filepath="$PROJECT_DIR$/staticfragment/staticfragment.iml" />
     </modules>
   </component>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="设置组1">
+        <EditTextPreference
+            android:dialogTitle="输入你的名字"
+            android:key="name"
+            android:singleLine="true"
+            android:summary="设置您的名字"
+            android:textColor="#55ff00cc"
+            android:dialogMessage="建议：昵称长度不超过10个字"
+            android:title="名字"/>
+        <ListPreference
+            android:dialogTitle="选择性别"
+            android:entries="@array/sex_name"
+            android:entryValues="@array/sex_value"
+            android:key="sex"
+            android:summary="设置您的性别"
+            android:title="性别 "/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="设置组2">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="push"
+            android:summaryOff="关闭"
+            android:summaryOn="打开"
+            android:title="推送"/>
+        <SwitchPreference
+            android:icon="@mipmap/ic_launcher_round"
+            android:defaultValue="false"
+            android:key="autoRun"
+            android:summaryOn="开"
+            android:summaryOff="关"
+            android:title="自启动"/>
+        <MultiSelectListPreference
+            android:key="multi"
+            android:icon="@mipmap/ic_launcher"
+            android:dialogIcon="@mipmap/ic_launcher_round"
+            android:title="multiSelectList-Title"
+            android:entries="@array/sex_name"
+            android:entryValues="@array/sex_value"
+            android:summary="summary"/>
+    </PreferenceCategory>
+    <Preference
+        android:title="Preference"
+        android:summary="Summary"
+        android:defaultValue="false"
+        />
+    <PreferenceScreen android:title="启动单独一个PreferenceScreen">
+        <MultiSelectListPreference
+            android:key="multi"
+            android:icon="@mipmap/ic_launcher"
+            android:dialogIcon="@mipmap/ic_launcher_round"
+            android:title="multiSelectList-Title"
+            android:entries="@array/sex_name"
+            android:entryValues="@array/sex_value"
+            android:summary="summary"/>
+    </PreferenceScreen>
+
+</PreferenceScreen>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SettingActivity</string>
+    
+    <string-array name="sex_name">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+
+    <string-array name="sex_value">
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+</resources>

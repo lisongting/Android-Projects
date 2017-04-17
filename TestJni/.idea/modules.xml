@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TestJni.iml" filepath="$PROJECT_DIR$/TestJni.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/roslib/roslib.iml" filepath="$PROJECT_DIR$/roslib/roslib.iml" />
     </modules>
   </component>
 </project>

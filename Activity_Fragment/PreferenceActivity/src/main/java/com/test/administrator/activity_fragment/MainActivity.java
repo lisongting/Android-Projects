@@ -1,11 +1,8 @@
 package com.test.administrator.activity_fragment;
 
-import android.app.Activity;
 import android.app.LauncherActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 
 

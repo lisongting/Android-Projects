@@ -5,7 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\SSoftware\Android Studio\gradle\gradle-2.10" />
+        <option name="gradleHome" value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -14,20 +14,11 @@
             <option value="$PROJECT_DIR$/fragmentcommunication" />
             <option value="$PROJECT_DIR$/fragmenttest" />
             <option value="$PROJECT_DIR$/intenttest1" />
+            <option value="$PROJECT_DIR$/settingactivity" />
             <option value="$PROJECT_DIR$/staticfragment" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/PreferenceActivity" />
-            <option value="$PROJECT_DIR$/dynamicfragment" />
-            <option value="$PROJECT_DIR$/fragmentcommunication" />
-            <option value="$PROJECT_DIR$/fragmenttest" />
-            <option value="$PROJECT_DIR$/intenttest1" />
-            <option value="$PROJECT_DIR$/staticfragment" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
