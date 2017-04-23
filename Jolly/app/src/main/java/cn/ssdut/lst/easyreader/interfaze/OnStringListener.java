@@ -9,5 +9,5 @@ import com.android.volley.VolleyError;
 public interface OnStringListener {
     void onSuccess(String result);
 
-    void onFailure(VolleyError error);
+    void onError(VolleyError error);
 }

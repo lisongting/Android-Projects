@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,8 @@ import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import cn.ssdut.lst.easyreader.R;
+import cn.ssdut.lst.easyreader.adapter.DoubanMomentAdapter;
 import cn.ssdut.lst.easyreader.bean.DoubanMomentNews;
 import cn.ssdut.lst.easyreader.interfaze.OnRecyclerViewOnClickListener;
 
@@ -46,6 +49,7 @@ public class DoubanMomentFragment extends Fragment
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Nullable

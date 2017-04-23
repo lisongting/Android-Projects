@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--定义了桌面小组件的属性-->
+
+<appwidget-provider
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/widget"
+    android:minWidth="84dp"
+    android:minHeight="84dp"
+    android:updatePeriodMillis="86400000">
+
+</appwidget-provider>
