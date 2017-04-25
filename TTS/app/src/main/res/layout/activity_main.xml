@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.ssdut.lst.tts.MainActivity">
+
+    <EditText
+        android:id="@+id/id_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入要朗读的文本："
+        android:text="欢迎使用优图人脸识别软件"
+        android:maxLines="5"
+        />
+    <Button
+        android:id="@+id/id_bt_speak"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开始朗读"/>
+    <Button
+        android:id="@+id/id_bt_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="停止朗读"/>
+</LinearLayout>

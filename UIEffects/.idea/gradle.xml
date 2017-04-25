@@ -5,7 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\SSoftware\Android Studio\gradle\gradle-2.14.1" />
+        <option name="gradleHome" value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/buttonflyout" />
             <option value="$PROJECT_DIR$/desktopwidget" />
             <option value="$PROJECT_DIR$/fragmenttab" />
+            <option value="$PROJECT_DIR$/lottietest" />
             <option value="$PROJECT_DIR$/myview" />
             <option value="$PROJECT_DIR$/myviewgroup" />
             <option value="$PROJECT_DIR$/recyclerviewtest" />
