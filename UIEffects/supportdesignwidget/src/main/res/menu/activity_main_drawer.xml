@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/navi_gallery"
+            android:checked="true"
+            android:icon="@drawable/mango"
+            android:title="Gallery"/>
+        <item android:id="@+id/navi_slideshow"
+            android:icon="@drawable/triblegrass"
+            android:checked="false"
+            android:title="SlideShow"/>
+    </group>
+    <item android:title="Communication">
+        <menu>
+            <item android:id="@+id/navi_share"
+                android:title="Share"
+                />
+            <item android:id="@+id/navi_contact"
+                android:title="ContactWithUs"
+                />
+        </menu>
+
+    </item>
+</menu>
