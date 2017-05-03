@@ -2,10 +2,12 @@ package cn.ssdut.lst.easyreader.customtabs;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.text.TextUtils;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,9 +80,39 @@ public class CustomTabsHelper {
         return sPackageNameToUse;
     }
 
-    private static boolean hasSpecializedHandlerIntents(Context context, Intent activityIntent) {
-        try{
+    //检查是否有能够处理该Intent的Activity
+    private static boolean hasSpecializedHandlerIntents(Context context, Intent intent) {
+        try {
+            PackageManager pm = context.getPackageManager();
+            List<ResolveInfo> handlers = pm.queryIntentActivities(
+                    intent,
+                    PackageManager.GET_RESOLVED_FILTER);
+            if (handlers == null || handlers.size() == 0) {
+                return false;
+            }
+            for (ResolveInfo resolveInfo : handlers) {
+                IntentFilter filter = resolveInfo.filter;
+                //经过下面三重门，如果返回了true，则说明有合适的Activity能够处理该Intent
+                if (filter == null) {
+                    continue;
+                }
+                if (filter.countDataAuthorities() == 0 || filter.countDataPaths() == 0) {
+                    continue;
+                }
+                if (resolveInfo.activityInfo == null) {
+                    continue;
+                }
+                return true;
+            }
+        } catch (RuntimeException e) {
+            Log.e(TAG, "Runtime exception while getting specialized handlers");
+            e.printStackTrace();
         }
+        return false;
+    }
+
+    public static String[] getPackages() {
+        return new String[]{"",STABLE_PACKAGE,BETA_PACKAGE,DEV_PACKAGE,LOCAL_PACKAGE};
     }
 
 }

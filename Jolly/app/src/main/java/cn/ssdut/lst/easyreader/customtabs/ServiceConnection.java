@@ -30,7 +30,7 @@ public class ServiceConnection extends CustomTabsServiceConnection {
         }
     }
 
-    public void onServiceConnected(ComponentName name) {
+    public void onServiceDisconnected(ComponentName name) {
         ServiceConnectionCallback connectionCallback = mConnectionCallback.get();
         if (connectionCallback != null) {
             connectionCallback.onServiceDisconnected();
