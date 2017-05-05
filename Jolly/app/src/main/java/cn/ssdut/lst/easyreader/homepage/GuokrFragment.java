@@ -27,18 +27,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.marktony.zhihudaily.adapter.GuokrNewsAdapter;
-import com.marktony.zhihudaily.R;
-import com.marktony.zhihudaily.bean.GuokrHandpickNews;
-import com.marktony.zhihudaily.interfaze.OnRecyclerViewOnClickListener;
 
 import java.util.ArrayList;
 
-/**
- * Created by lizhaotailang on 2016/6/13.
- * 果壳精选
- * guokr handpick
- */
 public class GuokrFragment extends Fragment implements GuokrContract.View{
 
     private RecyclerView recyclerView;

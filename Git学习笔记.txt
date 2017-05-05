@@ -88,3 +88,15 @@ git log --graph
 git merge --no-ff -dev
 (将dev分支合并)
 
+
+跟踪分支：
+（创建一个origin仓库branch1分支的跟踪分支，当输入git pull时，本地分支会向远程分支进行拉取操作。）
+git checkout --track origin/branch1
+
+
+变基：Rebase
+将分支branch1在master的基础上进行变基
+git rebase master branch1
+
+
+
