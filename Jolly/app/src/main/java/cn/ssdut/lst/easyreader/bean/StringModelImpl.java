@@ -31,7 +31,7 @@ public class StringModelImpl {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                listener.onFailure(error);
+                listener.onError(error);
             }
         });
 

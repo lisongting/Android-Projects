@@ -8,16 +8,19 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
 import cn.ssdut.lst.easyreader.R;
-import cn.ssdut.lst.easyreader.adapter.BookMarksAdapter;
+import cn.ssdut.lst.easyreader.adapter.BookmarksAdapter;
+import cn.ssdut.lst.easyreader.bean.BeanType;
 import cn.ssdut.lst.easyreader.bean.DoubanMomentNews;
 import cn.ssdut.lst.easyreader.bean.GuokrHandpickNews;
 import cn.ssdut.lst.easyreader.bean.ZhihuDailyNews;
+import cn.ssdut.lst.easyreader.interfaze.OnRecyclerViewOnClickListener;
 
 /**
  * Created by lisongting on 2017/4/30.
@@ -29,7 +32,7 @@ public class SearchFragment extends Fragment implements SearchContract.View{
     private SearchView searchView;
     private RecyclerView recyclerView;
     private ContentLoadingProgressBar progressBar;
-    private BookMarksAdapter adapter;
+    private BookmarksAdapter adapter;
 
     public static SearchFragment newInstance() {
         return new SearchFragment();
@@ -79,21 +82,46 @@ public class SearchFragment extends Fragment implements SearchContract.View{
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
 
-        progressBar = (ContentLoadingProgressBar) view.findViewById(R.id.prgressbar);
+        progressBar = (ContentLoadingProgressBar) view.findViewById(R.id.progressBar);
     }
 
     @Override
     public void showResult(ArrayList<ZhihuDailyNews.Question> zhihuList, ArrayList<GuokrHandpickNews.result> guokrList, ArrayList<DoubanMomentNews.posts> doubanList, ArrayList<Integer> types) {
-
+        if (adapter == null) {
+            adapter = new BookmarksAdapter(getActivity(), zhihuList, guokrList, doubanList, types);
+            adapter.setItemListener(new OnRecyclerViewOnClickListener() {
+                @Override
+                public void onItemClick(View v, int position) {
+                    int type = recyclerView.findViewHolderForLayoutPosition(position).getItemViewType();
+                    if (type == BookmarksAdapter.TYPE_ZHIHU_NORMAL) {
+                        presenter.startReading(BeanType.TYPE_ZHIHU,position);
+                    } else if (type == BookmarksAdapter.TYPE_GUOKR_NORMAL) {
+                        presenter.startReading(BeanType.TYPE_GUOKR, position);
+                    } else if (type == BookmarksAdapter.TYPE_DOUBAN_NORMAL) {
+                        presenter.startReading(BeanType.TYPE_DOUBAN,position);
+                    }
+                }
+            });
+            recyclerView.setAdapter(adapter);
+        }else {
+            adapter.notifyDataSetChanged();
+        }
     }
 
     @Override
     public void showLoading() {
-
+        progressBar.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void stopLoading() {
+        progressBar.setVisibility(View.GONE);
+    }
 
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            getActivity().onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

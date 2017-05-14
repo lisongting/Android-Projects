@@ -98,5 +98,31 @@ git checkout --track origin/branch1
 将分支branch1在master的基础上进行变基
 git rebase master branch1
 
+储藏工作（储藏是针对于那些已经被add的文件）：
+（当在一个分支工作了一段时间后，还不想进行提交。此时需要切换到另一个分支，当前分支处于脏目录）
+git stash 
+此时可以切换到其他分支进行工作。
+
+查看当前存储区中的东西列表：
+git stash list
+
+恢复现场：
+git stash apply (默认恢复为最近一次的stash)
+git stash apply stash@{2}(恢复为标记为2的stash)
+
+删除stash列表中的第3项：
+git stash drop stash@{3}
+
+
+使用最近期的stash，并从stash存储栈上删除:
+git stash pop
+
+清理工作目录：
+（如果不想储存工作中产生的文件，则进行清理。注意：git clean 删除的是未被add的那些文件）
+git clean -f 
+可使用git clean -n （会提示将会删除哪些文件）
+
+修改commit 中的提交信息：
+git commit --amend
 
 

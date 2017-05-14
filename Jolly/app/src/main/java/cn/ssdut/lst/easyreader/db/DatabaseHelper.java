@@ -57,10 +57,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             case 3:
                 // delete table if exists
                 //这两个表根本就没有创建啊
-                db.execSQL("delete from LatestPosts");
-                db.execSQL("delete from Contents");
-                db.execSQL("drop table if exists LatestPosts");
-                db.execSQL("drop table if exists Contents");
+//                db.execSQL("delete from LatestPosts");
+//                db.execSQL("delete from Contents");
+//                db.execSQL("drop table if exists LatestPosts");
+//                db.execSQL("drop table if exists Contents");
 
                 // create a new table of zhihu daily
                 db.execSQL("create table if not exists Zhihu("

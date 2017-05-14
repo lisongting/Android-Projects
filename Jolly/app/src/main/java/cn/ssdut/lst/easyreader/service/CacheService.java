@@ -1,4 +1,4 @@
-package cn.ssdut.lst.easyreader.Service;
+package cn.ssdut.lst.easyreader.service;
 
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -48,7 +48,7 @@ public class CacheService extends Service {
 
         //动态注册的广播接收器
         IntentFilter filter = new IntentFilter();
-        filter.addAction("cn.lst.zhihudaily.LOCAL_BROADCAST");
+        filter.addAction("cn.lst.jolly.LOCAL_BROADCAST");
         LocalBroadcastManager manager = LocalBroadcastManager.getInstance(this);
         manager.registerReceiver(new LocalReceiver(), filter);
     }
@@ -215,8 +215,8 @@ public class CacheService extends Service {
 
         String[] whereClause = new String[]{String.valueOf(timeStamp)};
         db.delete("Zhihu", "zhihu_time < ? and bookMark !=1", whereClause);
-        db.delete("Zhihu", "guokr_time < ? and bookMark !=1", whereClause);
-        db.delete("Zhihu", "douban_time < ? and bookMark !=1", whereClause);
+        db.delete("Guokr", "guokr_time < ? and bookMark !=1", whereClause);
+        db.delete("Douban", "douban_time < ? and bookMark !=1", whereClause);
 
     }
 

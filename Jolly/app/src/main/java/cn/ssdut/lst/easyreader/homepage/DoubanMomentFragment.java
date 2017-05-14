@@ -9,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -161,7 +160,7 @@ public class DoubanMomentFragment extends Fragment
             adapter = new DoubanMomentAdapter(getContext(), list);
             adapter.setItemClickListener(new OnRecyclerViewOnClickListener() {
                 @Override
-                public void OnItemClick(View v, int position) {
+                public void onItemClick(View v, int position) {
                     presenter.startReading(position);
                 }
             });

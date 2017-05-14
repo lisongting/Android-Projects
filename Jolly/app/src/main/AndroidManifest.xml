@@ -2,19 +2,65 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.ssdut.lst.easyreader">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".app.App"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".homepage.MainActivity">
+        <activity android:name=".homepage.MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
         </activity>
+
+        <activity android:name=".detail.DetailActivity"
+            android:label="@string/title_activity_read"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".setting.SettingPreferenceActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+            android:label="@string/settings"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".about.AboutPreferenceActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+            android:label="@string/about"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".license.OpenSourceLicenseActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+            android:label="@string/open_source_license"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".innerbrowser.InnerBrowserActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".search.SearchActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+            android:label="@string/search_bookmarks"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".service.CacheService" />
     </application>
 
 </manifest>

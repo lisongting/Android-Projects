@@ -22,10 +22,13 @@ import cn.ssdut.lst.easyreader.bean.BeanType;
 import cn.ssdut.lst.easyreader.bean.StringModelImpl;
 import cn.ssdut.lst.easyreader.bean.ZhihuDailyNews;
 import cn.ssdut.lst.easyreader.db.DatabaseHelper;
+import cn.ssdut.lst.easyreader.detail.DetailActivity;
 import cn.ssdut.lst.easyreader.interfaze.OnStringListener;
 import cn.ssdut.lst.easyreader.util.Api;
 import cn.ssdut.lst.easyreader.util.DateFormatter;
 import cn.ssdut.lst.easyreader.util.NetworkState;
+
+import static cn.ssdut.lst.easyreader.service.CacheService.TYPE_ZHIHU;
 
 /**
  * Created by Administrator on 2017/3/28.
@@ -92,9 +95,10 @@ public class ZhihuDailyPresenter implements ZhihuDailyContract.Presenter {
                                         values.clear();
                                     }
 
-                                    //发起广播
-                                    Intent intent = new Intent("cn.lst.zhihudaily.LOCAL_BROADCAST");
-                                    intent.putExtra("type", CacheService.TYPE_ZHIHU);
+                                    //通过发送广播，唤醒CacheService中的BroadcastReceiver，然后该BroadcastReceiver根据广播的内容
+                                    // 来决定调用哪一个缓存函数
+                                    Intent intent = new Intent("cn.lst.jolly.LOCAL_BROADCAST");
+                                    intent.putExtra("type", TYPE_ZHIHU);
                                     intent.putExtra("id", item.getId());
                                     LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
                                 }
@@ -110,7 +114,7 @@ public class ZhihuDailyPresenter implements ZhihuDailyContract.Presenter {
                         }
 
                         @Override
-                        public void onFailure(VolleyError error) {
+                        public void onError(VolleyError error) {
                             view.stopLoading();
                             view.showError();
 

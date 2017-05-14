@@ -167,7 +167,7 @@ public class DetailFragment extends Fragment implements DetailContract.View{
         activity.setSupportActionBar((Toolbar) view.findViewById(R.id.toolbar));
         activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        imageView = (ImageView) view.findViewById(R.id.imageView);
+        imageView = (ImageView) view.findViewById(R.id.image_view);
         scrollingView = (NestedScrollView) view.findViewById(R.id.scrollView);
         toolbarLayout = (CollapsingToolbarLayout) view.findViewById(R.id.toolbar_layout);
 

@@ -27,8 +27,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 import java.util.ArrayList;
+
+import cn.ssdut.lst.easyreader.R;
+import cn.ssdut.lst.easyreader.adapter.GuokrNewsAdapter;
+import cn.ssdut.lst.easyreader.bean.GuokrHandpickNews;
+import cn.ssdut.lst.easyreader.interfaze.OnRecyclerViewOnClickListener;
 
 public class GuokrFragment extends Fragment implements GuokrContract.View{
 
@@ -82,11 +86,12 @@ public class GuokrFragment extends Fragment implements GuokrContract.View{
     public void initViews(View view) {
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        //如果Adapter改变不会影响RecyclerView的条目数目的话，这里可以设置为true，可以避免每次重绘整个布局
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         refreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.refreshLayout);
-        //设置下拉刷新的按钮的颜色
+        //设置下拉刷新的环形进度条的颜色
         refreshLayout.setColorSchemeResources(R.color.colorPrimary);
 
     }
@@ -109,7 +114,7 @@ public class GuokrFragment extends Fragment implements GuokrContract.View{
             adapter = new GuokrNewsAdapter(getContext(), list);
             adapter.setItemClickListener(new OnRecyclerViewOnClickListener() {
                 @Override
-                public void OnItemClick(View v, int position) {
+                public void onItemClick(View v, int position) {
                     presenter.startReading(position);
                 }
             });

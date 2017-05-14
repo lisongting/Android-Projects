@@ -11,23 +11,21 @@ import cn.ssdut.lst.easyreader.bean.GuokrHandpickNews;
  */
 
 public interface GuokrContract {
-    interface View extends BaseView<ZhihuDailyContract.Presenter> {
+    interface View extends BaseView<Presenter> {
         void showError();
 
         void showLoading();
 
         void stopLoading();
 
-        void showResult(ArrayList<GuokrHandpickNews.result> list);
+        void showResults(ArrayList<GuokrHandpickNews.result> list);
 
     }
     interface Presenter extends BasePresenter {
 
-        void loadPosts(long date,boolean clearing);
+        void loadPosts();
 
         void refresh();
-
-        void loadMore(long date);
 
         void startReading(int position);
 

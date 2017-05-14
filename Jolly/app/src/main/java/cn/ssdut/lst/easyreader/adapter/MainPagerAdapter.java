@@ -25,19 +25,20 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
         return guokrFragment;
     }
 
-    public ZhihuDailyFragment getZhihuDailyFragment() {
+    public ZhihuDailyFragment getZhihuFragment() {
         return zhihuDailyFragment;
     }
 
-    public DoubanMomentFragment getDoubanMomentFragment() {
+    public DoubanMomentFragment getDoubanFragment() {
         return doubanMomentFragment;
     }
 
     public MainPagerAdapter(FragmentManager fm,
                             Context context,
                             ZhihuDailyFragment zhihuDailyFragment,
-                            DoubanMomentFragment doubanMomentFragment,
-                            GuokrFragment guokrFragment) {
+                            GuokrFragment guokrFragment,
+                            DoubanMomentFragment doubanMomentFragment
+                            ) {
         super(fm);
         this.context = context;
         this.zhihuDailyFragment = zhihuDailyFragment;
@@ -51,6 +52,8 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
         };
 
     }
+
+
 
     @Override
     public Fragment getItem(int position) {

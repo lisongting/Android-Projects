@@ -25,7 +25,7 @@ import cn.ssdut.lst.easyreader.interfaze.OnRecyclerViewOnClickListener;
  */
 
 //因为有多种ViewHolder,所以继承RecyclerView.Adapter<RecyclerView.ViewHolder>
-public class BookMarksAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class BookmarksAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private final Context context;
     private final LayoutInflater inflater;
@@ -46,7 +46,7 @@ public class BookMarksAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     public static final int TYPE_DOUBAN_NORMAL = 4;
     public static final int TYPE_DOUBAN_WITH_HEADER = 5;
 
-    public BookMarksAdapter(Context context,
+    public BookmarksAdapter(Context context,
                             ArrayList<ZhihuDailyNews.Question> zhihuList,
                             ArrayList<GuokrHandpickNews.result> guokrList,
                             ArrayList<DoubanMomentNews.posts> doubanList,
@@ -80,11 +80,10 @@ public class BookMarksAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 ((WithTypeViewHolder) holder).textViewType.setText(context.getResources().getText(R.string.zhihu_daily));
                 break;
             case TYPE_DOUBAN_WITH_HEADER:
-                //这样是否可行？[mark]
                 ((WithTypeViewHolder)holder).textViewType.setText(R.string.douban_moment);
                 break;
             case TYPE_GUOKR_WITH_HEADER:
-                ((WithTypeViewHolder)holder).textViewType.setText(R.string.douban_moment);
+                ((WithTypeViewHolder)holder).textViewType.setText(R.string.guokr_handpick);
                 break;
             case TYPE_ZHIHU_NORMAL:
                 if (!zhihuList.isEmpty()) {

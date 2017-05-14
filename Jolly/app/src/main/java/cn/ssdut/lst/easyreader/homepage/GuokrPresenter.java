@@ -34,9 +34,12 @@ import cn.ssdut.lst.easyreader.bean.BeanType;
 import cn.ssdut.lst.easyreader.bean.GuokrHandpickNews;
 import cn.ssdut.lst.easyreader.bean.StringModelImpl;
 import cn.ssdut.lst.easyreader.db.DatabaseHelper;
+import cn.ssdut.lst.easyreader.detail.DetailActivity;
 import cn.ssdut.lst.easyreader.interfaze.OnStringListener;
 import cn.ssdut.lst.easyreader.util.Api;
 import cn.ssdut.lst.easyreader.util.NetworkState;
+
+import static cn.ssdut.lst.easyreader.service.CacheService.TYPE_GUOKR;
 
 public class GuokrPresenter implements GuokrContract.Presenter {
 
@@ -47,7 +50,7 @@ public class GuokrPresenter implements GuokrContract.Presenter {
     private DatabaseHelper dbHelper;
     private SQLiteDatabase db;
 
-    private ArrayList<GuokrHandpickNews.result> list = new ArrayList<GuokrHandpickNews.result>();
+    private ArrayList<GuokrHandpickNews.result> list = new ArrayList<>();
     private Gson gson = new Gson();
 
     public GuokrPresenter(Context context, GuokrContract.View view) {
@@ -125,8 +128,10 @@ public class GuokrPresenter implements GuokrContract.Presenter {
 
                             }
 
-                            Intent intent = new Intent("com.marktony.zhihudaily.LOCAL_BROADCAST");
-                            intent.putExtra("type", CacheService.TYPE_GUOKR);
+                            //通过发送广播，唤醒CacheService中的BroadcastReceiver，然后该BroadcastReceiver根据广播的内容
+                            // 来决定调用哪一个缓存函数
+                            Intent intent = new Intent("cn.lst.jolly.LOCAL_BROADCAST");
+                            intent.putExtra("type", TYPE_GUOKR);
                             intent.putExtra("id", re.getId());
                             LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
 

@@ -26,6 +26,8 @@ import cn.ssdut.lst.easyreader.bean.DoubanMomentNews;
 import cn.ssdut.lst.easyreader.bean.DoubanMomentStory;
 import cn.ssdut.lst.easyreader.bean.StringModelImpl;
 import cn.ssdut.lst.easyreader.bean.ZhihuDailyStory;
+import cn.ssdut.lst.easyreader.customtabs.CustomFallback;
+import cn.ssdut.lst.easyreader.customtabs.CustomTabActivityHelper;
 import cn.ssdut.lst.easyreader.db.DatabaseHelper;
 import cn.ssdut.lst.easyreader.interfaze.OnStringListener;
 import cn.ssdut.lst.easyreader.util.Api;
@@ -154,7 +156,7 @@ public class DetailPresenter implements DetailContract.Presenter {
             CustomTabActivityHelper.openCustomTab((Activity)context,
                     customTabsIntent.build(),
                     Uri.parse(url),
-                    new CustomFallBack(){
+                    new CustomFallback(){
                         @Override
                         public void openUri(Activity activity, Uri uri) {
                             super.openUri(activity, uri);
@@ -237,7 +239,7 @@ public class DetailPresenter implements DetailContract.Presenter {
                 break;
             case TYPE_GUOKR:
                 tmpTable = "Guokr";
-                tmpId = "zhihu_id";
+                tmpId = "Guokr_id";
                 break;
             default:
                 break;
@@ -277,7 +279,7 @@ public class DetailPresenter implements DetailContract.Presenter {
                 break;
             case TYPE_GUOKR:
                 tmpTable = "Guokr";
-                tmpId = "zhihu_id";
+                tmpId = "guokr_id";
                 break;
             default:
                 break;
