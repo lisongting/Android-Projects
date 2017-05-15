@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/id_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="你好，游客，欢迎光临中科院软件博物馆。"
+        android:hint="输入要朗读的文本"
+        />
+    <Button
+        android:id="@+id/id_bt_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startReading"
+        android:text="开始朗读"/>
+    <Button
+        android:id="@+id/id_bt_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="stopReading"
+        android:text="停止朗读"/>
+</LinearLayout>
