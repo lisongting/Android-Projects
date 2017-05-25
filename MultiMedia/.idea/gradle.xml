@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/VideoView" />
+            <option value="$PROJECT_DIR$/cemaratest" />
             <option value="$PROJECT_DIR$/musicplayer" />
             <option value="$PROJECT_DIR$/screen_catcher" />
             <option value="$PROJECT_DIR$/soundpooltest" />
