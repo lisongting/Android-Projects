@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/broadcast_test" />
+            <option value="$PROJECT_DIR$/rostest" />
             <option value="$PROJECT_DIR$/uitest" />
             <option value="$PROJECT_DIR$/uitest1" />
           </set>
