@@ -3,15 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Test.iml" filepath="$PROJECT_DIR$/Test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Test.iml" filepath="$PROJECT_DIR$/Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/broadcast_test/broadcast_test.iml" filepath="$PROJECT_DIR$/broadcast_test/broadcast_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/broadcast_test/broadcast_test.iml" filepath="$PROJECT_DIR$/broadcast_test/broadcast_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/rostest/rostest.iml" filepath="$PROJECT_DIR$/rostest/rostest.iml" />
       <module fileurl="file://$PROJECT_DIR$/uitest/uitest.iml" filepath="$PROJECT_DIR$/uitest/uitest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/uitest/uitest.iml" filepath="$PROJECT_DIR$/uitest/uitest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/uitest1/uitest1.iml" filepath="$PROJECT_DIR$/uitest1/uitest1.iml" />
       <module fileurl="file://$PROJECT_DIR$/uitest1/uitest1.iml" filepath="$PROJECT_DIR$/uitest1/uitest1.iml" />
     </modules>
   </component>
