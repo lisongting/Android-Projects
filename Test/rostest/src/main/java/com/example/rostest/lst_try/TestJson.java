@@ -17,7 +17,13 @@ public class TestJson {
             jsonObject.put("op", "subscribe");
             jsonObject.put("topic", "/museum_position");
             jsonObject.put("test", "vzvz");
+            jsonObject.put("boolValue", true);
             System.out.print(jsonObject.toString());
+            boolean b = (boolean) jsonObject.get("boolValue");
+
+            System.out.println(b);
+            System.out.println(jsonObject.get("boolValue"));
+
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -2,89 +2,34 @@ package com.example.rostest.lst_try;
 
 import android.app.Service;
 import android.content.Intent;
-import android.os.Binder;
-import android.os.Handler;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.example.rostest.ros.rosbridge.ROSBridgeClient;
+import com.example.rostest.PublishEvent;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import de.greenrobot.event.EventBus;
+
 /**
  * Created by lisongting on 2017/6/4.
  */
-
+//Ros服务器和Service和Activity的交互机制试验
 public class RosConnectionService extends Service {
 
-    public static final String TAG = "RosConnectionService";
+//    public static final String TAG = "RosConnectionService";
+    public static final String TAG = "tag";
     public static final String PUBLISH_TOPIC = "/tts_status";
-    public static final String SUBSCRIBE_TOPIC = "/museum_position";
-    private Handler handler;
-    private ROSBridgeClient rosBridgeClient;
-    private myBinder binder;
-
-    //内部类myBinder
-    public class myBinder extends Binder{
-
-        //为该Sevice设置handler
-        public void setHandler(Handler h){
-            handler = h;
-        }
-
-        public void setRosBridgeClient(ROSBridgeClient roslient){
-            rosBridgeClient = roslient;
-        }
-        public void sendTTsStatus(TtsStatus ttsStatus){
-            sendPlayingStatus(ttsStatus);
-        }
-
-    }
-
-
-//    public RosConnectionService(Handler handler,ROSBridgeClient rosBridgeClient) {
-//        this.handler = handler;
-//        this.rosBridgeClient = rosBridgeClient;
-//    }
-
-    //不断地发布TTS的状态
-    public void sendPlayingStatus(TtsStatus status){
-        Log.i("tag", status.toString());
-        JSONObject jsonStatus = new JSONObject();
-        try {
-            jsonStatus.put("id", status.getId());
-            jsonStatus.put("playing", status.isplaying());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        JSONObject jsonObject = new JSONObject();
-        try {
-            jsonObject.put("op", "publish");
-            jsonObject.put("topic",PUBLISH_TOPIC);
-            jsonObject.put("msg", jsonStatus.toString());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        rosBridgeClient.send(jsonObject.toString());
-
-    }
+    public static final String SUBSCRIBE_TOPIC = "/turtle1/cmd_vel";
 
     @Override
     public void onCreate() {
         super.onCreate();
         Log.i(TAG, "RosConnService--onCreate()");
-
-        //订阅Ros即将发布的topic
-        JSONObject strSubscribe = new JSONObject();
-        try {
-            strSubscribe.put("op", "subscribe");
-            strSubscribe.put("topic", SUBSCRIBE_TOPIC);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        rosBridgeClient.send(strSubscribe.toString());
+        //注册Eventbus
+        EventBus.getDefault().register(this);
     }
 
     @Override
@@ -94,34 +39,35 @@ public class RosConnectionService extends Service {
 
     }
 
-    @Override
-    public void onDestroy() {
-        Log.i(TAG, "RosConnService--onDestroy()");
-        handler.sendEmptyMessage(666);
-        //取消订阅
-        JSONObject strSubscribe = new JSONObject();
-        try {
-            strSubscribe.put("op", "unsubscribe");
-            strSubscribe.put("topic", SUBSCRIBE_TOPIC);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        rosBridgeClient.send(strSubscribe.toString());
+    //订阅某个topic后，接收到Ros服务器返回的message，回调此方法
+    public void onEvent(PublishEvent event) {
+        //topic的名称
+        String topicName = event.name;
+        if (topicName.endsWith("/cmd_vel")) {
+            String msg = event.msg;
+            JSONObject msgInfo ;
+            try {
+                msgInfo = new JSONObject(msg);
+                Log.i("tag", "onEvent:" + event.msg);
+                EventBus.getDefault().post(new MovebaseStatus(666,false));
 
-        rosBridgeClient.disconnect();
-        super.onDestroy();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
-    public boolean onUnbind(Intent intent) {
-        Log.i(TAG, "RosConnService--onUnbind()");
-        return super.onUnbind(intent);
+    public void onDestroy() {
+        Log.i(TAG, "RosConnService--onDestroy()");
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
     }
 
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        Log.i(TAG, "RosConnService--onBind()");
-        return binder;
+        return null;
     }
+
 }

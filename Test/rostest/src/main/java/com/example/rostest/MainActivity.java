@@ -1,33 +1,42 @@
 package com.example.rostest;
 
-import android.content.ComponentName;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.IBinder;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.rostest.lst_try.MovebaseStatus;
 import com.example.rostest.lst_try.RosConnectionService;
+import com.example.rostest.lst_try.TtsStatus;
 import com.example.rostest.ros.ROSClient;
 import com.example.rostest.ros.rosbridge.ROSBridgeClient;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+import de.greenrobot.event.EventBus;
+
+import static com.example.rostest.lst_try.RosConnectionService.PUBLISH_TOPIC;
+import static com.example.rostest.lst_try.RosConnectionService.SUBSCRIBE_TOPIC;
+
+//Ros服务器和Service和Activity的交互机制试验
 public class MainActivity extends AppCompatActivity {
-
-
-    private RosConnectionService.myBinder rosService;
     ROSBridgeClient rosBridgeClient;
-
-    private Handler handler = new Handler(){
+    public static Handler handler = new Handler(){
+        @Override
         public void handleMessage(Message msg) {
-            Bundle data = msg.getData();
-            int position = data.getInt("positionId");
-            boolean isMoving = data.getBoolean("isMoving");
-
-            Toast.makeText(MainActivity.this, "get a message from Service:"+msg.what, Toast.LENGTH_SHORT).show();
+//            Bundle data = msg.getData();
+//            int position = data.getInt("positionId");
+//            boolean isMoving = data.getBoolean("isMoving");
+            if (msg.what == 6666) {
+                Log.i("tag", "get a message from Service:" + msg.what);
+            }
         }
     };
 
@@ -36,26 +45,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-        ServiceConnection serviceConnection = new ServiceConnection() {
-            @Override
-            public void onServiceConnected(ComponentName name, IBinder service) {
-                rosService = (RosConnectionService.myBinder) service;
-                rosService.setHandler(handler);
-                rosService.setRosBridgeClient(rosBridgeClient);
-            }
-
-            @Override
-            public void onServiceDisconnected(ComponentName name) {
-
-            }
-        };
+        EventBus.getDefault().register(this);
 
         Intent intent = new Intent(this, RosConnectionService.class);
-        bindService(intent, serviceConnection, BIND_AUTO_CREATE);
+        startService(intent);
     }
 
+    public void onEvent(MovebaseStatus status) {
+        Log.i("tag", "MovebaseStatus:" + status.toString());
+    }
     public void onResume() {
         super.onResume();
         new Thread() {
@@ -68,25 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onConnect() {
                         rosBridgeClient.setDebug(true);
-
-                        Log.d("tag","Connect ROS success");
-                        try {
-                            String[] nodes = rosBridgeClient.getNodes();
-                            String[] topics = rosBridgeClient.getTopics();
-                            String[] services = rosBridgeClient.getServices();
-
-                            for (String node : nodes) {
-                                Log.i("tag", "----node:"+node);
-                            }
-                            for (String i : topics) {
-                                Log.i("tag", "----topic:" + i);
-                            }
-                            for (String s : services) {
-                                Log.i("tag", "----service:" + s);
-                            }
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                        Log.i("tag","Connect ROS success");
 
                     }
 
@@ -102,9 +82,41 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 if (conn) {
-                    Log.i("tag", "连接成功");
+                    Toast.makeText(MainActivity.this, "连接Ros成功！", Toast.LENGTH_SHORT).show();
+
+                    //订阅Ros即将发布的topic
+                    JSONObject strSubscribe = new JSONObject();
+                    try {
+                        strSubscribe.put("op", "subscribe");
+                        strSubscribe.put("topic", SUBSCRIBE_TOPIC);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    rosBridgeClient.send(strSubscribe.toString());
+                    Log.i("tag", "连接Ros成功");
+
+                    TimerTask publishTtsTask = new TimerTask(){
+
+                        @Override
+                        public void run() {
+                            //取消订阅
+                            JSONObject strSubscribe = new JSONObject();
+                            try {
+                                strSubscribe.put("op", "unsubscribe");
+                                strSubscribe.put("topic", SUBSCRIBE_TOPIC);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            rosBridgeClient.send(strSubscribe.toString());
+
+//                            rosBridgeClient.disconnect();
+                        }
+                    };
+
+                    Timer timer = new Timer();
+//                    timer.schedule(publishTtsTask,2000,3000);
                 } else {
-                    Log.i("tag", "连接失败");
+                    Log.i("tag", "连接Ros失败");
 
                 }
             }
@@ -112,12 +124,30 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//        JSONObject jsonObject = new JSONObject();
-//        try {
-//            jsonObject.put("op", "subscribe");
-//            jsonObject.put("topic", "/museum_position");
-//            Log.i("tag", jsonObject.toString());
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+    //不断地发布播放器的状态
+    public void sendPlayingStatus(TtsStatus status){
+        Log.i("tag", status.toString());
+        JSONObject jsonStatus = new JSONObject();
+        try {
+            jsonStatus.put("id", status.getId());
+            jsonStatus.put("playing", status.isplaying());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("op", "publish");
+            jsonObject.put("topic",PUBLISH_TOPIC);
+            jsonObject.put("msg", jsonStatus.toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        rosBridgeClient.send(jsonObject.toString());
+
+    }
+
+    public void onDestroy() {
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
+    }
 }
