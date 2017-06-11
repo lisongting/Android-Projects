@@ -54,6 +54,8 @@ public class AutoFitTextureView extends TextureView {
         }
         mRatioWidth = width;
         mRatioHeight = height;
+
+//        Log.i("tag", "mRatioWidth:" + width + ",mRatioHeight:" + height);
         requestLayout();
     }
 
