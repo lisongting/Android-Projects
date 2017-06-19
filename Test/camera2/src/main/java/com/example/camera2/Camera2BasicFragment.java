@@ -502,7 +502,7 @@ public class Camera2BasicFragment extends Fragment
 
                 // We don't use a front facing camera in this sample.
                 Integer facing = characteristics.get(CameraCharacteristics.LENS_FACING);
-                if (facing != null && facing == CameraCharacteristics.LENS_FACING_FRONT) {
+                if (facing != null && facing == CameraCharacteristics.LENS_FACING_BACK) {
                     continue;
                 }
 
@@ -512,6 +512,13 @@ public class Camera2BasicFragment extends Fragment
                     continue;
                 }
 
+                for (Size s : map.getOutputSizes(ImageFormat.JPEG)) {
+                    Log.i("tag", "Size in map for JPEG:" + s.getWidth() + "x" + s.getHeight());
+                }
+
+                for (Size s : map.getOutputSizes(SurfaceTexture.class)) {
+                    Log.i("tag", "Size in map for SurfaceTexture:" + s.getWidth() + "x" + s.getHeight());
+                }
                 // For still image captures, we use the largest available size.
                 Size largest = Collections.max(
                         Arrays.asList(map.getOutputSizes(ImageFormat.JPEG)),
@@ -547,6 +554,7 @@ public class Camera2BasicFragment extends Fragment
 
                 Point displaySize = new Point();
                 activity.getWindowManager().getDefaultDisplay().getSize(displaySize);
+                Log.i("tag", "Point :" + displaySize.toString());
                 int rotatedPreviewWidth = width;
                 int rotatedPreviewHeight = height;
                 int maxPreviewWidth = displaySize.x;
@@ -573,6 +581,7 @@ public class Camera2BasicFragment extends Fragment
                 mPreviewSize = chooseOptimalSize(map.getOutputSizes(SurfaceTexture.class),
                         rotatedPreviewWidth, rotatedPreviewHeight, maxPreviewWidth,
                         maxPreviewHeight, largest);
+                Log.i("tag", "mPreviewSize:" + mPreviewSize.getWidth() + "x" + mPreviewSize.getHeight());
 
                 // We fit the aspect ratio of TextureView to the size of preview we picked.
                 int orientation = getResources().getConfiguration().orientation;
