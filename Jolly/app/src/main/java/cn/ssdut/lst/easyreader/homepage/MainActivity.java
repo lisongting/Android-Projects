@@ -25,6 +25,14 @@ import cn.ssdut.lst.easyreader.bookmarks.BookmarksPresenter;
 import cn.ssdut.lst.easyreader.service.CacheService;
 import cn.ssdut.lst.easyreader.setting.SettingPreferenceActivity;
 
+/**
+ * [已知BUG]:
+ * 知乎日报文章加入不到收藏里面去。
+ * 感觉代码逻辑也没有明显的错误，但就是加入收藏夹失败。
+ * 猜想：会不会是知乎文章的id过大，如9488918，导致每次使用update都无法更新条目？
+ * 2017.6.23
+ */
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -33,8 +41,6 @@ public class MainActivity extends AppCompatActivity
     private NavigationView navigationView;
     private DrawerLayout drawer;
     private Toolbar toolbar;
-
-    public static final String ACTION_BOOKMARKS = "cn.ssdut.lst.easyreader.bookmarks";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,15 +73,9 @@ public class MainActivity extends AppCompatActivity
 
         new BookmarksPresenter(MainActivity.this, bookmarksFragment);
 
-        String action = getIntent().getAction();
-
-        if (action.equals(ACTION_BOOKMARKS)) {
-            showBookmarksFragment();
-            navigationView.setCheckedItem(R.id.nav_bookmarks);
-        } else {
-            showMainFragment();
-            navigationView.setCheckedItem(R.id.nav_home);
-        }
+        getSupportFragmentManager().beginTransaction()
+                .hide(bookmarksFragment)
+                .commit();
         //开启缓存服务
         startService(new Intent(this, CacheService.class));
 

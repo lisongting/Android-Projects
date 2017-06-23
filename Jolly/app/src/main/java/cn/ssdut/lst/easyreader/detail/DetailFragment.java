@@ -127,7 +127,7 @@ public class DetailFragment extends Fragment implements DetailContract.View{
                 @Override
                 public void onClick(View v) {
                     dialog.dismiss();
-                    presenter.shareAsText();
+                    presenter.copyText();
                 }
             });
 

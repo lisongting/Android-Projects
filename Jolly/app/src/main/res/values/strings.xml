@@ -77,14 +77,14 @@
     <!--navigation view menu end-->
 
 
-    <string name="share_extra"> 分享自 EasyReader</string>
+    <string name="share_extra"> 分享自 Jolly</string>
 
     <string name="share_to">分享至</string>
 
     <!--activity关于-->
 
 
-    <string name="version">版本:V3.2.0</string>
+    <string name="version">应用版本:V3.2.0</string>
 
     <string name="rate">为该应用评分</string>
 
@@ -132,7 +132,6 @@
 
     <string name="zhihu_url">https://www.zhihu.com/people/kirin-momo</string>
 
-    <string name="rate_description">如果你喜欢EasyReader,请在商店中给它一个好评吧</string>
 
     <string name="zhihu_account">\@小松</string>
 

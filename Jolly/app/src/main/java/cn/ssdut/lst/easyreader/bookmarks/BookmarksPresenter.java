@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.google.gson.Gson;
 
@@ -114,6 +115,7 @@ public class BookmarksPresenter implements BookmarksContract.Presenter {
     public void checkForFreshData() {
         types.add(TYPE_ZHIHU_WITH_HEADER);
         Cursor cursor = db.rawQuery("select * from Zhihu where bookmark = ?", new String[]{"1"});
+        Log.i("tag","zhihu bookmark count:"+ cursor.getCount());
         if (cursor.moveToFirst()) {
             do {
                 ZhihuDailyNews.Question q = gson.fromJson(cursor.getString(cursor.getColumnIndex("zhihu_news")), ZhihuDailyNews.Question.class);
@@ -123,6 +125,7 @@ public class BookmarksPresenter implements BookmarksContract.Presenter {
         }
         types.add(TYPE_GUOKR_WITH_HEADER);
         cursor = db.rawQuery("select * from Guokr where bookmark = ?", new String[]{"1"});
+        Log.i("tag","guokr bookmark count:"+ cursor.getCount());
         if (cursor.moveToFirst()) {
             do {
                 GuokrHandpickNews.result result = gson.fromJson(cursor.getString(cursor.getColumnIndex("guokr_news")), GuokrHandpickNews.result.class);
@@ -133,6 +136,7 @@ public class BookmarksPresenter implements BookmarksContract.Presenter {
 
         types.add(TYPE_DOUBAN_WITH_HEADER);
         cursor = db.rawQuery("select * from Douban where bookmark = ?", new String[]{"1"});
+        Log.i("tag","douban bookmark count:"+ cursor.getCount());
         if (cursor.moveToFirst()) {
             do {
                 DoubanMomentNews.posts post = gson.fromJson(cursor.getString(cursor.getColumnIndex("douban_news")), DoubanMomentNews.posts.class);

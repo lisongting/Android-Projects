@@ -12,6 +12,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.support.customtabs.CustomTabsIntent;
 import android.text.Html;
+import android.util.Log;
 import android.webkit.WebView;
 
 import com.android.volley.VolleyError;
@@ -137,7 +138,7 @@ public class DetailPresenter implements DetailContract.Presenter {
                     shareText += doubanMomentStory.getShort_url();
 
             }
-            shareText += doubanMomentStory.getShort_url();
+            shareText = shareText + "\t\t\t" + context.getString(R.string.share_extra);
 
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareText);
             context.startActivity(Intent.createChooser(shareIntent, context.getString(R.string.share_to)));
@@ -146,6 +147,7 @@ public class DetailPresenter implements DetailContract.Presenter {
         }
     }
 
+    //使用当前界面下的webView来加载页面
     @Override
     public void openUrl(WebView webView, String url) {
         if (sp.getBoolean("in_app_browser", true)) {
@@ -239,7 +241,7 @@ public class DetailPresenter implements DetailContract.Presenter {
                 break;
             case TYPE_GUOKR:
                 tmpTable = "Guokr";
-                tmpId = "Guokr_id";
+                tmpId = "guokr_id";
                 break;
             default:
                 break;
@@ -247,14 +249,19 @@ public class DetailPresenter implements DetailContract.Presenter {
         //查询条目是否已经被收藏，如果是，则删除。否则，则添加
         if (queryIfIsBookmarked()) {
             ContentValues values = new ContentValues();
-            values.put("bookmark", 0);
-            dbHelper.getWritableDatabase().update(tmpTable, values, tmpId + "=?", new String[]{String.valueOf(id)});
+            values.put("bookmark",0);
+            int update = dbHelper.getWritableDatabase().update(tmpTable, values, tmpId + "=?", new String[]{String.valueOf(id)});
+            Log.i("tag", "tmpTable:" + tmpTable + ",update:" + update + " item");
+            Log.i("tag", id + "号文章之前已被添加为收藏，已取消收藏");
             values.clear();
             view.showDeletedFromBookmarks();
         } else {
             ContentValues values = new ContentValues();
+            Log.i("tag","tmpTable:" + tmpTable);
+            Log.i("tag", id + "号文章之前没有被添加，已经添加为收藏");
             values.put("bookmark",1);
-            dbHelper.getWritableDatabase().update(tmpTable, values, tmpId + "=?", new String[]{String.valueOf(id)});
+            int update = dbHelper.getWritableDatabase().update(tmpTable, values, tmpId + "=?", new String[]{String.valueOf(id)});
+            Log.i("tag", "tmpTable:" + tmpTable + ",update:" + update + " item");
             values.clear();
             view.showAddedToBookmarks();
         }
@@ -309,7 +316,7 @@ public class DetailPresenter implements DetailContract.Presenter {
         view.showLoading();
         view.setTitle(title);
         view.showCover(coverUrl);
-
+        Log.i("tag", "title:" + title + ",coverUrl:" + coverUrl);
         view.setImageMode(sp.getBoolean("no_picture_mode",false));
 
         switch (type) {
@@ -339,6 +346,23 @@ public class DetailPresenter implements DetailContract.Presenter {
                             view.showLoadingError();
                         }
                     });
+                }else {
+                    Cursor cursor = dbHelper.getReadableDatabase()
+                            .query("Zhihu", null, null, null, null, null, null);
+                    if (cursor.moveToFirst()) {
+                        do {
+                            if (cursor.getInt(cursor.getColumnIndex("zhihu_id")) == id) {
+                                String content = cursor.getString(cursor.getColumnIndex("zhihu_content"));
+                                try {
+                                    zhihuDailyStory = gson.fromJson(content, ZhihuDailyStory.class);
+                                } catch (JsonSyntaxException e) {
+                                    view.showResult(content);
+                                }
+                                view.showResult(convertZhihuContent(zhihuDailyStory.getBody()));
+                            }
+                        } while (cursor.moveToNext());
+                    }
+                    cursor.close();
                 }
                 break;
             case TYPE_GUOKR:
@@ -348,10 +372,12 @@ public class DetailPresenter implements DetailContract.Presenter {
                         public void onSuccess(String result) {
                             convertGuokrContent(result);
                             view.showResult(guokrStory);
+                            view.stopLoading();
                         }
 
                         @Override
                         public void onError(VolleyError error) {
+                            view.stopLoading();
                             view.showLoadingError();
                         }
                     });
@@ -383,10 +409,12 @@ public class DetailPresenter implements DetailContract.Presenter {
                             } catch (JsonSyntaxException e) {
                                 view.showLoadingError();
                             }
+                            view.stopLoading();
                         }
 
                         @Override
                         public void onError(VolleyError error) {
+                            view.stopLoading();
                             view.showLoadingError();
                         }
                     });

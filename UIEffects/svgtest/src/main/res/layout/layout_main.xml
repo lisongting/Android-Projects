@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0E0E0"
+    android:orientation="vertical">
+    <ImageButton
+        android:id="@+id/image_button_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_arrow_upward_black_128dp"
+        />
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_button_up"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/image_button_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_button_up"
+            android:background="@drawable/ic_arrow_back_black_128dp"
+            />
+        <ImageButton
+            android:id="@+id/icon_left_rotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/ic_rotate_left_black_64dp"/>
+        <ImageButton
+            android:id="@+id/icon_right_rotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/ic_rotate_right_black_64dp"
+            />
+        <ImageButton
+            android:id="@+id/image_button_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/ic_arrow_forward_black_128dp"
+            />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/image_button_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ic_arrow_downward_black_128dp"
+        />
+
+</RelativeLayout>

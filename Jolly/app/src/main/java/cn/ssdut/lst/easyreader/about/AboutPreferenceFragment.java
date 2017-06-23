@@ -23,14 +23,6 @@ public class AboutPreferenceFragment extends PreferenceFragmentCompat implements
 
         initViews(getView());
 
-        findPreference("rate").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                presenter.rate();
-                return false;
-            }
-        });
-
         findPreference("open_source_license").setOnPreferenceClickListener(new android.support.v7.preference.Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(android.support.v7.preference.Preference preference) {
@@ -47,26 +39,11 @@ public class AboutPreferenceFragment extends PreferenceFragmentCompat implements
             }
         });
 
-        findPreference("follow_me_on_zhihu").setOnPreferenceClickListener(new android.support.v7.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(android.support.v7.preference.Preference preference) {
-                presenter.followOnZhihu();
-                return false;
-            }
-        });
 
         findPreference("feedback").setOnPreferenceClickListener(new android.support.v7.preference.Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(android.support.v7.preference.Preference preference) {
                 presenter.feedback();
-                return false;
-            }
-        });
-
-        findPreference("coffee").setOnPreferenceClickListener(new android.support.v7.preference.Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(android.support.v7.preference.Preference preference) {
-                presenter.donate();
                 return false;
             }
         });

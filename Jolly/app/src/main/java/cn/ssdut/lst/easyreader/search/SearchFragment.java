@@ -4,9 +4,11 @@ package cn.ssdut.lst.easyreader.search;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.ContentLoadingProgressBar;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -40,6 +42,7 @@ public class SearchFragment extends Fragment implements SearchContract.View{
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
 
@@ -51,12 +54,14 @@ public class SearchFragment extends Fragment implements SearchContract.View{
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                Log.i("tag", "searchView -- onQueryTextSubmit:" + query);
                 presenter.loadResult(query);
                 return true;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
+                Log.i("tag", "searchView -- onQueryTextChange:" + newText);
                 presenter.loadResult(newText);
                 return true;
             }
@@ -82,30 +87,31 @@ public class SearchFragment extends Fragment implements SearchContract.View{
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
 
+
         progressBar = (ContentLoadingProgressBar) view.findViewById(R.id.progressBar);
     }
 
     @Override
     public void showResult(ArrayList<ZhihuDailyNews.Question> zhihuList, ArrayList<GuokrHandpickNews.result> guokrList, ArrayList<DoubanMomentNews.posts> doubanList, ArrayList<Integer> types) {
-        if (adapter == null) {
-            adapter = new BookmarksAdapter(getActivity(), zhihuList, guokrList, doubanList, types);
-            adapter.setItemListener(new OnRecyclerViewOnClickListener() {
-                @Override
-                public void onItemClick(View v, int position) {
-                    int type = recyclerView.findViewHolderForLayoutPosition(position).getItemViewType();
-                    if (type == BookmarksAdapter.TYPE_ZHIHU_NORMAL) {
-                        presenter.startReading(BeanType.TYPE_ZHIHU,position);
-                    } else if (type == BookmarksAdapter.TYPE_GUOKR_NORMAL) {
-                        presenter.startReading(BeanType.TYPE_GUOKR, position);
-                    } else if (type == BookmarksAdapter.TYPE_DOUBAN_NORMAL) {
-                        presenter.startReading(BeanType.TYPE_DOUBAN,position);
-                    }
+
+        adapter = new BookmarksAdapter(getActivity(), zhihuList, guokrList, doubanList, types);
+        adapter.setItemListener(new OnRecyclerViewOnClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                int type = recyclerView.findViewHolderForLayoutPosition(position).getItemViewType();
+                if (type == BookmarksAdapter.TYPE_ZHIHU_NORMAL) {
+                    presenter.startReading(BeanType.TYPE_ZHIHU,position);
+                } else if (type == BookmarksAdapter.TYPE_GUOKR_NORMAL) {
+                    presenter.startReading(BeanType.TYPE_GUOKR, position);
+                } else if (type == BookmarksAdapter.TYPE_DOUBAN_NORMAL) {
+                    presenter.startReading(BeanType.TYPE_DOUBAN,position);
                 }
-            });
-            recyclerView.setAdapter(adapter);
-        }else {
-            adapter.notifyDataSetChanged();
-        }
+            }
+        });
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(adapter);
+//        adapter.notifyDataSetChanged();
+
     }
 
     @Override
@@ -118,6 +124,7 @@ public class SearchFragment extends Fragment implements SearchContract.View{
         progressBar.setVisibility(View.GONE);
     }
 
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             getActivity().onBackPressed();

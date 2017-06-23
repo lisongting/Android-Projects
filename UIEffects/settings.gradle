@@ -1,1 +1,1 @@
-include ':ViewPager', ':fragmenttab', ':viewpagerindicator', ':buttonflyout', ':desktopwidget', ':myview', ':myviewgroup', ':viewdraghelper', ':recyclerviewtest', ':swiperefreshlayouttest', ':lottietest', ':supportdesignwidget'
+include ':ViewPager', ':fragmenttab', ':viewpagerindicator', ':buttonflyout', ':desktopwidget', ':myview', ':myviewgroup', ':viewdraghelper', ':recyclerviewtest', ':swiperefreshlayouttest', ':lottietest', ':supportdesignwidget', ':svgtest'

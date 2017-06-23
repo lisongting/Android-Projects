@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.google.gson.Gson;
 
@@ -45,7 +46,7 @@ public class SearchPresenter implements SearchContract.Presenter {
         this.view = view;
         this.view.setPresenter(this);
         gson = new Gson();
-        dbHelper = new DatabaseHelper(context, "history.db", null, 5);
+        dbHelper = new DatabaseHelper(context, "History.db", null, 5);
         db = dbHelper.getWritableDatabase();
 
         zhihuList = new ArrayList<>();
@@ -77,6 +78,7 @@ public class SearchPresenter implements SearchContract.Presenter {
                 zhihuList.add(question);
                 types.add(TYPE_ZHIHU_NORMAL);
             } while (cursor.moveToNext());
+            Log.i("tag", "找到相关收藏的知乎文章：" + cursor.getCount());
         }
 
         types.add(TYPE_GUOKR_WITH_HEADER);
@@ -88,6 +90,7 @@ public class SearchPresenter implements SearchContract.Presenter {
                 guokrList.add(result);
                 types.add(TYPE_GUOKR_NORMAL);
             } while (cursor.moveToNext());
+            Log.i("tag", "找到相关收藏的果壳文章：" + cursor.getCount());
         }
 
         types.add(TYPE_DOUBAN_WITH_HEADER);
@@ -99,9 +102,11 @@ public class SearchPresenter implements SearchContract.Presenter {
                 doubanList.add(posts);
                 types.add(TYPE_DOUBAN_NORMAL);
             } while (cursor.moveToNext());
+            Log.i("tag", "找到相关收藏的豆瓣文章：" + cursor.getCount());
         }
 
         cursor.close();
+//        Log.i("tag", zhihuList.toString() + guokrList.toString() + doubanList.toString() + types.toString());
         view.showResult(zhihuList, guokrList, doubanList,types);
     }
 

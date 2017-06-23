@@ -122,7 +122,9 @@ git stash pop
 git clean -f 
 可使用git clean -n （会提示将会删除哪些文件）
 
-修改commit 中的提交信息：
+修改commit 中的提交信息(只能修改上一次commit的备注信息)：
 git commit --amend
 
+如果要修改前面第n次的commit记录，则要使用:
+git rebase -i [commit-id]
 

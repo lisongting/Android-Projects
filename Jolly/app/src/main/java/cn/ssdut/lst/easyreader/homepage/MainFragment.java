@@ -66,6 +66,8 @@ public class MainFragment extends Fragment {
             doubanMomentFragment = DoubanMomentFragment.newInstance();
         }
 
+        //注：这里在创建ZhihuDailyPresenter实例的时候，就把ZhihuDailyFragment传进入，
+        //在ZhihuDailyPresenter的构造函数中就调用了setPresenter()了。
         zhihuDailyPresenter = new ZhihuDailyPresenter(context, zhihuDailyFragment);
         guokrPresenter = new GuokrPresenter(context, guokrFragment);
         doubanMomentPresenter = new DoubanMomentPresenter(context, doubanMomentFragment);
@@ -118,6 +120,7 @@ public class MainFragment extends Fragment {
 
         viewPager.setAdapter(adapter);
 
+        //将ViewPager和TabLayout关联起来，这样当ViewPager切换时，TabLayout知道当前被选中的tab是哪一个
         tabLayout.setupWithViewPager(viewPager);
 
     }

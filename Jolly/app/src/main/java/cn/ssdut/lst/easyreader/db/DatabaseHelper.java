@@ -53,7 +53,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             case 2:
                 db.execSQL("create table if not exists Contents(id integer primary key," +
                         "date integer not null,content text not null)");
-                break;
             case 3:
                 // delete table if exists
                 //这两个表根本就没有创建啊
@@ -83,7 +82,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                         + "douban_news text,"
                         + "douban_time integer,"
                         + "douban_content text)");
-                break;
             case 4:
                 db.execSQL("alter table Zhihu add column bookmark integer default 0");
                 db.execSQL("alter table Guokr add column bookmark integer default 0");

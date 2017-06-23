@@ -39,16 +39,17 @@ public class CacheService extends Service {
     public static final int TYPE_ZHIHU  = 0x00;
     public static final int TYPE_GUOKR  = 0x01;
     public static final int TYPE_DOUBAN = 0x02;
+    public static final String SERVICE_ACTION = "cn.lst.jolly.LOCAL_BROADCAST";
 
 
     public void onCreate() {
         super.onCreate();
-        dbHelper = new DatabaseHelper(this, "history.db", null, 5);
+        dbHelper = new DatabaseHelper(this, "History.db", null, 5);
         db = dbHelper.getWritableDatabase();
 
         //动态注册的广播接收器
         IntentFilter filter = new IntentFilter();
-        filter.addAction("cn.lst.jolly.LOCAL_BROADCAST");
+        filter.addAction(SERVICE_ACTION);
         LocalBroadcastManager manager = LocalBroadcastManager.getInstance(this);
         manager.registerReceiver(new LocalReceiver(), filter);
     }
@@ -84,52 +85,53 @@ public class CacheService extends Service {
             do {
                 if ((cursor.getInt(cursor.getColumnIndex("zhihu_id")) == id) &&
                         (cursor.getString(cursor.getColumnIndex("zhihu_content")).equals(""))) {
+
                     StringRequest request = new StringRequest(
-                            Request.Method.GET,
-                            Api.ZHIHU_NEWS + id,
-                            new Response.Listener<String>() {
-                                @Override
-                                public void onResponse(String s) {
-                                    Gson gson = new Gson();
-                                    ZhihuDailyStory story = gson.fromJson(s, ZhihuDailyStory.class);
+                        Request.Method.GET,
+                        Api.ZHIHU_NEWS + id,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String s) {
+                                Gson gson = new Gson();
+                                ZhihuDailyStory story = gson.fromJson(s, ZhihuDailyStory.class);
 
-                                    //如果等于1则请求share_url中的数据并存储
-                                    if (story.getType() == 1) {
-                                        Response.Listener rightListener = new Response.Listener() {
-                                            @Override
-                                            public void onResponse(Object o) {
-                                                ContentValues values = new ContentValues();
-                                                values.put("zhihu_content", (String) o);
-                                                db.update("zhihu", values, "zhihu_id=?", new String[]{String.valueOf(id)});
-                                                values.clear();
-                                            }
-                                        };
-                                        Response.ErrorListener errorListener = new Response.ErrorListener() {
-                                            @Override
-                                            public void onErrorResponse(VolleyError volleyError) {
-                                            }
-                                        };
-                                        StringRequest request1 = new StringRequest(Request.Method.GET,
-                                                story.getShare_url(),
-                                                rightListener,
-                                                errorListener);
-                                        request1.setTag(TAG);
-                                        VolleySingleton.getVolleySingleton(CacheService.this).addToRequestQueue(request1);
-                                    } else if (story.getType() == 0) {
-                                        ContentValues values = new ContentValues();
-                                        values.put("zhihu_content", s);
-                                        db.update("Zhihu", values, "zhihu_id=?", new String[]{String.valueOf(id)});
-                                        values.clear();
-                                    }
-
+                                //如果等于1则请求share_url中的数据并存储
+                                if (story.getType() == 1) {
+                                    Response.Listener rightListener = new Response.Listener() {
+                                        @Override
+                                        public void onResponse(Object o) {
+                                            ContentValues values = new ContentValues();
+                                            values.put("zhihu_content", (String) o);
+                                            db.update("Zhihu", values, "zhihu_id=?", new String[]{String.valueOf(id)});
+                                            values.clear();
+                                        }
+                                    };
+                                    Response.ErrorListener errorListener = new Response.ErrorListener() {
+                                        @Override
+                                        public void onErrorResponse(VolleyError volleyError) {
+                                        }
+                                    };
+                                    StringRequest request1 = new StringRequest(Request.Method.GET,
+                                            story.getShare_url(),
+                                            rightListener,
+                                            errorListener);
+                                    request1.setTag(TAG);
+                                    VolleySingleton.getVolleySingleton(CacheService.this).addToRequestQueue(request1);
+                                } else{
+                                    ContentValues values = new ContentValues();
+                                    values.put("zhihu_content", s);
+                                    db.update("Zhihu", values, "zhihu_id=?", new String[]{String.valueOf(id)});
+                                    values.clear();
                                 }
-                            },
-                            new Response.ErrorListener() {
-                                @Override
-                                public void onErrorResponse(VolleyError volleyError) {
 
-                                }
-                            });
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError volleyError) {
+
+                            }
+                        });
 
                     request.setTag(TAG);
                     VolleySingleton.getVolleySingleton(CacheService.this).addToRequestQueue(request);

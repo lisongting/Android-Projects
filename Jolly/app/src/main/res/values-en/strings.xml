@@ -1,18 +1,4 @@
-<!--
-  ~ Copyright 2017 lizhaotailang
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~     http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
+
 
 <resources>
     <string name="app_name">Paper Plane</string>
@@ -73,14 +59,13 @@
     <string name="donate_account">marktonymengyi@gmail.com</string>
     <string name="sendto">mailto:marktonymengyi@gmail.com</string>
     <string name="mail_topic">Paper Plane Feedback / Advice</string>
-    <string name="rate_description">If you like the Paper Plane app,please do rate it</string>
     <string name="device_model">Device Version:</string>
     <string name="sdk_version">SDK Version:</string>
     <string name="no_mail_app">No Mail App Installed</string>
     <string name="no_app_store_found">No App Store Installed</string>
     <string name="no_browser_found">No Browser Installed</string>
     <string name="author">Author</string>
-    <string name="author_name">Li Zhaotailang</string>
+    <string name="author_name">paperfish</string>
     <string name="author_description">Changsha, Hunan, China</string>
     <string name="follow_me_on_github">Follow Me on GitHub</string>
     <string name="follow_me_on_zhihu">Follow Me on ZhiHu</string>
@@ -90,7 +75,7 @@
     <string name="coffee_description">If you think I deserve to get paid for my work, you can give me a cup of coffee</string>
     <string name="github_url">https://github.com/marktony</string>
     <string name="zhihu_url">https://www.zhihu.com/people/kirin-momo</string>
-    <string name="zhihu_account">\@Li Zhaotailang</string>
+    <string name="zhihu_account">\@paperfish</string>
     <string name="open_source_license">Open Source License</string>
     <string name="easter_egg">Easter Egg</string>
     <string name="easter_egg_content">You clicked my name so many times, do you like me?</string>

@@ -14,6 +14,7 @@ public class NetworkState {
         if (context != null) {
             ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo info = manager.getActiveNetworkInfo();
+//            Log.i("tag", "info:" + info.getTypeName() + "," + info.getType());
             if (info != null) {
                 return info.isAvailable();
             }

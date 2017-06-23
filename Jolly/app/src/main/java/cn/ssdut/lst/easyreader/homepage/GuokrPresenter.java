@@ -36,6 +36,7 @@ import cn.ssdut.lst.easyreader.bean.StringModelImpl;
 import cn.ssdut.lst.easyreader.db.DatabaseHelper;
 import cn.ssdut.lst.easyreader.detail.DetailActivity;
 import cn.ssdut.lst.easyreader.interfaze.OnStringListener;
+import cn.ssdut.lst.easyreader.service.CacheService;
 import cn.ssdut.lst.easyreader.util.Api;
 import cn.ssdut.lst.easyreader.util.NetworkState;
 
@@ -130,7 +131,7 @@ public class GuokrPresenter implements GuokrContract.Presenter {
 
                             //通过发送广播，唤醒CacheService中的BroadcastReceiver，然后该BroadcastReceiver根据广播的内容
                             // 来决定调用哪一个缓存函数
-                            Intent intent = new Intent("cn.lst.jolly.LOCAL_BROADCAST");
+                            Intent intent = new Intent(CacheService.SERVICE_ACTION);
                             intent.putExtra("type", TYPE_GUOKR);
                             intent.putExtra("id", re.getId());
                             LocalBroadcastManager.getInstance(context).sendBroadcast(intent);

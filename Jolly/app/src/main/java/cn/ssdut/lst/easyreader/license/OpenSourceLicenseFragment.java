@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
@@ -33,13 +34,21 @@ public class OpenSourceLicenseFragment extends Fragment implements OpenSourceLic
         View view = inflater.inflate(R.layout.fragment_open_source_license, container, false);
         initViews(view);
         setHasOptionsMenu(true);
-        loadLicense("file://android_assets/license.html");
+        loadLicense("file:///android_asset/license.html");
 
         return view;
     }
     @Override
     public void setPresenter(OpenSourceLicenseContract.Presenter presenter) {
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            getActivity().onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -53,5 +62,6 @@ public class OpenSourceLicenseFragment extends Fragment implements OpenSourceLic
     @Override
     public void loadLicense(String path) {
         webView.loadUrl(path);
+
     }
 }

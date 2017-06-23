@@ -68,7 +68,7 @@ public class ZhihuDailyFragment extends Fragment implements ZhihuDailyContract.V
             }
         });
 
-        recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener(){
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener(){
             boolean isSlidingToLast = false;
 
             @Override
@@ -98,8 +98,10 @@ public class ZhihuDailyFragment extends Fragment implements ZhihuDailyContract.V
                 isSlidingToLast = dy > 0;
                 //隐藏或显示fab
                 if (dy > 0) {
+                    //向上拉动时隐藏floatingActionButton
                     fab.hide();
                 }else{
+                    //向下拉动时显示floatingActionButton
                     fab.show();
                 }
             }
@@ -133,7 +135,7 @@ public class ZhihuDailyFragment extends Fragment implements ZhihuDailyContract.V
 
                     dialog.setMaxDate(Calendar.getInstance());
                     Calendar minDate = Calendar.getInstance();
-                    //首次上线日期
+                    //首次上线日期:2013年6月20号
                     minDate.set(2013, 5, 20);
                     dialog.setMinDate(minDate);
                     dialog.vibrate(false);

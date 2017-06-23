@@ -2,8 +2,6 @@ package cn.ssdut.lst.easyreader.about;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
-import android.content.ClipData;
-import android.content.ClipboardManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,14 +11,12 @@ import android.os.SystemClock;
 import android.support.customtabs.CustomTabsIntent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 import cn.ssdut.lst.easyreader.R;
 import cn.ssdut.lst.easyreader.customtabs.CustomFallback;
 import cn.ssdut.lst.easyreader.customtabs.CustomTabActivityHelper;
 import cn.ssdut.lst.easyreader.license.OpenSourceLicenseActivity;
 
-import static android.content.Context.CLIPBOARD_SERVICE;
 import static android.content.Context.MODE_PRIVATE;
 
 /**
@@ -49,17 +45,6 @@ public class AboutPresenter implements AboutContract.Presenter {
 
     }
 
-    @Override
-    public void rate() {
-        try {
-            Uri uri = Uri.parse("marcket://details?id=?" + activity.getPackageName());
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            activity.startActivity(intent);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     public void openLicense() {
@@ -88,10 +73,6 @@ public class AboutPresenter implements AboutContract.Presenter {
         }
     }
 
-    @Override
-    public void followOnZhihu() {
-        Toast.makeText(activity, "知乎", Toast.LENGTH_SHORT).show();
-    }
 
     @Override
     public void feedback() {
@@ -106,30 +87,6 @@ public class AboutPresenter implements AboutContract.Presenter {
         } catch (ActivityNotFoundException e) {
             view.showFeedbackError();
         }
-    }
-
-    @Override
-    public void donate() {
-        AlertDialog dialog = new AlertDialog.Builder(activity).create();
-        dialog.setTitle(R.string.donate);
-        dialog.setMessage(activity.getString(R.string.donate_content));
-        dialog.setButton(DialogInterface.BUTTON_POSITIVE, activity.getString(R.string.positive), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                // 将指定账号添加到剪切板
-                // add the alipay account to clipboard
-                ClipboardManager manager = (ClipboardManager) activity.getSystemService(CLIPBOARD_SERVICE);
-                ClipData clipData = ClipData.newPlainText("text", activity.getString(R.string.donate_account));
-                manager.setPrimaryClip(clipData);
-            }
-        });
-        dialog.setButton(DialogInterface.BUTTON_NEGATIVE, activity.getString(R.string.negative), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
-        dialog.show();
     }
 
     long[] hits = new long[3];

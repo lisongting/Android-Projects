@@ -1,7 +1,6 @@
 package cn.ssdut.lst.easyreader.app;
 
 import android.app.Application;
-import android.content.ContentProvider;
 import android.support.v7.app.AppCompatDelegate;
 
 /**
@@ -19,7 +18,6 @@ public class App extends Application {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
 
-        ContentProvider k;
     }
 
 }

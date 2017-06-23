@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/myviewgroup/myviewgroup.iml" filepath="$PROJECT_DIR$/myviewgroup/myviewgroup.iml" />
       <module fileurl="file://$PROJECT_DIR$/recyclerviewtest/recyclerviewtest.iml" filepath="$PROJECT_DIR$/recyclerviewtest/recyclerviewtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/supportdesignwidget/supportdesignwidget.iml" filepath="$PROJECT_DIR$/supportdesignwidget/supportdesignwidget.iml" />
+      <module fileurl="file://$PROJECT_DIR$/svgtest/svgtest.iml" filepath="$PROJECT_DIR$/svgtest/svgtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/swiperefreshlayouttest/swiperefreshlayouttest.iml" filepath="$PROJECT_DIR$/swiperefreshlayouttest/swiperefreshlayouttest.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewdraghelper/viewdraghelper.iml" filepath="$PROJECT_DIR$/viewdraghelper/viewdraghelper.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" filepath="$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" />

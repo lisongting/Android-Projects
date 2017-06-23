@@ -19,17 +19,12 @@ public interface AboutContract {
     }
 
     interface Presenter extends BasePresenter{
-        void rate();
 
         void openLicense();
 
         void followOnGithub();
 
-        void followOnZhihu();
-
         void feedback();
-
-        void donate();
 
         void showEasterEgg();
 

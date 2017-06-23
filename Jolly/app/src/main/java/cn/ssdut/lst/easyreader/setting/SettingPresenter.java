@@ -50,6 +50,14 @@ public class SettingPresenter implements SettingContract.Presenter {
 
     @Override
     public void setNoPictureMode(Preference preference) {
+        //这里其实没必要再来一个SharedPreference，因为原来的Preference在设置的时候已经写入到系统底层的SharedPreference中了
+
+//       实际使用的时候可以这样：
+//       SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+//       然后就可以调用一系列的get方法，由key拿到相应的value
+//       如： pref.getBoolean(key, false);
+//       如：pref.getInt(key, 0);
+
         editor.putBoolean("no_picture_mode", preference.getSharedPreferences().getBoolean("no_picture_mode", false));
         editor.apply();
     }
