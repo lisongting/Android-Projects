@@ -48,6 +48,8 @@ Ctrl+ N  		在搜索框中搜索一个类
 
 Ctrl+shift+N		在搜索框中搜索一个文件
 
+Ctrl+shift+alt+N	在整个project搜索一个指定标识符出现的地方
+
 %Ctrl+shift+上/下   	上下移动行
 
 %Ctrl+Shift+I     	快速查看某个方法的定义

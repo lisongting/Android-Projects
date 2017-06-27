@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/broadcast_test/broadcast_test.iml" filepath="$PROJECT_DIR$/broadcast_test/broadcast_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/camera2/camera2.iml" filepath="$PROJECT_DIR$/camera2/camera2.iml" />
       <module fileurl="file://$PROJECT_DIR$/rostest/rostest.iml" filepath="$PROJECT_DIR$/rostest/rostest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testmultiframeworks/testmultiframeworks.iml" filepath="$PROJECT_DIR$/testmultiframeworks/testmultiframeworks.iml" />
       <module fileurl="file://$PROJECT_DIR$/uitest/uitest.iml" filepath="$PROJECT_DIR$/uitest/uitest.iml" />
       <module fileurl="file://$PROJECT_DIR$/uitest1/uitest1.iml" filepath="$PROJECT_DIR$/uitest1/uitest1.iml" />
     </modules>

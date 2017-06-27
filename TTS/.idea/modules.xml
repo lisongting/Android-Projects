@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TTS.iml" filepath="$PROJECT_DIR$/TTS.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/voicecommand/voicecommand.iml" filepath="$PROJECT_DIR$/voicecommand/voicecommand.iml" />
       <module fileurl="file://$PROJECT_DIR$/xunfeitts/xunfeitts.iml" filepath="$PROJECT_DIR$/xunfeitts/xunfeitts.iml" />
     </modules>
   </component>
