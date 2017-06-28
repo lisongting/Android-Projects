@@ -3,4 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="FloatingActionbarRipple">#7D26CD</color>
+    <color name="FloatingActionbarColor">#EE3A8C</color>
 </resources>

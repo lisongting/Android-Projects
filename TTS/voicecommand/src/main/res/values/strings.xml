@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">VoiceCommand</string>
+
+    <dimen name="fab_border_width">0dp</dimen>
+    <dimen name="fab_press_translation">5dp</dimen>
+    <dimen name="fab_margin">20dp</dimen>
+
 </resources>

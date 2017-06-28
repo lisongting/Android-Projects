@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.example.voicecommand.MainActivity">
+    android:layout_height="match_parent" tools:context="com.example.voicecommand.MainActivity"
+    >
 
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:text="科大讯飞命令词识别功能测试" app:layout_constraintBottom_toBottomOf="parent"
@@ -23,8 +24,36 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.933"
-        app:layout_constraintHorizontal_bias="0.28" />
+        app:layout_constraintVertical_bias="0.52" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintHorizontal_bias="0.838"
+        app:layout_constraintVertical_bias="0.936">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floating_action_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:src="@drawable/ic_record"
+            android:clickable="true"
+            android:layout_margin="@dimen/fab_margin"
+            app:borderWidth="@dimen/fab_border_width"
+            app:backgroundTint="@color/FloatingActionbarColor"
+            app:rippleColor="@color/FloatingActionbarRipple"
+            app:pressedTranslationZ="@dimen/fab_press_translation"/>
+    </android.support.design.widget.CoordinatorLayout>
 
 
 </android.support.constraint.ConstraintLayout>

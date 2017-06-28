@@ -1,13 +1,19 @@
 package com.example.voicecommand;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.iflytek.cloud.ErrorCode;
 import com.iflytek.cloud.GrammarListener;
 import com.iflytek.cloud.InitListener;
@@ -18,6 +24,8 @@ import com.iflytek.cloud.SpeechError;
 import com.iflytek.cloud.SpeechRecognizer;
 import com.iflytek.cloud.SpeechUtility;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "tag";
@@ -26,25 +34,22 @@ public class MainActivity extends AppCompatActivity {
             "mode voice;\n" +
             "root command;\n" +
             "$command = $action [$speech];\n" +
-            "$action = 停止|继续|恢复|开始;\n" +
+            "$action = 暂停|停止|继续|恢复|开始;\n" +
             "$speech = 解说|播放;";
     private Button button;
     private SpeechRecognizer recognizer;
     private RecognizerListener recognizerListener;
+    private FloatingActionButton floatingActionButton;
+    private CoordinatorLayout coordinatorLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         button = (Button) findViewById(R.id.button);
-
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(MainActivity.this, "开始录音", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.floating_action_bar);
+        coordinatorLayout = (CoordinatorLayout)findViewById(R.id.coordinatorLayout);
         button.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -60,8 +65,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        floatingActionButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    Toast.makeText(MainActivity.this, "开始录音", Toast.LENGTH_SHORT).show();
+                    recognizer.startListening(recognizerListener);
+
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    Toast.makeText(MainActivity.this, "录音结束", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
+        });
 
         initSpeechRecognizer();
+
+        final Snackbar snackbar = Snackbar.make(coordinatorLayout,
+                "你可以按住上方的按钮说出语音指令词，" +
+                        "如：停止播放/解说、开始播放/解说等"
+                ,Snackbar.LENGTH_INDEFINITE);
+        snackbar.setAction("知道了", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                snackbar.dismiss();
+            }
+        });
+        TextView textView = ((TextView) snackbar.getView().findViewById(R.id.snackbar_text));
+        snackbar.getView().setBackgroundColor(Color.parseColor("#8DEEEE"));
+        textView.setTextColor(Color.parseColor("#303F9F"));
+        snackbar.show();
+
 
 
     }
@@ -96,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         recognizerListener = new RecognizerListener() {
             @Override
             public void onVolumeChanged(int volume, byte[] data) {
-                Log.i(TAG, "RecognizerListener -- onVolumeChanged()");
+//                Log.i(TAG, "RecognizerListener -- onVolumeChanged()");
             }
 
             @Override
@@ -113,17 +147,23 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onResult(RecognizerResult recognizerResult, boolean isLast) {
-                Log.i(TAG, "RecognizerListener -- onResult()");
-                Log.i(TAG, "isLast:" + isLast);
-                Log.i(TAG, "recognizerResult:" + recognizerResult.getResultString());
+//                Log.i(TAG, "RecognizerListener -- onResult()");
+//                Log.i(TAG, "isLast:" + isLast);
+//                Log.i(TAG, "recognizerResult:" + recognizerResult.getResultString());
                 Toast.makeText(MainActivity.this, "isLast:"+isLast+",recognizerResult:"+recognizerResult.getResultString()
                         , Toast.LENGTH_LONG).show();
+                if (!isLast) {
+                    handleRecognizerResult(recognizerResult);
+                }
+
+
             }
 
             @Override
             public void onError(SpeechError speechError) {
-                Log.i(TAG, "RecognizerListener -- onError():"+speechError.getErrorCode()
-                        +","+speechError.getErrorDescription());
+                Log.i(TAG, "RecognizerListener -- onError():["+speechError.getErrorCode()
+                        +"],"+speechError.getErrorDescription());
+                Toast.makeText(MainActivity.this, speechError.getErrorDescription(), Toast.LENGTH_SHORT).show();
 
             }
 
@@ -133,6 +173,42 @@ public class MainActivity extends AppCompatActivity {
 
             }
         };
+
+
+    }
+
+    private void handleRecognizerResult(RecognizerResult recognizerResult) {
+        String result = recognizerResult.getResultString();
+
+        Gson gson = new Gson();
+        CommandRecogResult resultEntity = gson.fromJson(result, CommandRecogResult.class);
+        Log.i(TAG, resultEntity.toString());
+
+        List<CommandRecogResult.WsBean> list = resultEntity.getWs();
+        if (list.size() == 1) {
+            List<CommandRecogResult.WsBean.CwBean> cwBeanList = (List<CommandRecogResult.WsBean.CwBean>) list.get(0);
+            String word = cwBeanList.get(0).getW();
+            if (word.equals("开始") || word.equals("恢复") || word.equals("继续")) {
+                Log.i(TAG,"第一个指令正确：" + word);
+            }
+
+        } else if (list.size() == 2) {
+            List<CommandRecogResult.WsBean.CwBean> cwBeanList1 = (List<CommandRecogResult.WsBean.CwBean>) list.get(0);
+            String word1 = cwBeanList1.get(0).getW();
+            if (word1.equals("开始") || word1.equals("恢复") || word1.equals("继续")) {
+                Log.i(TAG,"第一个指令正确：" + word1);
+                List<CommandRecogResult.WsBean.CwBean> cwBeanList2 = (List<CommandRecogResult.WsBean.CwBean>) list.get(1);
+                String word2 = cwBeanList2.get(0).getW();
+                if (word2.equals("播放")||word2.equals("解说") ) {
+                    Log.i(TAG,"第二个指令正确：" + word2);
+
+                }
+            }
+
+        } else {
+            Toast.makeText(this, "请说出正确的口令词", Toast.LENGTH_SHORT).show();
+        }
+
 
 
     }
