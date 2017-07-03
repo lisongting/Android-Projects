@@ -1,6 +1,7 @@
 package cn.ssdut.lst.recyclerviewtest;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * Created by Administrator on 2017/4/3.
  */
 
-public class StaggerGridAdapter extends RecyclerViewAdapter {
+public class StaggerGridAdapter extends RecyclerViewAdapter<RecyclerView.ViewHolder> {
     //在这个Adapter中动态的控制高度
     public List<Integer> mHeights;
     public StaggerGridAdapter(Context context, List<String> datas) {

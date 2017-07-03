@@ -150,8 +150,8 @@ public class MainActivity extends AppCompatActivity {
 //                Log.i(TAG, "RecognizerListener -- onResult()");
 //                Log.i(TAG, "isLast:" + isLast);
 //                Log.i(TAG, "recognizerResult:" + recognizerResult.getResultString());
-                Toast.makeText(MainActivity.this, "isLast:"+isLast+",recognizerResult:"+recognizerResult.getResultString()
-                        , Toast.LENGTH_LONG).show();
+//                Toast.makeText(MainActivity.this, "isLast:"+isLast+",recognizerResult:"+recognizerResult.getResultString()
+//                        , Toast.LENGTH_LONG).show();
                 if (!isLast) {
                     handleRecognizerResult(recognizerResult);
                 }
@@ -186,31 +186,47 @@ public class MainActivity extends AppCompatActivity {
 
         List<CommandRecogResult.WsBean> list = resultEntity.getWs();
         if (list.size() == 1) {
-            List<CommandRecogResult.WsBean.CwBean> cwBeanList = (List<CommandRecogResult.WsBean.CwBean>) list.get(0);
+            List<CommandRecogResult.WsBean.CwBean> cwBeanList = list.get(0).getCw();
             String word = cwBeanList.get(0).getW();
             if (word.equals("开始") || word.equals("恢复") || word.equals("继续")) {
                 Log.i(TAG,"第一个指令正确：" + word);
+//                mAudioManager.resume();
+            }else if ( word.equals("暂停")||word.equals("停止")) {
+                Log.i(TAG,"第一个指令正确：" + word);
+//                mAudioManager.pause();
+            }else{
+                Log.i(TAG, "指令识别失败：" + result);
             }
-
+            Toast.makeText(this, word, Toast.LENGTH_SHORT).show();
         } else if (list.size() == 2) {
-            List<CommandRecogResult.WsBean.CwBean> cwBeanList1 = (List<CommandRecogResult.WsBean.CwBean>) list.get(0);
+            List<CommandRecogResult.WsBean.CwBean> cwBeanList1 = list.get(0).getCw();
             String word1 = cwBeanList1.get(0).getW();
+
             if (word1.equals("开始") || word1.equals("恢复") || word1.equals("继续")) {
                 Log.i(TAG,"第一个指令正确：" + word1);
-                List<CommandRecogResult.WsBean.CwBean> cwBeanList2 = (List<CommandRecogResult.WsBean.CwBean>) list.get(1);
+                List<CommandRecogResult.WsBean.CwBean> cwBeanList2 = list.get(1).getCw();
                 String word2 = cwBeanList2.get(0).getW();
                 if (word2.equals("播放")||word2.equals("解说") ) {
                     Log.i(TAG,"第二个指令正确：" + word2);
-
+                    Toast.makeText(this, word1+word2, Toast.LENGTH_SHORT).show();
+//                    mAudioManager.resume();
                 }
+            } else if (word1.equals("暂停") || word1.equals("停止")) {
+                Log.i(TAG, "第一个指令正确：" + word1);
+                List<CommandRecogResult.WsBean.CwBean> cwBeanList2 = list.get(1).getCw();
+                String word2 = cwBeanList2.get(0).getW();
+                if (word2.equals("播放") || word2.equals("解说")) {
+                    Log.i(TAG, "第二个指令正确：" + word2);
+                    Toast.makeText(this, word1+word2, Toast.LENGTH_SHORT).show();
+//                    mAudioManager.pause();
+                }
+            } else {
+                Log.i(TAG, "指令识别失败：" + result);
             }
-
         } else {
+            Log.i(TAG, "指令识别失败：" + result);
             Toast.makeText(this, "请说出正确的口令词", Toast.LENGTH_SHORT).show();
         }
-
-
-
     }
 
     @Override

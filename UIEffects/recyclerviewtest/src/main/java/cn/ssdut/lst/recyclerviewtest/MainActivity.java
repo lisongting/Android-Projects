@@ -18,14 +18,14 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<String> mDatas;
-    private RecyclerViewAdapter mAdapter;
+    private RecyclerViewAdapter<RecyclerView.ViewHolder> mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initDatas();
         initViews();
-        mAdapter = new RecyclerViewAdapter(this, mDatas);
+        mAdapter = new RecyclerViewAdapter<RecyclerView.ViewHolder>(this, mDatas);
         recyclerView.setAdapter(mAdapter);
 
         //设置recyclerView的布局,最后一个boolean参数，如果为true则每个元素倒着布置

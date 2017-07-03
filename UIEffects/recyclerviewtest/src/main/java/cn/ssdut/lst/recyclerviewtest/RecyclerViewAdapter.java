@@ -13,7 +13,7 @@ import java.util.List;
  * Created by Administrator on 2017/4/3.
  */
 //自定义的Adapter
-public class RecyclerViewAdapter extends RecyclerView.Adapter<MyViewHolder> {
+public class RecyclerViewAdapter<M extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<MyViewHolder> {
     private LayoutInflater mInflater;
     private Context mContext;
     protected  List<String> mDatas;
