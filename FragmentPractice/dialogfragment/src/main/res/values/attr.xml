@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleRotateView">
+        <attr name="firstColor" format="color|reference"/>
+        <attr name="secondColor" format="reference|color" />
+        <attr name="strokeWidth" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="SmileView">
+        <attr name="viewColor" format="color|reference" />
+    </declare-styleable>
+</resources>
