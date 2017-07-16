@@ -12,11 +12,13 @@ public enum  PackageFilterType {
 
     /**
      * Filters only the on the way (not complete or delivered) packages.
+     * 在运输路上的包裹
      */
     ON_THE_WAY_PACKAGES,
 
     /**
      * Filters only the delivered packages.
+     * 已派送的包裹
      */
     DELIVERED_PACKAGES
 

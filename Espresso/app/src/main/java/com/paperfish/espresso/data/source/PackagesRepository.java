@@ -19,6 +19,8 @@ package com.paperfish.espresso.data.source;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import com.paperfish.espresso.data.Package;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -28,7 +30,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
-import com.paperfish.espresso.data.Package;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.functions.Consumer;
@@ -97,6 +98,7 @@ public class PackagesRepository implements PackagesDataSource {
                             if (o1.getTimestamp() > o2.getTimestamp()) {
                                 return -1;
                             } else if (o1.getTimestamp() < o2.getTimestamp()) {
+                                //返回1则把o1排到o2的右边，即，时间约近的排在越前
                                 return 1;
                             }
                             return 0;
