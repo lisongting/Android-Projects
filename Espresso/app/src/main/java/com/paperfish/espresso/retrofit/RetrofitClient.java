@@ -8,7 +8,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by lisongting on 2017/7/15.
  */
 
-//这种单例模式很好
+/**
+ * 这种单例模式很好
+ * 线程安全：由于内部类的创建是由JVM完成的，该线程本身就是线程安全的
+ * 懒加载：内部类ClientHolder中的retrofit并不会马上加载，而是要等到调用getInstance()的时候才会去加载
+ *
+ */
+
 public class RetrofitClient {
     private RetrofitClient() {
 

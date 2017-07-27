@@ -24,6 +24,9 @@ import java.util.List;
 
 import io.reactivex.Observable;
 
+/**
+ * 接口：用于获取包裹数据源，并包含了一些对包裹数据的操作
+ */
 
 public interface PackagesDataSource {
 

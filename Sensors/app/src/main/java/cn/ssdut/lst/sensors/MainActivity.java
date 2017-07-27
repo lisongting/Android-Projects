@@ -5,6 +5,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
@@ -127,6 +128,7 @@ public class MainActivity extends AppCompatActivity
     protected void onStop(){
         mSensorManager.unregisterListener(this);
         super.onStop();
+        Handler h;
     }
     protected void onPause(){
         mSensorManager.unregisterListener(this);
