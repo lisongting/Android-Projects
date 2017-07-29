@@ -26,6 +26,9 @@ import com.iflytek.cloud.SpeechUtility;
 
 import java.util.List;
 
+/**
+ * 指令词识别
+ */
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "tag";

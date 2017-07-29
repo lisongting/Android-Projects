@@ -1,1 +1,1 @@
-include ':app', ':xunfeitts', ':voicecommand'
+include ':app', ':xunfeitts', ':voicecommand', ':aitalk'
