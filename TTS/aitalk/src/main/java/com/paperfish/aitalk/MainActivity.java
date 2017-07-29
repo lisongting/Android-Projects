@@ -68,8 +68,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 if (aiuiEvent.info != null) {
-//                    info.setText(aiuiEvent.info);
-
                     JSONObject bizParamJson;
                     try {
                         bizParamJson = new JSONObject(aiuiEvent.info);
@@ -131,54 +129,6 @@ public class MainActivity extends AppCompatActivity {
             agent.sendMessage(message);
             Log.i(TAG, "send text understand message");
         }
-
-        //第二种方式：使用SpeechUnderstander的方式来获取AI的回答内容，但是不能进行文本应答的
-//        speechUnderstander  = SpeechUnderstander.createUnderstander(this, new InitListener() {
-//            @Override
-//            public void onInit(int i) {
-//                if (i == 0) {
-//                    Log.i(TAG, "SpeechUnderstander初始化成功");
-//                } else {
-//                    Log.i(TAG, "init SpeechUnderstander result code：" + i);
-//                }
-//            }
-//        });
-//        speechUnderstander.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_CLOUD);
-//        byte[] data = text.getBytes();
-//        speechUnderstander.writeAudio(data, 0, data.length);
-//        speechUnderstander.startUnderstanding(new SpeechUnderstanderListener() {
-//            @Override
-//            public void onVolumeChanged(int i, byte[] bytes) {
-//
-//            }
-//
-//            @Override
-//            public void onBeginOfSpeech() {
-//
-//            }
-//
-//            @Override
-//            public void onEndOfSpeech() {
-//
-//            }
-//
-//            @Override
-//            public void onResult(UnderstanderResult understanderResult) {
-//                Log.i(TAG, "understandResult:" + understanderResult.getResultString());
-//                Log.i(TAG, "tostring:" + understanderResult.toString());
-//
-//            }
-//
-//            @Override
-//            public void onError(SpeechError speechError) {
-//                Log.i(TAG, "onError" + speechError.getErrorDescription() + "code:" + speechError.getErrorCode());
-//            }
-//
-//            @Override
-//            public void onEvent(int i, int i1, int i2, Bundle bundle) {
-//
-//            }
-//        });
     }
 
     public void startVoiceUnderstand(View view) {
