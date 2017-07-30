@@ -1,0 +1,1052 @@
+[
+    {
+        "outputFile": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 6,
+                    "endColumn": 19,
+                    "endOffset": 185
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 125,
+                        "startColumn": 4,
+                        "startOffset": 5151,
+                        "endLine": 129,
+                        "endColumn": 19,
+                        "endOffset": 5285
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 190,
+                    "endLine": 11,
+                    "endColumn": 19,
+                    "endOffset": 348
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 130,
+                        "startColumn": 4,
+                        "startOffset": 5291,
+                        "endLine": 134,
+                        "endColumn": 19,
+                        "endOffset": 5453
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 353,
+                    "endLine": 15,
+                    "endColumn": 19,
+                    "endOffset": 454
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 148,
+                        "startColumn": 4,
+                        "startOffset": 5827,
+                        "endLine": 151,
+                        "endColumn": 19,
+                        "endOffset": 5931
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 459,
+                    "endLine": 21,
+                    "endColumn": 19,
+                    "endOffset": 609
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 71,
+                        "startColumn": 5,
+                        "startOffset": 3370,
+                        "endLine": 76,
+                        "endColumn": 19,
+                        "endOffset": 3525
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 614,
+                    "endLine": 27,
+                    "endColumn": 19,
+                    "endOffset": 775
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 77,
+                        "startColumn": 4,
+                        "startOffset": 3531,
+                        "endLine": 82,
+                        "endColumn": 19,
+                        "endOffset": 3697
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 780,
+                    "endLine": 31,
+                    "endColumn": 19,
+                    "endOffset": 888
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 1857,
+                        "endLine": 26,
+                        "endColumn": 19,
+                        "endOffset": 1968
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 893,
+                    "endLine": 35,
+                    "endColumn": 19,
+                    "endOffset": 1002
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 1974,
+                        "endLine": 30,
+                        "endColumn": 19,
+                        "endOffset": 2086
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 36,
+                    "startColumn": 4,
+                    "startOffset": 1007,
+                    "endLine": 39,
+                    "endColumn": 19,
+                    "endOffset": 1117
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 117,
+                        "startColumn": 4,
+                        "startOffset": 4908,
+                        "endLine": 120,
+                        "endColumn": 19,
+                        "endOffset": 5021
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 40,
+                    "startColumn": 4,
+                    "startOffset": 1122,
+                    "endLine": 43,
+                    "endColumn": 19,
+                    "endOffset": 1237
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 121,
+                        "startColumn": 4,
+                        "startOffset": 5027,
+                        "endLine": 124,
+                        "endColumn": 19,
+                        "endOffset": 5145
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 44,
+                    "startColumn": 4,
+                    "startOffset": 1242,
+                    "endLine": 48,
+                    "endColumn": 19,
+                    "endOffset": 1373
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 101,
+                        "startColumn": 4,
+                        "startOffset": 4223,
+                        "endLine": 105,
+                        "endColumn": 19,
+                        "endOffset": 4358
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 49,
+                    "startColumn": 4,
+                    "startOffset": 1378,
+                    "endLine": 53,
+                    "endColumn": 19,
+                    "endOffset": 1523
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 106,
+                        "startColumn": 4,
+                        "startOffset": 4364,
+                        "endLine": 110,
+                        "endColumn": 19,
+                        "endOffset": 4513
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 54,
+                    "startColumn": 4,
+                    "startOffset": 1528,
+                    "endLine": 57,
+                    "endColumn": 19,
+                    "endOffset": 1632
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 140,
+                        "startColumn": 4,
+                        "startOffset": 5606,
+                        "endLine": 143,
+                        "endColumn": 19,
+                        "endOffset": 5713
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 58,
+                    "startColumn": 4,
+                    "startOffset": 1637,
+                    "endLine": 61,
+                    "endColumn": 19,
+                    "endOffset": 1736
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 144,
+                        "startColumn": 4,
+                        "startOffset": 5719,
+                        "endLine": 147,
+                        "endColumn": 19,
+                        "endOffset": 5821
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 62,
+                    "startColumn": 4,
+                    "startOffset": 1741,
+                    "endLine": 65,
+                    "endColumn": 19,
+                    "endOffset": 1860
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 135,
+                        "startColumn": 4,
+                        "startOffset": 5459,
+                        "endLine": 138,
+                        "endColumn": 19,
+                        "endOffset": 5581
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 66,
+                    "startColumn": 4,
+                    "startOffset": 1865,
+                    "endLine": 73,
+                    "endColumn": 19,
+                    "endOffset": 2065
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 83,
+                        "startColumn": 4,
+                        "startOffset": 3703,
+                        "endLine": 90,
+                        "endColumn": 19,
+                        "endOffset": 3910
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 74,
+                    "startColumn": 4,
+                    "startOffset": 2070,
+                    "endLine": 81,
+                    "endColumn": 19,
+                    "endOffset": 2263
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 91,
+                        "startColumn": 4,
+                        "startOffset": 3916,
+                        "endLine": 98,
+                        "endColumn": 19,
+                        "endOffset": 4116
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 82,
+                    "startColumn": 4,
+                    "startOffset": 2268,
+                    "endLine": 101,
+                    "endColumn": 19,
+                    "endOffset": 2921
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 31,
+                        "startColumn": 4,
+                        "startOffset": 2092,
+                        "endLine": 50,
+                        "endColumn": 19,
+                        "endOffset": 2764
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 102,
+                    "startColumn": 4,
+                    "startOffset": 2926,
+                    "endLine": 121,
+                    "endColumn": 19,
+                    "endOffset": 3500
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 51,
+                        "startColumn": 4,
+                        "startOffset": 2770,
+                        "endLine": 70,
+                        "endColumn": 19,
+                        "endOffset": 3363
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 122,
+                    "startColumn": 4,
+                    "startOffset": 3505,
+                    "endColumn": 47,
+                    "endOffset": 3548
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 384,
+                        "endColumn": 47,
+                        "endOffset": 427
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 123,
+                    "startColumn": 4,
+                    "startOffset": 3553,
+                    "endColumn": 54,
+                    "endOffset": 3603
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 283,
+                        "endColumn": 54,
+                        "endOffset": 333
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 124,
+                    "startColumn": 4,
+                    "startOffset": 3608,
+                    "endColumn": 45,
+                    "endOffset": 3649
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 338,
+                        "endColumn": 45,
+                        "endOffset": 379
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 125,
+                    "startColumn": 4,
+                    "startOffset": 3654,
+                    "endColumn": 39,
+                    "endOffset": 3689
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 214,
+                        "endColumn": 39,
+                        "endOffset": 249
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 126,
+                    "startColumn": 4,
+                    "startOffset": 3694,
+                    "endColumn": 39,
+                    "endOffset": 3729
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\dimen.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 137,
+                        "endColumn": 39,
+                        "endOffset": 172
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 127,
+                    "startColumn": 4,
+                    "startOffset": 3734,
+                    "endColumn": 41,
+                    "endOffset": 3771
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\dimen.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 241,
+                        "endColumn": 41,
+                        "endOffset": 278
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 128,
+                    "startColumn": 4,
+                    "startOffset": 3776,
+                    "endColumn": 38,
+                    "endOffset": 3810
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\dimen.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 60,
+                        "endColumn": 38,
+                        "endOffset": 94
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 129,
+                    "startColumn": 4,
+                    "startOffset": 3815,
+                    "endColumn": 37,
+                    "endOffset": 3848
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\dimen.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 99,
+                        "endColumn": 37,
+                        "endOffset": 132
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 130,
+                    "startColumn": 4,
+                    "startOffset": 3853,
+                    "endColumn": 39,
+                    "endOffset": 3888
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\dimen.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 177,
+                        "endColumn": 39,
+                        "endOffset": 212
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 131,
+                    "startColumn": 4,
+                    "startOffset": 3893,
+                    "endColumn": 56,
+                    "endOffset": 3945
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 75,
+                        "endColumn": 56,
+                        "endOffset": 127
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 132,
+                    "startColumn": 4,
+                    "startOffset": 3950,
+                    "endColumn": 55,
+                    "endOffset": 4001
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 157,
+                        "endColumn": 55,
+                        "endOffset": 208
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 133,
+                    "startColumn": 4,
+                    "startOffset": 4006,
+                    "endColumn": 43,
+                    "endOffset": 4045
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 135,
+                        "endColumn": 43,
+                        "endOffset": 174
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 134,
+                    "startColumn": 4,
+                    "startOffset": 4050,
+                    "endColumn": 43,
+                    "endOffset": 4089
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 43,
+                        "endOffset": 96
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 135,
+                    "startColumn": 4,
+                    "startOffset": 4094,
+                    "endColumn": 120,
+                    "endOffset": 4210
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 180,
+                        "endColumn": 120,
+                        "endOffset": 296
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 136,
+                    "startColumn": 4,
+                    "startOffset": 4215,
+                    "endColumn": 54,
+                    "endOffset": 4265
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1667,
+                        "endColumn": 54,
+                        "endOffset": 1717
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 137,
+                    "startColumn": 4,
+                    "startOffset": 4270,
+                    "endColumn": 53,
+                    "endOffset": 4319
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1779,
+                        "endColumn": 53,
+                        "endOffset": 1828
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 138,
+                    "startColumn": 4,
+                    "startOffset": 4324,
+                    "endColumn": 54,
+                    "endOffset": 4374
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1723,
+                        "endColumn": 54,
+                        "endOffset": 1773
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 139,
+                    "startColumn": 4,
+                    "startOffset": 4379,
+                    "endColumn": 45,
+                    "endOffset": 4420
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1276,
+                        "endColumn": 45,
+                        "endOffset": 1317
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 140,
+                    "startColumn": 4,
+                    "startOffset": 4425,
+                    "endColumn": 57,
+                    "endOffset": 4478
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1323,
+                        "endColumn": 57,
+                        "endOffset": 1376
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 141,
+                    "startColumn": 4,
+                    "startOffset": 4483,
+                    "endColumn": 88,
+                    "endOffset": 4567
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 116,
+                        "startColumn": 4,
+                        "startOffset": 4818,
+                        "endColumn": 88,
+                        "endOffset": 4902
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 142,
+                    "startColumn": 4,
+                    "startOffset": 4572,
+                    "endColumn": 52,
+                    "endOffset": 4620
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 114,
+                        "startColumn": 4,
+                        "startOffset": 4705,
+                        "endColumn": 52,
+                        "endOffset": 4753
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 143,
+                    "startColumn": 4,
+                    "startOffset": 4625,
+                    "endColumn": 57,
+                    "endOffset": 4678
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 115,
+                        "startColumn": 4,
+                        "startOffset": 4759,
+                        "endColumn": 57,
+                        "endOffset": 4812
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 144,
+                    "startColumn": 4,
+                    "startOffset": 4683,
+                    "endColumn": 54,
+                    "endOffset": 4733
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1611,
+                        "endColumn": 54,
+                        "endOffset": 1661
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 145,
+                    "startColumn": 4,
+                    "startOffset": 4738,
+                    "endColumn": 91,
+                    "endOffset": 4825
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 113,
+                        "startColumn": 4,
+                        "startOffset": 4612,
+                        "endColumn": 91,
+                        "endOffset": 4699
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 146,
+                    "startColumn": 4,
+                    "startOffset": 4830,
+                    "endColumn": 72,
+                    "endOffset": 4898
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 112,
+                        "startColumn": 4,
+                        "startOffset": 4538,
+                        "endColumn": 72,
+                        "endOffset": 4606
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 147,
+                    "startColumn": 4,
+                    "startOffset": 4903,
+                    "endColumn": 214,
+                    "endOffset": 5113
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 876,
+                        "endColumn": 214,
+                        "endOffset": 1086
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 148,
+                    "startColumn": 4,
+                    "startOffset": 5118,
+                    "endColumn": 156,
+                    "endOffset": 5270
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 302,
+                        "endColumn": 156,
+                        "endOffset": 454
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 149,
+                    "startColumn": 4,
+                    "startOffset": 5275,
+                    "endColumn": 414,
+                    "endOffset": 5685
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 460,
+                        "endColumn": 414,
+                        "endOffset": 870
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 150,
+                    "startColumn": 4,
+                    "startOffset": 5690,
+                    "endColumn": 165,
+                    "endOffset": 5851
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 1092,
+                        "endColumn": 165,
+                        "endOffset": 1253
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 151,
+                    "startColumn": 4,
+                    "startOffset": 5856,
+                    "endColumn": 54,
+                    "endOffset": 5906
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1382,
+                        "endColumn": 54,
+                        "endOffset": 1432
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 152,
+                    "startColumn": 4,
+                    "startOffset": 5911,
+                    "endColumn": 52,
+                    "endOffset": 5959
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1496,
+                        "endColumn": 52,
+                        "endOffset": 1544
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 153,
+                    "startColumn": 4,
+                    "startOffset": 5964,
+                    "endColumn": 56,
+                    "endOffset": 6016
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1438,
+                        "endColumn": 56,
+                        "endOffset": 1490
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 154,
+                    "startColumn": 4,
+                    "startOffset": 6021,
+                    "endColumn": 59,
+                    "endOffset": 6076
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1550,
+                        "endColumn": 59,
+                        "endOffset": 1605
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 155,
+                    "startColumn": 4,
+                    "startOffset": 6081,
+                    "endColumn": 82,
+                    "endOffset": 6159
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 99,
+                        "startColumn": 4,
+                        "startOffset": 4122,
+                        "endColumn": 82,
+                        "endOffset": 4200
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 156,
+                    "startColumn": 4,
+                    "startOffset": 6164,
+                    "endLine": 165,
+                    "endColumn": 9,
+                    "endOffset": 6688
+                },
+                "from": {
+                    "file": "D:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 6,
+                        "startOffset": 59,
+                        "endLine": 11,
+                        "endColumn": 9,
+                        "endOffset": 592
+                    }
+                }
+            }
+        ]
+    }
+]

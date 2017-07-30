@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\lisongting\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="D:\AndroidStudioProjects\IflytekVoiceDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.0.0_d40b4bcf48173ce77045df0a81c8dd02b1cb311c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidStudioProjects\IflytekVoiceDemo\app\libs\Msc.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3c3e72fd2b51c939b04ee174463c399bfe3e39e1">
+        <dex dex="D:\AndroidStudioProjects\IflytekVoiceDemo\app\build\intermediates\transforms\dex\debug\folders\1000\2\Msc_2c401879e2ee0c8a3bddf0c9b339c316ab6f7898\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidStudioProjects\IflytekVoiceDemo\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bb654f66a9af59395612fc59b9effed7ed5b1e8d">
+        <dex dex="D:\AndroidStudioProjects\IflytekVoiceDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_dbc0dba5e35b2316e6ab6c876acc92c34296391d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidStudioProjects\IflytekVoiceDemo\app\libs\Sunflower.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1a1b69711468e3139b0d58b8c6cbbdfe2a5e2357">
+        <dex dex="D:\AndroidStudioProjects\IflytekVoiceDemo\app\build\intermediates\transforms\dex\debug\folders\1000\2\Sunflower_4b3a847c7a6ff8d282beb429ef32578e709de0b8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidStudioProjects\IflytekVoiceDemo\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="D:\AndroidStudioProjects\IflytekVoiceDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_6866086df23e876092ad9ea1996f804d9a64f688\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lisongting\.android\build-cache\ab3dc21ffe40bda33d7c55467ee8f0ecb05d2208\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="D:\AndroidStudioProjects\IflytekVoiceDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d4132675316489961b9113413ea748f83bd92f9b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lisongting\.android\build-cache\ab3dc21ffe40bda33d7c55467ee8f0ecb05d2208\output\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="D:\AndroidStudioProjects\IflytekVoiceDemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.0_38a7085567492d196daa48798ad62333ec60d21e\classes.dex" />
+    </item>
+
+</items>

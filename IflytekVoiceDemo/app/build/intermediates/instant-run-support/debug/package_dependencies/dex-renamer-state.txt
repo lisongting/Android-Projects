@@ -1,0 +1,16 @@
+#Sun Jul 30 11:02:32 CST 2017
+renamed.4=classes2.dex
+renamed.3=classes3.dex
+renamed.2=classes.dex
+renamed.1=classes4.dex
+base.4=D\:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\internal_impl-23.0.0_38a7085567492d196daa48798ad62333ec60d21e
+renamed.0=classes5.dex
+base.3=D\:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-annotations-23.0.0_d40b4bcf48173ce77045df0a81c8dd02b1cb311c
+base.2=D\:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_d4132675316489961b9113413ea748f83bd92f9b
+base.1=D\:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\Msc_2c401879e2ee0c8a3bddf0c9b339c316ab6f7898
+base.0=D\:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\Sunflower_4b3a847c7a6ff8d282beb429ef32578e709de0b8
+file.4=D\:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\internal_impl-23.0.0_38a7085567492d196daa48798ad62333ec60d21e\\classes.dex
+file.3=D\:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-annotations-23.0.0_d40b4bcf48173ce77045df0a81c8dd02b1cb311c\\classes.dex
+file.2=D\:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_d4132675316489961b9113413ea748f83bd92f9b\\classes.dex
+file.1=D\:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\Msc_2c401879e2ee0c8a3bddf0c9b339c316ab6f7898\\classes.dex
+file.0=D\:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\Sunflower_4b3a847c7a6ff8d282beb429ef32578e709de0b8\\classes.dex

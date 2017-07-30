@@ -1,0 +1,7 @@
+#Sun Jul 30 12:28:07 CST 2017
+base.0=D\:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_dbc0dba5e35b2316e6ab6c876acc92c34296391d
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=D\:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_6866086df23e876092ad9ea1996f804d9a64f688\\classes.dex
+base.1=D\:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_6866086df23e876092ad9ea1996f804d9a64f688
+file.0=D\:\\AndroidStudioProjects\\IflytekVoiceDemo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_dbc0dba5e35b2316e6ab6c876acc92c34296391d\\classes.dex
