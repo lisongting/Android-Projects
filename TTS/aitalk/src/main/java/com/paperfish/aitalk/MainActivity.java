@@ -19,7 +19,6 @@ import com.iflytek.aiui.AIUIMessage;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechError;
 import com.iflytek.cloud.SpeechSynthesizer;
-import com.iflytek.cloud.SpeechUnderstander;
 import com.iflytek.cloud.SpeechUtility;
 import com.iflytek.cloud.SynthesizerListener;
 
@@ -34,11 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText editText;
     private TextView info;
     private Button startVoiceTalk;
-    private AIUIAgent agent;
-
-    private AIUIParams params;
     private String strParams;
-    private SpeechUnderstander speechUnderstander;
+
+    private AIUIAgent agent;
     private AIUIListener aiuiListener;
 
     private SpeechSynthesizer ttsSynthesizer;
@@ -202,7 +199,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCompleted(SpeechError speechError) {
-                //TODO:在播放完成后，开始下一轮对话，录音
                 startVoiceTalk();
 
             }
@@ -213,49 +209,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         agent = AIUIAgent.createAgent(getApplicationContext(), strParams, aiuiListener);
-
-//        创建AIUIAgent对象
-//        AIUIEvent中的arg1参数：
-//        0   STATE_IDLE （空闲状态）
-//        1   STATE_READY （就绪状态，待唤醒）
-//        2   STATE_WORKING（工作状态，已唤醒）
-//        agent = AIUIAgent.createAgent(getApplicationContext(),strParams,new AIUIListener(){
-//            @Override
-//            public void onEvent(AIUIEvent aiuiEvent) {
-//                Log.i(TAG, "eventType:" + aiuiEvent.eventType);
-//                Log.i(TAG, "info:" + aiuiEvent.info);
-//                Log.i(TAG, "arg1:" + aiuiEvent.arg1 + " arg2:" + aiuiEvent.arg2);
-//
-//                if (aiuiEvent.data != null) {
-//                    Bundle bundle = aiuiEvent.data;
-//                    for (String key : bundle.keySet()) {
-//                        Log.i(TAG, "key:" + key + "value:" + bundle.getString(key));
-//                    }
-//                }
-//                if (aiuiEvent.info != null) {
-//                    JSONObject bizParamJson;
-//                    try {
-//                        bizParamJson = new JSONObject(aiuiEvent.info);
-//                        JSONObject data = bizParamJson.getJSONArray("data").getJSONObject(0);
-//                        JSONObject params = data.getJSONObject("params");
-//                        JSONObject content = data.getJSONArray("content").getJSONObject(0);
-//                        if (content.has("cnt_id")) {
-//                            String cnt_id = content.getString("cnt_id");
-//                            JSONObject cntJson = new JSONObject(new String(aiuiEvent.data.getByteArray(cnt_id), "utf-8"));
-//                            Log.i(TAG, cntJson.toString());
-//
-//                            AIMessage aiMessage;
-//                            Gson gson = new Gson();
-//                            aiMessage = gson.fromJson(cntJson.toString(), AIMessage.class);
-//                            String str = aiMessage.getIntent().getAnswer().getText();
-//                            info.setText(str);
-//                        }
-//                    } catch (Exception e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            }
-//        });
 
     }
 
@@ -272,15 +225,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startTextUnderstand(View view) {
-        //第一种方式：使用AIUIAgent的方式来获取AI的回答内容
-        //问题在于：服务器返回的字段和官网上描述的不一样
+
         String text = editText.getText().toString().trim();
         if (text.length() > 0) {
             byte[] data = text.getBytes();
             String param = "data_type=text";
             AIUIMessage message = new AIUIMessage(AIUIConstant.CMD_WRITE, 0, 0, param, data);
             agent.sendMessage(message);
-            Log.i(TAG, "send text understand message");
         }
     }
 

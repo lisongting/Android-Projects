@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
+/**
+ * 获取优图服务器中注册的人脸图像，展示在ImageView上
+ */
 public class MainActivity extends AppCompatActivity {
     YoutuConnection youtuConnection;
     private ImageView imageView;
