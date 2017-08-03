@@ -1,5 +1,6 @@
 package cn.ssdut.lst.supportdesignwidget;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
@@ -53,8 +54,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createSnackbar(View v) {
-        //snackbar是一个类似Toast一样可以短暂停留的提示组件。可以向右滑动让其消失
-        Snackbar.make(coordinatorLayout, "this is a SnackBar.", Snackbar.LENGTH_LONG)
+        //snackbar是一个类似Toast一样可以短暂停留的提示组件。可以向右滑动让其消失（前提是要在CoordinatorLayout中）
+        //make的第一个参数是一个父view，snackbar尝试依附在一个父view上
+        Snackbar.make(fab, "这是一个 SnackBar.", Snackbar.LENGTH_LONG)
                 .setAction("确定", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -64,4 +66,9 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+
+    public void showCoordinatorActivity(View view) {
+        startActivity(new Intent(this, CoordinatorActivity.class));
+
+    }
 }

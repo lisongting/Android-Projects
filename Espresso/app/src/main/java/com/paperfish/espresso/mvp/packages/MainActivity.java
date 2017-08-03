@@ -1,0 +1,27 @@
+package com.paperfish.espresso.mvp.packages;
+
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+
+/**
+ * Created by lisongting on 2017/8/3.
+ */
+
+public class MainActivity extends AppCompatActivity
+        implements BottomNavigationView.OnNavigationItemSelectedListener {
+
+    private Toolbar toolbar;
+    private NavigationView navigationView;
+    private DrawerLayout drawer;
+
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
+    }
+}
