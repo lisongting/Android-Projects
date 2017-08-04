@@ -18,10 +18,17 @@ public class MainActivity extends AppCompatActivity
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawer;
+    private PackagesFragment packagesFragment;
+    private PackagesPresenter packagesPresenter;
+    private CompaniesFragment companiesFragment;
+    private static final String KEY_NAV_ITEM = "CURRENT_NAV_ITEM";
+    private static final String CURRENT_FILTERING_KEY = "CURRENT_FILTERING_KEY";
 
+    private int selectedNavItem = 0;
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
         return false;
     }
 }
