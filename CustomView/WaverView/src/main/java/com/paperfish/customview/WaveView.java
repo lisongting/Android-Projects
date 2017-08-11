@@ -26,7 +26,7 @@ public class WaveView extends View {
     public static final String START_TALK = "开启语音对话";
     public static final String STOP_TALK = "关闭语音对话";
     private boolean isWorking = false;
-    private int mColor;
+    private int mColor,circleColor;
     private float mRadius;
     private int mWidth,mHeight;
     private float centerX,centerY;
@@ -58,6 +58,7 @@ public class WaveView extends View {
             switch (attr) {
                 case R.styleable.WaveView_inner_color:
                     mColor = typedArray.getColor(attr, Color.BLUE);
+                    circleColor = mColor;
                     break;
                 default:
                     break;
@@ -194,14 +195,30 @@ public class WaveView extends View {
         accelerateAnimator.setDuration(2500);
         accelerateAnimator.setInterpolator(new AccelerateInterpolator());
         accelerateAnimator.start();
+        isWorking = true;
 
     }
 
     public void endAnimation(){
         radiusAnimator.end();
         alphaAnimator.end();
+        isWorking = false;
     }
 
+    public void setEnabled(boolean enable) {
+        if (enable) {
+            setClickable(true);
+            mColor = circleColor;
+            invalidate();
+        } else {
+            setClickable(false);
+            mColor = Color.GRAY;
+            if (isWorking) {
+                endAnimation();
+            }
+            invalidate();
+        }
+    }
 
 
 }

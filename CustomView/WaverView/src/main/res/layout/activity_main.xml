@@ -7,6 +7,7 @@
     tools:context="com.paperfish.customview.MainActivity">
 
     <TextView
+        android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="一个水波Button"
@@ -16,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.paperfish.customview.WaveView
+        android:id="@+id/waveview"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:padding="20dp"

@@ -37,9 +37,9 @@
         android:layout_marginStart="16dp">
 
         <TextView
+            android:id="@+id/textViewPackageName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textViewPackageName"
             android:maxLines="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 

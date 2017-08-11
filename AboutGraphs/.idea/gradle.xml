@@ -5,7 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\SSoftware\Android Studio\gradle\gradle-2.14.1" />
+        <option name="gradleHome" value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -21,6 +21,7 @@
             <option value="$PROJECT_DIR$/pinball" />
             <option value="$PROJECT_DIR$/propertyanim" />
             <option value="$PROJECT_DIR$/shader_test" />
+            <option value="$PROJECT_DIR$/shapetest" />
             <option value="$PROJECT_DIR$/surfaceview_anim" />
             <option value="$PROJECT_DIR$/surfaceview_waver" />
             <option value="$PROJECT_DIR$/tween_test" />

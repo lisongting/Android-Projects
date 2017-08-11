@@ -32,6 +32,7 @@ import com.paperfish.espresso.R;
 import com.paperfish.espresso.data.Package;
 import com.paperfish.espresso.interfaces.OnRecyclerViewItemClickListener;
 import com.paperfish.espresso.mvp.addpackage.AddPackageActivity;
+import com.paperfish.espresso.mvp.packagedetails.PackageDetailsActivity;
 
 import java.util.List;
 
@@ -71,6 +72,7 @@ public class PackagesFragment extends Fragment implements PackagesContract.View{
             }
         });
 
+        //底部的tab按钮
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
