@@ -6,6 +6,9 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Typeface;
+
+import com.paperfish.espresso.util.DensityUtil;
 
 /**
  * Created by lisongting on 2017/8/11.
@@ -52,5 +55,43 @@ public class FastScrollPopup {
         setTextSize(DensityUtil.dip2sp(recyclerView.getContext(),56));
         setBackgroundSize(DensityUtil.dip2px(recyclerView.getContext(),88));
     }
+
+    public void setBgColor(int color) {
+        mBackgroundPaint.setColor(color);
+        mRecyclerView.invalidate(mBgBounds);
+    }
+
+    public void setTextColor(int color) {
+        mTextPaint.setColor(color);
+        mRecyclerView.invalidate(mBgBounds);
+    }
+
+    public void setTextSize(int size) {
+        mTextPaint.setTextSize(size);
+        mRecyclerView.invalidate(mBgBounds);
+    }
+
+    public void setBackgroundSize(int size) {
+        mBackgroundSize = size;
+        mCornerRadius = mBackgroundSize / 2;
+        mRecyclerView.invalidate(mBgBounds);
+    }
+
+    public void setTypeface(Typeface typeface) {
+        mTextPaint.setTypeface(typeface);
+        mRecyclerView.invalidate(mBgBounds);
+    }
+
+
+    public void animateVisibility(boolean visible) {
+        if (mVisible != visible) {
+            mVisible = visible;
+            if (mAlphaAnimator != null) {
+                mAlphaAnimator.cancel();
+            }
+//            mAlphaAnimator = ObjectAnimator
+        }
+    }
+
 
 }

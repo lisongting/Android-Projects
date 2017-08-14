@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.paperfish.espresso.mvp.companies.CompaniesFragment;
+
 /**
  * Created by lisongting on 2017/8/3.
  */
