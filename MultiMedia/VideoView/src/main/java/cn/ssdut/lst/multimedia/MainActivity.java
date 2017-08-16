@@ -9,6 +9,9 @@ import android.widget.VideoView;
 
 import java.io.File;
 
+/**
+ * 用VideoView来播放sd卡视频
+ */
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){

@@ -8,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * 测试soundPool的使用
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     Button b1,b2,b3,b4;
     SoundPool soundPool;

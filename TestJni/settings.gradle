@@ -1,1 +1,1 @@
-include ':app', ':roslib'
+include ':jnitest'

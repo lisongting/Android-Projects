@@ -18,10 +18,15 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 /**
+ * [测试疯狂Android讲义中的例子程序]
  * 先提示一堆permission denied,然后报错：
  * seding message to a Handler on a dead thread
  * 不知是否是 手机分辨率不匹配的问题
  * 2016.12.14
+ *
+ *
+ * 后记：当时忘记声明权限了
+ * 2017.8.16
  */
 
 @TargetApi(21)

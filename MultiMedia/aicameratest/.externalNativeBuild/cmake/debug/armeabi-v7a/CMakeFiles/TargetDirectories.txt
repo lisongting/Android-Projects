@@ -1,0 +1,4 @@
+D:/AndroidStudioProjects/MultiMedia/aicameratest/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/native-lib.dir
+D:/AndroidStudioProjects/MultiMedia/aicameratest/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/cpufeatures.dir
+D:/AndroidStudioProjects/MultiMedia/aicameratest/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/AndroidStudioProjects/MultiMedia/aicameratest/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir

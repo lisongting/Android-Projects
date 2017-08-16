@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MultiMedia.iml" filepath="$PROJECT_DIR$/MultiMedia.iml" />
       <module fileurl="file://$PROJECT_DIR$/VideoView/VideoView.iml" filepath="$PROJECT_DIR$/VideoView/VideoView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aicameratest/aicameratest.iml" filepath="$PROJECT_DIR$/aicameratest/aicameratest.iml" />
       <module fileurl="file://$PROJECT_DIR$/VideoView/app.iml" filepath="$PROJECT_DIR$/VideoView/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/cemaratest/cemaratest.iml" filepath="$PROJECT_DIR$/cemaratest/cemaratest.iml" />
       <module fileurl="file://$PROJECT_DIR$/musicplayer/musicplayer.iml" filepath="$PROJECT_DIR$/musicplayer/musicplayer.iml" />

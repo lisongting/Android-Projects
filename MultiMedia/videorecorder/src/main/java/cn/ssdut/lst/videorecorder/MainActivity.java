@@ -14,6 +14,7 @@ import android.widget.Toast;
 import java.io.File;
 
 /**
+ * 疯狂Android讲义中的例子程序
  * 没有运行成功
  * 在56行报错，video source has already been set
  * 2016.12.14

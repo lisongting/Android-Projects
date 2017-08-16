@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Display;
-import android.widget.QuickContactBadge;
 @TargetApi(21)
 public class MainActivity extends AppCompatActivity {
 
@@ -13,8 +12,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final QuickContactBadge quck = (QuickContactBadge)findViewById(R.id.quickContact);
-        quck.assignContactFromEmail("501648152@qq.com",false);
+
     }
 
 
