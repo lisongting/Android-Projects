@@ -37,7 +37,8 @@ import java.util.Arrays;
 import static android.view.View.GONE;
 
 /**
- * 使用Camera2 API测试优图服务器的用户注册接口
+ * 使用Camera2 API 拍摄照片，进行人脸注册
+ * 测试优图服务器的用户注册接口
  * Created by lisongting on 2017/5/25.
  */
 @TargetApi(21)

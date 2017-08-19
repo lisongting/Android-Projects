@@ -11,8 +11,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 
 /**
  * 在app中集成caffe2的物体识别功能
@@ -21,8 +19,7 @@ import android.widget.Button;
  */
 public class MainActivity extends AppCompatActivity {
 
-    public static final String TAG = "MainActivity";
-    Button startCamera;
+    public static final String TAG = "tag";
 
     private AICameraFragment fragment;
 
@@ -31,27 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         log("onCreate");
-
-        startCamera = (Button) findViewById(R.id.startCamera);
-
         fragment = AICameraFragment.getInstance();
-
-        startCamera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int rc = ActivityCompat.checkSelfPermission(getBaseContext(), Manifest.permission.CAMERA);
-                if (rc == PackageManager.PERMISSION_GRANTED) {
-
-                    getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.container, fragment)
-                            .commit();
-                } else {
-                    //请求照相机权限
-                    ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.CAMERA}, 11);
-                }
-            }
-        });
-
 
     }
 
@@ -59,6 +36,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         log("onStart");
+        int rc = ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA);
+        if (rc == PackageManager.PERMISSION_GRANTED) {
+
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, fragment)
+                    .commit();
+
+        } else {
+            //请求照相机权限
+            ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.CAMERA}, 11);
+        }
     }
 
 
@@ -66,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         log("onResume");
-
-
 
     }
 
@@ -93,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == RESULT_OK) {
+        if ( grantResults[0]==PackageManager.PERMISSION_GRANTED) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container, fragment)
                     .commit();
@@ -121,6 +107,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void log(String string) {
-        Log.i(TAG, string);
+        Log.i(TAG, "MainActivity -- "+string);
     }
 }

@@ -55,13 +55,29 @@ Java_facebook_f8demo_ClassifyCamera_initCaffe2(
     alog("done.")
 }
 
+extern "C"
+void
+Java_com_paperfish_aicameratest_AICameraFragment_initCaffe2(
+        JNIEnv* env,
+        jobject /* this */,
+        jobject assetManager) {
+    AAssetManager *mgr = AAssetManager_fromJava(env, assetManager);
+    alog("Attempting to load protobuf netdefs...");
+    loadToNetDef(mgr, &_initNet,   "squeeze_init_net.pb");
+    loadToNetDef(mgr, &_predictNet,"squeeze_predict_net.pb");
+    alog("done.");
+    alog("Instantiating predictor...");
+    _predictor = new caffe2::Predictor(_initNet, _predictNet);
+    alog("done.")
+}
+
 float avg_fps = 0.0;
 float total_fps = 0.0;
 int iters_fps = 10;
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_facebook_f8demo_ClassifyCamera_classificationFromCaffe2(
+Java_com_paperfish_aicameratest_AICameraFragment_classificationFromCaffe2(
         JNIEnv *env,
         jobject /* this */,
         jint h, jint w, jbyteArray Y, jbyteArray U, jbyteArray V,

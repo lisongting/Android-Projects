@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         //调用jni方法
         tv.setText(myJNI.sayHello());
+//        NativeActivity s;
 
     }
 }
