@@ -1,5 +1,5 @@
 # ninja log v5
-1	168	0	CMakeFiles/cpufeatures.dir/C_/Users/lisongting/AppData/Local/Android/Sdk/ndk-bundle/sources/android/cpufeatures/cpu-features.c.o	a81122f6b1e46f7
-169	270	0	libcpufeatures.a	b4fa4ed0cec812d8
-271	4496	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	7a4cbfa6d88004a9
-4498	5736	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	77955c8fd7451ca
+1	183	0	CMakeFiles/cpufeatures.dir/C_/Users/lisongting/AppData/Local/Android/Sdk/ndk-bundle/sources/android/cpufeatures/cpu-features.c.o	a81122f6b1e46f7
+184	298	0	libcpufeatures.a	b4fa4ed0cec812d8
+298	2866	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	7a4cbfa6d88004a9
+2868	4206	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	77955c8fd7451ca

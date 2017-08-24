@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         log("onCreate");
         fragment = AICameraFragment.getInstance();
-
+//        getSupportFragmentManager().beginTransaction().addToBackStack()
     }
 
     @Override

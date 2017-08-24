@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
+import android.graphics.Bitmap;
 import android.graphics.ImageFormat;
 import android.graphics.SurfaceTexture;
 import android.hardware.camera2.CameraAccessException;
@@ -42,6 +43,21 @@ import java.util.Arrays;
 
 public class AICameraFragment extends Fragment {
     public static final String TAG = "tag";
+
+    private static final int NUM_CLASSES = 1470;
+    private static final int INPUT_SIZE = 448;
+    private static final int IMAGE_MEAN = 128;
+    private static final float IMAGE_STD = 128;
+    private static final String INPUT_NAME = "Placeholder";
+    private static final String OUTPUT_NAME = "19_fc";
+
+    private static final String MODEL_FILE = "file:///android_asset/android_graph.pb";
+    private static final String LABEL_FILE =
+            "file:///android_asset/label_strings.txt";
+    //yolo能识别的物体
+    private final String[] class_labels =  {"aeroplane", "bicycle", "bird", "boat", "bottle", "bus", "car",
+            "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person",
+            "pottedplant", "sheep", "sofa", "train","tvmonitor"};
     private TextureView textureView;
     private TextView textView;
     private SurfaceTexture surfaceTexture;
@@ -53,12 +69,15 @@ public class AICameraFragment extends Fragment {
     private CaptureRequest captureRequest;
 
     private Size imageDimension;
+    private Size previewSize;
 
     private Handler mUIHandler ;
     private Handler backgroundHandler;
     private HandlerThread backgroundThread;
 
     private String predictedClass = "none";
+
+
 
     private TextureView.SurfaceTextureListener surfaceTextureListener;
     private CameraDevice.StateCallback cameraStateCallback;
@@ -75,14 +94,31 @@ public class AICameraFragment extends Fragment {
     private byte[] U;
     private byte[] V;
     static{
+        //caffe2
         System.loadLibrary("native-lib");
 
+        //tensorflow
+        System.loadLibrary("tensorflow_demo");
     }
 
     public native String classificationFromCaffe2(int h, int w, byte[] Y, byte[] U, byte[] V,
                                                   int rowStride, int pixelStride, boolean r_hwc);
 
     public native void initCaffe2(AssetManager mgr);
+
+    public native int initializeTensorFlow(
+            AssetManager assetManager,
+            String model,
+            String labels,
+            int numClasses,
+            int inputSize,
+            int imageMean,
+            float imageStd,
+            String inputName,
+            String outputName);
+
+    private native String classifyImageBmp(Bitmap bitmap);
+
 
     public AICameraFragment() {
 
@@ -113,6 +149,9 @@ public class AICameraFragment extends Fragment {
             @Override
             public void run() {
                 initCaffe2(mgr);
+
+                int initCode = initializeTensorFlow(mgr, MODEL_FILE, LABEL_FILE, NUM_CLASSES, INPUT_SIZE, IMAGE_MEAN, IMAGE_STD, INPUT_NAME, OUTPUT_NAME);
+                log("TensorFlow initCode:" + initCode);
             }
         }).start();
 
@@ -220,24 +259,11 @@ public class AICameraFragment extends Fragment {
                         public void run() {
 //                        textView.setText(predictedClass);
                             String[] things = getProbablyThings(predictedClass);
-                            textView.setText("Maybe:\n"+"1."+things[0]+"\n2."+things[1]);
+                            textView.setText("1."+things[0]+"\n2."+things[1]);
                             processing = false;
                         }
                     });
                 }else{
-//                    Class<ImageReader> clazz =ImageReader.class;
-//
-//                    try {
-//                        Method method = clazz.getMethod("discardFreeBuffers");
-//                        method.setAccessible(true);
-//                         method.invoke(reader);
-//                    } catch (NoSuchMethodException e) {
-//                        e.printStackTrace();
-//                    } catch (InvocationTargetException e) {
-//                        e.printStackTrace();
-//                    } catch (IllegalAccessException e) {
-//                        e.printStackTrace();
-//                    }
                 }
 
                 image.close();
@@ -291,7 +317,8 @@ public class AICameraFragment extends Fragment {
 
             CameraCharacteristics characteristics = manager.getCameraCharacteristics(cameraId);
             StreamConfigurationMap configurationMap = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
-            //获取所有可支持的图像输出尺寸，这里是获取了第0个，应该是最小的那个
+            previewSize = Util.getPreferredPreviewSize(configurationMap.getOutputSizes(ImageFormat.YUV_420_888), textureView.getWidth(), textureView.getHeight());
+            //获取所有可支持的图像输出尺寸，这里是获取了第0个
             imageDimension = configurationMap.getOutputSizes(SurfaceTexture.class)[0];
             log("output Image Dimension:" + imageDimension.getWidth() + "X" + imageDimension.getHeight());
 
@@ -306,17 +333,19 @@ public class AICameraFragment extends Fragment {
     }
 
     private void startPreview() {
+
         surfaceTexture.setDefaultBufferSize(textureView.getWidth(), textureView.getHeight());
         Surface surface = new Surface(surfaceTexture);
 
-//        int width = textureView.getWidth()/4;
-//        int height = textureView.getHeight()/4;
-        ImageReader imageReader = ImageReader.newInstance(227, 227, ImageFormat.YUV_420_888, 4);
+        int width = textureView.getWidth()/6;
+        int height = textureView.getHeight()/6;
+        ImageReader imageReader = ImageReader.newInstance(width, height, ImageFormat.YUV_420_888, 4);
         log("imageReader size:" + imageReader.getWidth() + "X" + imageReader.getHeight());
         //让ImageAvailable事件发生在后台线程
         imageReader.setOnImageAvailableListener(imageListener, backgroundHandler);
 
-        surfaceTexture.setDefaultBufferSize(textureView.getWidth(),textureView.getHeight());
+//        surfaceTexture.setDefaultBufferSize(imageDimension.getWidth(),imageDimension.getHeight());
+        surfaceTexture.setDefaultBufferSize(previewSize.getWidth(),previewSize.getHeight());
         try {
             captureRequestBuilder = cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW);
             
