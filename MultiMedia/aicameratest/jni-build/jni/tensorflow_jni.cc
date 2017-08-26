@@ -231,6 +231,34 @@ Java_com_paperfish_aicameratest_AICameraFragment_initializeTensorFlow(
   return 0;
 }
 
+extern "C"
+JNIEXPORT jstring JNICALL
+Java_com_paperfish_aicameratest_AICameraFragment_classifyImageBmp(JNIEnv *env,
+                                                                jobject thiz,
+                                                                jobject bitmap){
+
+    // Obtains the bitmap information.
+    AndroidBitmapInfo info;
+    CHECK_EQ(AndroidBitmap_getInfo(env, bitmap, &info),
+             ANDROID_BITMAP_RESULT_SUCCESS);
+    void* pixels;
+    CHECK_EQ(AndroidBitmap_lockPixels(env, bitmap, &pixels),
+             ANDROID_BITMAP_RESULT_SUCCESS);
+    LOG(INFO) << "Image dimensions: " << info.width << "x" << info.height
+              << " stride: " << info.stride;
+    // TODO(andrewharp): deal with other formats if necessary.
+    if (info.format != ANDROID_BITMAP_FORMAT_RGBA_8888) {
+        LOG(FATAL) << "Only RGBA_8888 Bitmaps are supported.";
+    }
+
+    std::string result = ClassifyImage(static_cast<const RGBA*>(pixels));
+
+    // Finally, unlock the pixels
+    CHECK_EQ(AndroidBitmap_unlockPixels(env, bitmap),
+             ANDROID_BITMAP_RESULT_SUCCESS);
+
+    return env->NewStringUTF(result.c_str());
+}
 namespace {
 typedef struct {
   uint8 red;

@@ -21,14 +21,18 @@ limitations under the License.
 #ifndef ORG_TENSORFLOW_JNI_TENSORFLOW_JNI_H_  // NOLINT
 #define ORG_TENSORFLOW_JNI_TENSORFLOW_JNI_H_  // NOLINT
 
+
 #include <jni.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif  // __cplusplus
 
+//#define TENSORFLOW_METHOD(METHOD_NAME) \
+//  Java_org_tensorflow_demo_TensorFlowClassifier_##METHOD_NAME  // NOLINT
+
 #define TENSORFLOW_METHOD(METHOD_NAME) \
-  Java_org_tensorflow_demo_TensorFlowClassifier_##METHOD_NAME  // NOLINT
+  Java_com_paperfish_aicameratest_AICameraFragment_##METHOD_NAME  // NOLINT
 
 JNIEXPORT jint JNICALL TENSORFLOW_METHOD(initializeTensorFlow)(
     JNIEnv* env, jobject thiz, jobject java_asset_manager, jstring model,
@@ -42,9 +46,9 @@ JNIEXPORT jstring JNICALL TENSORFLOW_METHOD(classifyImageBmp)(JNIEnv* env,
 JNIEXPORT jstring JNICALL TENSORFLOW_METHOD(classifyImageRgb)(
     JNIEnv* env, jobject thiz, jintArray image, jint width, jint height);
 
-JNIEXPORT jstring JNICALL Java_com_paperfish_aicameratest_AICameraFragment_initializeTensorFlow(JNIEnv* env, jobject thiz, jobject java_asset_manager, jstring model,
-                                                                                             jstring labels, jint num_classes, jint model_input_size, jint image_mean,
-                                                                                             jfloat image_std, jstring input_name, jstring output_name);
+//JNIEXPORT jstring JNICALL Java_com_paperfish_aicameratest_AICameraFragment_initializeTensorFlow(JNIEnv* env, jobject thiz, jobject java_asset_manager, jstring model,
+//                                                                                             jstring labels, jint num_classes, jint model_input_size, jint image_mean,
+//                                                                                             jfloat image_std, jstring input_name, jstring output_name);
 #ifdef __cplusplus
 }  // extern "C"
 #endif  // __cplusplus

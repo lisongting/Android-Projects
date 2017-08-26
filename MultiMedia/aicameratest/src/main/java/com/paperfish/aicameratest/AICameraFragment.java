@@ -94,8 +94,8 @@ public class AICameraFragment extends Fragment {
     private byte[] U;
     private byte[] V;
     static{
-        //caffe2
-        System.loadLibrary("native-lib");
+//        //caffe2
+//        System.loadLibrary("native-lib");
 
         //tensorflow
         System.loadLibrary("tensorflow_demo");
@@ -119,6 +119,8 @@ public class AICameraFragment extends Fragment {
 
     private native String classifyImageBmp(Bitmap bitmap);
 
+
+    private native String classifyImageRgb(int[] output, int width, int height);
 
     public AICameraFragment() {
 
@@ -148,7 +150,7 @@ public class AICameraFragment extends Fragment {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                initCaffe2(mgr);
+//                initCaffe2(mgr);
 
                 int initCode = initializeTensorFlow(mgr, MODEL_FILE, LABEL_FILE, NUM_CLASSES, INPUT_SIZE, IMAGE_MEAN, IMAGE_STD, INPUT_NAME, OUTPUT_NAME);
                 log("TensorFlow initCode:" + initCode);
@@ -252,7 +254,7 @@ public class AICameraFragment extends Fragment {
                     Ubuffer.get(U);
                     Vbuffer.get(V);
 
-                    predictedClass = classificationFromCaffe2(h, w, Y, U, V, rowStride, pixelStride, false);
+//                    predictedClass = classificationFromCaffe2(h, w, Y, U, V, rowStride, pixelStride, false);
 
                     mUIHandler.post(new Runnable() {
                         @Override
