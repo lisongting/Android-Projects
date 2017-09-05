@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
-import android.graphics.Bitmap;
 import android.graphics.ImageFormat;
 import android.graphics.SurfaceTexture;
 import android.hardware.camera2.CameraAccessException;
@@ -39,10 +38,6 @@ import java.util.Arrays;
 
 /**
  * Created by lisongting on 2017/8/16.
- * [想使用YOLO中的JNI库：]
- * 各种坑：主要是两个问题：
- * 1.构建不通过，各种报错
- * 2.构建通过后，运行起来找不到native方法
  */
 
 public class AICameraFragment extends Fragment {
@@ -58,7 +53,7 @@ public class AICameraFragment extends Fragment {
     private static final String MODEL_FILE = "file:///android_asset/android_graph.pb";
     private static final String LABEL_FILE =
             "file:///android_asset/label_strings.txt";
-    //yolo能识别的物体
+
     private final String[] class_labels =  {"aeroplane", "bicycle", "bird", "boat", "bottle", "bus", "car",
             "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person",
             "pottedplant", "sheep", "sofa", "train","tvmonitor"};
@@ -81,7 +76,7 @@ public class AICameraFragment extends Fragment {
 
     private String predictedClass = "none";
 
-
+    private TensorFlowClassifier tensorflowClassifier;
 
     private TextureView.SurfaceTextureListener surfaceTextureListener;
     private CameraDevice.StateCallback cameraStateCallback;
@@ -97,12 +92,14 @@ public class AICameraFragment extends Fragment {
     private byte[] Y;
     private byte[] U;
     private byte[] V;
+
     static{
 //        //caffe2
 //        System.loadLibrary("native-lib");
 
         //tensorflow
-        System.loadLibrary("tensorflow_demo");
+//        System.loadLibrary("tensorflow_demo");
+//        System.loadLibrary("my_tensorflow");
     }
 
 //    public native String classificationFromCaffe2(int h, int w, byte[] Y, byte[] U, byte[] V,
@@ -110,21 +107,21 @@ public class AICameraFragment extends Fragment {
 //
 //    public native void initCaffe2(AssetManager mgr);
 
-    public native int initializeTensorFlow(
-            AssetManager assetManager,
-            String model,
-            String labels,
-            int numClasses,
-            int inputSize,
-            int imageMean,
-            float imageStd,
-            String inputName,
-            String outputName);
-
-    private native String classifyImageBmp(Bitmap bitmap);
-
-
-    private native String classifyImageRgb(int[] output, int width, int height);
+//    public native int initializeTensorFlow(
+//            AssetManager assetManager,
+//            String model,
+//            String labels,
+//            int numClasses,
+//            int inputSize,
+//            int imageMean,
+//            float imageStd,
+//            String inputName,
+//            String outputName);
+//
+//    private native String classifyImageBmp(Bitmap bitmap);
+//
+//
+//    private native String classifyImageRgb(int[] output, int width, int height);
 
     public AICameraFragment() {
 
@@ -147,19 +144,13 @@ public class AICameraFragment extends Fragment {
         super.onStart();
         log("onStart");
 
-        mgr = getResources().getAssets();
+
+        tensorflowClassifier = new TensorFlowClassifier();
         mUIHandler = new Handler(Looper.getMainLooper());
+//        log("beginInitializeTensorFLow()");
+//        int initCode = initializeTensorFlow(mgr, MODEL_FILE, LABEL_FILE, NUM_CLASSES, INPUT_SIZE, IMAGE_MEAN, IMAGE_STD, INPUT_NAME, OUTPUT_NAME);
+//        log("TensorFlow initCode:" + initCode);
 
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-//                initCaffe2(mgr);
-
-                int initCode = initializeTensorFlow(mgr, MODEL_FILE, LABEL_FILE, NUM_CLASSES, INPUT_SIZE, IMAGE_MEAN, IMAGE_STD, INPUT_NAME, OUTPUT_NAME);
-                log("TensorFlow initCode:" + initCode);
-            }
-        }).start();
 
         backgroundThread = new HandlerThread("Background Thread");
         backgroundThread.start();
@@ -183,6 +174,32 @@ public class AICameraFragment extends Fragment {
         log("onResume");
         initListeners();
         textureView.setSurfaceTextureListener(surfaceTextureListener);
+
+        final AssetManager mgr = getActivity().getAssets();
+
+        log("beginInitializeTensorFLow()");
+
+//                int initCode = initializeTensorFlow(mgr, MODEL_FILE, LABEL_FILE, NUM_CLASSES, INPUT_SIZE, IMAGE_MEAN, IMAGE_STD, INPUT_NAME, OUTPUT_NAME);
+        int initCode = tensorflowClassifier.initializeTensorFlow(
+                mgr, MODEL_FILE, LABEL_FILE, NUM_CLASSES, INPUT_SIZE, IMAGE_MEAN, IMAGE_STD,
+                INPUT_NAME, OUTPUT_NAME);
+        log("TensorFlow initCode:" + initCode);
+
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                //initCaffe2(mgr);
+//
+//                log("beginInitializeTensorFLow()");
+//
+////                int initCode = initializeTensorFlow(mgr, MODEL_FILE, LABEL_FILE, NUM_CLASSES, INPUT_SIZE, IMAGE_MEAN, IMAGE_STD, INPUT_NAME, OUTPUT_NAME);
+//                int initCode = tensorflowClassifier.initializeTensorFlow(
+//                        mgr, MODEL_FILE, LABEL_FILE, NUM_CLASSES, INPUT_SIZE, IMAGE_MEAN, IMAGE_STD,
+//                        INPUT_NAME, OUTPUT_NAME);
+//                log("TensorFlow initCode:" + initCode);
+//
+//            }
+//        }).start();
     }
 
     private void initListeners() {
@@ -190,7 +207,7 @@ public class AICameraFragment extends Fragment {
             @Override
             public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
                 surfaceTexture = surface;
-                //当SurfaceTexture可用的时候，打开照相头
+
                 openCamera();
                 log("onSurfaceTextureAvailable");
             }
@@ -215,7 +232,7 @@ public class AICameraFragment extends Fragment {
             @Override
             public void onOpened(@NonNull CameraDevice camera) {
                 cameraDevice = camera;
-                //开始预览
+
                 startPreview();
             }
 
@@ -241,7 +258,7 @@ public class AICameraFragment extends Fragment {
                     processing = true;
                     int w = image.getWidth();
                     int h = image.getHeight();
-                    //获取Y,U,V的ByteBuffer
+
                     Ybuffer = image.getPlanes()[0].getBuffer();
                     Ubuffer = image.getPlanes()[1].getBuffer();
                     Vbuffer = image.getPlanes()[2].getBuffer();
@@ -260,15 +277,15 @@ public class AICameraFragment extends Fragment {
 
 //                    predictedClass = classificationFromCaffe2(h, w, Y, U, V, rowStride, pixelStride, false);
 
-                    mUIHandler.post(new Runnable() {
-                        @Override
-                        public void run() {
+//                    mUIHandler.post(new Runnable() {
+//                        @Override
+//                        public void run() {
 //                        textView.setText(predictedClass);
-                            String[] things = getProbablyThings(predictedClass);
-                            textView.setText("1."+things[0]+"\n2."+things[1]);
-                            processing = false;
-                        }
-                    });
+//                            String[] things = getProbablyThings(predictedClass);
+//                            textView.setText("1."+things[0]+"\n2."+things[1]);
+//                            processing = false;
+//                        }
+//                    });
                 }else{
                 }
 
@@ -297,7 +314,7 @@ public class AICameraFragment extends Fragment {
     }
 
     private void updatePreview() {
-        //打开自动曝光
+
         captureRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH);
 
         captureRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
@@ -324,7 +341,7 @@ public class AICameraFragment extends Fragment {
             CameraCharacteristics characteristics = manager.getCameraCharacteristics(cameraId);
             StreamConfigurationMap configurationMap = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
             previewSize = Util.getPreferredPreviewSize(configurationMap.getOutputSizes(ImageFormat.YUV_420_888), textureView.getWidth(), textureView.getHeight());
-            //获取所有可支持的图像输出尺寸，这里是获取了第0个
+
             imageDimension = configurationMap.getOutputSizes(SurfaceTexture.class)[0];
             log("output Image Dimension:" + imageDimension.getWidth() + "X" + imageDimension.getHeight());
 
@@ -347,7 +364,7 @@ public class AICameraFragment extends Fragment {
         int height = textureView.getHeight()/6;
         ImageReader imageReader = ImageReader.newInstance(width, height, ImageFormat.YUV_420_888, 4);
         log("imageReader size:" + imageReader.getWidth() + "X" + imageReader.getHeight());
-        //让ImageAvailable事件发生在后台线程
+
         imageReader.setOnImageAvailableListener(imageListener, backgroundHandler);
 
 //        surfaceTexture.setDefaultBufferSize(imageDimension.getWidth(),imageDimension.getHeight());
@@ -355,8 +372,7 @@ public class AICameraFragment extends Fragment {
         try {
             captureRequestBuilder = cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW);
             
-            //让照相机的图像数据同时传给两个目标，一个是TextureView用于展示
-            // 另一个是ImageReader，用于进行后台的物体识别
+
             captureRequestBuilder.addTarget(surface);
             captureRequestBuilder.addTarget(imageReader.getSurface());
 
@@ -376,7 +392,7 @@ public class AICameraFragment extends Fragment {
         log("onAttach");
     }
 
-    //这个方法在onDestroy之后调用
+
     @Override
     public void onDetach() {
         super.onDetach();

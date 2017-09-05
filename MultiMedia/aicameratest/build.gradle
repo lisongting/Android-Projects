@@ -34,11 +34,7 @@ android {
 //        }
 
     }
-//    externalNativeBuild{
-//        ndkBuild{
-//            path "jni-build/jni/Android.mk"
-//        }
-//    }
+
 
     buildTypes {
         release {
@@ -50,10 +46,6 @@ android {
         noCompress 'pb'
     }
 
-//    sourceSets.main{
-//        jni.srcDirs =[]
-//        jni.srcDirs = ['src/main/jni-build']
-//    }
 
 
 }
@@ -68,38 +60,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-//测试一下博客中讲的方法:会报错
-//Error:Execution failed for task ':aicameratest:ndkBuild'.
-//        > Process 'command 'C:\Users\lisongting\AppData\Local\Android\Sdk\ndk-bundle/ndk-build.cmd'' finished with non-zero exit value 2
-//tasks.withType(JavaCompile) {
-//    compileTask -> compileTask.dependsOn ndkBuild
-//}
-//
-//task ndkBuild(type: Exec) {
-//    workingDir file('src/main/jni')
-//    commandLine getNdkBuildCmd()
-//}
-//
-//task cleanNative(type: Exec){
-//    workingDir file('src/main/jni')
-//    commandLine getNdkBuildCmd(), 'clean'
-//}
-//
-//clean.dependsOn cleanNative
-//
-//def getNdkDir() {
-//    if (System.env.ANDROID_NDK_ROOT != null)
-//        return System.env.ANDROID_NDK_ROOT
-//    Properties properties = new Properties()
-//    properties.load(project.rootProject.file('local.properties').newDataInputStream())
-//    def ndkdir = properties.getProperty('ndk.dir', null)
-//    if (ndkdir == null)
-//        throw new GradleException("NDK location not found. Define location with ndk.dir in the local.properties file or with an ANDROID_NDK_ROOT environment variable.")
-//    return ndkdir
-//}
-//
-//def getNdkBuildCmd() {
-//    def ndkbuild = getNdkDir() + "/ndk-build"
-//    ndkbuild += ".cmd"
-//    return ndkbuild
-//}
+

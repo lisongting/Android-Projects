@@ -1,17 +1,9 @@
 # ninja log v5
-1	174	0	CMakeFiles/cpufeatures.dir/C_/Users/lisongting/AppData/Local/Android/Sdk/ndk-bundle/sources/android/cpufeatures/cpu-features.c.o	a81122f6b1e46f7
-175	279	0	libcpufeatures.a	b4fa4ed0cec812d8
-279	2606	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	7a4cbfa6d88004a9
-2608	3934	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	77955c8fd7451ca
-4	187	0	CMakeFiles/cpufeatures.dir/C_/Users/lisongting/AppData/Local/Android/Sdk/ndk-bundle/sources/android/cpufeatures/cpu-features.c.o	a81122f6b1e46f7
-187	292	0	libcpufeatures.a	b4fa4ed0cec812d8
-292	2720	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	7a4cbfa6d88004a9
-2720	4159	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	77955c8fd7451ca
-5	210	0	CMakeFiles/cpufeatures.dir/C_/Users/lisongting/AppData/Local/Android/Sdk/ndk-bundle/sources/android/cpufeatures/cpu-features.c.o	a81122f6b1e46f7
-210	326	0	libcpufeatures.a	b4fa4ed0cec812d8
-326	2890	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	7a4cbfa6d88004a9
-2890	4265	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	77955c8fd7451ca
-4	203	0	CMakeFiles/cpufeatures.dir/C_/Users/lisongting/AppData/Local/Android/Sdk/ndk-bundle/sources/android/cpufeatures/cpu-features.c.o	a81122f6b1e46f7
-203	301	0	libcpufeatures.a	b4fa4ed0cec812d8
-301	2644	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	7a4cbfa6d88004a9
-2644	3946	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	77955c8fd7451ca
+2	483	0	CMakeFiles/cpufeatures.dir/C_/Users/lisongting/AppData/Local/Android/Sdk/ndk-bundle/sources/android/cpufeatures/cpu-features.c.o	a81122f6b1e46f7
+484	631	0	libcpufeatures.a	b4fa4ed0cec812d8
+631	4915	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	7a4cbfa6d88004a9
+4917	7191	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	77955c8fd7451ca
+6	616	0	CMakeFiles/cpufeatures.dir/C_/Users/lisongting/AppData/Local/Android/Sdk/ndk-bundle/sources/android/cpufeatures/cpu-features.c.o	a81122f6b1e46f7
+616	761	0	libcpufeatures.a	b4fa4ed0cec812d8
+762	5794	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	7a4cbfa6d88004a9
+5794	7992	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	77955c8fd7451ca

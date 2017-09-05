@@ -88,6 +88,9 @@ git log --graph
 git merge --no-ff -dev
 (将dev分支合并)
 
+将一个旧的分支old_branch中已经commit的代码(假设这个commit的log标志为ffxzfz)移动到新分支new_branch去：
+先切换到新建立的分支new_branch，执行git chery-pick ffxzfz 
+然后切换到old_branch中，将版本回退到上一个版本。完成commit 的分支转移！
 
 跟踪分支：
 （创建一个origin仓库branch1分支的跟踪分支，当输入git pull时，本地分支会向远程分支进行拉取操作。）
