@@ -29,6 +29,10 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+/**
+ * tensorflow--yolo 物体识别
+ * 使用ndk-build来生成so库
+ */
 public class CameraActivity extends Activity {
   private static final int PERMISSIONS_REQUEST = 1;
 

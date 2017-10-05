@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
-import android.graphics.Bitmap;
 import android.graphics.ImageFormat;
 import android.graphics.SurfaceTexture;
 import android.hardware.camera2.CameraAccessException;
@@ -98,7 +97,7 @@ public class AICameraFragment extends Fragment {
         System.loadLibrary("native-lib");
 
         //tensorflow
-        System.loadLibrary("tensorflow_demo");
+        //System.loadLibrary("tensorflow_demo");
     }
 
     public native String classificationFromCaffe2(int h, int w, byte[] Y, byte[] U, byte[] V,
@@ -106,21 +105,19 @@ public class AICameraFragment extends Fragment {
 
     public native void initCaffe2(AssetManager mgr);
 
-    public native int initializeTensorFlow(
-            AssetManager assetManager,
-            String model,
-            String labels,
-            int numClasses,
-            int inputSize,
-            int imageMean,
-            float imageStd,
-            String inputName,
-            String outputName);
-
-    private native String classifyImageBmp(Bitmap bitmap);
-
-
-    private native String classifyImageRgb(int[] output, int width, int height);
+//    public native int initializeTensorFlow(
+//            AssetManager assetManager,
+//            String model,
+//            String labels,
+//            int numClasses,
+//            int inputSize,
+//            int imageMean,
+//            float imageStd,
+//            String inputName,
+//            String outputName);
+//
+//    private native String classifyImageBmp(Bitmap bitmap);
+//
 
     public AICameraFragment() {
 
@@ -255,7 +252,7 @@ public class AICameraFragment extends Fragment {
                     Vbuffer.get(V);
 
                     predictedClass = classificationFromCaffe2(h, w, Y, U, V, rowStride, pixelStride, false);
-
+                    Log.i("tag", "底层代码识别结果：" + predictedClass);
                     mUIHandler.post(new Runnable() {
                         @Override
                         public void run() {

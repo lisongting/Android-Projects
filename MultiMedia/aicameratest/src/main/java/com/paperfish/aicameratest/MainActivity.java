@@ -14,7 +14,7 @@ import android.util.Log;
 
 /**
  * 在app中集成caffe2的物体识别功能
- *
+ * 使用CMake
  * 2017.8.16
  */
 public class MainActivity extends AppCompatActivity {
