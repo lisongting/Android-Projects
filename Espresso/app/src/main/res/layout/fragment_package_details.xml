@@ -25,7 +25,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                app:popUpTheme="@style/AppTheme.PopupOverlay"
                 app:background="@color/colorPrimary">
 
             </android.support.v7.widget.Toolbar>

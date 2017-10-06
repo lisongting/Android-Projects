@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
 
+            //当前处于哪个页面，则把下方的按钮设为选中状态(西瓜图案)
             @Override
             public void onPageSelected(int position) {
                 int currentItem = mViewPager.getCurrentItem();
