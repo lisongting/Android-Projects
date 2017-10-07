@@ -27,11 +27,13 @@ public class SimpleFragment extends Fragment {
         return fragment;
     }
 
+    @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        text = savedInstanceState.getString("text");
+        text = getArguments().getString("text");
     }
 
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.layout_simple_fragment,container,false);
         textView = (TextView) v.findViewById(R.id.textview);
