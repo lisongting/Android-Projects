@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/plane"
+        android:icon="@drawable/plane"
+        android:title="航班"
+        />
+
+    <item android:id="@+id/train"
+        android:icon="@drawable/train"
+        android:title="车次"
+        />
+
+    <item android:id="@+id/user"
+        android:icon="@drawable/user"
+        android:title="我的"
+        />
+
+</menu>

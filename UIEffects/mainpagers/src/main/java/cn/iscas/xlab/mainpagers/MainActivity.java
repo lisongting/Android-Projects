@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.bt3:
+                startActivity(new Intent(this,MainPageActivity3.class));
                 break;
         }
     }
