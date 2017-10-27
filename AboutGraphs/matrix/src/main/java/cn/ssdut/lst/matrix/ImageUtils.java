@@ -144,7 +144,7 @@ public class ImageUtils {
         int width = options.outWidth;
         int height = options.outHeight;
 //        options.inSampleSize = calculateInSampleSize(options,width/3,height/3);
-        options.inSampleSize = 2;
+        options.inSampleSize = 1;
         options.inJustDecodeBounds = false;
 
         return BitmapFactory.decodeByteArray(bitmapBytes, 0, bitmapBytes.length,options);

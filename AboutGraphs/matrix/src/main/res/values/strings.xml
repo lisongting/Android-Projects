@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">matrix</string>
+
+    <string name="base64">ww</string>
 </resources>

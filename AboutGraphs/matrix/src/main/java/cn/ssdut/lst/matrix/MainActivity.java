@@ -33,17 +33,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button bt1,bt2,bt3,bt4,bt5;
+        Button bt1,bt2,bt3,bt4,bt5,bt6;
         bt1 = (Button)findViewById(R.id.leftSkew);
         bt2 = (Button)findViewById(R.id.rightSkew);
         bt3 = (Button)findViewById(R.id.zoomIn)  ;
         bt4 = (Button)findViewById(R.id.zoomOut);
-        bt4 = (Button)findViewById(R.id.openTextureview);
+        bt5 = (Button)findViewById(R.id.openTextureview);
+        bt6 = (Button) findViewById(R.id.base64);
         imageView = (ImageView) findViewById(R.id.imageView);
         bt1.setOnClickListener(this);
         bt2.setOnClickListener(this);
         bt3.setOnClickListener(this);
         bt4.setOnClickListener(this);
+        bt5.setOnClickListener(this);
+        bt6.setOnClickListener(this);
         myview = new MyView(this);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
         linearLayout.addView(myview);
@@ -73,7 +76,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 myview.invalidate();
                 break;
             case R.id.openTextureview:
-                startActivity(new Intent(this, TextureViewTest.class));
+                startActivity(new Intent(this, MapViewTestActivity.class));
+                break;
+            case R.id.base64:
+                startActivity(new Intent(this, DecodeActivity.class));
                 break;
         }
     }

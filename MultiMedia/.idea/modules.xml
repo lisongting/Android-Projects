@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MultiMedia.iml" filepath="$PROJECT_DIR$/MultiMedia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StreamMediaTest/StreamMediaTest.iml" filepath="$PROJECT_DIR$/StreamMediaTest/StreamMediaTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/VideoView/VideoView.iml" filepath="$PROJECT_DIR$/VideoView/VideoView.iml" />
       <module fileurl="file://$PROJECT_DIR$/aicameratest/aicameratest.iml" filepath="$PROJECT_DIR$/aicameratest/aicameratest.iml" />
       <module fileurl="file://$PROJECT_DIR$/aicameratest2/aicameratest2.iml" filepath="$PROJECT_DIR$/aicameratest2/aicameratest2.iml" />

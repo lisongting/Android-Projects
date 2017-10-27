@@ -17,23 +17,27 @@
             android:id="@+id/leftSkew"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:text="向左倾斜"/>
         <Button
             android:id="@+id/rightSkew"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:text="向右倾斜"
             android:layout_toRightOf="@id/leftSkew"/>
         <Button
             android:id="@+id/zoomIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:text="放大"
             android:layout_below="@id/leftSkew"/>
         <Button
             android:id="@+id/zoomOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:text="缩小"
             android:layout_toRightOf="@id/zoomIn"
             android:layout_below="@id/leftSkew"/>
@@ -41,16 +45,24 @@
             android:id="@+id/openTextureview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="测试textureview缩放"
+            android:layout_margin="5dp"
+            android:text="测试自定义mapview缩放平移旋转"
             android:layout_below="@id/zoomOut"
             />
+        <Button
+            android:id="@+id/base64"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试Base64字符串解码"
+            android:layout_margin="5dp"
+            android:layout_below="@id/openTextureview"/>
         <LinearLayout
             android:id="@+id/linearLayout"
             android:orientation="vertical"
             android:background="#fff"
             android:layout_width="300dp"
             android:layout_height="400dp"
-            android:layout_below="@id/openTextureview"/>
+            android:layout_below="@id/base64"/>
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"

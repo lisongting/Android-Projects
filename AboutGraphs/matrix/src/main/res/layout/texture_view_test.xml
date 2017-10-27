@@ -10,15 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <Button
-        android:id="@+id/zoomIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="放大"/>
-
-    <Button
-        android:id="@+id/zoomOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="缩小"/>
+   <TextView
+       android:textSize="15sp"
+       android:textColor="@color/colorAccent"
+       android:layout_width="wrap_content"
+       android:layout_height="match_parent"
+       android:text="可使用手势进行图片的缩放，平移，旋转"/>
 </LinearLayout>
