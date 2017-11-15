@@ -32,7 +32,8 @@ public class MyAppWidgetProvider extends AppWidgetProvider {
         if (intent.getAction() == CLICK_ACTION) {
             Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
 
-            new Thread(){
+            new Thread(new Runnable() {
+                @Override
                 public void run() {
                     Bitmap srcBitmap = BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher_round);
                     AppWidgetManager manager = AppWidgetManager.getInstance(context);
@@ -59,7 +60,7 @@ public class MyAppWidgetProvider extends AppWidgetProvider {
 
                     }
                 }
-            }.start();
+            }).start();
         }
 
     }
@@ -93,7 +94,7 @@ public class MyAppWidgetProvider extends AppWidgetProvider {
 
     private Bitmap rotateBitmap(Context context, Bitmap src, float degree) {
         Matrix matrix = new Matrix();
-        matrix.reset();
+//        matrix.reset();
         matrix.setRotate(degree);
         Bitmap bitmap = Bitmap.createBitmap(src, 0, 0, src.getWidth(), src.getHeight(), matrix, true);
         return bitmap;

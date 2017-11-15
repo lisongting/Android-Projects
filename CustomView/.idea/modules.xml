@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CustomView.iml" filepath="$PROJECT_DIR$/CustomView.iml" />
       <module fileurl="file://$PROJECT_DIR$/WaverView/WaverView.iml" filepath="$PROJECT_DIR$/WaverView/WaverView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seekbar/seekbar.iml" filepath="$PROJECT_DIR$/seekbar/seekbar.iml" />
     </modules>
   </component>
 </project>

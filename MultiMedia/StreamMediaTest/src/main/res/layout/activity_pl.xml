@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rtmp://192.168.0.118/m"
+        android:hint="在这里输入流媒体URL"/>
+
+    <com.pili.pldroid.player.widget.PLVideoTextureView
+        android:id="@+id/plTextureView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/bt_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="播放指定流媒体" />
+
+        <Button
+            android:id="@+id/bt_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/bt_start"
+            android:text="停止" />
+        <Button
+            android:id="@+id/bt_rgb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bt_start"
+            android:text="RGB图像" />
+
+        <Button
+            android:id="@+id/bt_depth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bt_start"
+            android:layout_toRightOf="@id/bt_rgb"
+            android:text="深度图像" />
+    </RelativeLayout>
+
+
+</LinearLayout>

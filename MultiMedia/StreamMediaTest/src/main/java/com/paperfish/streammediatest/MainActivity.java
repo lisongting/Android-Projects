@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import io.vov.vitamio.MediaPlayer;
@@ -22,14 +21,12 @@ public class MainActivity extends AppCompatActivity {
 
     private VideoView videoView;
     private Button start;
-    private Button stop;
+    private Button stop,bt_rgb,bt_depth;
     private EditText editText;
-    private TextView percentTv;
     private MediaController mediaController;
 
-    private static final String VIDEO_URL = "http://192.168.3.220:9999/test.flv";
-    private static final String MUSIC_URL = "http://192.168.3.220:9999/music.mp3";
-    private static final String TEST = "rtmp://203.207.99.19:1935/live/CCTV5 ";
+    private static final String RTMP_RGB = "rtmp://192.168.0.107/rgb ";
+    private static final String RTMP_DEPTH = "rtmp://192.168.0.107/depth ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,15 +36,14 @@ public class MainActivity extends AppCompatActivity {
         stop = (Button) findViewById(R.id.bt_stop);
         editText = (EditText) findViewById(R.id.url);
         videoView = (VideoView) findViewById(R.id.vitamio_videoview);
-        percentTv = (TextView) findViewById(R.id.percent);
-
+        bt_rgb = (Button) findViewById(R.id.bt_rgb);
+        bt_depth = (Button) findViewById(R.id.bt_depth);
         if (!Vitamio.initialize(this)) {
             log("Vitamio初始化失败");
             return;
         }
 
 
-        videoView.setVideoURI(Uri.parse(TEST));
         videoView.setVideoQuality(MediaPlayer.VIDEOQUALITY_MEDIUM);
         mediaController = new MediaController(this);
         videoView.setBufferSize(10240);
@@ -64,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         videoView.setOnBufferingUpdateListener(new MediaPlayer.OnBufferingUpdateListener() {
             @Override
             public void onBufferingUpdate(MediaPlayer mp, int percent) {
-                percentTv.setText("缓冲百分比："+percent);
             }
         });
 
@@ -103,6 +98,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String s = editText.getEditableText().toString();
                 videoView.setVideoURI(Uri.parse(s));
+                videoView.start();
+            }
+        });
+
+        bt_rgb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                videoView.setVideoURI(Uri.parse(RTMP_RGB));
                 videoView.start();
             }
         });

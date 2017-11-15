@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.ssdut.paperfish.seekbar.MainActivity">
+
+
+
+    <cn.ssdut.paperfish.seekbar.PercentCircleView
+        android:id="@+id/percentView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:inner_radius="80dp"
+        app:inner_color="#e0e0e0"
+        app:stroke_size="30dp"
+        app:stroke_color="#8bc34a"
+        app:text_size="30sp"
+        app:text_color="#ab47bc"/>
+
+    <Button
+        android:id="@+id/bt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="percent+2"/>
+    <Button
+        android:id="@+id/bt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="percent-2"/>
+
+
+    <cn.ssdut.paperfish.seekbar.CustomSeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        app:is_horizontal="true"
+        app:track_length="200dp"
+        app:track_width="5dp"
+        app:track_color="@android:color/holo_green_light"
+        app:indicator_radius="7dp"
+        app:indicator_color="@color/colorAccent"
+        app:bubble_color="@android:color/holo_blue_light"
+        app:bubble_height="25dp"
+        app:bubble_width="40dp"
+        app:bubble_text_size="15sp"
+        app:bubble_text_color="@android:color/holo_red_light"
+        app:min_value="-90"
+        app:max_value="90"
+        app:value_text_size="16sp"
+        app:value_text_color="@color/colorPrimary"/>
+
+</LinearLayout>
