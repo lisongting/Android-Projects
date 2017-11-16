@@ -36,30 +36,21 @@ public class CustomSeekBar extends View {
     private int valueTextColor;
     private Rect minTextBounds,maxTextBounds,bubbleTextBounds;
 
-    private float triangleHeight;
+    private Paint trackPaint,bubblePaint,indicatorPaint,valueTextPaint,bubbleTextPaint;
 
-    private Paint trackPaint;
-    private Paint bubblePaint;
-    private Paint indicatorPaint;
-    private Paint valueTextPaint;
-    private Paint bubbleTextPaint;
+    private float triangleHeight;
     private Path trianglePath;
 
     //这个进度为[0,100]，但实际显示时要转换为minValue到maxValue之间的数值
     private float progress = 21F;
 
     //当前滑块的x和y坐标
-    private float posX;
-    private float posY;
+    private float posX,posY;
 
     private OnProgressChangeListener progressChangeListener;
 
-    private float centerX;
-    private float centerY;
-    private float trackLeft;
-    private float trackRight;
-    private float trackTop;
-    private float trackBottom;
+    private float centerX,centerY;
+    private float trackLeft,trackRight,trackTop,trackBottom;
     private boolean isIndicatorDragged = false;
 
     /**
@@ -76,7 +67,7 @@ public class CustomSeekBar extends View {
          * 当滑块拖动完毕时触发
          * @param value：取值[minValue,maxValue]
          */
-        void onSeekCompleted(int value);
+        void onProgressChangeCompleted(int value);
     }
 
     public CustomSeekBar(Context context){
@@ -201,20 +192,25 @@ public class CustomSeekBar extends View {
         int width = 0;
         int height = 0;
         if (isHorizontal) {
-
-//            if (widthMeasureSpec == MeasureSpec.EXACTLY) {
-//                width += trackLength + indicatorRadius * 4;
-//            } else if (widthMeasureSpec == MeasureSpec.AT_MOST) {
-//                width += widthSize / 1.5;
-//            }
-//            height += indicatorRadius * 2 + bubbleHeight + triangleHeight * 2;
             triangleHeight = bigIndicatorRadius / 2;
-            width += trackLength + bigIndicatorRadius * 2 ;
-
+            if (bigIndicatorRadius > bubbleWidth / 2) {
+                width += trackLength + bigIndicatorRadius * 2;
+            } else {
+                width +=  trackLength +bubbleWidth;
+            }
+            width += getPaddingLeft() + getPaddingRight();
             height += bigIndicatorRadius * 2 +getPaddingBottom()+getPaddingTop()+maxTextBounds.height()*1.5;
-
+            height += triangleHeight + bubbleHeight;
         }else{
-
+            triangleHeight = bigIndicatorRadius / 2;
+            if (bigIndicatorRadius > bubbleHeight / 2) {
+                height += trackLength + bigIndicatorRadius * 2;
+            } else {
+                height +=  trackLength +bubbleHeight;
+            }
+            height += getPaddingBottom() + getPaddingTop();
+            width += bigIndicatorRadius * 2 +getPaddingLeft()+getPaddingRight()+ maxTextBounds.width()*1.5;
+            width += triangleHeight + bubbleWidth;
         }
 
         setMeasuredDimension(width, height);
@@ -225,17 +221,27 @@ public class CustomSeekBar extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        centerX = getMeasuredWidth() / 2;
-        centerY = getMeasuredHeight() / 2;
         trianglePath.reset();
         if (isHorizontal) {
+            //进度条的中心点centerX centerY
+            if (bigIndicatorRadius > bubbleWidth / 2) {
+                centerX = getPaddingLeft()+bigIndicatorRadius+trackLength/2;
+            } else {
+                centerX = getPaddingLeft()+bubbleWidth / 2+trackLength/2;
+            }
+            centerY = getPaddingTop()+bubbleHeight+triangleHeight/2+bigIndicatorRadius;
             trackLeft = centerX - trackLength / 2;
             trackRight = centerX + trackLength / 2;
             trackTop = centerY - trackWidth / 2;
             trackBottom = centerY + trackWidth / 2;
-            canvas.drawLine(bigIndicatorRadius, centerY, trackLeft + trackLength, centerY, trackPaint);
+            if (bigIndicatorRadius > bubbleWidth / 2) {
+                canvas.drawLine(trackLeft, centerY, trackLeft + trackLength, centerY, trackPaint);
+                posX = trackLength * progress / 100F +bigIndicatorRadius +  getPaddingLeft();
+            } else {
+                canvas.drawLine(trackLeft, centerY, trackLeft + trackLength, centerY, trackPaint);
+                posX = trackLength * progress / 100F + bubbleWidth / 2+  getPaddingLeft();
+            }
 
-            posX = trackLength * progress / 100F + bigIndicatorRadius;
             posY = centerY;
             if (isIndicatorDragged) {
                 canvas.drawCircle(posX, posY, bigIndicatorRadius, indicatorPaint);
@@ -247,6 +253,7 @@ public class CustomSeekBar extends View {
                     centerY + bigIndicatorRadius+ minTextBounds.height() * 1.5F, valueTextPaint);
             canvas.drawText(maxValueStr, trackRight - maxTextBounds.width() / 2,
                     centerY + bigIndicatorRadius + maxTextBounds.height() * 1.5F, valueTextPaint);
+            //当滑块拖动时放大滑块，显示上方的气泡图案
             if (isIndicatorDragged) {
                 float triangleStartX = posX;
                 float triangleStartY = posY - bigIndicatorRadius;
@@ -265,13 +272,56 @@ public class CustomSeekBar extends View {
                 String tip = String.valueOf(progressToRealValue(progress));
                 bubbleTextPaint.getTextBounds(tip, 0, tip.length(), bubbleTextBounds);
                 canvas.drawText(tip, triangleStartX - bubbleTextBounds.width() / 2, bubbleRectBottom - bubbleHeight /4, bubbleTextPaint);
-
-
             }
         } else {
+            //进度条的中心点centerX centerY
+            if (bigIndicatorRadius > bubbleWidth / 2) {
+                centerY = getPaddingTop()+bigIndicatorRadius+trackLength/2;
+            } else {
+                centerY = getPaddingTop()+bubbleHeight / 2+trackLength/2;
+            }
+            centerX =getPaddingLeft()+bubbleWidth+triangleHeight+bigIndicatorRadius/2;
 
+            trackLeft = centerX - trackWidth / 2;
+            trackRight = centerX + trackWidth / 2;
+            trackTop = centerY - trackLength/ 2;
+            trackBottom = centerY + trackLength / 2;
+            if (bigIndicatorRadius > bubbleHeight / 2) {
+                canvas.drawLine(centerX, trackBottom, centerX, trackTop, trackPaint);
+                posY = trackLength * progress / 100F + bigIndicatorRadius + getPaddingTop();
+            } else {
+                canvas.drawLine(centerX, trackBottom, centerX, trackTop, trackPaint);
+                posY = trackLength * progress / 100F + bubbleHeight / 2+  getPaddingTop();
+            }
+            posX = centerX;
+            if (isIndicatorDragged) {
+                canvas.drawCircle(posX, posY, bigIndicatorRadius, indicatorPaint);
+            }
+            canvas.drawCircle(posX, posY, indicatorRadius, indicatorPaint);
+
+            canvas.drawText(minValueStr, centerX + bigIndicatorRadius + minTextBounds.width() / 5, trackBottom + minTextBounds.height() / 2, valueTextPaint);
+            canvas.drawText(maxValueStr, centerX + bigIndicatorRadius + maxTextBounds.width() / 5, trackTop + maxTextBounds.height() / 2, valueTextPaint);
+            //当滑块拖动时放大滑块，显示上方的气泡图案
+            if (isIndicatorDragged) {
+                float triangleStartX = posX - bigIndicatorRadius;
+                float triangleStartY = posY;
+                trianglePath.moveTo(triangleStartX, triangleStartY);
+                trianglePath.lineTo(triangleStartX - triangleHeight,(float) ( triangleStartY + triangleHeight * Math.tan(Math.PI / 6)));
+                trianglePath.lineTo(triangleStartX - triangleHeight,(float) (triangleStartY - triangleHeight * Math.tan(Math.PI / 6)));
+                trianglePath.close();
+                canvas.drawPath(trianglePath, bubblePaint);
+
+                float bubbleRectLeft = triangleStartX - triangleHeight-bubbleWidth ;
+                float bubbleRectRight = triangleStartX - triangleHeight;
+                float bubbleRectTop = triangleStartY - bubbleHeight / 2;
+                float bubbleRectBottom = triangleStartY + bubbleHeight / 2;
+                canvas.drawRect(bubbleRectLeft, bubbleRectTop, bubbleRectRight, bubbleRectBottom, bubblePaint);
+                String tip = String.valueOf(progressToRealValue(progress));
+                bubbleTextPaint.getTextBounds(tip, 0, tip.length(), bubbleTextBounds);
+                canvas.drawText(tip, bubbleRectLeft +bubbleWidth/2 - bubbleTextBounds.width()/2, triangleStartY + bubbleTextBounds.height() / 2, bubbleTextPaint);
+
+            }
         }
-//        log("track length:" + trackLength);
 //        log("track center :(" + centerX + "," + centerY + ")");
 //        log("track rectangle:" + trackLeft+ "," + trackTop + "," + trackRight + "," + trackBottom);
     }
@@ -279,14 +329,12 @@ public class CustomSeekBar extends View {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 //        log("onTouchEvent xy:" + event.getX() +","+ event.getY());
-//        log("raw xy:" + event.getRawX() + "," + event.getRawY());
         log("isIndicatorTouched :" + isIndicatorTouched(event));
         log("isTrackTouched:" + isTrackTouched(event));
         event.getAction();
         int action = event.getAction();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-//                log("ACTIONDOWN");
                 if (!isIndicatorTouched(event) && isTrackTouched(event)) {
                     float destProgress = 0;
                     if (isHorizontal) {
@@ -295,12 +343,14 @@ public class CustomSeekBar extends View {
                         destProgress = distance / trackLength *100;
                         animateTo(destProgress);
                     }else{
-
+                        float y = event.getY();
+                        float distance = y - trackTop;
+                        destProgress = distance / trackLength * 100;
+                        animateTo(destProgress);
                     }
                     if (progressChangeListener != null) {
-                        progressChangeListener.onSeekCompleted(progressToRealValue(destProgress));
+                        progressChangeListener.onProgressChangeCompleted(progressToRealValue(destProgress));
                     }
-                    log("progress changed:" + progress);
                 }
                 if (isIndicatorTouched(event)) {
                     isIndicatorDragged = true;
@@ -308,24 +358,30 @@ public class CustomSeekBar extends View {
 
                 break;
             case MotionEvent.ACTION_MOVE:
-//                log("ACTIONMOVE");
                 if (isTrackTouched(event)) {
                     if (isHorizontal) {
                         float x = event.getX();
                         float distance = x - trackLeft;
                         progress = distance / trackLength *100;
+                        if (progressChangeListener != null) {
+                            progressChangeListener.onProgressChanged(progressToRealValue(progress));
+                        }
                         invalidate();
                     }else {
                         float y = event.getY();
+                        float distance = y - trackTop;
+                        progress = distance / trackLength * 100;
+                        if (progressChangeListener != null) {
+                            progressChangeListener.onProgressChanged(progressToRealValue(progress));
+                        }
+                        invalidate();
                     }
-                    log("progress changed:" + progress);
                 }
                 break;
             case MotionEvent.ACTION_UP:
-//                log("ACTIONUP");
                 if (isIndicatorDragged) {
                     if (progressChangeListener != null) {
-                        progressChangeListener.onSeekCompleted(progressToRealValue(progress));
+                        progressChangeListener.onProgressChangeCompleted(progressToRealValue(progress));
                     }
                     isIndicatorDragged = false;
                 }
@@ -368,8 +424,12 @@ public class CustomSeekBar extends View {
                 && y>=trackTop*0.3
                 && y<=trackBottom*2){
             return true;
-        }else{
-
+        }else if(!isHorizontal
+                && x>=trackLeft*0.3
+                && x<=trackRight*2
+                &&y>=trackTop
+                &&y<=trackBottom){
+            return true;
         }
         return false;
     }
@@ -381,19 +441,14 @@ public class CustomSeekBar extends View {
     private void animateTo(float destProgress) {
         float currentProgress = progress;
         ValueAnimator animator = ValueAnimator.ofFloat(currentProgress, destProgress);
-        if (isHorizontal) {
-            animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                @Override
-                public void onAnimationUpdate(ValueAnimator animation) {
-                    float value = (float) animation.getAnimatedValue();
-                    progress = value;
-                    invalidate();
-                }
-            });
-        } else {
-
-        }
-
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float value = (float) animation.getAnimatedValue();
+                progress = value;
+                invalidate();
+            }
+        });
         animator.setDuration(400);
         animator.setInterpolator(new AccelerateDecelerateInterpolator());
         animator.start();
@@ -404,8 +459,15 @@ public class CustomSeekBar extends View {
     }
 
 
-    public void setProgress(float progress) {
-        this.progress = progress;
+    public void setProgress(float p) {
+        if (p < minValue) {
+            progress = minValue;
+        } else if (p > maxValue) {
+            progress = maxValue;
+        } else {
+            this.progress = p;
+        }
+
         animateTo(progress);
     }
 
@@ -416,7 +478,10 @@ public class CustomSeekBar extends View {
      */
     private int progressToRealValue(float progress) {
         int gap = maxValue - minValue;
-        return Math.round (gap * progress / 100 + minValue);
+        if (isHorizontal) {
+            return Math.round (gap * progress / 100 + minValue);
+        }
+        return maxValue - Math.round(gap * progress / 100);
     }
 
     private void log(String s) {

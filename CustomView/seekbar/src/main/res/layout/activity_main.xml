@@ -1,43 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="cn.ssdut.paperfish.seekbar.MainActivity">
-
-
-
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/battery_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="电量"
+        android:layout_margin="5dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        />
     <cn.ssdut.paperfish.seekbar.PercentCircleView
         android:id="@+id/percentView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:inner_radius="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/battery_txt"
+        app:inner_radius="50dp"
         app:inner_color="#e0e0e0"
-        app:stroke_size="30dp"
+        app:stroke_size="20dp"
         app:stroke_color="#8bc34a"
-        app:text_size="30sp"
+        app:text_size="25sp"
         app:text_color="#ab47bc"/>
+
 
     <Button
         android:id="@+id/bt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="percent+2"/>
+        android:layout_alignParentRight="true"
+        android:text="+6"/>
+
     <Button
         android:id="@+id/bt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="percent-2"/>
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/bt1"
+        android:text="-6"/>
+
 
 
     <cn.ssdut.paperfish.seekbar.CustomSeekBar
+        android:id="@+id/seekbar_cloud_degree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
+        android:layout_below="@id/percentView"
+        android:layout_margin="5dp"
+        android:layout_centerHorizontal="true"
         app:is_horizontal="true"
         app:track_length="200dp"
         app:track_width="5dp"
@@ -54,4 +68,102 @@
         app:value_text_size="16sp"
         app:value_text_color="@color/colorPrimary"/>
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/cloud_degree_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/seekbar_cloud_degree"
+        android:text="云台角度"
+        android:layout_marginBottom="10dp"
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimary"
+        />
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_below="@id/cloud_degree_txt">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+            <cn.ssdut.paperfish.seekbar.CustomSeekBar
+                android:id="@+id/seekbar_lift_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                app:is_horizontal="false"
+                app:track_length="150dp"
+                app:track_width="5dp"
+                app:track_color="@android:color/holo_orange_light"
+                app:indicator_radius="7dp"
+                app:indicator_color="@color/colorAccent"
+                app:bubble_color="@android:color/holo_blue_light"
+                app:bubble_height="25dp"
+                app:bubble_width="40dp"
+                app:bubble_text_size="15sp"
+                app:bubble_text_color="@android:color/holo_red_light"
+                app:min_value="0"
+                app:max_value="100"
+                app:value_text_size="16sp"
+                app:value_text_color="@color/colorPrimary"/>
+            <TextView
+                android:id="@+id/lift_height_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="升降台高度"
+                android:layout_gravity="center_horizontal"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimary"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical">
+            <cn.ssdut.paperfish.seekbar.CustomSeekBar
+                android:id="@+id/seekbar_cemera_degree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                app:is_horizontal="false"
+                app:track_length="150dp"
+                app:track_width="5dp"
+                app:track_color="@android:color/holo_orange_light"
+                app:indicator_radius="7dp"
+                app:indicator_color="@color/colorAccent"
+                app:bubble_color="@android:color/holo_blue_light"
+                app:bubble_height="25dp"
+                app:bubble_width="40dp"
+                app:bubble_text_size="15sp"
+                app:bubble_text_color="@android:color/holo_red_light"
+                app:min_value="-45"
+                app:max_value="45"
+                app:value_text_size="16sp"
+                app:value_text_color="@color/colorPrimary"/>
+            <TextView
+                android:id="@+id/camera_degree_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="摄像头角度"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimary"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

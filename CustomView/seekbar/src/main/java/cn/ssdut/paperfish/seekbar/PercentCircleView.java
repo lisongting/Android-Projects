@@ -80,10 +80,10 @@ public class PercentCircleView extends View {
 
         array.recycle();
 
-        log("innderRadius:" + innerCircleRadius);
-        log("strokeSize:" + strokeSize);
-        log("textSize:" + textSize);
-        displayScreenInfo();
+//        log("innderRadius:" + innerCircleRadius);
+//        log("strokeSize:" + strokeSize);
+//        log("textSize:" + textSize);
+//        displayScreenInfo();
 
     }
 
@@ -129,21 +129,25 @@ public class PercentCircleView extends View {
         int height = 0;
 
         if (widthMode == MeasureSpec.AT_MOST) {
-            int wantSize  = (innerCircleRadius + strokeSize) * 2 < widthSize ? (innerCircleRadius + strokeSize) * 2 : widthSize / 2;
-            width = wantSize < widthSize ? wantSize : widthSize;
+//            int wantSize  = (innerCircleRadius + strokeSize) * 2 < widthSize ? (innerCircleRadius + strokeSize) * 2 : widthSize / 2;
+//            width = wantSize < widthSize ? wantSize : widthSize;
+            width = (innerCircleRadius + strokeSize) * 2;
+
         } else if (widthMode == MeasureSpec.EXACTLY) {
-            width = (innerCircleRadius + strokeSize) * 2 < widthSize ? (innerCircleRadius + strokeSize) * 2 : widthSize / 2;
+//            width = (innerCircleRadius + strokeSize) * 2 < widthSize ? (innerCircleRadius + strokeSize) * 2 : widthSize / 2;
+            width = (innerCircleRadius + strokeSize) * 2;
         }
 
         if (heightMode == MeasureSpec.AT_MOST) {
-            int wantSize = (innerCircleRadius + strokeSize) * 2 < heightSize ? (innerCircleRadius + strokeSize) * 2 : heightSize / 2;
-            height = wantSize < heightSize ? wantSize : heightSize;
+//            int wantSize = (innerCircleRadius + strokeSize) * 2 ;
+//            height = wantSize < heightSize ? wantSize : heightSize;
+            height = (innerCircleRadius + strokeSize) * 2 ;
         } else if (heightMode == MeasureSpec.EXACTLY) {
-            height = (innerCircleRadius + strokeSize) * 2 < heightSize ? (innerCircleRadius + strokeSize) * 2 : heightSize / 2;
+            height = (innerCircleRadius + strokeSize) * 2 ;
         }
 
         //将width 和height 统一设置为更小的
-        height = width < height ? width : height;
+//        height = width < height ? width : height;
         setMeasuredDimension(width, height);
         log("onMeasuredDimension:" + width + "x" + height);
     }
@@ -194,8 +198,14 @@ public class PercentCircleView extends View {
 //        log("textBounds Size:" + rect.width() + "x" + rect.height());
     }
 
-    public void setPercent(int percent) {
-        this.percent = percent;
+    public void setPercent(int p) {
+        if (p < 0) {
+            percent = 0;
+        } else if (p > 100) {
+            percent = 100;
+        } else {
+            this.percent = p;
+        }
 
         postInvalidate();
     }
