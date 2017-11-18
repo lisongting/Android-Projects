@@ -1,16 +1,20 @@
-package cn.ssdut.paperfish.seekbar;
+package com.paperfish.viewsset;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Region;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.LinearInterpolator;
 
 /**
  * 一个用来显示电量多少的圆形控件
@@ -19,7 +23,7 @@ import android.view.WindowManager;
 
 public class PercentCircleView extends View {
 
-    private int percent = 56;
+    private int percent = 72;
     private int innerCircleRadius;
     private int innerCircleColor;
     private int textSize;
@@ -35,6 +39,17 @@ public class PercentCircleView extends View {
 
     private int colorBatteryLow = Color.parseColor("#ff8f00");
     private int colorBatteryVeryLow = Color.parseColor("#b71c1c");
+    
+    
+    private Path bezierPath;
+    private Paint bezierPaint;
+    private float bezierStartX , bezierStartY;
+    //贝塞尔曲线起始点的偏移量，用于动画效果
+    private float bezierStartShift = 0;
+    float peakHeight=0;
+    float peakWidth =0;
+    //用于裁剪的path
+    private Path clipPath;
 
     public PercentCircleView(Context context) {
         this(context, null);
@@ -103,6 +118,7 @@ public class PercentCircleView extends View {
         innerCirclePaint.setColor(innerCircleColor);
         innerCirclePaint.setAntiAlias(true);
         innerCirclePaint.setStyle(Paint.Style.FILL);
+        innerCirclePaint.setAlpha(0);
 
         textPaint = new Paint();
         textPaint.setColor(textColor);
@@ -114,8 +130,18 @@ public class PercentCircleView extends View {
         strokePaint.setAntiAlias(true);
         strokePaint.setStyle(Paint.Style.STROKE);
         strokePaint.setStrokeWidth(strokeSize);
+        strokePaint.setAlpha(50);
         strokePaint.setStrokeCap(Paint.Cap.ROUND);
 
+        bezierPaint = new Paint();
+        bezierPaint.setColor(Color.GREEN);
+        bezierPaint.setStyle(Paint.Style.FILL);
+        bezierPaint.setStrokeWidth(8);
+        bezierPaint.setAntiAlias(true);
+
+        bezierPath = new Path();
+
+        clipPath = new Path();
     }
 
     @Override
@@ -159,6 +185,12 @@ public class PercentCircleView extends View {
         centerX = getWidth() / 2;
         centerY = getHeight() / 2;
 
+        canvas.save();
+        clipPath.reset();
+        canvas.clipPath(clipPath);
+        clipPath.addCircle(centerX, centerY, innerCircleRadius, Path.Direction.CCW);
+        canvas.clipPath(clipPath, Region.Op.REPLACE);
+
         canvas.drawCircle(centerX, centerY, innerCircleRadius, innerCirclePaint);
 
         float left = centerX - innerCircleRadius - strokeSize/2;
@@ -175,33 +207,105 @@ public class PercentCircleView extends View {
             strokePaint.setColor(strokeColor);
         }
         canvas.drawArc(left, top, right, bottom, 90, sweepAngle,false, strokePaint);
+
+
+
+        //绘制贝塞尔曲线
+        if (percent> 0 && percent < 50) {
+            float distanceToCenter = 2*innerCircleRadius*(50 - percent)/100F  ;
+            double angle = Math.acos(distanceToCenter / innerCircleRadius);
+            peakWidth = (float) (innerCircleRadius * Math.sin(angle) / 2);
+            peakHeight = (innerCircleRadius-distanceToCenter)/4;
+            bezierStartX = centerX - 2 * peakWidth + bezierStartShift;
+            bezierStartY = centerY + distanceToCenter;
+        } else if (percent > 50 && percent <= 100) {
+            float distanceToCenter;
+            //如果等于100则按照99来算
+            if (percent == 100) {
+                distanceToCenter = 2 * innerCircleRadius * (99 - 50) / 100F;
+            }
+            distanceToCenter = 2 * innerCircleRadius * (percent - 50) / 100F;
+            double angle = Math.acos(distanceToCenter / innerCircleRadius);
+            peakWidth = (float) (innerCircleRadius * Math.sin(angle) / 2);
+            peakHeight = (innerCircleRadius-distanceToCenter)/4;
+            bezierStartX = centerX - 2 * peakWidth + bezierStartShift;
+            bezierStartY = centerY - distanceToCenter;
+        }else{
+            peakWidth = innerCircleRadius / 2;
+            peakHeight = (innerCircleRadius)/4;
+            bezierStartX = centerX - 2 * peakWidth + bezierStartShift;
+            bezierStartY = centerY ;
+        }
+
+
+        bezierPath.reset();
+
+        bezierPath.moveTo(bezierStartX-4*peakWidth, bezierStartY);
+        //画n组曲线，一组曲线为一个波峰和一个波谷
+        int n =4;
+
+        for(int i=0;i<n;i++) {
+            float pAx = bezierStartX + (i-1) * peakWidth * 2;
+//            float pAx = bezierStartX;
+            float pAy = bezierStartY;
+
+            float cABx = pAx + peakWidth / 2;
+            float cABy = pAy - peakHeight;
+
+            float pBx = pAx + peakWidth;
+            float pBy = pAy;
+
+            float cBCx = pBx + peakWidth / 2;
+            float cBCy = pBy + peakHeight;
+
+            float pCx = pAx + peakWidth*2;
+            float pCy = pAy;
+
+            bezierPath.quadTo(cABx, cABy, pBx, pBy);
+            bezierPath.quadTo(cBCx,cBCy,pCx,pCy);
+            //如果画到最后一组曲线，则将这个曲线的围成的图形进行封闭
+            if (i == n-1 ) {
+                bezierPath.lineTo(pCx+getMeasuredWidth(),pCy);
+                bezierPath.lineTo(pCx+getMeasuredWidth(),pCy+(float)getMeasuredHeight());
+                bezierPath.lineTo(bezierStartX-getMeasuredWidth() ,bezierStartY+(float)getMeasuredHeight());
+                bezierPath.lineTo(bezierStartX-getMeasuredWidth(),bezierStartY);
+                bezierPath.close();
+
+            }
+        }
+
+        canvas.drawPath(bezierPath,bezierPaint);
+
+
+        canvas.restore();
+
         String text = percent + "%";
 
         float textWidth = textPaint.measureText(text);
 
         canvas.drawText(text, centerX - textWidth / 2,centerY-(textPaint.ascent()+textPaint.descent())/2, textPaint);
 
+    }
 
-        //----------------------------------------
-        //measureText()获取到的是整个字符所占的大矩形宽度(包含预留空间)
-        //fontMetrics表示整个字符串的大矩形宽度（高度为从top到bottom 的距离）
-//        log("center point :" + centerX + "," + centerY);
-//        log("measureText() width:" + textWidth);
-//        log("textPaint ascent:" + textPaint.ascent() + ", descent:" + textPaint.descent());
-//        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
-//        log("fontMetrics : " + fontMetrics.top + " ," + fontMetrics.bottom + "," + fontMetrics.ascent + "," + fontMetrics.descent);
-//        log("fontMetrics height:" + String.valueOf(fontMetrics.bottom - fontMetrics.top));
-//
-//        //textBound是字符串实际占用的空间(不包含预留空间，高度为从ascent到decent的距离)
-//        Rect rect = new Rect();
-//        textPaint.getTextBounds(text, 0, 3, rect);
-//        log("TextBounds Rect:" + rect.left + "," + rect.top + "," + rect.right + "," + rect.bottom);
-//        log("textBounds Size:" + rect.width() + "x" + rect.height());
+    public void startAnim() {
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, peakWidth*2 );
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                bezierStartShift = (float) animation.getAnimatedValue();
+                invalidate();
+            }
+        });
+        valueAnimator.setDuration(1500);
+        valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
+        valueAnimator.setRepeatMode(ValueAnimator.RESTART);
+        valueAnimator.setInterpolator(new LinearInterpolator());
+        valueAnimator.start();
     }
 
     public void setPercent(int p) {
         if (p < 0) {
-            percent = 0;
+            percent = 1;
         } else if (p > 100) {
             percent = 100;
         } else {
@@ -209,6 +313,7 @@ public class PercentCircleView extends View {
         }
 
         postInvalidate();
+        startAnim();
     }
 
     public int getPercent() {

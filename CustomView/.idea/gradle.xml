@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/WaverView" />
             <option value="$PROJECT_DIR$/seekbar" />
+            <option value="$PROJECT_DIR$/viewsset" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -1,1 +1,1 @@
-include ':WaverView', ':seekbar'
+include ':WaverView', ':seekbar', ':viewsset'

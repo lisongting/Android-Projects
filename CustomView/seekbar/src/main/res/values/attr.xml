@@ -28,4 +28,5 @@
         <attr name="text_color" format="color|reference" />
     </declare-styleable>
 
+
 </resources>

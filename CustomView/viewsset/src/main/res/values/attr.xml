@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PercentCircleView" >
+        <attr name="inner_radius" format="dimension|reference" />
+        <attr name="inner_color" format="color|reference" />
+        <attr name="stroke_size" format="dimension|reference" />
+        <attr name="stroke_color" format="color|reference" />
+        <attr name="text_size" format="dimension|reference" />
+        <attr name="text_color" format="color|reference" />
+    </declare-styleable>
+
+
+</resources>

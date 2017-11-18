@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
 /**
+ * 自定义的seekbar效果，有气泡文字，可支持水平和垂直布局
  * Created by lisongting on 2017/11/14.
  */
 

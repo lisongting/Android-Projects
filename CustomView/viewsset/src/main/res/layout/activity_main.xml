@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.paperfish.viewsset.MainActivity">
+
+   <com.paperfish.viewsset.BezierView
+       android:id="@+id/bezier_view1"
+       android:layout_width="200dp"
+       android:layout_height="200dp"
+       android:layout_margin="20dp"
+       android:background="#ddd"/>
+
+   <com.paperfish.viewsset.PercentCircleView
+       android:id="@+id/percentView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_margin="20dp"
+       app:inner_radius="50dp"
+       app:inner_color="#e0e0e0"
+       app:stroke_size="20dp"
+       app:stroke_color="#8bc34a"
+       app:text_size="25sp"
+       app:text_color="#ab47bc"/>
+
+
+   <Button
+       android:id="@+id/bt1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="+6"/>
+
+   <Button
+       android:id="@+id/bt2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="-6"/>
+</LinearLayout>
