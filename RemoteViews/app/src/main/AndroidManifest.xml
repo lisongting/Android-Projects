@@ -16,19 +16,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name=".MyAppWidgetProvider">
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/widget_provider_info">
-            </meta-data>
+        <!--<receiver android:name=".MyAppWidgetProvider">-->
+            <!--<meta-data-->
+                <!--android:name="android.appwidget.provider"-->
+                <!--android:resource="@xml/widget_provider_info">-->
+            <!--</meta-data>-->
 
-            <intent-filter>
-                <action android:name="cn.lst.action.click"/>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
-            </intent-filter>
-        </receiver>
+            <!--<intent-filter>-->
+                <!--<action android:name="cn.lst.action.click"/>-->
+                <!--<action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
 
-        <receiver android:name=".TimeWidget">
+        <receiver android:name=".TimeWidget"
+            android:icon="@color/colorPrimaryDark">
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/time_widget_info">
@@ -40,6 +41,23 @@
         </receiver>
 
         <service android:name=".TimeService" />
+
+
+
+        <!--倒计时控件-->
+        <receiver android:name=".CountDownWidget">
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_count_down_info" />
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.paperfish.counter" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".UpdateService">
+        </service>
+
     </application>
 
 </manifest>

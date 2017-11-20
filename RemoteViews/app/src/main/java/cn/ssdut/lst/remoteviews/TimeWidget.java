@@ -23,13 +23,14 @@ public class TimeWidget extends AppWidgetProvider {
     @Override
     public void onReceive(Context context, Intent intent) {
         log("onReceive()");
-
+        super.onReceive(context, intent);
     }
 
     //刷新
     @Override
     public void onUpdate(Context context, AppWidgetManager manager, int[] appWidgetIds) {
         log("onUpdate");
+        super.onUpdate(context, manager, appWidgetIds);
 
     }
 
@@ -45,12 +46,13 @@ public class TimeWidget extends AppWidgetProvider {
     @Override
     public void onDeleted(Context context, int[] appWidgetIds) {
         log("onDeleted()");
+        super.onDeleted(context,appWidgetIds);
     }
 
 
 
 
     private static void log(String s) {
-        Log.i("tag", s);
+        Log.i("TimeWidget", s);
     }
 }

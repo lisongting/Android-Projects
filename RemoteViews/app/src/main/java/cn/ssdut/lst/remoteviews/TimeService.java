@@ -1,5 +1,6 @@
 package cn.ssdut.lst.remoteviews;
 
+import android.app.PendingIntent;
 import android.app.Service;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
@@ -22,20 +23,25 @@ import java.util.TimerTask;
 public class TimeService extends Service {
 
     private Timer t ;
+    SimpleDateFormat format ;
     @Override
     public void onCreate() {
         super.onCreate();
         Log.i("tag", "TimeService Created()");
         t = new Timer();
+        format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         TimerTask task  = new TimerTask() {
             @Override
             public void run() {
-                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 String time = format.format(new Date());
-
                 //将时间传给RemoteView
                 RemoteViews rv = new RemoteViews(getPackageName(),R.layout.time_widget);
                 rv.setTextViewText(R.id.textview,time);
+
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+
+                rv.setOnClickPendingIntent(R.id.textview, pendingIntent);
 
                 AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(getApplicationContext());
                 ComponentName componentName = new ComponentName(getApplicationContext(), TimeWidget.class);
@@ -51,6 +57,12 @@ public class TimeService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         return null;
+    }
+
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        return super.onStartCommand(intent, flags, startId);
     }
 
     @Override

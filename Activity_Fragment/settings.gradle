@@ -1,1 +1,1 @@
-include ':PreferenceActivity', ':fragmenttest', ':fragmentcommunication', ':staticfragment', ':dynamicfragment', ':intenttest1', ':settingactivity'
+include ':PreferenceActivity', ':fragmenttest', ':fragmentcommunication', ':staticfragment', ':dynamicfragment', ':intenttest1', ':settingactivity', ':fragmentlifecycle'
