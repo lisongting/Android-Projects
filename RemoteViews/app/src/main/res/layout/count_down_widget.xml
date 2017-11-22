@@ -8,9 +8,9 @@
         android:id="@+id/counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/gradient_bg"
+        android:background="@drawable/gradient_bg2"
         android:textSize="25sp"
         android:gravity="center"
-        android:text="70"
+        android:text="100"
         />
 </LinearLayout>

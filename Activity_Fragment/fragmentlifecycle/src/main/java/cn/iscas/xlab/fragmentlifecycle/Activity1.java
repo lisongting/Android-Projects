@@ -33,8 +33,8 @@ public class Activity1 extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-        super.onStart();
         log("onStart()");
+        super.onStart();
 
         frameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
