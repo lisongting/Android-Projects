@@ -15,6 +15,7 @@ import com.pili.pldroid.player.PLMediaPlayer;
 import com.pili.pldroid.player.widget.PLVideoTextureView;
 
 /**
+ * 使用七牛PLDroidPlayer播放rtmp流媒体
  * Created by lisongting on 2017/11/8.
  */
 

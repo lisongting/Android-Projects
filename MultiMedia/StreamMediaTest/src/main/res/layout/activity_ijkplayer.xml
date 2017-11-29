@@ -10,11 +10,11 @@
         android:text="rtmp://192.168.0.118/m"
         android:hint="在这里输入流媒体URL"/>
 
-    <com.pili.pldroid.player.widget.PLVideoTextureView
-        android:id="@+id/plTextureView"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        />
+  <SurfaceView
+      android:id="@+id/surface_view"
+      android:layout_width="match_parent"
+      android:layout_height="300dp"
+      />
 
 
     <RelativeLayout
@@ -39,14 +39,14 @@
             android:layout_below="@id/bt_start"
             android:text="RGB图像" />
 
-        <Button
-            android:id="@+id/bt_depth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bt_start"
-            android:layout_toRightOf="@id/bt_rgb"
-            android:text="深度图像"
-            />
+        <!--<Button-->
+            <!--android:id="@+id/bt_depth"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/bt_start"-->
+            <!--android:layout_toRightOf="@id/bt_rgb"-->
+            <!--android:text="深度图像"-->
+            <!--/>-->
     </RelativeLayout>
 
 
