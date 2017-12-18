@@ -34,21 +34,21 @@ public class SimpleFragment1 extends Fragment {
 
     @Override
     public void onAttach(Context context) {
-        log("onAttach()");
         super.onAttach(context);
+        log("onAttach");
 
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        log("onCreate()");
         super.onCreate(savedInstanceState);
+        log("onCreate");
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        log("onCreateView()");
+        log("onCreateView");
         str = getArguments().getString("string");
         View v = inflater.inflate(R.layout.fragment_simple, container,false);
         TextView text = (TextView) v.findViewById(R.id.textview);
@@ -59,70 +59,69 @@ public class SimpleFragment1 extends Fragment {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        log("onActivityCreated()");
         super.onActivityCreated(savedInstanceState);
+        log("onActivityCreated");
     }
 
     @Override
     public void onStart() {
-        log("onStart()");
         super.onStart();
+        log("onStart");
     }
 
 
     @Override
     public void onResume() {
-        log("onResume()");
         super.onResume();
+        log("onResume");
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        log("onSaveInstanceState()");
-        outState.putString("key", "test");
         super.onSaveInstanceState(outState);
+        log("onSaveInstanceState");
     }
 
     @Override
     public void onPause() {
-        log("onPause()");
         super.onPause();
+        log("onPause");
     }
 
     @Override
     public void onStop() {
-        log("onStop()");
         super.onStop();
+        log("onStop");
     }
 
 
 
     @Override
     public void onDestroyView() {
-        log("onDestroyView()");
         super.onDestroyView();
+        log("onDestroyView");
     }
 
     @Override
     public void onDestroy() {
-        log("onDestroy()");
         super.onDestroy();
+        log("onDestroy");
     }
 
     @Override
     public void onDetach() {
-        log("onDetach()");
         super.onDetach();
+        log("onDetach");
     }
 
     @Override
     public void onHiddenChanged(boolean hidden) {
-        log("isHidden:" + hidden);
         super.onHiddenChanged(hidden);
+        log("isHidden:" + hidden);
     }
 
     private void log(String s) {
-        Log.i("tag","Fragment"+num +" -- " + s);
+        Log.v("tag","Fragment"+num +" -- " + s);
     }
 
 

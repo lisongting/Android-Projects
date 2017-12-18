@@ -14,27 +14,35 @@ import android.widget.FrameLayout;
 public class Activity1 extends AppCompatActivity {
     FragmentManager fragmentManager;
     FrameLayout frameLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        log("onCreate()");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity1);
+        log("onCreate");
+        setContentView(R.layout.activity_simple);
         frameLayout = (FrameLayout) findViewById(R.id.container);
 
 
         fragmentManager = getSupportFragmentManager();
 
-        fragmentManager.beginTransaction()
-                .setAllowOptimization(false)
-                .add(R.id.container,SimpleFragment1.getInstance("fragment") , "fragment")
-                .commit();
+//        fragmentManager.beginTransaction()
+//                .setAllowOptimization(false)
+//                .add(R.id.container,SimpleFragment1.getInstance("fragment") , "fragment")
+//                .commit();
+
+        if (savedInstanceState == null) {
+            fragmentManager.beginTransaction()
+                    .add(R.id.container,SimpleFragment1.getInstance("fragment") , "fragment")
+                    .commit();
+        }
+
 
     }
 
     @Override
     protected void onStart() {
-        log("onStart()");
         super.onStart();
+        log("onStart");
 
         frameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,36 +56,35 @@ public class Activity1 extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        log("onResume()");
+        log("onResume");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        log("onPause()");
+        log("onPause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        log("onStop()");
+        log("onStop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        log("onDestroy()");
+        log("onDestroy");
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        log("onSaveInstanceState()");
-        outState.putString("key", "test");
         super.onSaveInstanceState(outState);
+        log("onSaveInstanceState");
 
     }
 
     private void log(String s) {
-        Log.i("tag", "Activity  -- " + s);
+        Log.i("tag", "Activity1 -- " + s);
     }
 }

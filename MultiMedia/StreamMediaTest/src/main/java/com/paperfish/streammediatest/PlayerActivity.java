@@ -1,5 +1,6 @@
 package com.paperfish.streammediatest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -20,15 +21,13 @@ import tv.danmaku.ijk.media.player.IjkMediaPlayer;
  */
 
 public class PlayerActivity extends AppCompatActivity {
-    private Button start,stop,bt_rgb;
+    private Button start,stop,bt_rgb,bt_depth,bt_start_custom_video;
     private EditText editText;
     private IjkMediaPlayer ijkMediaPlayer;
     private SurfaceView surfaceView;
 
-    private static final String RTMP_RGB = "rtmp://192.168.0.118/rgb ";
-//    private static final String RTMP_RGB = "rtmp://10.0.0.24/rgb ";
-
-    private static final String RTMP_DEPTH = "rtmp://192.168.0.118/depth ";
+    private static final String RTMP_RGB = "rtmp://192.168.0.110/rgb ";
+    private static final String RTMP_DEPTH = "rtmp://192.168.0.110/depth ";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +38,8 @@ public class PlayerActivity extends AppCompatActivity {
         stop = (Button) findViewById(R.id.bt_stop);
         editText = (EditText) findViewById(R.id.url);
         bt_rgb = (Button) findViewById(R.id.bt_rgb);
+        bt_depth = (Button) findViewById(R.id.bt_depth);
+        bt_start_custom_video = (Button) findViewById(R.id.bt_custom_video);
         surfaceView = (SurfaceView) findViewById(R.id.surface_view);
 
         getSupportActionBar().setTitle("测试IJKPlayer");
@@ -46,9 +47,24 @@ public class PlayerActivity extends AppCompatActivity {
         bt_rgb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ijkMediaPlayer.isPlaying()) {
+                    ijkMediaPlayer.stop();
+                    ijkMediaPlayer.reset();
+                }
                 play(RTMP_RGB);
             }
         });
+        bt_depth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ijkMediaPlayer.isPlaying()) {
+                    ijkMediaPlayer.stop();
+                    ijkMediaPlayer.reset();
+                }
+                play(RTMP_DEPTH);
+            }
+        });
+
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +82,13 @@ public class PlayerActivity extends AppCompatActivity {
                 if (ijkMediaPlayer != null) {
                     ijkMediaPlayer.stop();
                 }
+            }
+        });
+        bt_start_custom_video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PlayerActivity.this, CustomVideoActivity.class));
+
             }
         });
     }
@@ -90,7 +113,17 @@ public class PlayerActivity extends AppCompatActivity {
 
     private void createPlayer() {
         ijkMediaPlayer = new IjkMediaPlayer();
+
+        ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, "probesize", 1024 * 16);
+        ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, "analyzeduration", 50000);
+        ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_CODEC, "skip_loop_filter", 0);
+        ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_CODEC, "skip_frame", 0);
+
         ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER, "mediacodec", 1);
+        ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER,"packet-buffering",0);
+        ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER, "max_cached_duration", 3000);
+        ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER, "infbuf", 1);
+
         ijkMediaPlayer.setOnNativeInvokeListener(new IjkMediaPlayer.OnNativeInvokeListener() {
             @Override
             public boolean onNativeInvoke(int i, Bundle bundle) {

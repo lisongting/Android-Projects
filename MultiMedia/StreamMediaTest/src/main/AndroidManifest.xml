@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <!--<activity android:name=".PLMediaActivity"/>-->
-
+        <activity android:name=".CustomVideoActivity" />
+        <activity android:name=".FullScreenVideoActivity" />
     </application>
 
 </manifest>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ssudt.lst.viewgroup.MyViewGroup
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#AA333333" >
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="#FF4444"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#00ff00"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#ff0000"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:text="2"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#0000ff"
+        android:gravity="center"
+        android:text="3"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+
+</com.ssudt.lst.viewgroup.MyViewGroup>

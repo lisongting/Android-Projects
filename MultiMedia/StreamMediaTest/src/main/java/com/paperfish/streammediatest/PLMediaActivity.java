@@ -16,6 +16,8 @@ import com.pili.pldroid.player.widget.PLVideoTextureView;
 
 /**
  * 使用七牛PLDroidPlayer播放rtmp流媒体
+ * 使用PLDroidPlayer，在我推流端正确的时候，播放的视频画质非常差，
+ * 有的时候一帧都显示不出来，还是使用ijkPlayer能够正常播放
  * Created by lisongting on 2017/11/8.
  */
 
