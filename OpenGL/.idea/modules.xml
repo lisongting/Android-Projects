@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/OpenGL.iml" filepath="$PROJECT_DIR$/OpenGL.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/robotdisplay/robotdisplay.iml" filepath="$PROJECT_DIR$/robotdisplay/robotdisplay.iml" />
       <module fileurl="file://$PROJECT_DIR$/simple3d/simple3d.iml" filepath="$PROJECT_DIR$/simple3d/simple3d.iml" />
       <module fileurl="file://$PROJECT_DIR$/texture3d/texture3d.iml" filepath="$PROJECT_DIR$/texture3d/texture3d.iml" />
     </modules>

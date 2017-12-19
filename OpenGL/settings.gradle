@@ -1,1 +1,1 @@
-include ':app', ':simple3d', ':texture3d'
+include ':app', ':simple3d', ':texture3d', ':robotdisplay'

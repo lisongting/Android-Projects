@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/robotdisplay" />
             <option value="$PROJECT_DIR$/simple3d" />
             <option value="$PROJECT_DIR$/texture3d" />
           </set>
