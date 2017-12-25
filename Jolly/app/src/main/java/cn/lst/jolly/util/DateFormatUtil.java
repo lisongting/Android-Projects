@@ -17,6 +17,16 @@ public class DateFormatUtil {
         return sDate;
     }
 
+    public static long formatZhihuDailyDateStringToLong(String date) {
+        Date d = null;
+        try {
+            d = new SimpleDateFormat("yyyyMMdd").parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return d == null ? 0 : d.getTime();
+    }
+
     public static String formatDoubanMomentDateLongToString(long date) {
         String sDate;
         Date d = new Date(date);

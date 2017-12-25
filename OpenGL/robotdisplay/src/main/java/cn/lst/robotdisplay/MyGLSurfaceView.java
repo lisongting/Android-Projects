@@ -20,8 +20,7 @@ public class MyGLSurfaceView extends GLSurfaceView implements GestureDetector.On
 
     public MyGLSurfaceView(Context context) {
         super(context);
-        gestureDetector = new GestureDetector(context, this);
-//        setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
+//        gestureDetector = new GestureDetector(context, this);
     }
 
     public MyGLSurfaceView(Context context, AttributeSet attrs) {
@@ -57,8 +56,8 @@ public class MyGLSurfaceView extends GLSurfaceView implements GestureDetector.On
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         log("onTouchEvent");
-        boolean b = gestureDetector.onTouchEvent(event);
-        return b;
+//        boolean b = gestureDetector.onTouchEvent(event);
+        return true;
     }
 
 

@@ -35,7 +35,7 @@ public class DatabaseCreator {
     }
 
     public void createDb(final Context context) {
-        log("Create Database in Thread:" + Thread.currentThread().getName());
+//        log("Create Database in Thread:" + Thread.currentThread().getName());
         if (!mInitializing.compareAndSet(true, false)) {
             return;
         }

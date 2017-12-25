@@ -6,6 +6,7 @@ import android.content.pm.ConfigurationInfo;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.animation.LinearInterpolator;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,23 +45,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (glSurfaceView != null) {
-            glSurfaceView.onResume();
+        if (myGLSurfaceView != null) {
+            myGLSurfaceView.onResume();
         }
 
-//        valueAnimator = ValueAnimator.ofFloat(0,360);
-//        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-//            @Override
-//            public void onAnimationUpdate(ValueAnimator animation) {
-//                float f = (float) animation.getAnimatedValue();
+        valueAnimator = ValueAnimator.ofFloat(0,360);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float f = (float) animation.getAnimatedValue();
 //                glRenderer.rotate(f);
-//                glSurfaceView.invalidate();
-//            }
-//        });
-//        valueAnimator.setInterpolator(new LinearInterpolator());
-//        valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
-//        valueAnimator.setDuration(10000);
-//        valueAnimator.start();
+                glRenderer.setAngle(f, 0);
+//                glRenderer.setAngle(0, f);
+                myGLSurfaceView.invalidate();
+            }
+        });
+        valueAnimator.setInterpolator(new LinearInterpolator());
+        valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
+        valueAnimator.setDuration(10000);
+        valueAnimator.start();
 
     }
 

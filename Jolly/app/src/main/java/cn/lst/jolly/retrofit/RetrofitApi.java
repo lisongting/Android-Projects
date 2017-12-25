@@ -17,7 +17,7 @@ import retrofit2.http.Query;
 
 public interface RetrofitApi {
 
-    String ZHIHU_DAILY_BASE = "https://news-at.zhihu.com/api/4/news";
+    String ZHIHU_DAILY_BASE = "https://news-at.zhihu.com/api/4/news/";
 
     String DOUBAN_MOMENT_BASE = "https://moment.douban.com/api/";
 
@@ -36,7 +36,7 @@ public interface RetrofitApi {
         Call<DoubanMomentNews> getDoubanList(@Path("date") String date);
 
         @GET("post/{id}")
-        Call<DoubanMomentContent> getDoubanMoment(@Path("id") int id);
+        Call<DoubanMomentContent> getDoubanContent(@Path("id") int id);
     }
 
     interface GuokrHandpickService{

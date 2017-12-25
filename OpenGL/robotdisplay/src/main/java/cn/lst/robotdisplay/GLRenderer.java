@@ -65,7 +65,7 @@ public class GLRenderer implements GLSurfaceView.Renderer{
         //设置深度缓存比较函数
         gl.glDepthFunc(GL10.GL_LEQUAL);
         gl.glShadeModel(GL10.GL_SMOOTH);
-//        gl.glRotatef(45, 0, 0 , 1);
+//        gl.glRotatef(90, 0, 0 , 1);
         float r = model.getR();
         mScalef = 0.5f / r;
         mCenterPoint = model.getCenterPoint();
