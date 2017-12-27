@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="18dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="@color/colorPrimary"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="人脸注册"
+            android:textSize="30sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/id_text_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="150dp"
+            android:layout_below="@id/tv_register"
+            android:layout_gravity="center"
+            >
+            <EditText
+                android:id="@+id/id_textView"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:hint="输入姓名"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@id/id_text_input_layout"
+            >
+            <Button
+                android:id="@+id/id_bt_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_margin="8dp"
+                android:text="注册"
+                android:background="@drawable/bt_background"
+                />
+
+            <Button
+                android:id="@+id/id_bt_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_margin="8dp"
+                android:text="取消"
+                android:background="@drawable/bt_background"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+
+
+
+
