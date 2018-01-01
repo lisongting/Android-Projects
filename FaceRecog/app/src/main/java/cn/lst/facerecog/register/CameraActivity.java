@@ -88,7 +88,7 @@ public class CameraActivity extends AppCompatActivity implements RegisterContrac
         btCapture = findViewById(R.id.capture);
         btSwithCam = findViewById(R.id.bt_switch);
 
-        //LENS_FACING_FRONT 后置摄像头， LENS_FACING_BACK  前置摄像头
+        //LENS_FACING_FRONT 2 后置摄像头， LENS_FACING_BACK 1 前置摄像头
         cameraFacingMode = CameraCharacteristics.LENS_FACING_BACK;
 
         initView();
@@ -109,6 +109,13 @@ public class CameraActivity extends AppCompatActivity implements RegisterContrac
         ViewGroup.LayoutParams params = status_bar.getLayoutParams();
         params.height = Util.getStatusBarHeight(this);
         status_bar.setLayoutParams(params);
+
+        WindowManager manager = getWindowManager();
+        DisplayMetrics metrics = new DisplayMetrics();
+        manager.getDefaultDisplay().getMetrics(metrics);
+        log("screen size:" + metrics.widthPixels + "x" + metrics.heightPixels);
+        log("densityDpi" + metrics.densityDpi + ",density:" + metrics.density + ",scaledDensity" + metrics.scaledDensity);
+        log("xdpi:" + metrics.xdpi + ",ydpi:" + metrics.ydpi);
     }
 
     @Override
@@ -147,9 +154,11 @@ public class CameraActivity extends AppCompatActivity implements RegisterContrac
             @Override
             public void onClick(View v) {
                 String userName = getIntent().getStringExtra("userName");
-                presenter.register(Util.makeUserNameToHex(userName),
+//                presenter.youtuRegister(Util.makeUserNameToHex(userName),
+//                        ImageUtils.encodeBitmapToBase64(bitmapSoftReference.get(), Bitmap.CompressFormat.JPEG, 100));
+                presenter.facePlusRegister(Util.makeUserNameToHex(userName),
                         ImageUtils.encodeBitmapToBase64(bitmapSoftReference.get(), Bitmap.CompressFormat.JPEG, 100));
-
+                Toast.makeText(CameraActivity.this, "注册成功", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -287,8 +296,10 @@ public class CameraActivity extends AppCompatActivity implements RegisterContrac
                         }
                         matrix1.postScale(1, 1);
                     }
+                    //这个bitmap用来发往服务器进制注册
                     bitmapSoftReference = new SoftReference<Bitmap>(Bitmap.createBitmap(tmpBitmap, 0, 0, width, height, matrix, true));
 
+                    //这个bitmap用来展示在界面上
                     WeakReference<Bitmap> bitmapWeakReference =
                             new WeakReference<Bitmap>(Bitmap.createBitmap(tmpBitmap, 0, 0, width, height, matrix1, true));
                     ivShow.setImageBitmap(bitmapWeakReference.get());
@@ -304,7 +315,7 @@ public class CameraActivity extends AppCompatActivity implements RegisterContrac
 
     @TargetApi(23)
     public void openCamera() {
-        log("openCamera:" + cameraFacingMode);
+        log("openCamera facingMode:" + cameraFacingMode);
         mCameraID = ""+ cameraFacingMode;
         try{
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)!=
@@ -389,7 +400,7 @@ public class CameraActivity extends AppCompatActivity implements RegisterContrac
         try{
             requestBuilder = mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
 
-            //将ImageReader的surface作为CaptureRequest.Builder的目标
+            //将ImageReader的surface作为CaptureRequ est.Builder的目标
             requestBuilder.addTarget(mImageReader.getSurface());
             // 自动对焦
             requestBuilder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
@@ -441,7 +452,7 @@ public class CameraActivity extends AppCompatActivity implements RegisterContrac
 
     @Override
     public void showInfo(String s) {
-        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, s, Toast.LENGTH_LONG).show();
     }
 
     @Override

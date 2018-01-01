@@ -51,8 +51,8 @@ public class UpdateService extends Service{
                 Calendar endCalendar = Calendar.getInstance();
                 endCalendar.set(Calendar.YEAR, 2018);
                 endCalendar.set(Calendar.MONTH, 0);
-                endCalendar.set(Calendar.DAY_OF_MONTH, 30);
-                endCalendar.set(Calendar.HOUR_OF_DAY, 17);
+                endCalendar.set(Calendar.DAY_OF_MONTH, 29);
+                endCalendar.set(Calendar.HOUR_OF_DAY, 6);
                 long remainTimeInMillis = endCalendar.getTimeInMillis() - currentCalendar.getTimeInMillis();
                 int remainDays = (int) (remainTimeInMillis / (24 * 60 * 60 * 1000));
 

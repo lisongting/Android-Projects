@@ -12,7 +12,9 @@ public interface RecogContract {
 
     interface Presenter extends BasePresenter {
 
-        void recognize(String strBitmap);
+        void youtuRecognize(String strBitmap);
+
+        void facePlusRecognize(String strBitmap);
 
         void destroy();
     }

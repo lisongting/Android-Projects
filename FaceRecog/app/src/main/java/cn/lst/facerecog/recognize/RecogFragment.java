@@ -375,7 +375,9 @@ public class RecogFragment extends Fragment implements RecogContract.View{
                             }else if (tmpFrameCount == 3) {
                                 faceBitmap = ImageUtils.cropFace(faces[0], RGBFace);
                                 if (!alertDialog.isShowing()) {
-                                    presenter.recognize(
+//                                    presenter.youtuRecognize(
+//                                            ImageUtils.encodeBitmapToBase64(faceBitmap, Bitmap.CompressFormat.JPEG,100));
+                                    presenter.facePlusRecognize(
                                             ImageUtils.encodeBitmapToBase64(faceBitmap, Bitmap.CompressFormat.JPEG,100));
                                     getActivity().runOnUiThread(new Runnable() {
                                         @Override

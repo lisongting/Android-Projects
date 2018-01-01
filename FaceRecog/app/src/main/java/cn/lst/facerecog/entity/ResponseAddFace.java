@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by lisongting on 2017/12/27.
+ * 优图：人脸添加的服务端响应
  */
 
 public class ResponseAddFace {

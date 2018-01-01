@@ -15,6 +15,7 @@ import retrofit2.http.POST;
 
 /**
  * Created by lisongting on 2017/12/27.
+ * 优图在线人脸识别API
  */
 
 public interface YouTuApi {

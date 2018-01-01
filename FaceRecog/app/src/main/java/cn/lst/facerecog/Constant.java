@@ -13,4 +13,10 @@ public class Constant {
     public static final String YOUTU_SECRET_KEY = "TyXpLvfUg2U1gUMJLRnFhBjWQQUfuEfI";
     //签名码过期时间(秒)：30天
     public static final int YOUTU_EXPIRED_SECONDS = 2592000;
+
+
+    public static final String FACEPLUS_API_KEY = "5Nwxo-QuBvBuqEHZ5m3Dn-v873w_EE4P";
+    public static final String FACEPLUS_API_SECRET = "VDquvwgaAhwKLzft_ElCxs6wAufn80if";
+    public static final String FACEPLUS_BASE_URL = "https://api-cn.faceplusplus.com/facepp/v3/";
+
 }

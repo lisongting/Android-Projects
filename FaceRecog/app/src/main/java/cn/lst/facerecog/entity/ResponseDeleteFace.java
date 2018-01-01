@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by lisongting on 2017/12/27.
+ * 优图 JSON响应对应实体类
  */
 
 public class ResponseDeleteFace {
