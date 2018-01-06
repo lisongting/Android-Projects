@@ -172,8 +172,10 @@ public class RegisterPresenter implements RegisterContract.Presenter {
     @Override
     public void facePlusRegister(final String userId, final String strBitmap) {
         //创建人脸集合,创建好会得到一个facesettoken
-        //facsettoken : 7afefd59b5afe54fb0f79f0f7487f4eb
-        JSONObject jsonObject = new JSONObject();
+        //如facsettoken : 7afefd59b5afe54fb0f79f0f7487f4eb
+
+        //床脚好人脸集合后，检测人脸
+        //检测人脸会得到一个FaceToken
         try {
             facePlusApi.detectFace(Constant.FACEPLUS_API_KEY, Constant.FACEPLUS_API_SECRET,strBitmap)
                     .subscribeOn(Schedulers.io())
@@ -188,10 +190,10 @@ public class RegisterPresenter implements RegisterContract.Presenter {
                             log(detectFaceResponse.toString());
                             if (detectFaceResponse.getFaces().size() != 0) {
                                 try {
-                                    String faceToken = detectFaceResponse.getFaces().get(0).getFace_token();
-                                    //这一步添加人脸得到的face_token是：a4b0f89e3f48c0e021d75095ac21dc81
+                                    final String faceToken = detectFaceResponse.getFaces().get(0).getFace_token();
+                                    //这一步添加人脸得到face_token，类似于这样的：a4b0f89e3f48c0e021d75095ac21dc81
                                     facePlusApi.addFace(Constant.FACEPLUS_API_KEY,
-                                            Constant.FACEPLUS_API_SECRET,"7afefd59b5afe54fb0f79f0f7487f4eb",
+                                            Constant.FACEPLUS_API_SECRET,"8c2414aa04e213319c605be206f273d9",
                                             faceToken)
                                             .subscribeOn(Schedulers.io())
                                             .observeOn(AndroidSchedulers.mainThread())
@@ -205,7 +207,8 @@ public class RegisterPresenter implements RegisterContract.Presenter {
                                                 public void onNext(AddFaceResponse addFaceResponse) {
                                                     log(addFaceResponse.toString());
                                                     if (addFaceResponse.getFace_count() == 1) {
-                                                        view.showSuccess();
+//                                                        view.showSuccess();
+                                                        view.showInfo("注册成功。人脸Token:"+faceToken);
                                                     }
 
                                                 }

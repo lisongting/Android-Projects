@@ -9,6 +9,8 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.lst.jolly.data.GuokrHandpickContentChannel;
+
 /**
  * Created by lisongting on 2017/12/18.
  */
@@ -25,4 +27,17 @@ public class GuokrContentTypeConverter {
         Type listType = new TypeToken<ArrayList<String>>(){}.getType();
         return new Gson().fromJson(string,listType);
     }
+
+    @TypeConverter
+    public static String channelListToString(List<GuokrHandpickContentChannel> channels){
+        return new Gson().toJson(channels);
+    }
+
+    @TypeConverter
+    public static List<GuokrHandpickContentChannel> stringToChannelList(String s) {
+        Type listType = new TypeToken<ArrayList<GuokrHandpickContentChannel>>(){}.getType();
+        return new Gson().fromJson(s, listType);
+    }
+
+
 }

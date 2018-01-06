@@ -5,20 +5,18 @@ import android.util.Log;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-
 import cn.lst.facerecog.Constant;
 import cn.lst.facerecog.FacePlusApi;
 import cn.lst.facerecog.Util;
 import cn.lst.facerecog.YouTuApi;
 import cn.lst.facerecog.entity.ResponseRecogFace;
+import cn.lst.facerecog.entity.SearchFaceResponse;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -95,26 +93,23 @@ public class RecogPresenter implements RecogContract.Presenter {
     @Override
     public  void facePlusRecognize(String strBitmap) {
         //Face++的人脸识别实际上是在一个组内进行人脸查找，找到最相似的
-        String faceSetToken = "7afefd59b5afe54fb0f79f0f7487f4eb";
+        String faceSetToken = "8c2414aa04e213319c605be206f273d9";
         facePlusApi.searchFace(Constant.FACEPLUS_API_KEY,
                 Constant.FACEPLUS_API_SECRET,
                 faceSetToken,
                 strBitmap)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<ResponseBody>() {
+                .subscribe(new Observer<SearchFaceResponse>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(ResponseBody responseBody) {
-                        try {
-                            log(responseBody.string());
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                    public void onNext(SearchFaceResponse responseBody) {
+                        log(responseBody.toString());
+                        view.showRecognitionSuccess("识别成功\nToken:" + responseBody.getResults().get(0).getFace_token());
                     }
 
                     @Override

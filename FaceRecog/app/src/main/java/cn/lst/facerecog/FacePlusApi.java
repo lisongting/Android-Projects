@@ -2,6 +2,7 @@ package cn.lst.facerecog;
 
 import cn.lst.facerecog.entity.AddFaceResponse;
 import cn.lst.facerecog.entity.DetectFaceResponse;
+import cn.lst.facerecog.entity.SearchFaceResponse;
 import io.reactivex.Observable;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
@@ -36,10 +37,10 @@ public interface FacePlusApi {
 
     @FormUrlEncoded
     @POST("search")
-    Observable<ResponseBody> searchFace(@Field("api_key") String apiKey,
-                                        @Field("api_secret")String apiSecret,
-                                        @Field("faceset_token")String facesetToken,
-                                        @Field("image_base64")String base64);
+    Observable<SearchFaceResponse> searchFace(@Field("api_key") String apiKey,
+                                              @Field("api_secret")String apiSecret,
+                                              @Field("faceset_token")String facesetToken,
+                                              @Field("image_base64")String base64);
 
 
 }

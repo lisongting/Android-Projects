@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:enabled = "true"
+        android:icon = "@drawable/ic_shortcut_favorite"
+        android:shortcutId="favorite"
+        android:shortcutShortLabel="@string/favorites"
+        android:shortcutLongLabel="@string/favorites">
+
+        <intent
+            android:action="cn.lst.jolly.favorites"
+            android:targetPackage="cn.lst.jolly"
+            android:targetClass="cn.lst.jolly.ui.MainActivity"/>
+
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+</shortcuts>

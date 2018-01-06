@@ -1,0 +1,98 @@
+
+<resources>
+
+    <string name="app_name">Jolly</string>
+
+    <string name="zhihu_daily">知乎日报</string>
+    <string name="douban_moment">豆瓣一刻</string>
+    <string name="guokr_handpick">果壳精选</string>
+
+    <string name="favorites">收藏</string>
+    <string name="timeline">时间轴</string>
+    <string name="info">关于</string>
+
+    <!-- general -->
+    <string name="positive">确定</string>
+    <string name="negative">取消</string>
+    <string name="something_wrong">发生了一些错误…</string>
+    <!-- general end -->
+
+    <!-- timeline -->
+    <string name="fab_description">选择特定日期</string>
+    <string name="empty_content">哎呀, 内容走丢了…</string>
+    <!-- timeline end -->
+
+    <!-- favorites -->
+    <string name="no_favorites">收藏迷路了…</string>
+    <!-- favorites end -->
+
+    <!--info fragment-->
+    <string name="settings">设置</string>
+    <string name="no_picture_mode">无图模式</string>
+    <string name="no_image_mode_desc">显示文章内容时不加载图片</string>
+    <string name="in_app_browser">Chrome Custom Tabs</string>
+    <string name="in_app_browser_desc">使用Chrome Custom Tabs打开链接</string>
+    <string name="night_mode">夜间模式</string>
+    <string name="time_of_saving_articles">文章保存时间</string>
+    <string name="clear_image_cache">清除图片缓存</string>
+    <string name="clear_image_cache_successfully">缓存已被成功清除</string>
+    <string name="about">关于</string>
+    <string name="version">版本: V3.3.0</string>
+    <string name="rate">为应用评分</string>
+    <string name="rate_desc">如果你喜欢纸飞机App,请在商店中给它一个好评吧</string>
+    <string name="author">作者</string>
+    <string name="contributors">代码贡献者</string>
+    <string name="contributors_desc">https://github.com/TonnyL/PaperPlane/graphs/contributors</string>
+    <string name="follow_me_on_github">在GitHub关注我</string>
+    <string name="follow_me_on_github_desc">https://github.com/TonnyL</string>
+    <string name="follow_me_on_zhihu">在知乎关注我</string>
+    <string name="follow_me_on_zhihu_desc">https://www.zhihu.com/people/lizhaotailang</string>
+    <string name="support">支持</string>
+    <string name="source_code">源代码</string>
+    <string name="source_code_desc">https://github.com/TonnyL/PaperPlane</string>
+    <string name="feedback">反馈Bug / 建议</string>
+    <string name="feedback_desc">帮助我改进纸飞机App</string>
+    <string name="sendto">mailto:marktonymengyi@gmail.com</string>
+    <string name="mail_topic">纸飞机使用反馈与建议</string>
+    <string name="device_model">设备型号:</string>
+    <string name="sdk_version">SDK版本:</string>
+    <string name="no_mail_app">没有安装邮件类应用</string>
+    <string name="coffee">请我喝杯咖啡</string>
+    <string name="coffee_description">如果你认同我的工作，可以请我喝杯咖啡支持我的工作</string>
+    <string name="donate">捐助开发者</string>
+    <string name="donate_content">支付宝账号将会复制到粘贴板，进入支付宝可直接粘贴完成捐赠，感谢您的支持！</string>
+    <string name="donate_account">marktonymengyi@gmail.com</string>
+    <string name="open_source_licenses">开源许可证</string>
+
+    <string-array name="time_of_saving_articles">
+        <item>1 day</item>
+        <item>5 days</item>
+        <item>15 days</item>
+        <item>30 days</item>
+    </string-array>
+
+    <string-array name="time_of_saving_articles_item">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <!-- info fragment end -->
+
+    <!-- article details -->
+    <string name="favorite">收藏</string>
+    <string name="unfavorite">取消收藏</string>
+    <string name="action_copy_link">复制链接地址至剪贴板</string>
+    <string name="action_open_in_browser">使用浏览器中打开</string>
+    <string name="action_share">分享</string>
+    <string name="share_to">分享至</string>
+    <string name="share_error">分享失败</string>
+    <string name="copied_to_clipboard">已复制到剪贴板</string>
+    <!-- article details end -->
+
+    <!-- others -->
+    <string name="no_browser_found">没有安装浏览器</string>
+    <string name="image_view_cover_desc">封面</string>
+    <!-- others end -->
+
+</resources>

@@ -29,6 +29,13 @@ public class AIMessage {
         this.intent = intent;
     }
 
+    @Override
+    public String toString() {
+        return "AIMessage{" +
+                "intent=" + intent +
+                '}';
+    }
+
     public static class IntentBean {
         /**
          * sid : cid6f1877c2@ch00b00cd64625040001
@@ -124,6 +131,21 @@ public class AIMessage {
             this.no_nlu_result = no_nlu_result;
         }
 
+        @Override
+        public String toString() {
+            return "IntentBean{" +
+                    "sid='" + sid + '\'' +
+                    ", operation='" + operation + '\'' +
+                    ", text='" + text + '\'' +
+                    ", service='" + service + '\'' +
+                    ", man_intv='" + man_intv + '\'' +
+                    ", answer=" + answer +
+                    ", uuid='" + uuid + '\'' +
+                    ", rc=" + rc +
+                    ", no_nlu_result=" + no_nlu_result +
+                    '}';
+        }
+
         public static class AnswerBean {
             /**
              * topic : chat_aiui个性化_你是谁
@@ -209,6 +231,20 @@ public class AIMessage {
                 this.emotion = emotion;
             }
 
+            @Override
+            public String toString() {
+                return "AnswerBean{" +
+                        "topic='" + topic + '\'' +
+                        ", text='" + text + '\'' +
+                        ", answerType='" + answerType + '\'' +
+                        ", topicID='" + topicID + '\'' +
+                        ", question=" + question +
+                        ", type='" + type + '\'' +
+                        ", isCustomized='" + isCustomized + '\'' +
+                        ", emotion='" + emotion + '\'' +
+                        '}';
+            }
+
             public static class QuestionBean {
                 /**
                  * ws : 你 是 谁
@@ -232,6 +268,14 @@ public class AIMessage {
 
                 public void setQ(String q) {
                     this.q = q;
+                }
+
+                @Override
+                public String toString() {
+                    return "QuestionBean{" +
+                            "ws='" + ws + '\'' +
+                            ", q='" + q + '\'' +
+                            '}';
                 }
             }
         }

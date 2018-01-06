@@ -1,42 +1,19 @@
-/*
- * Copyright 2016 lizhaotailang
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+
 
 package cn.lst.jolly.data.source.repository;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.marktony.zhihudaily.data.GuokrHandpickNewsResult;
-import com.marktony.zhihudaily.data.source.datasource.GuokrHandpickDataSource;
-import com.marktony.zhihudaily.util.DateFormatUtil;
-
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by lizhaotailang on 2017/5/24.
- *
- * Concrete implementation to load {@link GuokrHandpickNewsResult} from the data sources into a cache.
- * <p>
- *     Use the remote data source firstly, which is obtained from the server.
- *     If the remote data was not available, then use the local data source,
- *     which was from the locally persisted in database.
- */
+import cn.lst.jolly.data.GuokrHandpickNewsResult;
+import cn.lst.jolly.data.source.datasource.GuokrHandpickDataSource;
+import cn.lst.jolly.util.DateFormatUtil;
+
 
 public class GuokrHandpickNewsRepository implements GuokrHandpickDataSource {
 
@@ -70,7 +47,7 @@ public class GuokrHandpickNewsRepository implements GuokrHandpickDataSource {
     }
 
     @Override
-    public void getGuokrHandpickNews(boolean forceUpdate, boolean clearCache, int offset, int limit, @NonNull LoadGuokrHandpickNewsCallback callback) {
+    public void getGuokrHandpickNews(boolean forceUpdate, final boolean clearCache, final int offset, final int limit, final @NonNull LoadGuokrHandpickNewsCallback callback) {
 
         if (mCachedItems != null && !forceUpdate) {
             callback.onNewsLoad(new ArrayList<>(mCachedItems.values()));
@@ -106,7 +83,7 @@ public class GuokrHandpickNewsRepository implements GuokrHandpickDataSource {
     }
 
     @Override
-    public void getFavorites(@NonNull LoadGuokrHandpickNewsCallback callback) {
+    public void getFavorites(@NonNull final LoadGuokrHandpickNewsCallback callback) {
         mLocalDataSource.getFavorites(new LoadGuokrHandpickNewsCallback() {
             @Override
             public void onNewsLoad(@NonNull List<GuokrHandpickNewsResult> list) {
@@ -121,7 +98,7 @@ public class GuokrHandpickNewsRepository implements GuokrHandpickDataSource {
     }
 
     @Override
-    public void getItem(int itemId, @NonNull GetNewsItemCallback callback) {
+    public void getItem(final int itemId, @NonNull final GetNewsItemCallback callback) {
         GuokrHandpickNewsResult item = getItemWithId(itemId);
 
         if (item != null) {

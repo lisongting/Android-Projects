@@ -1,9 +1,13 @@
 package com.paperfish.aitalk;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,7 +33,7 @@ import org.json.JSONObject;
  */
 public class MainActivity extends AppCompatActivity {
 
-    public static final String TAG = "aiui";
+    public static final String TAG = "tag";
     private EditText editText;
     private TextView info;
     private Button startVoiceTalk;
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     private SpeechSynthesizer ttsSynthesizer;
     private SynthesizerListener synthesizerListener;
+    private boolean isRecording = false;
 
     private int mAIUIState = AIUIConstant.STATE_IDLE;
 
@@ -51,21 +56,43 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
         startVoiceTalk = (Button) findViewById(R.id.voiceUnderstand);
         Log.i(TAG, "MainActivity -- onCreate()");
-        startVoiceTalk.setOnTouchListener(new View.OnTouchListener() {
+//        startVoiceTalk.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                int action = event.getAction();
+//                if (action == MotionEvent.ACTION_DOWN) {
+//                    Log.i(TAG, "MotionEvent.ACTION_DOWN");
+//                    startVoiceTalk();
+//                }
+//                if (action == MotionEvent.ACTION_UP) {
+//                    Log.i(TAG, "MotionEvent.ACTION_UP");
+////                    stopVoiceTalk();
+//                }
+//                return false;
+//            }
+//        });
+        startVoiceTalk.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                int action = event.getAction();
-                if (action == MotionEvent.ACTION_DOWN) {
-                    Log.i(TAG, "MotionEvent.ACTION_DOWN");
+            public void onClick(View v) {
+                boolean b = ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.RECORD_AUDIO);
+
+                if (isRecording) {
+                    stopVoiceTalk();
+
+                    startVoiceTalk.setText("进行语音对话");
+                } else {
+                    if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.RECORD_AUDIO)
+                            != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.RECORD_AUDIO},1);
+
+                    }
                     startVoiceTalk();
+                    startVoiceTalk.setText("关闭语音对话");
                 }
-                if (action == MotionEvent.ACTION_UP) {
-                    Log.i(TAG, "MotionEvent.ACTION_UP");
-//                    stopVoiceTalk();
-                }
-                return false;
+                isRecording = !isRecording;
             }
         });
+        
         SpeechUtility.createUtility(this, SpeechConstant.APPID +"=59198461");
     }
 
@@ -108,16 +135,23 @@ public class MainActivity extends AppCompatActivity {
                                 AIMessage aiMessage;
                                 Gson gson = new Gson();
                                 aiMessage = gson.fromJson(cntJson.toString(), AIMessage.class);
-                                AIMessage.IntentBean.AnswerBean answerBean = aiMessage.getIntent().getAnswer();
-                                String str = "";
-                                str = answerBean.getText();
+                                AIMessage.IntentBean intentBean = aiMessage.getIntent();
+                                if (intentBean != null) {
+                                    AIMessage.IntentBean.AnswerBean answerBean = intentBean.getAnswer();
+                                    if (answerBean != null) {
+                                        String str = "";
+                                        str = answerBean.getText();
+                                        info.setText(str);
+                                        speakOutResult(str);
+                                    }
+
+                                }
 //                                if (anserBean != null) {
 //                                    str = anserBean.getText();
 //                                } else {
 //                                    str = "这个问题太难了，换一个吧";
 //                                }
-                                info.setText(str);
-                                speakOutResult(str);
+
                             }
                         } catch (Throwable e) {
                             e.printStackTrace();
@@ -131,7 +165,8 @@ public class MainActivity extends AppCompatActivity {
                     case AIUIConstant.EVENT_ERROR: {
                         Log.i( TAG,  "on event: "+ event.eventType );
                         info.append( "\n" );
-                        info.append( "错误: "+event.arg1+"\n"+event.info );
+//                        info.append( "错误: "+event.arg1+"\n"+event.info );
+                        Toast.makeText(MainActivity.this, "错误: "+event.arg1+"\n"+event.info, Toast.LENGTH_SHORT).show();
                     } break;
 
                     case AIUIConstant.EVENT_START_RECORD: {
@@ -263,11 +298,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        if (requestCode == 1 ) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "获取到录音权限", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "未获取到录音权限", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    @Override
     protected void onDestroy() {
         agent.destroy();
         ttsSynthesizer.stopSpeaking();
         ttsSynthesizer.destroy();
 
         super.onDestroy();
+    }
+
+    private void log(String s) {
+        Log.i("tag", s);
     }
 }

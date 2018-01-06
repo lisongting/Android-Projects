@@ -433,7 +433,8 @@ public class RecogFragment extends Fragment implements RecogContract.View{
                 return;
             }
         }
-        alertDialog.setTitle("识别结果：" + userName);
+//        alertDialog.setTitle("识别结果：" + userName);
+        alertDialog.setTitle(userName);
         alertDialog.setMessage("是否继续识别？");
         alertDialog.show();
 //        Toast.makeText(getContext(), "识别结果："+userName, Toast.LENGTH_SHORT).show();

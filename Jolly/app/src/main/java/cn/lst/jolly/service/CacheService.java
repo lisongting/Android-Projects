@@ -8,18 +8,25 @@ import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.content.LocalBroadcastManager;
 
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.List;
 
 import cn.lst.jolly.data.DoubanMomentContent;
+import cn.lst.jolly.data.DoubanMomentNewsPosts;
 import cn.lst.jolly.data.GuokrHandpickContentResult;
+import cn.lst.jolly.data.GuokrHandpickNewsResult;
 import cn.lst.jolly.data.PostType;
 import cn.lst.jolly.data.ZhihuDailyContent;
+import cn.lst.jolly.data.ZhihuDailyNewsQuestion;
 import cn.lst.jolly.database.AppDatabase;
 import cn.lst.jolly.database.DatabaseCreator;
 import cn.lst.jolly.retrofit.RetrofitApi;
+import cn.lst.jolly.util.InfoConstants;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -238,7 +245,51 @@ public class CacheService extends Service {
             }
             mDb = creator.getDatabase();
         }
-//        int dayCount
+        final int dayCount =
+                getDaysOfSavingArticles(Integer.parseInt(
+                        PreferenceManager.getDefaultSharedPreferences(CacheService.this)
+                                .getString(InfoConstants.KEY_TIME_OF_SAVING_ARTICLES, "2")));
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (mDb != null) {
+                    mDb.beginTransaction();
+                    try {
+                        long timeInMillis = Calendar.getInstance().getTimeInMillis() - dayCount * 24 * 60 * 60 * 1000;
+
+                        //清空知乎缓存
+                        List<ZhihuDailyNewsQuestion> zhihuTimeoutItems =
+                                mDb.zhihuDailyNewsDao().queryAllTimeoutItems(timeInMillis);
+                        for (ZhihuDailyNewsQuestion q : zhihuTimeoutItems) {
+                            mDb.zhihuDailyNewsDao().delete(q);
+                            mDb.zhihuDailyContentDao().delete(mDb.zhihuDailyContentDao().queryContentById(q.getId()));
+                        }
+
+                        //清空果壳缓存
+                        List<GuokrHandpickNewsResult> guokrTimeoutItems =
+                                mDb.guokrHandpickNewsDao().queryAllTimeoutItems(timeInMillis);
+                        for (GuokrHandpickNewsResult r : guokrTimeoutItems) {
+                            mDb.guokrHandpickNewsDao().delete(r);
+                            mDb.guokrHandpickContentDao().delete(mDb.guokrHandpickContentDao().queryContentById(r.getId()));
+                        }
+
+                        //清空豆瓣缓存
+                        List<DoubanMomentNewsPosts> doubanTimeoutItems =
+                                mDb.doubanMomentNewsDao().queryAllTimeoutItems(timeInMillis);
+                        for (DoubanMomentNewsPosts d : doubanTimeoutItems) {
+                            mDb.doubanMomentNewsDao().delete(d);
+                            mDb.doubanMomentContentDao().delete(mDb.doubanMomentContentDao().queryContentById(d.getId()));
+                        }
+                        handler.sendEmptyMessage(MSG_CLEAR_CACHE_DONE);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        mDb.endTransaction();
+                    }
+                }
+            }
+        }).start();
     }
 
     private int getDaysOfSavingArticles(int id) {

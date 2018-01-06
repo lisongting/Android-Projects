@@ -158,7 +158,7 @@ public class CameraActivity extends AppCompatActivity implements RegisterContrac
 //                        ImageUtils.encodeBitmapToBase64(bitmapSoftReference.get(), Bitmap.CompressFormat.JPEG, 100));
                 presenter.facePlusRegister(Util.makeUserNameToHex(userName),
                         ImageUtils.encodeBitmapToBase64(bitmapSoftReference.get(), Bitmap.CompressFormat.JPEG, 100));
-                Toast.makeText(CameraActivity.this, "注册成功", Toast.LENGTH_LONG).show();
+                //Toast.makeText(CameraActivity.this, "注册成功", Toast.LENGTH_LONG).show();
 
             }
         });
