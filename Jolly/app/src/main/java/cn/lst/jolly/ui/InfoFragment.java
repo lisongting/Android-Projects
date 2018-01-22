@@ -1,4 +1,4 @@
-package cn.lst.jolly.timeline;
+package cn.lst.jolly.ui;
 
 import android.support.v4.app.Fragment;
 

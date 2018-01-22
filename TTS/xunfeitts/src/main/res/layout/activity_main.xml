@@ -6,7 +6,7 @@
         android:id="@+id/id_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="你好，游客，欢迎光临中科院软件博物馆。"
+        android:text="你好，游客。"
         android:hint="输入要朗读的文本"
         />
     <Button
@@ -21,4 +21,45 @@
         android:layout_height="wrap_content"
         android:onClick="stopReading"
         android:text="停止朗读"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/holo_green_light"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你好"
+            android:onClick="clickButton"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你叫什么名字"
+            android:onClick="clickButton"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="介绍一下你自己"
+            android:onClick="clickButton"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你多大了"
+            android:onClick="clickButton"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你来自哪里"
+            android:onClick="clickButton"/>
+    </LinearLayout>
 </LinearLayout>

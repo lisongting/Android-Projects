@@ -259,6 +259,7 @@ public class MainActivity extends AppCompatActivity {
                 "\"speech\":{\"data_source\":\"sdk\"}}";
     }
 
+    //进行语音对话
     public void startTextUnderstand(View view) {
 
         String text = editText.getText().toString().trim();

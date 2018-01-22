@@ -58,9 +58,19 @@ public class ZhihuDailyNewsAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         holder.title.setText(item.getTitle());
     }
 
+    public void setItemClickListener(OnRecyclerViewItemOnClickListener listener) {
+        this.mListener = listener;
+    }
     @Override
     public int getItemCount() {
         return 0;
+    }
+
+    public void updateData(List<ZhihuDailyNewsQuestion> list) {
+        mList.clear();
+        mList.addAll(list);
+        notifyDataSetChanged();
+        notifyItemRemoved(list.size());
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{

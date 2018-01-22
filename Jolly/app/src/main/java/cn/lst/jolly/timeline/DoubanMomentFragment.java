@@ -1,7 +1,10 @@
+
 package cn.lst.jolly.timeline;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -21,68 +24,80 @@ import java.util.TimeZone;
 
 import cn.lst.jolly.R;
 import cn.lst.jolly.data.ContentType;
-import cn.lst.jolly.data.ZhihuDailyNews;
-import cn.lst.jolly.data.ZhihuDailyNewsQuestion;
+import cn.lst.jolly.data.DoubanMomentNewsPosts;
+import cn.lst.jolly.data.PostType;
 import cn.lst.jolly.details.DetailsActivity;
 import cn.lst.jolly.service.CacheService;
 
-/**
- * Created by lisongting on 2018/1/2.
- */
 
-public class ZhihuDailyFragment extends Fragment implements ZhihuDailyContract.View{
+public class DoubanMomentFragment extends Fragment
+        implements DoubanMomentContract.View {
 
-    private ZhihuDailyContract.Presenter mPresenter;
+    private DoubanMomentContract.Presenter mPresenter;
+
+    // View references.
     private RecyclerView mRecyclerView;
     private SwipeRefreshLayout mRefreshLayout;
     private View mEmptyView;
     private FloatingActionButton fab;
-    private ZhihuDailyNewsAdapter mAdapter;
+
+    private DoubanMomentNewsAdapter mAdapter;
     private LinearLayoutManager mLayoutManager;
-    private int mYear,mMonth,mDay;
-    private int mListSize = 0;
+
+    private int mYear, mMonth, mDay;
+
     private boolean mIsFirstLoad = true;
+    private int mListSize = 0;
 
-    public static ZhihuDailyFragment newInstance(){
-        return new ZhihuDailyFragment();
+    public DoubanMomentFragment() {
+        // Requires default empty constructor.
+    }
+
+    public static DoubanMomentFragment newInstance() {
+        return new DoubanMomentFragment();
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Calendar c = Calendar.getInstance();
-        c.setTimeZone(TimeZone.getTimeZone("GMT+08"));
-        mYear = c.get(Calendar.YEAR);
-        mMonth = c.get(Calendar.MONTH);
-        mDay = c.get(Calendar.DAY_OF_MONTH);
+        mYear = Calendar.getInstance().get(Calendar.YEAR);
+        mMonth = Calendar.getInstance().get(Calendar.MONTH);
+        mDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
     }
 
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_timeline_page, container, false);
+
         initViews(view);
+
         mRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT+08"));
-                mPresenter.loadNews(true, true, c.getTimeInMillis());
+                Calendar c = Calendar.getInstance();
+                c.setTimeZone(TimeZone.getTimeZone("GMT+08"));
+                mPresenter.load(true, true, c.getTimeInMillis());
             }
         });
 
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                if (dy > 0) {
-                    fab.hide();
+
+                if (dy >0 ) {
                     if (mLayoutManager.findLastCompletelyVisibleItemPosition() == mListSize - 1) {
                         loadMore();
                     }
+                    fab.hide();
                 } else {
                     fab.show();
                 }
             }
         });
+
         return view;
     }
 
@@ -90,20 +105,21 @@ public class ZhihuDailyFragment extends Fragment implements ZhihuDailyContract.V
     public void onResume() {
         super.onResume();
         mPresenter.start();
-        Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT+08"));
+        Calendar c = Calendar.getInstance();
         c.set(mYear, mMonth, mDay);
         setLoadingIndicator(mIsFirstLoad);
         if (mIsFirstLoad) {
-            mPresenter.loadNews(true, false, c.getTimeInMillis());
+            mPresenter.load(true, false, c.getTimeInMillis());
             mIsFirstLoad = false;
         } else {
-            mPresenter.loadNews(false, false, c.getTimeInMillis());
+            mPresenter.load(false, false, c.getTimeInMillis());
         }
     }
+
     @Override
-    public void setPresenter(ZhihuDailyContract.Presenter presenter) {
+    public void setPresenter(DoubanMomentContract.Presenter presenter) {
         if (presenter != null) {
-            this.mPresenter = presenter;
+            mPresenter = presenter;
         }
     }
 
@@ -119,11 +135,6 @@ public class ZhihuDailyFragment extends Fragment implements ZhihuDailyContract.V
     }
 
     @Override
-    public boolean isActive() {
-        return isAdded()&&isResumed();
-    }
-
-    @Override
     public void setLoadingIndicator(final boolean active) {
         mRefreshLayout.post(new Runnable() {
             @Override
@@ -134,15 +145,20 @@ public class ZhihuDailyFragment extends Fragment implements ZhihuDailyContract.V
     }
 
     @Override
-    public void showResult(final List<ZhihuDailyNewsQuestion> list) {
+    public boolean isActive() {
+        return isAdded() && isResumed();
+    }
+
+    @Override
+    public void showResult(@NonNull final List<DoubanMomentNewsPosts> list) {
         if (mAdapter == null) {
-            mAdapter = new ZhihuDailyNewsAdapter(list, getContext());
+            mAdapter = new DoubanMomentNewsAdapter(list, getContext());
             mAdapter.setItemClickListener(new OnRecyclerViewItemOnClickListener() {
                 @Override
                 public void OnItemClick(View v, int i) {
-                    Intent intent = new Intent(getContext(), DetailsActivity.class);
+                    Intent intent = new Intent(getActivity(), DetailsActivity.class);
                     intent.putExtra(DetailsActivity.KEY_ARTICLE_ID, list.get(i).getId());
-                    intent.putExtra(DetailsActivity.KEY_ARTICLE_TYPE, ContentType.TYPE_ZHIHU_DAILY);
+                    intent.putExtra(DetailsActivity.KEY_ARTICLE_TYPE, ContentType.TYPE_DOUBAN_MOMENT);
                     intent.putExtra(DetailsActivity.KEY_ARTICLE_TITLE, list.get(i).getTitle());
                     intent.putExtra(DetailsActivity.KEY_ARTICLE_IS_FAVORITE, list.get(i).isFavorite());
                     startActivity(intent);
@@ -152,46 +168,47 @@ public class ZhihuDailyFragment extends Fragment implements ZhihuDailyContract.V
         } else {
             mAdapter.updateData(list);
         }
+
         mListSize = list.size();
+
         mEmptyView.setVisibility(list.isEmpty() ? View.VISIBLE : View.INVISIBLE);
 
-        //缓存数据
-        for (ZhihuDailyNewsQuestion q : list) {
+        for (DoubanMomentNewsPosts item : list) {
             Intent intent = new Intent(CacheService.BROADCAST_FILTER_ACTION);
-            intent.putExtra(CacheService.FLAG_ID, q.getId());
-            intent.putExtra(CacheService.FLAG_TYPE, q.getType());
-            //通过发送广播给Service，让Service去缓存数据条目
+            intent.putExtra(CacheService.FLAG_ID, item.getId());
+            intent.putExtra(CacheService.FLAG_TYPE, PostType.TYPE_DOUBAN);
             LocalBroadcastManager.getInstance(getContext()).sendBroadcast(intent);
         }
     }
 
     private void loadMore() {
-        Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT+08"));
+        Calendar c = Calendar.getInstance();
         c.set(mYear, mMonth, --mDay);
-        mPresenter.loadNews(true, false, c.getTimeInMillis());
+        mPresenter.load(true, false, c.getTimeInMillis());
     }
 
     public void showDatePickerDialog() {
-        final Calendar c = Calendar.getInstance();
-//        c.set(mYear, mMonth, mDay);
         DatePickerDialog dialog = DatePickerDialog.newInstance(new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
                 mYear = year;
                 mMonth = monthOfYear;
                 mDay = dayOfMonth;
+                Calendar c = Calendar.getInstance();
                 c.set(mYear, mMonth, mDay);
-                mPresenter.loadNews(true, true, c.getTimeInMillis());
+                mPresenter.load(true, true, c.getTimeInMillis());
             }
-        }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
+        }, mYear, mMonth, mDay);
 
-        dialog.setMaxDate(c);
+        dialog.setMaxDate(Calendar.getInstance());
+
         Calendar minDate = Calendar.getInstance();
-        minDate.set(2013, 5, 20);
+        minDate.set(2014, 5, 12);
         dialog.setMinDate(minDate);
-        dialog.vibrate(false);
 
-        dialog.show(getActivity().getFragmentManager(), ZhihuDailyFragment.class.getSimpleName());
+        dialog.vibrate(false);
+        dialog.show(getActivity().getFragmentManager(), DoubanMomentFragment.class.getSimpleName());
+
     }
 
 }

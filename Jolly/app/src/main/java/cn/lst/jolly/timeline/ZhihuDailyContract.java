@@ -15,7 +15,7 @@ public interface ZhihuDailyContract {
     interface View extends BaseView<Presenter> {
         boolean isActive();
 
-        void setLoadingIndicatoe(boolean active);
+        void setLoadingIndicator(boolean active);
 
         void showResult(List<ZhihuDailyNewsQuestion> list);
     }

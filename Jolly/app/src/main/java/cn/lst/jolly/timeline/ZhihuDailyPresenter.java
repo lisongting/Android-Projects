@@ -34,14 +34,14 @@ public class ZhihuDailyPresenter implements ZhihuDailyContract.Presenter {
             public void onNewsLoaded(@NonNull List<ZhihuDailyNewsQuestion> list) {
                 if (mView.isActive()) {
                     mView.showResult(list);
-                    mView.setLoadingIndicatoe(false);
+                    mView.setLoadingIndicator(false);
                 }
             }
 
             @Override
             public void onDataNotAvailable() {
                 if (mView.isActive()) {
-                    mView.setLoadingIndicatoe(false);
+                    mView.setLoadingIndicator(false);
                 }
             }
         });
