@@ -23,6 +23,7 @@ public class RobotActivity extends AppCompatActivity implements ModelHelper.Adap
 
     private String assetDir = "model";
     private String assetFilename = "xbot_model.obj";
+//    private String assetFilename = "new_base_link.dae";
     private float[] backgroundColor = new float[]{0,0,0,1};
 
 

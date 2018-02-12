@@ -11,8 +11,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
         GLSurfaceView glView = new GLSurfaceView(this);
-        MyRenderer renderer = new MyRenderer();
-        glView.setRenderer(renderer);
+//        MyRenderer renderer = new MyRenderer();
+//        Triangle triangle = new Triangle();
+//        glView.setRenderer(triangle);
         setContentView(glView);
     }
 }
