@@ -11,10 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final String file = "base_link.STL";
-    private GLSurfaceView glSurfaceView;
-    private MyGLSurfaceView myGLSurfaceView;
-    private float rotateDegree;
+
     private GLRenderer glRenderer;
     private ValueAnimator valueAnimator;
 
