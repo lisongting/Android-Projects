@@ -21,6 +21,7 @@ import static android.opengl.GLES20.glDrawArrays;
 import static android.opengl.GLES20.glEnableVertexAttribArray;
 import static android.opengl.GLES20.glGetAttribLocation;
 import static android.opengl.GLES20.glGetUniformLocation;
+import static android.opengl.GLES20.glLineWidth;
 import static android.opengl.GLES20.glUniform4f;
 import static android.opengl.GLES20.glUseProgram;
 import static android.opengl.GLES20.glVertexAttribPointer;
@@ -81,6 +82,7 @@ public class AirHockeyRenderer implements GLSurfaceView.Renderer {
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         glClearColor(0.0f, 0f, 0f, 0f);
 
+
         String vertexShaderSource = TextResourceReader.readTextFileFromResource(context,R.raw.simple_vertex_shader);
         String fragmentShaderSource = TextResourceReader.readTextFileFromResource(context, R.raw.simple_fragment_shader);
 
@@ -100,7 +102,7 @@ public class AirHockeyRenderer implements GLSurfaceView.Renderer {
         glVertexAttribPointer(aPositionLocation, POSITION_COMPONENT_COUNT, GL_FLOAT, false, 0, vertexData);
 
         glEnableVertexAttribArray(aPositionLocation);
-
+        glLineWidth(2.0f);
     }
 
     @Override
@@ -119,6 +121,7 @@ public class AirHockeyRenderer implements GLSurfaceView.Renderer {
         //画中间分割线
         glUniform4f(uColorLocation, 1f, 0f, 0f, 1f);
         glDrawArrays(GL_LINES, 6, 2);
+
 
         //
         glUniform4f(uColorLocation, 0f, 0f, 1f, 1f);

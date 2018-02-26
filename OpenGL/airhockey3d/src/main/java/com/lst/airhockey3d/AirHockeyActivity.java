@@ -1,4 +1,4 @@
-package com.lst.airhockey2;
+package com.lst.airhockey3d;
 
 import android.app.ActivityManager;
 import android.content.Context;
