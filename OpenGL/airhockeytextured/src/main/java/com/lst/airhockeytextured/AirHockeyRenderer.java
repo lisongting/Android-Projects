@@ -25,7 +25,7 @@ import static android.opengl.Matrix.translateM;
 
 /**
  * Created by lisongting on 2018/2/24.
- *
+ * 给桌面贴上纹理
  */
 
 public class AirHockeyRenderer implements GLSurfaceView.Renderer {

@@ -14,8 +14,8 @@ public class MainActivity extends AppCompatActivity {
 
     private GLRenderer glRenderer;
     private ValueAnimator valueAnimator;
-
-
+    private MyGLSurfaceView myGLSurfaceView ;
+    private GLSurfaceView glSurfaceView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
