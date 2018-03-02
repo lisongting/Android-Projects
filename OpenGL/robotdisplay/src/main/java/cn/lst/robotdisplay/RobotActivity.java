@@ -22,8 +22,9 @@ public class RobotActivity extends AppCompatActivity implements ModelHelper.Adap
     private ModelSurfaceView gLView;
 
     private String assetDir = "model";
-    private String assetFilename = "xbot_model.obj";
-//    private String assetFilename = "new_base_link.dae";
+//    private String assetFilename = "xbot_model.obj";
+//    private String assetFilename = "ISCAS_museum.dae";
+    private String assetFilename = "cowboy.dae";
     private float[] backgroundColor = new float[]{0,0,0,1};
 
 

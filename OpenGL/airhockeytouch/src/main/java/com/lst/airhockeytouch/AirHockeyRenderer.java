@@ -13,8 +13,6 @@ import com.lst.airhockeytouch.util.Geometry;
 import com.lst.airhockeytouch.util.MatrixHelper;
 import com.lst.airhockeytouch.util.TextureHelper;
 
-import java.util.Vector;
-
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
@@ -22,16 +20,16 @@ import static android.opengl.GLES20.GL_COLOR_BUFFER_BIT;
 import static android.opengl.GLES20.glClear;
 import static android.opengl.GLES20.glClearColor;
 import static android.opengl.GLES20.glViewport;
+import static android.opengl.Matrix.invertM;
 import static android.opengl.Matrix.multiplyMM;
+import static android.opengl.Matrix.multiplyMV;
 import static android.opengl.Matrix.rotateM;
 import static android.opengl.Matrix.setIdentityM;
 import static android.opengl.Matrix.setLookAtM;
 import static android.opengl.Matrix.translateM;
-import static android.support.v4.math.MathUtils.clamp;
-
 /**
  * Created by lisongting on 2018/2/24.
- * 加入旋转
+ * 可以用手控制木槌击打冰球让它移动
  */
 
 public class AirHockeyRenderer implements GLSurfaceView.Renderer {
@@ -73,6 +71,10 @@ public class AirHockeyRenderer implements GLSurfaceView.Renderer {
         mallet = new Mallet(0.08f, 0.15f, 32);
         puck = new Puck(0.06f, 0.02f, 32);
 
+        blueMalletPosition = new Geometry.Point(0f, mallet.height / 2f, 0.4f);
+        puckPosition = new Geometry.Point(0f, puck.height / 2f, 0f);
+        puckVector = new Geometry.Vector(0f, 0f, 0f);
+
         textureShaderProgram = new TextureShaderProgram(context);
         colorShaderProgram = new ColorShaderProgram(context);
         texture = TextureHelper.loadTexture(context, R.drawable.air_hockey_surface);
@@ -90,9 +92,24 @@ public class AirHockeyRenderer implements GLSurfaceView.Renderer {
     public void onDrawFrame(GL10 gl) {
         glClear(GL_COLOR_BUFFER_BIT);
 
+        puckPosition = puckPosition.translate(puckVector);
+        if (puckPosition.x < leftBound + puck.radius || puckPosition.x > rightBound - puck.radius) {
+            puckVector = new Geometry.Vector(-puckVector.x, puckVector.y, puckVector.z);
+            puckVector = puckVector.scale(0.9f);
+        }
+        if (puckPosition.z < farBound + puck.radius||puckPosition.z>nearBound-puck.radius) {
+            puckVector = new Geometry.Vector(puckVector.x, puckVector.y, -puckVector.z);
+            puckVector = puckVector.scale(0.9f);
+        }
+        puckPosition = new Geometry.Point(clamp(puckPosition.x, leftBound + puck.radius, rightBound - puck.radius),
+                puckPosition.y,
+                clamp(puckPosition.z, farBound + puck.radius, nearBound - puck.radius));
+        puckVector = puckVector.scale(0.99f);
+
         //将视图矩阵和投影矩阵相乘,结果放在viwProjectionMatrix里面
         multiplyMM(viewProjectionMatrix, 0, projectionMatrix, 0, viewMatrix, 0);
 
+        invertM(invertedViewProjectionMatrix, 0, viewProjectionMatrix, 0);
         //绘制桌面
         positionTableInScene();
         textureShaderProgram.useProgram();
@@ -107,16 +124,13 @@ public class AirHockeyRenderer implements GLSurfaceView.Renderer {
         mallet.bindData(colorShaderProgram);
         mallet.draw();
 
-        //绘制木槌2
-        positionObjectInScene(0f, mallet.height / 2f, 0.4f);
-        colorShaderProgram.useProgram();
+        positionObjectInScene(blueMalletPosition.x, blueMalletPosition.y, blueMalletPosition.z);
         colorShaderProgram.setUniforms(modelViewProjectionMatrix, 0f, 0f, 1f);
-        //这里不需要再次bindData了，绑定一次就可以了
         mallet.draw();
 
         //绘制冰球
-        positionObjectInScene(0f, puck.height / 2f, 0f);
-        colorShaderProgram.setUniforms(modelViewProjectionMatrix, 0.8f, 0.8f, 0.8f);
+        positionObjectInScene(puckPosition.x, puckPosition.y, puckPosition.z);
+        colorShaderProgram.setUniforms(modelViewProjectionMatrix, 0.8f, 0.8f, 1f);
         puck.bindData(colorShaderProgram);
         puck.draw();
     }
