@@ -1,6 +1,7 @@
 package com.lst.gdx;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
@@ -14,6 +15,8 @@ public class AndroidLauncher extends AndroidApplication {
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
+		Toast.makeText(this, "模型加载中....", Toast.LENGTH_LONG).show();
+
 		initialize(new ModelLoaderTest(), config);
 	}
 }

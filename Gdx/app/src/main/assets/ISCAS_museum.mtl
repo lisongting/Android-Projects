@@ -1,0 +1,79 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v3.1.187496374)
+
+newmtl FBXASC0514SG-material
+Kd 1 1 1
+Ka 1 1 1
+Ks 1.03 1.03 1.03
+Ke 0 0 0
+d 1
+Ns 1
+illum 2
+
+newmtl FBXASC229FBXASC175FBXASC185FBXASC232FBXASC177FBXASC161022SG-material
+Kd 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ke 0 0 0
+d 1
+Ns 1
+illum 2
+
+newmtl FBXASC229FBXASC175FBXASC185FBXASC232FBXASC177FBXASC161022SG5-material
+Kd 0.6 0.6 0.6
+Ka 1 1 1
+Ks 0 0 0
+Ke 0 0 0
+d 1
+Ns 1
+illum 2
+map_Kd zd_011.jpg
+
+newmtl FBXASC229FBXASC175FBXASC185FBXASC232FBXASC177FBXASC161033SG-material
+Kd 0.6 0.6 0.6
+Ka 1 1 1
+Ks 0 0 0
+Ke 0 0 0
+d 1
+Ns 1
+illum 2
+map_Kd zd_021.jpg
+
+newmtl Line001SG-material
+Kd 0.6 0.6 0.6
+Ka 1 1 1
+Ks 0 0 0
+Ke 0 0 0
+d 1
+Ns 1
+illum 2
+map_Kd zd_041.jpg
+
+newmtl duim001SG-material
+Kd 0.6 0.6 0.6
+Ka 1 1 1
+Ks 0 0 0
+Ke 0 0 0
+d 1
+Ns 1
+illum 2
+map_Kd zd_031.jpg
+
+newmtl JoinedMaterial_#8
+Kd 0.59 0.59 0.59
+Ka 1 1 1
+Ks 0 0 0
+Ke 0 0 0
+d 1
+Ns 1
+illum 2
+
+newmtl yuan50SG-material
+Kd 0.87 0.81 0.41
+Ka 1 1 1
+Ks 0 0 0
+Ke 0 0 0
+d 1
+Ns 1
+illum 2
+
