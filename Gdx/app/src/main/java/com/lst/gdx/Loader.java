@@ -17,7 +17,6 @@ import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
 import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.math.collision.BoundingBox;
-import com.badlogic.gdx.math.collision.Ray;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.Array;
@@ -80,13 +79,17 @@ public class Loader implements ApplicationListener {
 //        model = new Model(modelData, new TextureProvider.FileTextureProvider());
 //        doneLoading();
 
+//        ModelLoader loader = new MyObjLoader();
+//        ModelData modelData = loader.loadModelData(Gdx.files.internal(MODEL_MUSEUM));
+//        model = new Model(modelData, new TextureProvider.FileTextureProvider());
+//        doneLoading();
+
     }
 
 
     private void doneLoading() {
         Model xbot = assets.get(MODEL_XBOT, Model.class);
         instanceXbot = new ModelInstance(xbot);
-//        instanceXbot.transform.setToTranslation(0f, 0f, 5f);
 
         Model museum = assets.get(MODEL_MUSEUM, Model.class);
         instanceMuseum = new ModelInstance(museum);
@@ -100,8 +103,8 @@ public class Loader implements ApplicationListener {
         minVector = new Vector3();
         boundingBox.getMax(maxVector);
         boundingBox.getMin(minVector);
-        Log.i("tag", "maxVector:"+maxVector.toString());
-        Log.i("tag", "maxVector:"+minVector.toString());
+//        Log.i("tag", "maxVector:"+maxVector.toString());
+//        Log.i("tag", "maxVector:"+minVector.toString());
 
     }
 
@@ -151,14 +154,6 @@ public class Loader implements ApplicationListener {
     public void resume() {
         Log.i("tag", "resume()");
 
-    }
-
-    public void translate(float x, float y) {
-        Ray ray = camera.getPickRay(x, y);
-        Log.i("tag", "Ray:"+ray.toString());
-
-//        camera.lookAt(20, 0,10);
-//        camera.update();
     }
 
     @Override
