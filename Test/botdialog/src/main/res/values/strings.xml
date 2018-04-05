@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">BotDialog</string>
+
+    <string-array name="array">
+        <item>111</item>
+        <item>222</item>
+        <item>333</item>
+        <item>444</item>
+        <item>555</item>
+        <item>666</item>
+        <item>777</item>
+        <item>888</item>
+    </string-array>
+</resources>

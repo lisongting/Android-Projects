@@ -32,11 +32,21 @@ public class Activity1 extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             fragmentManager.beginTransaction()
-                    .add(R.id.container,SimpleFragment1.getInstance("fragment") , "fragment")
+                    .add(R.id.container, SimpleFragment1.getInstance("fragment"), "fragment")
                     .commit();
+            log("savedInstance is null");
+        } else {
+            log("savedInstance is NOT null");
         }
 
 
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        log("onRestoreInstanceState");
     }
 
     @Override

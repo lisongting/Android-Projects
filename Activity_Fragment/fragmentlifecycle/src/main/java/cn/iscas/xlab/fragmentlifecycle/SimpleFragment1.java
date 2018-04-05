@@ -69,6 +69,11 @@ public class SimpleFragment1 extends Fragment {
         log("onStart");
     }
 
+    @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+        log("onViewStateRestored");
+    }
 
     @Override
     public void onResume() {
@@ -121,7 +126,7 @@ public class SimpleFragment1 extends Fragment {
     }
 
     private void log(String s) {
-        Log.v("tag","Fragment"+num +" -- " + s);
+        Log.i("tag","Fragment"+num +" -- " + s);
     }
 
 

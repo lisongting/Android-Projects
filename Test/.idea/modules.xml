@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Test.iml" filepath="$PROJECT_DIR$/Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/botdialog/botdialog.iml" filepath="$PROJECT_DIR$/botdialog/botdialog.iml" />
       <module fileurl="file://$PROJECT_DIR$/broadcast_test/broadcast_test.iml" filepath="$PROJECT_DIR$/broadcast_test/broadcast_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/camera2/camera2.iml" filepath="$PROJECT_DIR$/camera2/camera2.iml" />
       <module fileurl="file://$PROJECT_DIR$/hotfixtest/hotfixtest.iml" filepath="$PROJECT_DIR$/hotfixtest/hotfixtest.iml" />

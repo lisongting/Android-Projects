@@ -1,1 +1,1 @@
-include ':app', ':uitest', ':uitest1', ':broadcast_test', ':rostest', ':camera2', ':hotfixtest'
+include ':app', ':uitest', ':uitest1', ':broadcast_test', ':rostest', ':camera2', ':hotfixtest', ':botdialog'
