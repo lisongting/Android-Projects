@@ -1,9 +1,14 @@
 package com.lst.botdialog;
 
 import android.animation.ValueAnimator;
+import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
@@ -46,12 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         parentView.addView(bottom);
         bottom.setVisibility(View.INVISIBLE);
 
-        bottom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "cli", Toast.LENGTH_SHORT).show();
-            }
-        });
         prevBottomLine = findViewById(R.id.ll_prev_bottom_line);
         bottomLine = findViewById(R.id.ll_bottom_line);
 //        prevExpandImg = findViewById(R.id.prev_expand_icon);
@@ -94,19 +93,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 hideList();
                 break;
             case R.id.bt3:
-                Toast.makeText(this, "TEST", Toast.LENGTH_SHORT).show();
+                selectFile();
                 break;
-//            case R.id.drawer_title:
-//                if (bottom.getVisibility() == View.VISIBLE) {
-//                    Toast.makeText(this, "popViewHeight:"+popViewHeight, Toast.LENGTH_LONG).show();
-//                    translateAnimOut = new TranslateAnimation(0, 0, 0, popViewHeight);
-//                    translateAnimOut.setDuration(500);
-//                    translateAnimOut.setInterpolator(new DecelerateInterpolator());
-//                    translateAnimOut.setFillAfter(true);
-//                    bottom.startAnimation(translateAnimOut);
-//                    bottom.setVisibility(View.INVISIBLE);
-//                }
-//                break;
             default:
                 break;
         }
@@ -170,6 +158,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             isShowingList = false;
         }
 
+    }
+
+    private void selectFile(){
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("audio/*");
+        startActivityForResult(Intent.createChooser(intent, "请选择一个音频文件"), 1);
+
+    }
+
+    private String getRealPathFromUri(Uri uri) {
+        String res ;
+        String[] proj = {MediaStore.Audio.AudioColumns.DATA};
+        Cursor cursor = getContentResolver().query(uri, proj, null, null, null);
+        if (cursor == null) {
+            res = "";
+        } else {
+            cursor.moveToFirst();
+            int index = cursor.getColumnIndex(MediaStore.Audio.AudioColumns.DATA);
+            res = cursor.getString(index);
+            cursor.close();
+        }
+
+        return res;
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1) {
+            if (data != null) {
+                Uri uri = data.getData();
+//                Toast.makeText(this, "文件URI："+uri.getPath().toString(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "文件路径: "+getRealPathFromUri(uri), Toast.LENGTH_SHORT).show();
+                Log.i("tag", "文件URI：" + uri.getPath().toString());
+                Log.i("tag", "文件绝对路径：" + getRealPathFromUri(uri));
+            } else {
+                Toast.makeText(this, "请选择文件", Toast.LENGTH_SHORT).show();
+            } 
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
 }
