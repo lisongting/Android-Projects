@@ -1,4 +1,4 @@
-package com.paperfish.streammediatest;
+package com.lst.streammedia;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -26,8 +26,6 @@ public class PlayerActivity extends AppCompatActivity {
     private SurfaceView surfaceView;
 
     private boolean isPlaying = false;
-    private static final String RTMP_RGB = "rtmp://192.168.0.110/rgb ";
-    private static final String RTMP_DEPTH = "rtmp://192.168.0.110/depth ";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,33 +35,9 @@ public class PlayerActivity extends AppCompatActivity {
         start = (Button) findViewById(R.id.bt_start);
         stop = (Button) findViewById(R.id.bt_stop);
         editText = (EditText) findViewById(R.id.url);
-        //bt_rgb = (Button) findViewById(R.id.bt_rgb);
-        //bt_depth = (Button) findViewById(R.id.bt_depth);
-        //bt_start_custom_video = (Button) findViewById(R.id.bt_custom_video);
         surfaceView = (SurfaceView) findViewById(R.id.surface_view);
 
         getSupportActionBar().setTitle("直播拉流测试");
-
-//        bt_rgb.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (ijkMediaPlayer.isPlaying()) {
-//                    ijkMediaPlayer.stop();
-//                    ijkMediaPlayer.reset();
-//                }
-//                play(RTMP_RGB);
-//            }
-//        });
-//        bt_depth.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (ijkMediaPlayer.isPlaying()) {
-//                    ijkMediaPlayer.stop();
-//                    ijkMediaPlayer.reset();
-//                }
-//                play(RTMP_DEPTH);
-//            }
-//        });
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,19 +54,15 @@ public class PlayerActivity extends AppCompatActivity {
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ijkMediaPlayer != null) {
+                if (ijkMediaPlayer != null&&isPlaying) {
                     isPlaying = false;
                     ijkMediaPlayer.stop();
+                    ijkMediaPlayer.release();
+                    ijkMediaPlayer.reset();
                 }
             }
         });
-//        bt_start_custom_video.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(PlayerActivity.this, CustomVideoActivity.class));
-//
-//            }
-//        });
+
     }
 
     @Override
@@ -140,17 +110,6 @@ public class PlayerActivity extends AppCompatActivity {
             public void onPrepared(IMediaPlayer iMediaPlayer) {
                 log("onPrepared()");
                 iMediaPlayer.start();
-//                log("--------------------");
-//                log("MediaInfo: " + iMediaPlayer.getMediaInfo());
-//                log("DataSource: " + iMediaPlayer.getDataSource());
-//                log("bitrate: "+ijkMediaPlayer.getBitRate());
-//                log("currentPosition：" + ijkMediaPlayer.getCurrentPosition());
-//                log("videoCachedBytes : " + ijkMediaPlayer.getVideoCachedBytes());
-//                log("videoCachedPackets : " + ijkMediaPlayer.getVideoCachedPackets());
-//                log("videoCachedDuration : " + ijkMediaPlayer.getVideoCachedDuration());
-//                log("decodeFramePerSecond : " + ijkMediaPlayer.getVideoDecodeFramesPerSecond());
-//                log("dropFrameRate : " + ijkMediaPlayer.getDropFrameRate());
-//                log("--------------------");
             }
         });
         ijkMediaPlayer.setOnInfoListener(new IMediaPlayer.OnInfoListener() {
@@ -163,7 +122,7 @@ public class PlayerActivity extends AppCompatActivity {
         ijkMediaPlayer.setOnBufferingUpdateListener(new IMediaPlayer.OnBufferingUpdateListener() {
             @Override
             public void onBufferingUpdate(IMediaPlayer iMediaPlayer, int i) {
-//                log("onBufferingUpdate:" + i);
+                log("onBufferingUpdate:" + i);
                 log("videoCachedBytes : " + ijkMediaPlayer.getVideoCachedBytes());
                 log("videoCachedPackets : " + ijkMediaPlayer.getVideoCachedPackets());
                 log("videoCachedDuration : " + ijkMediaPlayer.getVideoCachedDuration());
@@ -177,11 +136,7 @@ public class PlayerActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
-
-
 
     private void log(String s) {
         Log.i("ijk", s);

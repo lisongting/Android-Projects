@@ -36,6 +36,7 @@ public class MapView extends View{
     private int indicatorCount;
     //表示当前是否还在
     private boolean isTouching;
+    private float touchX,touchY;
 
     public MapView(Context context) {
         this(context,null);

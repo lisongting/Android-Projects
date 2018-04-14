@@ -32,27 +32,6 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/bt_start"
             android:text="停止" />
-        <!--<Button-->
-            <!--android:id="@+id/bt_rgb"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_below="@id/bt_start"-->
-            <!--android:text="RGB图像" />-->
-
-        <!--<Button-->
-            <!--android:id="@+id/bt_depth"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_below="@id/bt_start"-->
-            <!--android:layout_toRightOf="@id/bt_rgb"-->
-            <!--android:text="深度图像"-->
-            <!--/>-->
-        <!--<Button-->
-            <!--android:id="@+id/bt_custom_video"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_below="@id/bt_rgb"-->
-            <!--android:text="自定义播放器" />-->
     </RelativeLayout>
 
 
