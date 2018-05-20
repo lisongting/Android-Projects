@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
         Calendar currentCalendar = Calendar.getInstance();
         Calendar endCalendar = Calendar.getInstance();
-        endCalendar.set(Calendar.YEAR, 2018);
-        endCalendar.set(Calendar.MONTH, 0);
-        endCalendar.set(Calendar.DAY_OF_MONTH, 29);
-        endCalendar.set(Calendar.HOUR_OF_DAY, 6);
+        endCalendar.set(Calendar.YEAR, Constant.destYear);
+        endCalendar.set(Calendar.MONTH, Constant.destMonth);
+        endCalendar.set(Calendar.DAY_OF_MONTH, Constant.destDay);
+        endCalendar.set(Calendar.HOUR_OF_DAY, Constant.destHour);
         long remainTimeInMillis = endCalendar.getTimeInMillis() - currentCalendar.getTimeInMillis();
 
         int remainDays = (int) (remainTimeInMillis / (24 * 60 * 60 * 1000));
@@ -46,7 +46,11 @@ public class MainActivity extends AppCompatActivity {
                 .append(currentCalendar.get(Calendar.MONTH) + 1).append("月 ")
                 .append(currentCalendar.get(Calendar.DAY_OF_MONTH)).append("日\n");
 
-        sb.append("距离回家仅剩：\n")
+        StringBuilder dest = new StringBuilder();
+        dest.append(Constant.destYear).append("年")
+                .append(Constant.destMonth+1).append("月")
+                .append(Constant.destDay).append("日");
+        sb.append("距离").append(dest).append("\n仅剩：\n")
                 .append(remainDays).append("天\n")
                 .append(remainHours).append("小时");
 

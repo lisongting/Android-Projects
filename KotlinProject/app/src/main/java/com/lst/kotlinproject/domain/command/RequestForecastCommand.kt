@@ -7,9 +7,15 @@ class RequestForecastCommand(
         private val forecastProvider: ForecastProvider = ForecastProvider()) :
         Command<ForecastList> {
 
+//    init {
+//        Log.d("tag","RequestForecastCommand create")
+//    }
     companion object {
         const val DAYS = 7
     }
 
-    override fun execute() = forecastProvider.requestByZipCode(zipCode, DAYS)
+    override fun execute():ForecastList {
+//        Log.d("tag","RequestForecastCommand -- execute()")
+        return forecastProvider.requestByZipCode(zipCode, DAYS)
+    }
 }

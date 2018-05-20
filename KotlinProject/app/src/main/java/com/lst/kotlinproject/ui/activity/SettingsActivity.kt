@@ -3,6 +3,7 @@ package com.lst.kotlinproject.ui.activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import android.view.Window
 import com.lst.kotlinproject.R
 import com.lst.kotlinproject.ui.DelegatesExt
 import kotlinx.android.synthetic.main.activity_setting.*
@@ -15,10 +16,11 @@ class SettingsActivity :AppCompatActivity(){
     }
 
 
-    private var zipCode:Long by DelegatesExt.Preference(this, ZIP_CODE, DEFAULT_ZIP)
+    private var zipCode:Long by DelegatesExt.preference(this, ZIP_CODE, DEFAULT_ZIP)
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_setting)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

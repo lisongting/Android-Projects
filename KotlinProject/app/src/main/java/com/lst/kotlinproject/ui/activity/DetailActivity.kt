@@ -2,8 +2,9 @@ package com.lst.kotlinproject.ui.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
+import android.view.Window
 import android.widget.TextView
-import android.widget.Toolbar
 import com.bumptech.glide.Glide
 import com.lst.kotlinproject.R
 import com.lst.kotlinproject.domain.command.RequestDayForecastCommand
@@ -31,6 +32,7 @@ class DetailActivity:AppCompatActivity(),ToolbarManager{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_detail)
         initToolbar()
         toolbarTitle = intent.getStringExtra(CITY_NAME)

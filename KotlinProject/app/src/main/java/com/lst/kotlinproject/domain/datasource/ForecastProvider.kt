@@ -7,12 +7,16 @@ import com.lst.kotlinproject.extensions.firstResult
 
 class ForecastProvider(private val sources: List<ForecastDataSource> = ForecastProvider.SOURCES) {
 
+//    init {
+//        Log.d("tag","ForecastProvider create")
+//    }
     companion object {
         const val DAY_IN_MILLIS = 1000 * 60 * 60 * 24
         val SOURCES by lazy { listOf(ForecastDb(), ForecastServer()) }
     }
 
     fun requestByZipCode(zipCode: Long, days: Int): ForecastList = requestToSources {
+//        Log.d("tag", "requestByZipCode")
         val res = it.requestForecastByZipCode(zipCode, todayTimeSpan())
         if (res != null && res.size >= days) res else null
     }

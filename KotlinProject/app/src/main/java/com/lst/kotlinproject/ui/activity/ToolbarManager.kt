@@ -2,7 +2,7 @@ package com.lst.kotlinproject.ui.activity
 
 import android.support.v7.graphics.drawable.DrawerArrowDrawable
 import android.support.v7.widget.RecyclerView
-import android.widget.Toolbar
+import android.support.v7.widget.Toolbar
 import com.lst.kotlinproject.R
 import com.lst.kotlinproject.extensions.ctx
 import com.lst.kotlinproject.extensions.slideEnter
@@ -12,7 +12,7 @@ import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 interface ToolbarManager{
-    val toolbar:Toolbar
+    val toolbar: Toolbar
     var toolbarTitle:String
         get() = toolbar.title.toString()
         set(value){

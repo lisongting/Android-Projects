@@ -45,10 +45,10 @@ public class CountDownWidget extends AppWidgetProvider {
         //计算剩余的天数
         Calendar currentCalendar = Calendar.getInstance();
         Calendar endCalendar = Calendar.getInstance();
-        endCalendar.set(Calendar.YEAR, 2018);
-        endCalendar.set(Calendar.MONTH, 0);
-        endCalendar.set(Calendar.DAY_OF_MONTH, 30);
-        endCalendar.set(Calendar.HOUR_OF_DAY, 17);
+        endCalendar.set(Calendar.YEAR, Constant.destYear);
+        endCalendar.set(Calendar.MONTH, Constant.destMonth);
+        endCalendar.set(Calendar.DAY_OF_MONTH, Constant.destDay);
+        endCalendar.set(Calendar.HOUR_OF_DAY, Constant.destHour);
         long remainTimeInMillis = endCalendar.getTimeInMillis() - currentCalendar.getTimeInMillis();
         int remainDays = (int) (remainTimeInMillis / (24 * 60 * 60 * 1000));
 

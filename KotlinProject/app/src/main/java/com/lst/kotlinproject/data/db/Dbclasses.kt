@@ -24,6 +24,7 @@ class DayForecast(var map: MutableMap<String, Any?>) {
     var iconUrl: String by map
     var cityId: Long by map
 
+    //次构造函数需要调一次主构造函数
     constructor(date: Long, description: String, high: Int, low: Int, iconUrl: String, cityId: Long)
             : this(HashMap()) {
         this.date = date

@@ -4,11 +4,14 @@ import com.lst.kotlinproject.domain.datasource.ForecastDataSource
 import com.lst.kotlinproject.domain.model.ForecastList
 import com.lst.kotlinproject.extensions.*
 import org.jetbrains.anko.db.insert
-
 import org.jetbrains.anko.db.select
 
 class ForecastDb(val forecastDbHelper:ForecastDbHelper = ForecastDbHelper.instance,
                  val dataMapper:DbDataMapper = DbDataMapper()):ForecastDataSource{
+
+//    init{
+//        Log.d("tag","ForecastDb create")
+//    }
 
     override fun requestForecastByZipCode(zipCode: Long, date: Long)= forecastDbHelper.use{
         val dailyRequest = "${DayForecastTable.CITY_ID}=? AND ${DayForecastTable.DATE}>=?"
@@ -22,7 +25,7 @@ class ForecastDb(val forecastDbHelper:ForecastDbHelper = ForecastDbHelper.instan
         val city =select(CityForecastTable.NAME)
                 .whereSimple("${CityForecastTable.ID}=?",zipCode.toString())
                 .parseOpt{
-                    CityForecast(HashMap(),dailyForecast )
+                    CityForecast(HashMap(it),dailyForecast )
                 }
         city?.let{
             dataMapper.convertToDomain(it)
