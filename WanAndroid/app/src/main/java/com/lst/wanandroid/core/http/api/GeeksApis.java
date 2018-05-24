@@ -38,7 +38,7 @@ public interface GeeksApis {
     //获取热搜
     @GET("hotkey/json")
     @Headers("Cache-Control: public, max-age=36000")
-    Observable<BaseResponse<TopSearchData>> getTopSearchData();
+    Observable<BaseResponse<List<TopSearchData>>> getTopSearchData();
 
     @GET("friend/json/")
     Observable<BaseResponse<List<UsefulSiteData>>> getUsefulSites();
@@ -88,7 +88,26 @@ public interface GeeksApis {
 
     //收藏站外的文章
     @POST("lg/collect/add/json")
+    @FormUrlEncoded
+    Observable<BaseResponse<FeedArticleListData>>
+            addCollectOutsideArticle(@Field("title")String title,
+                                     @Field("author")String author,
+                                     @Field("link")String link);
 
+    @GET("lg/collect/list/{page}/json")
+    Observable<BaseResponse<FeedArticleListData>> getCollectList(@Path("page") int page);
+
+    //取消收藏站内文章
+    @POST("lg/uncollect/{id}/json")
+    @FormUrlEncoded
+    Observable<BaseResponse<FeedArticleListData>>
+            cancelCollectPageArticle(@Path("id")int id,@Field("originId")int originId);
+
+    //取消收藏页面站内文章
+    @POST("lg/uncollec_originId/{id}/json")
+    @FormUrlEncoded
+    Observable<BaseResponse<FeedArticleListData>>
+            cancelCollectArticle(@Path("id")int id,@Field("originId")int originId);
 
 
 }
