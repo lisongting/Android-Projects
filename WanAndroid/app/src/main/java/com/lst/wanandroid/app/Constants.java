@@ -11,7 +11,7 @@ import java.io.File;
 
 public class Constants {
 
-//    static final String  BUGLY_ID = "a29fb52485";
+    static final String  BUGLY_ID = "63a3c11663";
 
     /**
      * url
