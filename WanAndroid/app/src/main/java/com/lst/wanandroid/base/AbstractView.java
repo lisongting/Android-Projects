@@ -19,7 +19,7 @@ public interface AbstractView {
 
     void showCollectSuccess();
 
-    void showCacelCollectSuccess();
+    void showCancelCollectSuccess();
 
 
 }

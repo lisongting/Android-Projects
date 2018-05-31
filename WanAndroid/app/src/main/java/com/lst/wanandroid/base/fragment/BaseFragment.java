@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.lst.wanandroid.base.AbstractView;
 import com.lst.wanandroid.base.presenter.AbstractPresenter;
+import com.lst.wanandroid.utils.CommonUtil;
 
 import javax.inject.Inject;
 
@@ -19,11 +20,32 @@ public abstract class BaseFragment<T extends AbstractPresenter>
 
     @Override
     public void onAttach(Activity activity) {
+        //todo:?
         AndroidSupportInjection.inject(this);
         super.onAttach(activity);
     }
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        if (mPresenter != null) {
+            mPresenter.attachView(this);
+        }
+    }
 
+    @Override
+    public void onDestroyView(){
+        if (mPresenter != null) {
+            mPresenter.detachView();
+            mPresenter = null;
+        }
+        super.onDestroyView();
+    }
+
+    @Override
+    public void showErrorMsg(String errorMsg) {
+        if (isAdded()) {
+            CommonUtil.showSnackMessage(_mActivity,errorMsg);
+        }
     }
 }

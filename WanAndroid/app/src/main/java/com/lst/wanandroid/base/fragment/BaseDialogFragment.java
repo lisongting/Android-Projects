@@ -41,55 +41,10 @@ public abstract class BaseDialogFragment<T extends AbstractPresenter>
     }
 
     @Override
-    public void useNightMode(boolean isNightMode) {
-
-    }
-
-    @Override
     public void showErrorMsg(String errorMsg) {
         if (getActivity() != null) {
             CommonUtil.showSnackMessage(getActivity(),errorMsg);
         }
-    }
-
-    @Override
-    public void showNormal() {
-
-    }
-
-    @Override
-    public void showError() {
-
-    }
-
-    @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void reload() {
-
-    }
-
-    @Override
-    public void showLoginView() {
-
-    }
-
-    @Override
-    public void showLogoutView() {
-
-    }
-
-    @Override
-    public void showCollectSuccess() {
-
-    }
-
-    @Override
-    public void showCacelCollectSuccess() {
-
     }
 
 
