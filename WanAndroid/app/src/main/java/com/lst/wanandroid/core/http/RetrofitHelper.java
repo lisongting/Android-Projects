@@ -18,11 +18,11 @@ import javax.inject.Inject;
 
 import io.reactivex.Observable;
 
-public class HttpHelperImpl implements HttpHelper {
+public class RetrofitHelper implements HttpHelper {
     private GeeksApis geeksApis;
 
     @Inject
-    HttpHelperImpl(GeeksApis geeksApis) {
+    RetrofitHelper(GeeksApis geeksApis) {
         this.geeksApis = geeksApis;
     }
 
