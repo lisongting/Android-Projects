@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lst.wanandroid.R;
-import com.lst.wanandroid.WanAndroidApp;
+import com.lst.wanandroid.app.WanAndroidApp;
 import com.lst.wanandroid.app.Constants;
 
 import java.io.BufferedReader;

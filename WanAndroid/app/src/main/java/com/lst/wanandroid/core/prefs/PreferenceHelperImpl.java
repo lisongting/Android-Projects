@@ -3,7 +3,7 @@ package com.lst.wanandroid.core.prefs;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.lst.wanandroid.WanAndroidApp;
+import com.lst.wanandroid.app.WanAndroidApp;
 import com.lst.wanandroid.app.Constants;
 
 import javax.inject.Inject;

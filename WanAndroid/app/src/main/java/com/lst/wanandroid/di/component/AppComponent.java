@@ -1,6 +1,6 @@
 package com.lst.wanandroid.di.component;
 
-import com.lst.wanandroid.WanAndroidApp;
+import com.lst.wanandroid.app.WanAndroidApp;
 import com.lst.wanandroid.core.DataManager;
 import com.lst.wanandroid.di.module.AbstractAllActivityModule;
 import com.lst.wanandroid.di.module.AbstractAllDialogFragmentModule;

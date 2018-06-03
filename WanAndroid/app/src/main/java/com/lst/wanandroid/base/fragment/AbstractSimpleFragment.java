@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lst.wanandroid.R;
-import com.lst.wanandroid.WanAndroidApp;
+import com.lst.wanandroid.app.WanAndroidApp;
 import com.lst.wanandroid.utils.CommonUtil;
 import com.squareup.leakcanary.RefWatcher;
 

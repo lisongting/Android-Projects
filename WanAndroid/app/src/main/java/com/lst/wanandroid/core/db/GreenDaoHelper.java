@@ -1,6 +1,6 @@
 package com.lst.wanandroid.core.db;
 
-import com.lst.wanandroid.WanAndroidApp;
+import com.lst.wanandroid.app.WanAndroidApp;
 import com.lst.wanandroid.core.dao.DaoSession;
 import com.lst.wanandroid.core.dao.HistoryData;
 import com.lst.wanandroid.core.dao.HistoryDataDao;

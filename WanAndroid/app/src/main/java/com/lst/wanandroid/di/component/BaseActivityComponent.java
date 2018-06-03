@@ -7,11 +7,10 @@ import dagger.android.AndroidInjectionModule;
 import dagger.android.AndroidInjector;
 
 @Subcomponent(modules = {AndroidInjectionModule.class})
-public class BaseActivityComponent {
+public interface BaseActivityComponent extends AndroidInjector<BaseActivity>{
 
     //每一个继承于BaseActivity的Activity都继承于同一个组件
     @Subcomponent.Builder
     abstract class BaseBuilder extends AndroidInjector.Builder<BaseActivity>{
-
     }
 }

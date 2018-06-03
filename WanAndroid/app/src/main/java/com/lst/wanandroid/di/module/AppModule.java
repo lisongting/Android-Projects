@@ -1,6 +1,6 @@
 package com.lst.wanandroid.di.module;
 
-import com.lst.wanandroid.WanAndroidApp;
+import com.lst.wanandroid.app.WanAndroidApp;
 import com.lst.wanandroid.core.DataManager;
 import com.lst.wanandroid.core.db.DbHelper;
 import com.lst.wanandroid.core.db.GreenDaoHelper;

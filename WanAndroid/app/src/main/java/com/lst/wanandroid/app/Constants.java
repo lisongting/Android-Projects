@@ -4,7 +4,6 @@ package com.lst.wanandroid.app;
 import android.graphics.Color;
 
 import com.lst.wanandroid.R;
-import com.lst.wanandroid.WanAndroidApp;
 
 import java.io.File;
 
