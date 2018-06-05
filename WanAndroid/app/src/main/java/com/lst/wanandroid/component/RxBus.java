@@ -20,7 +20,7 @@ public class RxBus {
     }
 
     //提供一个新的事件
-    private void post(Object o) {
+    public void post(Object o) {
         bus.onNext(o);
     }
 
