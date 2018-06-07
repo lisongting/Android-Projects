@@ -25,7 +25,7 @@ public class Constants {
     public static final String PATH_CACHE = PATH_DATA + "/NetCache";
 
     /**
-     * Tag fragment classify
+     * Tag NavigationFragment classify
      */
     public static final int TYPE_MAIN_PAGER = 0;
 

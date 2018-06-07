@@ -45,7 +45,7 @@ public class RxUtils {
         };
     }
 
-    //统一返回结果处理：将BaseResponse<T>还原为Observable<T>类型
+    //统一返回结果处理：将BaseResponse<T>封装为Observable<T>类型
     public static <T> ObservableTransformer<BaseResponse<T>,T> handleResult(){
         return new ObservableTransformer<BaseResponse<T>, T>() {
             @Override
@@ -89,6 +89,7 @@ public class RxUtils {
     }
 
     private static <T> Observable<T> createData(final T t) {
+//        return Observable.just(t);
         return Observable.create(new ObservableOnSubscribe<T>() {
             @Override
             public void subscribe(ObservableEmitter<T> e) throws Exception {

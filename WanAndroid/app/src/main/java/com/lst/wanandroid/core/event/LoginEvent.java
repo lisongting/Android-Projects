@@ -14,4 +14,5 @@ public class LoginEvent {
     public LoginEvent(boolean b) {
         this.isLogin = b;
     }
+
 }

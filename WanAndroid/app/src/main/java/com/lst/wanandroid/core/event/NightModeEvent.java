@@ -10,4 +10,8 @@ public class NightModeEvent {
     public void setNightMode(boolean b) {
         isNightMode = b;
     }
+
+    public boolean getNightMode(){
+        return isNightMode;
+    }
 }

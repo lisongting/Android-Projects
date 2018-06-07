@@ -147,7 +147,7 @@ public class MainPagerFragment extends BaseRootFragment<MainPagerPresenter> impl
                         if (superChapterName.contains(getString(R.string.open_project))) {
                             //todo:
                             RxBus.getDefault().post(new SwitchProjectEvent());
-                        } if(superChapterName.contains(getString(R.string.navigation)))else {
+                        }else if(superChapterName.contains(getString(R.string.navigation))) {
                             RxBus.getDefault().post(new SwitchNavigationEvent());
                         }
                         break;
