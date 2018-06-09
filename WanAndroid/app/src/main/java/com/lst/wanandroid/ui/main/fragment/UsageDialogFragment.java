@@ -3,6 +3,7 @@ package com.lst.wanandroid.ui.main.fragment;
 import com.lst.wanandroid.base.fragment.BaseDialogFragment;
 import com.lst.wanandroid.contract.main.UsageDialogContract;
 import com.lst.wanandroid.core.bean.main.search.UsefulSiteData;
+import com.lst.wanandroid.presenter.main.UsageDialogPresenter;
 
 import java.util.List;
 

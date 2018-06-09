@@ -4,6 +4,7 @@ import com.lst.wanandroid.base.fragment.BaseDialogFragment;
 import com.lst.wanandroid.contract.main.SearchContract;
 import com.lst.wanandroid.core.bean.main.search.TopSearchData;
 import com.lst.wanandroid.core.dao.HistoryData;
+import com.lst.wanandroid.presenter.main.SearchPresenter;
 
 import java.util.List;
 

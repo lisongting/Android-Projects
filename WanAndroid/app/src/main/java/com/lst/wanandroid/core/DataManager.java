@@ -19,6 +19,7 @@ import java.util.List;
 
 import io.reactivex.Observable;
 
+//该数据管理器管理着三层数据：SharedPreference、网络请求、数据库
 public class DataManager implements HttpHelper, DbHelper, PreferenceHelper {
 
     private HttpHelper mHttpHelper;
