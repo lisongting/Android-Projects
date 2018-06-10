@@ -9,6 +9,7 @@ import java.util.List;
 
 public class UsageDialogFragment extends BaseDialogFragment<UsageDialogPresenter>
     implements UsageDialogContract.View{
+
     @Override
     public void showUsefulSites(List<UsefulSiteData> usefulSiteDataList) {
 
