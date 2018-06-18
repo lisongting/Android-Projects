@@ -9,7 +9,7 @@ import java.util.List;
 public class KnowledgeHierarchyFragment extends BaseRootFragment<KnowledgeHierarchyPresenter>
             implements KnowledgeHierarchyContract.View{
     @Override
-    public void showKnoledgeHierarchyData(List<KnowledgeHierarchyData> knowledgeHierarchyDataList) {
+    public void showKnowledgeHierarchyData(List<KnowledgeHierarchyData> knowledgeHierarchyDataList) {
 
     }
 

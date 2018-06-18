@@ -11,9 +11,13 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -30,6 +34,7 @@ import com.lst.wanandroid.presenter.main.SearchPresenter;
 import com.lst.wanandroid.ui.main.HistorySearchAdapter;
 import com.lst.wanandroid.utils.CommonUtil;
 import com.lst.wanandroid.utils.JudgeUtils;
+import com.lst.wanandroid.utils.KeyBoardUtil;
 import com.lst.wanandroid.widget.CircularRevealAnim;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
@@ -41,6 +46,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Predicate;
 
@@ -87,9 +93,15 @@ public class SearchDialogFragment extends BaseDialogFragment<SearchPresenter>
     }
 
     private void initDialog(){
-
+        Window window = getDialog().getWindow();
+        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+        //DialogSearch的宽
+        int width = (int) (displayMetrics.widthPixels * 0.98);
+        window.setLayout(width, WindowManager.LayoutParams.MATCH_PARENT);
+        window.setGravity(Gravity.TOP);
+        //取消过度动画，使DialogSearch的出现更加平滑
+        window.setWindowAnimations(R.style.DialogEmptyAnimation);
     }
-
 
     @Override
     protected int getLayout() {
@@ -135,10 +147,6 @@ public class SearchDialogFragment extends BaseDialogFragment<SearchPresenter>
         mPresenter.getTopSearchData();
     }
 
-    private void initCircleAnimation(){
-
-    }
-
     @Override
     public void showHistoryData(List<HistoryData> historyDataList) {
         if (historyDataList == null || historyDataList.size() == 0) {
@@ -182,7 +190,7 @@ public class SearchDialogFragment extends BaseDialogFragment<SearchPresenter>
     @Override
     public void showTopSearchData(List<TopSearchData> topSearchDataList) {
         mTopSearchDataList = topSearchDataList;
-        mTopSearchFlowLayout.setAdapter(new TagAdapter<TopSearchData>() {
+        mTopSearchFlowLayout.setAdapter(new TagAdapter<TopSearchData>(mTopSearchDataList) {
             @Override
             public View getView(FlowLayout parent, int position, TopSearchData topSearchData) {
                 assert getActivity() != null;
@@ -210,6 +218,60 @@ public class SearchDialogFragment extends BaseDialogFragment<SearchPresenter>
         backEvent();
         JudgeUtils.startSearchListActivity(getActivity(),mSearchEdit.getText().toString().trim());
     }
+
+    @Override
+    public void onHideAnimationEnd() {
+        mSearchEdit.setText("");
+        dismissAllowingStateLoss();
+    }
+
+    @Override
+    public void onShowAnimationEnd() {
+        KeyBoardUtil.openKeyboard(getActivity(),mSearchEdit);
+    }
+
+    //todo:
+    @Override
+    public boolean onPreDraw() {
+        mSearchEdit.getViewTreeObserver().removeOnPreDrawListener(this);
+        circularRevealAnim.show(mSearchEdit,mRootView);
+        return true;
+    }
+
+    @OnClick({R.id.search_back_ib, R.id.search_floating_action_btn, R.id.search_history_clear_all_tv})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.search_back_ib:
+                backEvent();
+                break;
+            case R.id.search_floating_action_btn:
+                mSearchScrollView.smoothScrollTo(0,0);
+                break;
+            case R.id.search_history_clear_all_tv:
+                mPresenter.clearHistoryData();
+                adapter.replaceData(new ArrayList<>());
+                setHistoryTvStatus(true);
+                break;
+            default:break;
+        }
+    }
+
+    private void setItemBackground(TextView tv) {
+        tv.setBackgroundColor(CommonUtil.randomColor());
+        tv.setTextColor(ContextCompat.getColor(getActivity(),R.color.white));
+    }
+
+    private void initCircleAnimation(){
+        circularRevealAnim = new CircularRevealAnim();
+        circularRevealAnim.setAnimListener(this);
+        mSearchEdit.getViewTreeObserver().addOnPreDrawListener(this);
+    }
+
+    public void backEvent(){
+        KeyBoardUtil.closeKeyboard(getActivity(),mSearchEdit);
+        circularRevealAnim.hide(mSearchEdit,mRootView);
+    }
+
 
     @Override
     public void useNightMode(boolean isNightMode) {
@@ -256,19 +318,7 @@ public class SearchDialogFragment extends BaseDialogFragment<SearchPresenter>
 
     }
 
-    @Override
-    public boolean onPreDraw() {
-        return false;
-    }
 
-    @Override
-    public void onHideAnimationEnd() {
-        mSearchEdit.setText("");
-        dismissAllowingStateLoss();
-    }
 
-    @Override
-    public void onShowAnimationEnd() {
 
-    }
 }

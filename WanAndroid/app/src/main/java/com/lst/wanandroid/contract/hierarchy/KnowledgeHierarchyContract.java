@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface KnowledgeHierarchyContract {
     interface View extends AbstractView {
-        void showKnoledgeHierarchyData(List<KnowledgeHierarchyData> knowledgeHierarchyDataList);
+        void showKnowledgeHierarchyData(List<KnowledgeHierarchyData> knowledgeHierarchyDataList);
     }
 
     interface Presenter extends AbstractPresenter<View>{

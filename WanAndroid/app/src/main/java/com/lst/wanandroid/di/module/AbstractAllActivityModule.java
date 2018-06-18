@@ -1,6 +1,10 @@
 package com.lst.wanandroid.di.module;
 
-import com.lst.wanandroid.MainActivity;
+
+import com.lst.wanandroid.di.component.BaseActivityComponent;
+import com.lst.wanandroid.ui.main.activity.LoginActivity;
+import com.lst.wanandroid.ui.main.activity.MainActivity;
+import com.lst.wanandroid.ui.main.activity.RegisterActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;

@@ -15,7 +15,7 @@ import butterknife.Unbinder;
 
 public abstract class AbstractSimpleDialogFragment extends DialogFragment {
     private Unbinder unbinder;
-    private View mRootView;
+    protected View mRootView;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         mRootView = inflater.inflate(getLayout(), container, false);
         unbinder = ButterKnife.bind(this, mRootView);
