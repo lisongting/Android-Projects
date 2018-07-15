@@ -3,6 +3,7 @@ package com.lst.wanandroid.ui.hierarchy;
 import com.lst.wanandroid.base.fragment.BaseRootFragment;
 import com.lst.wanandroid.contract.hierarchy.KnowledgeHierarchyContract;
 import com.lst.wanandroid.core.bean.hierarchy.KnowledgeHierarchyData;
+import com.lst.wanandroid.presenter.hierarchy.KnowledgeHierarchyPresenter;
 
 import java.util.List;
 

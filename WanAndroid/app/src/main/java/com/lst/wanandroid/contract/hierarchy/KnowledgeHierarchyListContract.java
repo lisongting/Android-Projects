@@ -19,7 +19,7 @@ public interface KnowledgeHierarchyListContract {
     }
 
     interface Presenter extends AbstractPresenter<View>{
-        void getKnowledgeHIerarchyDetailData(int page,int cid,boolean isShowError);
+        void getKnowledgeHierarchyDetailData(int page,int cid,boolean isShowError);
 
         void addCollectArticle(int position, FeedArticleData feedArticleData);
 

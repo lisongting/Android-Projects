@@ -4,6 +4,7 @@ import com.lst.wanandroid.base.fragment.BaseRootFragment;
 import com.lst.wanandroid.contract.hierarchy.KnowledgeHierarchyListContract;
 import com.lst.wanandroid.core.bean.main.collect.FeedArticleData;
 import com.lst.wanandroid.core.bean.main.collect.FeedArticleListData;
+import com.lst.wanandroid.presenter.hierarchy.KnowledgeHierarchyListPresenter;
 
 public class KnowledgeHierarchyListFragment extends BaseRootFragment<KnowledgeHierarchyListPresenter>
     implements KnowledgeHierarchyListContract.View{

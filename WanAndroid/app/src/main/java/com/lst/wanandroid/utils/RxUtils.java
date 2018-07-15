@@ -40,7 +40,7 @@ public class RxUtils {
             @Override
             public ObservableSource<T> apply(Observable<T> upstream) {
                 return upstream.subscribeOn(Schedulers.io())
-                        .subscribeOn(AndroidSchedulers.mainThread());
+                        .observeOn(AndroidSchedulers.mainThread());
             }
         };
     }
