@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../MultiMedia.iml" filepath="$PROJECT_DIR$/../MultiMedia.iml" />
       <module fileurl="file://$PROJECT_DIR$/StreamMediaTest.iml" filepath="$PROJECT_DIR$/StreamMediaTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../VideoView/VideoView.iml" filepath="$PROJECT_DIR$/../VideoView/VideoView.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aicameratest/aicameratest.iml" filepath="$PROJECT_DIR$/../aicameratest/aicameratest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../aicameratest2/aicameratest2.iml" filepath="$PROJECT_DIR$/../aicameratest2/aicameratest2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../cemaratest/cemaratest.iml" filepath="$PROJECT_DIR$/../cemaratest/cemaratest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../musicplayer/musicplayer.iml" filepath="$PROJECT_DIR$/../musicplayer/musicplayer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../screen_catcher/screen_catcher.iml" filepath="$PROJECT_DIR$/../screen_catcher/screen_catcher.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../soundpooltest/soundpooltest.iml" filepath="$PROJECT_DIR$/../soundpooltest/soundpooltest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../surfaceview/surfaceview.iml" filepath="$PROJECT_DIR$/../surfaceview/surfaceview.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../videorecorder/videorecorder.iml" filepath="$PROJECT_DIR$/../videorecorder/videorecorder.iml" />
     </modules>
   </component>
 </project>

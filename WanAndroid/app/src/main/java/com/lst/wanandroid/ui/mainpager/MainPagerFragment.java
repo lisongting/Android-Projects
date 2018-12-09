@@ -99,7 +99,7 @@ public class MainPagerFragment extends BaseRootFragment<MainPagerPresenter> impl
     protected void initEventAndData(){
         super.initEventAndData();
         mFeedArticleDataList = new ArrayList<>();
-        mAdapter = new ArticleListAdapter(R.layout.item_search_page, mFeedArticleDataList);
+        mAdapter = new ArticleListAdapter(R.layout.item_search_pager, mFeedArticleDataList);
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {

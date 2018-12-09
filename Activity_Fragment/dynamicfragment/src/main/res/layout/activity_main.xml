@@ -12,7 +12,7 @@
     <fragment
         android:id="@+id/id_fragment_title"
         android:name="com.test.administrator.dynamicfragment.TitleFragment"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="45dp" />
 
     <include

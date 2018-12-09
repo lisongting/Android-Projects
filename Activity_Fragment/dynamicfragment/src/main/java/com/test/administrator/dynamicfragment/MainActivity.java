@@ -1,11 +1,9 @@
 package com.test.administrator.dynamicfragment;
 
-import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ContentFragment contentFragment;
     private FriendFragment fiendFragment;
     private BaseFragment baseFragment;
+    private android.support.v4.app.Fragment f ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +34,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         FragmentManager manager = getFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         baseFragment = new BaseFragment();
+
+        //动态管理Fragment之常见操作
+        //1.添加
+        transaction.add(R.id.id_content, baseFragment);
+        //2.替换
         transaction.replace(R.id.id_content, baseFragment);
+        //3.移除
+        transaction.remove(baseFragment);
+        //4.隐藏
+        transaction.hide(baseFragment);
+        //5.显示
+        transaction.show(baseFragment);
         transaction.commit();
     }
     public void onClick(View v){

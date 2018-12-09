@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请选择图形:"
+        android:layout_margin="5dp"
+        android:textSize="16sp"
+         />
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/shapes"
+        android:textAlignment="center"
+        android:layout_marginBottom="20dp"
+        />
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="长:"
+        android:textSize="20sp"
+        android:layout_margin="5dp"
+        />
+
+    <EditText
+        android:id="@+id/edit1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="请输入正整数或小数"
+        android:backgroundTint="@color/colorAccent"
+        />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="宽:"
+        android:layout_margin="5dp"
+        android:textSize="20sp"
+        />
+    <EditText
+        android:id="@+id/edit2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="请输入正整数或小数"
+        android:backgroundTint="@color/colorAccent"
+        />
+
+    <Button
+        android:id="@+id/bt_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="计算面积"/>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"
+        tools:text="面积："
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

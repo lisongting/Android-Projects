@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MaterialUI</string>
+
+    <!--<string-array name="list_array">-->
+        <!--<item name="item1" />-->
+        <!--<item name="item2" />-->
+        <!--<item name="item3" />-->
+        <!--<item name="item4" />-->
+        <!--<item name="item5" />-->
+        <!--<item name="item6" />-->
+
+    <!--</string-array>-->
+    <string name="detail">
+        app:layout_scrollFlags\n
+        1.scroll\n
+        RecyclerView向上滚动的时候，toolbar也跟着滚动，等到toolbar滚出屏幕之后RecyclerView还在继续滚动，下拉的时候等到拉到RecyclerView的头部toolbar才会进入屏幕。\n
+        2.scroll|enterAlways\n
+        这个属性和scroll唯一不同的地方是，只要往下拉，toolbar就会显示出来，不必等着RecyclerView到顶部才可以显示\n
+        3.scroll|enterAlways|enterAlwaysCollapsed\n
+        假设ActionBar高度为50dp,我设置Toolbar的高为150dp，上滑滚出屏幕时，手指一上滑就消失，但是下滑滚入屏幕时，TabLayout会和RecyclerView一起滚入50dp，然后等RecyclerView的第一个条目出现后，再往下拉，Toolbar才会出现剩下的100dp\n
+        4.scroll|exitUntilCollapsed\n
+        假设ActionBar高度为50dp,我设置Toolbar的高为150dp，手指上滑(列表向下滚动)时，会先折叠100dp，在列表向下滚动时始终保持50dp的高度。手指下滑时，直到RecyclerView的第一个条目出现后，再往下拉，Toolbar才会出现剩下的100dp\n
+        5.scroll|snap\n
+        设置吸附性效果，当滚动Toolbar不足一半高度的时候就会回弹，高于一半的时候就会全部隐藏（即要么全部显示，要么全部隐藏）\n
+    </string>
+</resources>

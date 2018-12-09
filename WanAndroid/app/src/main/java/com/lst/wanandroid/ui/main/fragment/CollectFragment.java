@@ -55,7 +55,7 @@ public class CollectFragment extends BaseRootFragment<CollectPresenter> implemen
 
     private void initView(){
         mArticles = new ArrayList<>();
-        mAdapter = new ArticleListAdapter(R.layout.item_search_page, mArticles);
+        mAdapter = new ArticleListAdapter(R.layout.item_search_pager, mArticles);
         mAdapter.isCollectPage();
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override

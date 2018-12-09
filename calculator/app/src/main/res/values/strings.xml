@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">面积计算器</string>
+
+    <string-array name="shapes">
+        <item>长方形</item>
+        <item>正方形</item>
+        <item>圆形</item>
+        <item>三角形</item>
+    </string-array>
+</resources>

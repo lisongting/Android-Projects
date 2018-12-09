@@ -5,22 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-all/8bnwg5hd3w55iofp58khbp6yv/gradle-2.14.1" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/.." />
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/../VideoView" />
-            <option value="$PROJECT_DIR$/../aicameratest" />
-            <option value="$PROJECT_DIR$/../aicameratest2" />
-            <option value="$PROJECT_DIR$/../cemaratest" />
-            <option value="$PROJECT_DIR$/../musicplayer" />
-            <option value="$PROJECT_DIR$/../screen_catcher" />
-            <option value="$PROJECT_DIR$/../soundpooltest" />
-            <option value="$PROJECT_DIR$/../surfaceview" />
-            <option value="$PROJECT_DIR$/../videorecorder" />
-          </set>
-        </option>
+        <option name="gradleHome" value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1" />
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>

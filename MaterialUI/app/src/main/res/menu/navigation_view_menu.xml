@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single" >
+        <item
+            android:id="@+id/navi_item1"
+            android:icon="@drawable/ic_1"
+            android:title="cake" />
+        <item
+            android:id="@+id/navi_item2"
+            android:icon="@drawable/ic_2"
+            android:title="flower" />
+        <item
+            android:id="@+id/navi_item3"
+            android:icon="@drawable/ic_3"
+            android:title="signal" />
+        <item
+            android:id="@+id/navi_item4"
+            android:icon="@drawable/ic_4"
+            android:title="user" />
+        <item
+            android:id="@+id/navi_item5"
+            android:icon="@drawable/ic_5"
+            android:title="plane" />
+    </group>
+</menu>

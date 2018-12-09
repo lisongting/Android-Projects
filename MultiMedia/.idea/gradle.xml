@@ -6,21 +6,6 @@
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/StreamMediaTest" />
-            <option value="$PROJECT_DIR$/VideoView" />
-            <option value="$PROJECT_DIR$/aicameratest" />
-            <option value="$PROJECT_DIR$/aicameratest2" />
-            <option value="$PROJECT_DIR$/cemaratest" />
-            <option value="$PROJECT_DIR$/musicplayer" />
-            <option value="$PROJECT_DIR$/screen_catcher" />
-            <option value="$PROJECT_DIR$/soundpooltest" />
-            <option value="$PROJECT_DIR$/surfaceview" />
-            <option value="$PROJECT_DIR$/videorecorder" />
-          </set>
-        </option>
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>

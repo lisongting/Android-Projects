@@ -1,0 +1,47 @@
+{
+  "buildFiles": [
+    "D:\\AndroidStudioProjects\\MultiMedia\\aicameratest\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\lisongting\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\AndroidStudioProjects\\MultiMedia\\aicameratest\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target clean"
+  ],
+  "libraries": {
+    "glog-Debug-armeabi-v7a": {
+      "artifactName": "glog",
+      "abi": "armeabi-v7a",
+      "output": "D:\\AndroidStudioProjects\\MultiMedia\\aicameratest\\src\\main\\jniLibs\\armeabi-v7a\\libglog.so"
+    },
+    "NNPACK-Debug-armeabi-v7a": {
+      "artifactName": "NNPACK",
+      "abi": "armeabi-v7a",
+      "output": "D:\\AndroidStudioProjects\\MultiMedia\\aicameratest\\src\\main\\jniLibs\\armeabi-v7a\\libCAFFE2_NNPACK.a"
+    },
+    "cpufeatures-Debug-armeabi-v7a": {
+      "artifactName": "cpufeatures",
+      "buildCommand": "C:\\Users\\lisongting\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\AndroidStudioProjects\\MultiMedia\\aicameratest\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target cpufeatures",
+      "abi": "armeabi-v7a",
+      "output": "D:\\AndroidStudioProjects\\MultiMedia\\aicameratest\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a\\libcpufeatures.a"
+    },
+    "thread_pool-Debug-armeabi-v7a": {
+      "artifactName": "thread_pool",
+      "abi": "armeabi-v7a",
+      "output": "D:\\AndroidStudioProjects\\MultiMedia\\aicameratest\\src\\main\\jniLibs\\armeabi-v7a\\libCAFFE2_PTHREADPOOL.a"
+    },
+    "native-lib-Debug-armeabi-v7a": {
+      "artifactName": "native-lib",
+      "buildCommand": "C:\\Users\\lisongting\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\AndroidStudioProjects\\MultiMedia\\aicameratest\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target native-lib",
+      "abi": "armeabi-v7a",
+      "output": "D:\\AndroidStudioProjects\\MultiMedia\\aicameratest\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libnative-lib.so"
+    },
+    "caffe2-Debug-armeabi-v7a": {
+      "artifactName": "caffe2",
+      "abi": "armeabi-v7a",
+      "output": "D:\\AndroidStudioProjects\\MultiMedia\\aicameratest\\src\\main\\jniLibs\\armeabi-v7a\\libCaffe2_CPU.a"
+    },
+    "protobuf-Debug-armeabi-v7a": {
+      "artifactName": "protobuf",
+      "abi": "armeabi-v7a",
+      "output": "D:\\AndroidStudioProjects\\MultiMedia\\aicameratest\\src\\main\\jniLibs\\armeabi-v7a\\libprotobuf.a"
+    }
+  }
+}
